@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Brand orange background circle -->
+  <circle cx="16" cy="16" r="16" fill="#f97316"/>
+  <!-- Bold "C" lettermark in white -->
+  <path d="M22 10.5C20.3 9.5 18.2 9 16 9C10.5 9 6 13.1 6 18C6 22.9 10.5 27 16 27C18.2 27 20.3 26.5 22 25.5" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Small dot accent -->
+  <circle cx="23.5" cy="10.5" r="1.5" fill="white"/>
+  <circle cx="23.5" cy="25.5" r="1.5" fill="white"/>
+</svg>

@@ -1,0 +1,84 @@
+# CasperB2B
+
+> CasperB2B is a business services company founded by Jared Casper. It helps small and local businesses capture and follow up on leads by combining lead-management software (CasperPortal), trained dedicated virtual assistants ("Casper VAs"), optional done-for-you implementation (websites, SEO, PPC, automation), and practical cybersecurity and IT protection.
+
+CasperB2B is the services company. CasperPortal is a separate software platform (https://casperportal.com) that CasperB2B sells, implements and runs for clients. Do not treat the two as the same entity.
+
+## Key facts
+- Founder: Jared Casper (Founder & Lead Strategist), born and raised in Georgetown, Massachusetts. The team also includes Mark Casper (35+ years in automotive sales and leadership).
+- Based in Georgetown, Massachusetts; serves businesses nationwide, with local focus on the North Shore of Massachusetts and Southern New Hampshire.
+- Mailing address: 252 Daniel Webster Hwy #1093, Nashua, NH 03060.
+- Phone/text: 1-207-222-7737 (1-207-2-CASPER). Email: contact@casperb2b.com.
+- Hours: Monday–Friday, 9:00 AM – 5:00 PM.
+- Pricing published on the site: CasperPortal software only, $297/month (month-to-month, unlimited users); Software + a dedicated Casper VA: $297/month plus the VA's flat monthly rate (each role's rate is listed at https://casperb2b.com/casper-va/roles, e.g. General VA $800/month); done-for-you setups: Starter $399/month + $1,500 one-time setup, Premium $199/month + $3,500 one-time setup. Typical setup time: 5–7 business days.
+- Working model: Diagnose, Build, Protect & Improve. Starts with a 15-minute fit call. Signed scope before work begins.
+- Who it is for: owner-led businesses with existing revenue that need consistent lead follow-up and fewer software tools. Not a fit for buyers wanting the cheapest option or guaranteed overnight results.
+
+## Main pages
+- [Home](https://casperb2b.com/): Overview of the system (CasperPortal), the hands (Casper VAs), implementation and protection.
+- [About CasperB2B](https://casperb2b.com/about-us): Company story, team, and operating principles.
+- [Pricing](https://casperb2b.com/pricing): CasperPortal software, Casper VA and done-for-you plans, setup process and FAQ.
+- [Contact](https://casperb2b.com/contact): Request a 15-minute fit call.
+- [Our Process](https://casperb2b.com/our-process): Step-by-step engagement process.
+- [Our Team](https://casperb2b.com/our-team)
+- [Jared Casper](https://casperb2b.com/author/jared-casper): Founder profile.
+- [Mark Casper](https://casperb2b.com/mark-casper): Profile.
+- [The $49,000 story](https://casperb2b.com/the-49k-story): Why CasperB2B charges a one-time setup fee and works from signed agreements.
+
+## Software and staffing
+- [What is CasperPortal?](https://casperb2b.com/software/casperportal): The CRM and marketing-automation platform CasperB2B deploys (missed-call text-back, unified inbox, follow-up automation, pipeline tracking, review requests).
+- [CasperPortal vs other CRMs](https://casperb2b.com/compare/casperportal)
+- [CasperPortal done-for-you setup](https://casperb2b.com/setup)
+- [Integrations](https://casperb2b.com/integrations)
+- [Casper VA overview](https://casperb2b.com/casper-va): Dedicated, trained virtual assistants recruited and managed by CasperB2B.
+- [Casper VA roles and pricing](https://casperb2b.com/casper-va/roles)
+- [How hiring a Casper VA works](https://casperb2b.com/casper-va/hiring-guide)
+- [Casper VA vs an agency](https://casperb2b.com/casper-va/vs-agency)
+
+## Services
+- [All services](https://casperb2b.com/services)
+- [SEO](https://casperb2b.com/services/seo)
+- [Local SEO](https://casperb2b.com/services/local-seo)
+- [PPC & Google Ads](https://casperb2b.com/services/ppc)
+- [Website development](https://casperb2b.com/services/web-development)
+- [Lead generation](https://casperb2b.com/services/lead-generation)
+- [Email marketing](https://casperb2b.com/services/email-marketing)
+- [Reputation management](https://casperb2b.com/services/reputation-management)
+- [Cybersecurity](https://casperb2b.com/services/cybersecurity)
+- [Managed IT](https://casperb2b.com/services/managed-it)
+- [Graphic design](https://casperb2b.com/services/graphic-design)
+- [AI services & automation](https://casperb2b.com/ai-services)
+- [Free SEO audit](https://casperb2b.com/seo-audit)
+- [CarSalesSoftware.com setup for dealerships](https://casperb2b.com/carsalessoftware-setup)
+- [Service areas](https://casperb2b.com/service-areas)
+
+## Problems solved
+- [Missed calls](https://casperb2b.com/problems/missed-calls)
+- [Missed leads](https://casperb2b.com/problems/missed-leads)
+- [No follow-up](https://casperb2b.com/problems/no-follow-up)
+- [No pipeline visibility](https://casperb2b.com/problems/no-pipeline-visibility)
+- [Too many tools](https://casperb2b.com/problems/too-many-tools)
+- [Low conversion](https://casperb2b.com/problems/low-conversion)
+- [Stagnant reviews](https://casperb2b.com/problems/reviews-stagnant)
+
+## Industries
+- [Industries overview](https://casperb2b.com/niches)
+- [HVAC & home services](https://casperb2b.com/niches/hvac-home-services), [Real estate agents](https://casperb2b.com/niches/real-estate-agents), [Legal firms](https://casperb2b.com/niches/legal-firms), [Car dealerships](https://casperb2b.com/niches/car-dealerships), [Construction](https://casperb2b.com/niches/construction-companies), [Restaurants](https://casperb2b.com/niches/restaurants), [Dental clinics](https://casperb2b.com/niches/dental-clinics)
+
+## Guides
+- [Blog](https://casperb2b.com/blog)
+- [Mastering local SEO](https://casperb2b.com/blog/mastering-local-seo)
+- [Stop missing calls](https://casperb2b.com/blog/stop-missing-calls)
+- [Why antivirus isn't enough](https://casperb2b.com/blog/why-antivirus-isnt-enough)
+- [Massachusetts cybersecurity guide](https://casperb2b.com/blog/massachusetts-cybersecurity-guide)
+- [CRM vs spreadsheets](https://casperb2b.com/blog/crm-vs-spreadsheets)
+- [How to automate lead follow-up](https://casperb2b.com/blog/automate-lead-follow-up)
+- [Local SEO & CRM glossary](https://casperb2b.com/glossary)
+
+## Optional
+- [Free tools](https://casperb2b.com/tools)
+- [Is CasperB2B right for me? (quiz)](https://casperb2b.com/quiz)
+- [Agreement builder](https://casperb2b.com/agreement-builder)
+- [News & press](https://casperb2b.com/news)
+- [Privacy policy](https://casperb2b.com/privacy)
+- [Terms of service](https://casperb2b.com/terms)
