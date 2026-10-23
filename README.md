@@ -28,6 +28,7 @@ This site links to CasperPortal once, in the footer ("Sister product"). CasperPo
   removed, placeholders and dead CTAs fixed). Each must match exactly once or the build fails.
 - `data/cut-edits.json` — second pass of exact edits (fluff, repetition, broken structure), applied after `scripts/declutter.mjs` strips template boilerplate repeated across pages. Dead declutter rules fail the build.
 - `data/locations.json` — the 27 MA/NH towns (county, ZIP codes, neighborhoods, nearby towns, a local note); `scripts/locations.mjs` builds the town pages (/<town>-ma, /<town>-nh) and the state hubs /massachusetts and /new-hampshire. Old town sub-URLs redirect to the town page.
+- `data/additions.json` — extra sections and FAQs for pages that were too thin to rank (inserted before the page FAQ).
 - `data/redirects.json` — old URL → new URL (chains are resolved at build time).
 - `scripts/ia.mjs` — information architecture: the header menu grouped by visitor goal, topic clusters and hubs, the one
   primary CTA per page, the "Your next best step" block, the trust block and the sticky mobile CTA.

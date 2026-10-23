@@ -21,7 +21,20 @@ const REDIRECTS = read("data/redirects.json");
 const IMAGES = read("data/images.json");
 const KW = read("data/keywords.json", {});
 const CEDITS = read("data/content-edits.json", {});
-const CUTS = read("data/cut-edits.json", {}); // second pass: fluff cuts, applied after declutter()
+const CUTS = read("data/cut-edits.json", {});
+const ADDS = read("data/additions.json", {}); // extra sections + FAQs for pages that were too thin to rank
+function addContent(p, html) {
+  const a = ADDS[p]; if (!a) return html;
+  const faqAt = html.search(/<section>(?:(?!<\/section>)[\s\S])*?<details>/);
+  if (a.add) html = faqAt >= 0 ? html.slice(0, faqAt) + a.add + html.slice(faqAt) : html + a.add;
+  if (a.faq?.length) {
+    const items = a.faq.map(({ q, a: ans }) => `<details><summary>${esc(q)}</summary><p>${esc(ans)}</p></details>`).join("");
+    const at = html.search(/<section>(?:(?!<\/section>)[\s\S])*?<details>/);
+    if (at >= 0) { const end = html.indexOf("</section>", at); html = html.slice(0, end) + items + html.slice(end); }
+    else html += `<section><h2>Frequently asked questions</h2>${items}</section>`;
+  }
+  return html;
+} // second pass: fluff cuts, applied after declutter()
 const LOC = read("data/locations.json");
 const NOINDEX = new Set(["/thank-you", "/agreement-builder"]);
 
@@ -270,12 +283,16 @@ function relatedPicks(p, exclude) {
 const related = (p, picks) => picks.length ? `<section class="related"><h2>Related in ${esc(CLUSTERS[CL(p)]?.name || "this topic")}</h2><div class="grid g${Math.min(picks.length, 4)}">${picks.map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>` : "";
 
 // ── hubs ──
-const kind = (x) => BY[x]?.location ? (BY[x].location.st === "nh" ? "New Hampshire towns" : "Massachusetts towns") : /^\/(massachusetts|new-hampshire)$/.test(x) ? "States" : x === "/georgetown-ma" ? "Massachusetts towns" : x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
+const kind = (x) => /^\/(staffing\/.|b2b-growth$)/.test(x) ? "Services" : BY[x]?.location ? (BY[x].location.st === "nh" ? "New Hampshire towns" : "Massachusetts towns") : /^\/(massachusetts|new-hampshire)$/.test(x) ? "States" : x === "/georgetown-ma" ? "Massachusetts towns" : x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
 const KIND_ORDER = ["States", "Massachusetts towns", "New Hampshire towns", "Services", "Questions answered", "Problems we fix", "Industries", "Free tools", "Guides & articles", "More"];
 function clusterListing(cluster, self) {
   const members = all.filter((x) => CL(x) === cluster && x !== self && x !== "/");
   const groups = KIND_ORDER.map((k) => [k, members.filter((x) => kind(x) === k)]).filter(([, xs]) => xs.length);
   return `<section class="hub-group"><h2>Everything in ${esc(CLUSTERS[cluster].name)}</h2>${groups.map(([k, xs]) => `<h3>${k}</h3><div class="grid g3">${xs.map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div>`).join("")}</section>`;
+}
+function allServices() {
+  const svc = all.filter((x) => kind(x) === "Services" && !/^\/casper-va\/./.test(x) && !BY[x]?.location && !/-georgetown-ma$/.test(x) && x !== "/services");
+  return `<section class="hub-group"><h2>Every CasperB2B service</h2>${Object.entries(CLUSTERS).map(([k, c]) => { const xs = svc.filter((x) => CL(x) === k); return xs.length ? `<h3>${esc(c.name)}</h3><div class="grid g3">${xs.map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div>` : ""; }).join("")}</section>`;
 }
 function hubHtml(p) {
   const h = HUBS[p], c = CLUSTERS[h.cluster];
@@ -359,7 +376,7 @@ for (const P of ALL) {
   if (HUBS[p]) html = hubHtml(p);
   else if (p === "/faq") html = faqHub();
   else if (P.generated) { /* town + state pages are built clean */ }
-  else if (!P.hand) { html = applyContentEdits(p, html); const w0 = strip(html).split(" ").length; html = declutterLate(p, applyContentEdits(p, declutter(p, html).html, CUTS)); wordsCut += w0 - strip(html).split(" ").length; }
+  else if (!P.hand) { html = applyContentEdits(p, html); const w0 = strip(html).split(" ").length; html = addContent(p, declutterLate(p, applyContentEdits(p, declutter(p, html).html, CUTS))); wordsCut += w0 - strip(html).split(" ").length; }
   html = keywordize(p, html).replace(/\bbusinesses nationwide\b/g, "businesses worldwide").replace(/we serve businesses nationwide/g, "we work with businesses worldwide").replace(/\bnationwide\b(?![^<]*Affiliate)/g, "worldwide");
   if (p === "/blog") html = blogIndex(html);
   if (TOOLS[p]) html = toolPage(p, html);
@@ -379,6 +396,8 @@ for (const P of ALL) {
   }
   if (p === "/sitemap") html = htmlSitemap(html);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
+  if (p === "/services") html += allServices();
+  if (p === "/niches") html += `<section class="hub-group"><h2>Every industry we work with</h2><div class="grid g3">${all.filter((x) => /^\/niches\/./.test(x)).map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>`;
   imgCount = 0;
   const h1s = (html.match(/<h1[\s>]/g) || []).length;
   if (h1s !== 1) throw new Error(`${p}: ${h1s} h1: ${(html.match(/<h1[\s>][\s\S]{0,80}/g) || []).join(" ;; ")}`);
