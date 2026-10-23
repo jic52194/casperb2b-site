@@ -51,7 +51,7 @@ export function write(path, html) {
   if (path !== "/" && !path.endsWith("/") && !/\.[a-z0-9]+$/i.test(path)) writeFileSync(join(OUT, path + ".html"), html);
 }
 
-const navLink = (n, h, path) => `<a href="${h}"${path === h ? ' aria-current="page"' : ""}>${esc(n)}</a>`;
+const navLink = (n, h, path) => h ? `<a href="${h}"${path === h ? ' aria-current="page"' : ""}>${esc(n)}</a>` : `<span class="drop-head">${esc(n)}</span>`;
 
 /** The page shell. crumbs = [[name, path], ...] (visible breadcrumb + BreadcrumbList). */
 export function page({ path, title, desc, body, schema = [], crumbs, noindex = false, ogType = "website", image, lastmod = TODAY, cta = { href: "/contact", label: "Book My 15-Minute Fit Call" }, sticky = "" }) {
@@ -78,7 +78,7 @@ ${nodes.map(ld).join("")}
 <a class="topphone" href="tel:${PHONE_TEL}" data-cta="header-call">${PHONE}</a>
 <a class="btn sm topcta" href="${ctaHref}" data-cta="header">Book a Fit Call</a>
 <button class="burger" type="button" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button></div>
-<nav class="mainnav" aria-label="Main"><div class="wrap">${NAV.menus.map(([n, items], i) => `<div class="menu${i >= NAV.menus.length - 2 ? " end" : ""}"><button type="button" aria-expanded="false" aria-haspopup="true">${esc(n)}</button><div class="drop">${items.map(([a, h]) => navLink(a, h, path)).join("")}</div></div>`).join("")}</div></nav>
+<nav class="mainnav" aria-label="Main"><div class="wrap">${NAV.menus.map(([n, items], i) => `<div class="menu${i >= NAV.menus.length - 2 ? " end" : ""}${items.some(([, h]) => !h) ? " grouped" : ""}"><button type="button" aria-expanded="false" aria-haspopup="true">${esc(n)}</button><div class="drop">${items.map(([a, h]) => navLink(a, h, path)).join("")}</div></div>`).join("")}</div></nav>
 <nav class="drawer" id="drawer" data-drawer aria-label="Mobile" hidden>${NAV.menus.map(([n, items]) => `<details><summary>${esc(n)}</summary>${items.map(([a, h]) => navLink(a, h, path)).join("")}</details>`).join("")}<a class="btn" href="${ctaHref}" data-cta="drawer">Book My 15-Minute Fit Call</a></nav></header>
 <div class="print-head" aria-hidden="true"><img src="${LOGO}" alt="" width="57" height="40"><span>casperb2b.com · ${PHONE} · ${EMAIL}</span><span class="print-url">${url}</span></div>
 <main id="main" tabindex="-1">${crumbs && crumbs.length > 1 ? `<nav class="crumbs wrap" aria-label="Breadcrumb"><ol>${crumbs.map(([n, p], i) => `<li>${i < crumbs.length - 1 ? `<a href="${p}">${esc(n)}</a>` : `<span aria-current="page">${esc(n)}</span>`}</li>`).join("")}</ol></nav>` : ""}${body}</main>

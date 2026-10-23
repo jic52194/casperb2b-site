@@ -320,3 +320,13 @@ h2[id]{scroll-margin-top:130px}
 .cta-band b{display:block;color:#fff;font-size:1.2rem;margin-bottom:2px}
 .cta-band span{font-size:.97rem}
 @media print{.toc,.cta-band{display:none!important}}
+/* footer bottom block: brand green (from the logo) instead of orange */
+.foot .contact a,.foot .fine a,.foot .foot-bottom a{color:#4ade80}
+.foot .contact a:hover,.foot .fine a:hover,.foot .legal a:hover{color:#86efac}
+.foot .legal a{color:#a7f3d0}
+
+/* grouped dropdown (Marketing & SEO) */
+.drop-head{display:block;padding:10px 12px 4px;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-d)}
+.menu.grouped .drop{columns:4;column-gap:4px;min-width:820px;padding:10px}
+.menu.grouped .drop .drop-head{break-before:column}.menu.grouped .drop .drop-head:first-child{break-before:auto}
+.drawer .drop-head{padding:10px 0 2px 12px}

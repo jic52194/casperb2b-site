@@ -57,6 +57,9 @@
   "cluster": "about",
   "noindex": true
  },
+ "/affiliate-terms": {
+  "desc": "Terms and conditions for the CasperB2B affiliate and partner program: eligibility, how commissions are earned and paid, and how the program works."
+ },
  "/agreement-builder": {
   "cluster": "about",
   "noindex": true
@@ -2789,6 +2792,23 @@
    }
   ]
  },
+ "/services/bundled-seo": {
+  "keyword": "bundled seo services",
+  "secondary": [
+   "all in one seo package",
+   "monthly seo bundle",
+   "seo and google business profile package"
+  ],
+  "title": "Bundled SEO Services for Small Business | CasperB2B",
+  "desc": "Bundled SEO services: on-page, technical, listings, content, reviews and reporting from one team. Book a 15-minute fit call to see if a bundle fits.",
+  "h1": "Bundled SEO Services: One Team, One Monthly Plan",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/how-much-does-seo-cost"
+  }
+ },
  "/services/business-listings": {
   "keyword": "business listings management",
   "secondary": [
@@ -2969,6 +2989,23 @@
    "article": "/strategy/marketing"
   }
  },
+ "/services/design-services": {
+  "keyword": "design services for small business",
+  "secondary": [
+   "small business branding and design",
+   "logo and website design services",
+   "brand identity design services"
+  ],
+  "title": "Design Services for Small Business | CasperB2B",
+  "desc": "Design services for small business: logos, brand identity, style guides, graphics, website and landing page design. Book a fit call to scope your project.",
+  "h1": "Design Services for Small Business",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/logo-design",
+   "tool": "/brand-kit",
+   "article": "/blog/roi-website-redesign"
+  }
+ },
  "/services/email-marketing": {
   "keyword": "email marketing services for small business",
   "secondary": [
@@ -3023,6 +3060,23 @@
     "a": "Yes. Every piece is designed to match your core brand identity, so your ads, social posts and print materials look consistent."
    }
   ]
+ },
+ "/services/hosting-support": {
+  "keyword": "website hosting and support",
+  "secondary": [
+   "managed website hosting",
+   "website hosting migration",
+   "small business website support"
+  ],
+  "title": "Website Hosting and Support | CasperB2B",
+  "desc": "Website hosting and support: setup or migration, SSL, DNS and email records, backups, updates, monitoring and fixes. Book a fit call to review your setup.",
+  "h1": "Website Hosting and Support for Small Businesses",
+  "cluster": "cyber",
+  "next": {
+   "service": "/caspercare",
+   "tool": "/tools/website-grader",
+   "article": "/what-happens-if-i-get-hacked"
+  }
  },
  "/services/it-infrastructure": {
   "keyword": "it infrastructure services",
@@ -3124,6 +3178,23 @@
    "service": "/services/custom-apps",
    "tool": "/tools/tech-stack-roi",
    "article": "/services/software-testing"
+  }
+ },
+ "/services/online-advertising": {
+  "keyword": "online advertising services",
+  "secondary": [
+   "digital advertising for small business",
+   "google and social ads management",
+   "paid advertising services"
+  ],
+  "title": "Online Advertising Services for Small Business | CasperB2B",
+  "desc": "Online advertising services: Google Search, local, display, retargeting, social and YouTube ads with tracking and landing pages. Book a fit call to plan.",
+  "h1": "Online Advertising Services for Small Businesses",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/make-my-phone-ring"
   }
  },
  "/services/outbound-prospecting": {
@@ -4130,8 +4201,5 @@
    "tool": "/tools/ai-search-readiness",
    "article": "/what-is-an-ai-chatbot-and-do-i-need-one"
   }
- },
- "/affiliate-terms": {
-  "desc": "Terms and conditions for the CasperB2B affiliate and partner program: eligibility, how commissions are earned and paid, and how the program works."
  }
 }
