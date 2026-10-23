@@ -11,6 +11,8 @@ import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page
 import { TOOLS, toolPage } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion } from "./ia.mjs";
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB } from "./pages-extra.mjs";
+import { declutter, declutterReport, declutterLate, lateReport } from "./declutter.mjs";
+import { locationPages } from "./locations.mjs";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url)).split("\\").join("/");
 const read = (f, d) => existsSync(ROOT + f) ? JSON.parse(readFileSync(ROOT + f, "utf8")) : d;
@@ -19,12 +21,19 @@ const REDIRECTS = read("data/redirects.json");
 const IMAGES = read("data/images.json");
 const KW = read("data/keywords.json", {});
 const CEDITS = read("data/content-edits.json", {});
+const CUTS = read("data/cut-edits.json", {}); // second pass: fluff cuts, applied after declutter()
+const LOC = read("data/locations.json");
 const NOINDEX = new Set(["/thank-you", "/agreement-builder"]);
 
 // ── pages that are written here rather than captured ──
 const byPath = Object.fromEntries(PAGES.map((p) => [p.path, p]));
 byPath["/pricing"] = { ...(byPath["/pricing"] || { path: "/pricing" }), title: PRICING.title, desc: PRICING.desc, h1: PRICING.h1, html: PRICING.html, hand: true };
 byPath["/agreement-builder"] = { ...(byPath["/agreement-builder"] || { path: "/agreement-builder" }), title: AGREEMENT.title, desc: AGREEMENT.desc, h1: AGREEMENT.h1, html: AGREEMENT.html, hand: true };
+// town pages + state hubs (data/locations.json)
+const LOCS = locationPages(LOC, (h) => !!byPath[h] || h === "/casper-va");
+for (const x of LOCS.pages) { byPath[x.path] = { ...x, generated: true }; KW[x.path] = { ...LOCS.kw[x.path], ...(KW[x.path] || {}) }; }
+KW["/georgetown-ma"] = { ...(KW["/georgetown-ma"] || {}), cluster: "local" }; if (byPath["/georgetown-ma"]) byPath["/georgetown-ma"].parent = "/massachusetts";
+KW["/service-areas"] = { ...(KW["/service-areas"] || {}), cluster: "local" };
 for (const [p, h] of Object.entries(HUBS)) byPath[p] = { path: p, title: h.title, desc: h.desc, h1: h.h1, html: "", hub: true };
 byPath["/faq"] = { path: "/faq", title: FAQ_HUB.title, desc: FAQ_HUB.desc, h1: FAQ_HUB.h1, html: "", hub: true };
 for (const [p, h] of [...Object.entries(HUBS), ["/faq", FAQ_HUB]]) KW[p] = { keyword: h.keyword, title: h.title, desc: h.desc, h1: h.h1, intro: h.intro, cluster: h.cluster || "resources", ...(KW[p] || {}) };
@@ -45,6 +54,7 @@ function finalTarget(to, seen = new Set()) {
   if (REDIRECTS[p] && !seen.has(p)) { seen.add(p); return finalTarget(REDIRECTS[p], seen); }
   throw new Error(`redirect ends at a page that is not built: ${to}`);
 }
+for (const k of Object.keys(REDIRECTS)) { const m = k.match(/^\/(?:strategy\/ai\/|strategy\/|faq\/|compare\/national-agencies\/|blog\/spotlight-)?([a-z-]+-(?:ma|nh))(?:\/.*)?$/); if (m && KEEP.has("/" + m[1]) && LOCS.slugs.includes(m[1])) REDIRECTS[k] = "/" + m[1]; }
 for (const k of Object.keys(REDIRECTS)) REDIRECTS[k] = finalTarget(REDIRECTS[k]);
 
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
@@ -59,7 +69,7 @@ const NAVNAME = new Map(MENU.flatMap(([, items]) => items).map(([n, h]) => [h, n
 
 // ── names, titles, descriptions ──
 const HUBNAME = Object.fromEntries(Object.values(CLUSTERS).map((c) => [c.hub, c.name]));
-const shortName = (p) => p === "/" ? "Home" : HUBNAME[p] || NAVNAME.get(p) || clean(KW[p]?.h1 || BY[p]?.h1 || p).replace(/[.:]$/, "").slice(0, 70);
+const shortName = (p) => p === "/" ? "Home" : BY[p]?.name || HUBNAME[p] || NAVNAME.get(p) || clean(KW[p]?.h1 || BY[p]?.h1 || p).replace(/[.:]$/, "").slice(0, 70);
 const TITLE_OVERRIDE = {
   "/": "CasperB2B | Marketing, Automation & Cybersecurity",
   "/contact": "Contact CasperB2B | Request a 15-Minute Fit Call",
@@ -88,7 +98,7 @@ function fitDesc(d) {
   return cut.slice(0, 152).replace(/\s+\S*$/, "").replace(/[,;:—–-]$/, "") + "…";
 }
 function makeDesc(p, html) {
-  if (KW[p]?.desc) return fitDesc(KW[p].desc);
+  if (KW[p]?.desc) return fitDesc(KW[p].desc.replace(/\bnationwide\b/g, "worldwide"));
   let d = clean(BY[p].desc);
   if (!d || /^CasperB2B protects small businesses from cyber threats/.test(d) && p !== "/") d = firstPara(html);
   return fitDesc(d);
@@ -169,8 +179,8 @@ function oneCta(html, cta) {
 }
 
 // ── content corrections ──
-function applyContentEdits(p, html) {
-  for (const e of CEDITS[p] || []) {
+function applyContentEdits(p, html, set = CEDITS) {
+  for (const e of set[p] || []) {
     const n = html.split(e.find).length - 1;
     if (n !== 1) throw new Error(`content edit on ${p} matched ${n} times: ${e.find.slice(0, 90)}`);
     html = html.replace(e.find, () => e.replace);
@@ -182,6 +192,8 @@ const OUR_PRICES = [/\$297\b/, /\$1,?097\b/, /\$399\s*\/\s*mo/, /\$199\s*\/\s*mo
 const VA_PRICE = /\$\d[\d,]*\s*(?:\/\s*mo\b|per month)/;
 function priceGuard(p, html) {
   const text = strip(html);
+  const garbled = text.match(/$[0-9][0-9,]*$[0-9]|$[0-9,]+(?:er month|onth)\b/);
+  if (garbled) throw new Error(`${p}: garbled money text: ${garbled[0]}`);
   for (const re of OUR_PRICES) if (re.test(text)) throw new Error(`${p}: shows a CasperB2B price (${re}) — prices are hidden`);
   if (/^\/(casper-va|pricing|done-for-you|onboarding|caspercare|$)/.test(p) && VA_PRICE.test(text)) throw new Error(`${p}: shows a monthly price: ${text.match(VA_PRICE)[0]}`);
 }
@@ -200,10 +212,10 @@ function keywordize(p, html) {
 const CONTACT_FORM = leadForm({ id: "Contact Us Form", tags: ["website_contact", "service_{service_requested|general}"], submit: "Request My 15-Minute Fit Call",
   success: "Request received. Expect a personal reply within 1 business day. If a call is the right next step, we’ll include a booking link.",
   note: "We’ll use your details only to respond to this request. Marketing updates are optional.",
-  fields: [{ name: "first_name", label: "First Name", required: true, autocomplete: "given-name", placeholder: "John" }, { name: "last_name", label: "Last Name", required: true, autocomplete: "family-name", placeholder: "Doe" },
-    { name: "email", label: "Email Address", type: "email", required: true, autocomplete: "email", placeholder: "john@example.com" }, { name: "phone", label: "Phone Number (Optional)", type: "tel", autocomplete: "tel", placeholder: "(555) 123-4567" },
-    { name: "service_requested", label: "What are you looking for? (Optional)", type: "select", options: [["marketing", "Marketing & Lead Gen"], ["seo", "SEO & Local Search"], ["website", "Website Development"], ["automation", "CRM & Automation (CasperPortal)"], ["va", "Virtual Assistants"], ["cybersecurity", "Cybersecurity & IT"], ["other", "Other / Not Sure"]] },
-    { name: "calendar_notes", label: "What would you like help with?", type: "textarea", required: true, placeholder: "Tell us what is leaking time or revenue..." }] });
+  fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name", placeholder: "Jane Smith" },
+    { name: "email", label: "Email", type: "email", required: true, autocomplete: "email", placeholder: "jane@yourbusiness.com" }, { name: "phone", label: "Phone (optional — fastest reply)", type: "tel", autocomplete: "tel", placeholder: "(555) 123-4567" },
+    { name: "service_requested", label: "What do you need help with?", type: "select", options: [["marketing", "Getting more customers"], ["seo", "SEO & Google visibility"], ["website", "A new or better website"], ["automation", "AI, CRM & automation"], ["va", "A virtual assistant"], ["cybersecurity", "Cybersecurity & IT"], ["other", "Not sure yet"]] },
+    { name: "calendar_notes", label: "Anything we should know? (optional)", type: "textarea", rows: 3, placeholder: "What is leaking time or revenue right now?" }] });
 const PAGE_FORMS = {
   "/contact": () => CONTACT_FORM,
   "/newsletter": () => leadForm({ id: "Newsletter Subscription - Archive Page", tags: ["newsletter_subscriber"], submit: "Subscribe Now", success: "Subscribed! You'll receive our next growth insights email.", note: "Unsubscribe at any time.",
@@ -230,6 +242,8 @@ function placeForms(p, html) {
 const all = [...KEEP].filter((p) => !NOINDEX.has(p) && !["/privacy", "/terms", "/affiliate-terms", "/sitemap"].includes(p));
 const family = (p) => {
   const f = (re) => all.filter((x) => re.test(x));
+  if (BY[p]?.location) return [...BY[p].location.near.map((n) => "/" + n).filter((x) => KEEP.has(x)), BY[p].parent];
+  if (/^\/(massachusetts|new-hampshire)$/.test(p)) return ["/massachusetts", "/new-hampshire", "/service-areas", "/georgetown-ma"];
   if (/-georgetown-ma$|^\/georgetown-ma$/.test(p)) return f(/-georgetown-ma$|^\/georgetown-ma$/);
   if (p.startsWith("/services/") || p === "/ai-services") return f(/^\/services\/|^\/ai-services$/).filter((x) => CL(x) === CL(p)).concat(f(/^\/services\//).filter((x) => CL(x) !== CL(p)));
   if (p.startsWith("/casper-va/")) return f(/^\/casper-va\/./);
@@ -253,8 +267,8 @@ function relatedPicks(p, exclude) {
 const related = (p, picks) => picks.length ? `<section class="related"><h2>Related in ${esc(CLUSTERS[CL(p)]?.name || "this topic")}</h2><div class="grid g${Math.min(picks.length, 4)}">${picks.map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>` : "";
 
 // ── hubs ──
-const kind = (x) => x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
-const KIND_ORDER = ["Services", "Questions answered", "Problems we fix", "Industries", "Free tools", "Guides & articles", "More"];
+const kind = (x) => BY[x]?.location ? (BY[x].location.st === "nh" ? "New Hampshire towns" : "Massachusetts towns") : /^\/(massachusetts|new-hampshire)$/.test(x) ? "States" : x === "/georgetown-ma" ? "Massachusetts towns" : x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
+const KIND_ORDER = ["States", "Massachusetts towns", "New Hampshire towns", "Services", "Questions answered", "Problems we fix", "Industries", "Free tools", "Guides & articles", "More"];
 function clusterListing(cluster, self) {
   const members = all.filter((x) => CL(x) === cluster && x !== self && x !== "/");
   const groups = KIND_ORDER.map((k) => [k, members.filter((x) => kind(x) === k)]).filter(([, xs]) => xs.length);
@@ -304,12 +318,13 @@ function htmlSitemap(html) {
 }
 
 // ── schema ──
+const PROJECTS = [["CarSales AI", "https://carsalessoftware.com", "AI-first car sales software for dealerships"], ["FMYCAR", "https://fmycar.com", "Independent car-buying help and a marketplace of cars from local dealers"], ["NextWeigh", "https://nextweigh.com", "A health and fitness program: habit coaching by text"], ["MC Sales Training", "https://mcsalestraining.com", "An 8-week sales challenge with live coaching"], ["FBK Marketing", "https://fbkmarketing.com", "Social media content for business owners"]];
 const JARED = { "@type": "Person", "@id": `${SITE}/author/jared-casper#person`, name: "Jared Casper", url: `${SITE}/author/jared-casper` };
 function faqSchema(html) {
   const qs = [...html.matchAll(/<details><summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g)].map((m) => [strip(m[1]), strip(m[2])]).filter(([q, a]) => q && a);
   return qs.length ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: qs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) } : null;
 }
-const isService = (p) => /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
+const isService = (p) => !!BY[p]?.location ||  /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
 function schemaFor(p, html, title, desc) {
   const s = [];
   if (p === "/" || p === "/about-us") s.push({ "@context": "https://schema.org", ...ORG });
@@ -321,9 +336,10 @@ function schemaFor(p, html, title, desc) {
     s.push({ "@context": "https://schema.org", "@type": isPost(p) ? "BlogPosting" : "Article", headline: strip((html.match(/<h1>([\s\S]*?)<\/h1>/) || [, title])[1]).slice(0, 110), description: desc, url: SITE + p, mainEntityOfPage: SITE + p, author: JARED, publisher: ORG_REF, ...(iso ? { datePublished: iso } : {}), dateModified: TODAY, image: SITE + (img || "/og.png"), inLanguage: "en-US", ...(KW[p]?.keyword ? { about: KW[p].keyword } : {}) });
   }
   if (p === "/author/jared-casper") s.push({ "@context": "https://schema.org", ...JARED, jobTitle: "Founder", worksFor: ORG_REF, sameAs: ["https://www.linkedin.com/in/jaredcasper94/", "https://www.facebook.com/jaredcasper94/"], image: SITE + "/img/jared-casper.webp" });
+  if (p === "/portfolio" || p === "/") s.push({ "@context": "https://schema.org", "@type": "ItemList", name: "Projects built by CasperB2B", itemListElement: PROJECTS.map(([name, url, about], i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name, url, about, creator: ORG_REF } })) });
   if (p === "/mark-casper") s.push({ "@context": "https://schema.org", "@type": "Person", "@id": `${SITE}/mark-casper#person`, name: "Mark Casper", jobTitle: "Co-Founder", url: SITE + p, worksFor: ORG_REF, image: SITE + "/img/6961d9d4f13bc3f87b316c89-7ea04d.webp" });
   if (isService(p)) s.push({ "@context": "https://schema.org", "@type": "Service", name: shortName(p), serviceType: KW[p]?.keyword || shortName(p), description: desc, url: SITE + p, provider: ORG_REF,
-    areaServed: /georgetown/.test(p) ? { "@type": "City", name: "Georgetown, Massachusetts" } : { "@type": "Country", name: "United States" } });
+    areaServed: BY[p]?.location ? { "@type": "City", name: `${BY[p].location.name}, ${LOC.states[BY[p].location.st].name}`, containedInPlace: { "@type": "AdministrativeArea", name: `${BY[p].location.county}, ${LOC.states[BY[p].location.st].name}` } } : /georgetown/.test(p) ? { "@type": "City", name: "Georgetown, Massachusetts" } : { "@type": "Place", name: "Worldwide" } });
   if (Object.values(CLUSTERS).some((c) => c.hub === p) || p === "/faq") s.push({ "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: SITE + p, about: KW[p]?.keyword, isPartOf: { "@id": `${SITE}/#website` } });
   const faq = faqSchema(html); if (faq) s.push(faq);
   return s;
@@ -331,6 +347,7 @@ function schemaFor(p, html, title, desc) {
 
 // ── build every page ──
 const titles = new Map(), descs = new Map(), report = [], linksReport = [];
+let wordsCut = 0;
 const HUB_OF = new Set(Object.values(CLUSTERS).map((c) => c.hub));
 for (const P of ALL) {
   const p = P.path;
@@ -338,8 +355,9 @@ for (const P of ALL) {
   let html = P.html;
   if (HUBS[p]) html = hubHtml(p);
   else if (p === "/faq") html = faqHub();
-  else if (!P.hand) html = applyContentEdits(p, html);
-  html = keywordize(p, html);
+  else if (P.generated) { /* town + state pages are built clean */ }
+  else if (!P.hand) { html = applyContentEdits(p, html); const w0 = strip(html).split(" ").length; html = declutterLate(p, applyContentEdits(p, declutter(p, html).html, CUTS)); wordsCut += w0 - strip(html).split(" ").length; }
+  html = keywordize(p, html).replace(/\bbusinesses nationwide\b/g, "businesses worldwide").replace(/we serve businesses nationwide/g, "we work with businesses worldwide").replace(/\bnationwide\b(?![^<]*Affiliate)/g, "worldwide");
   if (p === "/blog") html = blogIndex(html);
   if (TOOLS[p]) html = toolPage(p, html);
   html = placeForms(p, html);
@@ -348,7 +366,13 @@ for (const P of ALL) {
   // the primary CTA is visible in the first screen of every page (tools convert inside the tool)
   if (cta && !TOOLS[p] && !["/agreement-builder", "/thank-you"].includes(p)) {
     const end = html.indexOf("</section>"), first = end > 0 ? html.slice(0, end) : "";
-    if (first && !/<a class="btn" href="\/contact/.test(first)) html = html.slice(0, end) + `<p class="ctas"><a class="btn" href="${cta.href}" data-cta="hero">${esc(cta.label)}</a></p>` + html.slice(end);
+    if (first && !/<a class="btn" href="\/contact/.test(first)) {
+      // right under the answer-first paragraph (or the H1), so it is in the first screen
+      const btn = `<p class="ctas"><a class="btn" href="${cta.href}" data-cta="hero">${esc(cta.label)}</a></p>`;
+      const m = first.match(/<p class="answer">[\s\S]*?<\/p>/) || first.match(/<h1>[\s\S]*?<\/h1>(?:<p>[\s\S]*?<\/p>)?/);
+      const at = m ? m.index + m[0].length : end;
+      html = html.slice(0, at) + btn + html.slice(at);
+    }
   }
   if (p === "/sitemap") html = htmlSitemap(html);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
@@ -367,6 +391,7 @@ for (const P of ALL) {
   const crumbs = [["Home", "/"]];
   const hub = CLUSTERS[cluster]?.hub;
   if (hub && hub !== p && KEEP.has(hub)) crumbs.push([shortName(hub), hub]);
+  if (P.parent && P.parent !== hub && KEEP.has(P.parent)) crumbs.push([shortName(P.parent), P.parent]);
   const segs = p.split("/").filter(Boolean);
   for (let i = 1; i < segs.length; i++) { const pre = "/" + segs.slice(0, i).join("/"); if (KEEP.has(pre) && !crumbs.some(([, x]) => x === pre)) crumbs.push([shortName(pre), pre]); }
   if (p !== "/") crumbs.push([shortName(p), p]);
@@ -397,9 +422,13 @@ writeFileSync(join(ROOT, "data/urls.txt"), list.map(([p]) => SITE + (p === "/" ?
 const indexed = new Set(list.map(([p]) => p));
 const llmsHead = readFileSync(ROOT + "content/llms.txt", "utf8").trim();
 const llmsLine = (p) => `- [${shortName(p)}](${SITE}${p === "/" ? "/" : p}): ${cardDesc(p)}`;
-const llms = llmsHead + "\n\n" + MENU.map(([k]) => { const items = linksReport.filter((r) => r.cluster === k).map((r) => r.p).sort((a, b) => (b === CLUSTERS[k].hub) - (a === CLUSTERS[k].hub) || (kind(a) > kind(b) ? 1 : -1)); return items.length ? `## ${CLUSTERS[k].name}\n${items.map(llmsLine).join("\n")}` : ""; }).filter(Boolean).join("\n\n") + `\n\n## Optional\n- [Sitemap](${SITE}/sitemap.xml)\n- [CasperPortal (sister product)](https://casperportal.com)\n`;
+const llms = llmsHead + "\n\n" + Object.keys(CLUSTERS).map((k) => { const items = linksReport.filter((r) => r.cluster === k).map((r) => r.p).sort((a, b) => (b === CLUSTERS[k].hub) - (a === CLUSTERS[k].hub) || (kind(a) > kind(b) ? 1 : -1)); return items.length ? `## ${CLUSTERS[k].name}\n${items.map(llmsLine).join("\n")}` : ""; }).filter(Boolean).join("\n\n") + `\n\n## Optional\n- [Sitemap](${SITE}/sitemap.xml)\n- [CasperPortal (sister product)](https://casperportal.com)\n`;
 for (const m of llms.matchAll(/\]\(https:\/\/casperb2b\.com([^)]*)\)/g)) { const p = m[1].replace(/\/$/, "") || "/"; if (!indexed.has(p) && p !== "/sitemap.xml") throw new Error("llms.txt links to a page that is not indexed: " + p); }
 writeFileSync(join(OUT, "llms.txt"), llms);
+// llms-full.txt: plain text of every indexable page (body only), for AI assistants
+const bodyText = (p) => strip(((readFileSync(join(OUT, p === "/" ? "index.html" : p.slice(1) + ".html"), "utf8").match(/<main[\s\S]*?<\/main>/) || [""])[0])
+  .replace(/<nav class="crumbs[\s\S]*?<\/nav>/, "").replace(/<section class="(?:related|next)"[\s\S]*?<\/section>/g, "").replace(/<form[\s\S]*?<\/form>/g, "").replace(/<script[\s\S]*?<\/script>/g, ""));
+writeFileSync(join(OUT, "llms-full.txt"), llmsHead + "\n\n" + linksReport.map((r) => `---\n# ${r.h1}\nURL: ${SITE}${r.p === "/" ? "/" : r.p}\nTopic: ${CLUSTERS[r.cluster]?.name || r.cluster}\n\n${bodyText(r.p)}\n`).join("\n"));
 
 // ── KEYWORDS.md + LINKS.md (generated; commit them with content changes) ──
 const kwRows = linksReport.map((r) => ({ ...r, kw: KW[r.p]?.keyword || "", sec: (KW[r.p]?.secondary || []).join("; ") }));
@@ -407,10 +436,12 @@ const dupKw = Object.entries(kwRows.reduce((a, r) => { if (r.kw) (a[r.kw] ||= []
 if (dupKw.length) throw new Error("two pages target the same primary keyword: " + JSON.stringify(dupKw));
 const md = (s) => String(s).replace(/\|/g, "\\|");
 const merged = Object.entries(REDIRECTS).filter(([from]) => !/-(ma|nh)(\/|$)|^\/(faq|playbooks|features|georgetown-ma|strategy\/ai|compare\/national)/.test(from));
-writeFileSync(join(ROOT, "KEYWORDS.md"), `# KEYWORDS.md — one primary keyword per indexable page\n\nGenerated by \`npm run build\` from data/keywords.json (edit that file, not this one). ${kwRows.length} indexable pages; the build fails if two pages share a primary keyword, a title is over 60 characters or a description over 155.\n\nEvery page gets: the title and meta description below, an H1 aligned to the keyword, an answer-first intro (the page's opening or \`intro\` in keywords.json), FAQPage schema where it has questions, Service schema on service pages, Article/BlogPosting schema on questions and articles, BreadcrumbList everywhere and Organization on home and About.\n\n${MENU.map(([k]) => `## ${CLUSTERS[k].name}\n\n| Page | Primary keyword | Secondary | Title | H1 |\n|---|---|---|---|---|\n${kwRows.filter((r) => r.cluster === k).map((r) => `| ${r.p} | ${md(r.kw || "—")} | ${md(r.sec)} | ${md(r.title)} | ${md(r.h1)} |`).join("\n")}\n`).join("\n")}\n## Merged and moved URLs (redirect → page that now owns the keyword)\n\nTown × service, town FAQ, playbook and CasperPortal feature URLs are omitted here (all in data/redirects.json, ${Object.keys(REDIRECTS).length} in total).\n\n| Old URL | Now |\n|---|---|\n${merged.map(([a, b]) => `| ${a} | ${b} |`).join("\n")}\n`);
+writeFileSync(join(ROOT, "KEYWORDS.md"), `# KEYWORDS.md — one primary keyword per indexable page\n\nGenerated by \`npm run build\` from data/keywords.json (edit that file, not this one). ${kwRows.length} indexable pages; the build fails if two pages share a primary keyword, a title is over 60 characters or a description over 155.\n\nEvery page gets: the title and meta description below, an H1 aligned to the keyword, an answer-first intro (the page's opening or \`intro\` in keywords.json), FAQPage schema where it has questions, Service schema on service pages, Article/BlogPosting schema on questions and articles, BreadcrumbList everywhere and Organization on home and About.\n\n${Object.keys(CLUSTERS).map((k) => `## ${CLUSTERS[k].name}\n\n| Page | Primary keyword | Secondary | Title | H1 |\n|---|---|---|---|---|\n${kwRows.filter((r) => r.cluster === k).map((r) => `| ${r.p} | ${md(r.kw || "—")} | ${md(r.sec)} | ${md(r.title)} | ${md(r.h1)} |`).join("\n")}\n`).join("\n")}\n## Merged and moved URLs (redirect → page that now owns the keyword)\n\nTown × service, town FAQ, playbook and CasperPortal feature URLs are omitted here (all in data/redirects.json, ${Object.keys(REDIRECTS).length} in total).\n\n| Old URL | Now |\n|---|---|\n${merged.map(([a, b]) => `| ${a} | ${b} |`).join("\n")}\n`);
 const inbound = {}; for (const r of linksReport) for (const x of [...Object.values(r.steps), ...r.picks]) if (x) inbound[x] = (inbound[x] || 0) + 1;
 writeFileSync(join(ROOT, "LINKS.md"), `# LINKS.md — navigation and internal linking\n\nGenerated by \`npm run build\` (from scripts/ia.mjs and data/keywords.json).\n\n## Rules\n- Header menu grouped by visitor goal (below). Mobile: same groups in the drawer.\n- Every page: breadcrumb (Home › topic hub › section › page), a "Related in <topic>" block (same-topic siblings + the hub), and a "Your next best step" block linking the most relevant service, free tool, article and the booking page, plus the trust block.\n- One primary CTA per page: "Book My 15-Minute Fit Call" → /contact?topic=<topic> (header button, in-page buttons, sticky mobile bar, footer). Other buttons are secondary. Tools convert inside the tool with a short form.\n- Every page is one click from booking (header CTA + sticky mobile bar) — \`npm run check\` fails otherwise.\n- Topic hubs list every page in their topic, so every page is within two clicks of the menu.\n\n## Header menu\n\n${MENU.map(([k, items]) => `- **${CLUSTERS[k].name}** (hub: ${CLUSTERS[k].hub})\n${items.map(([n, h]) => `  - ${n} — ${h}`).join("\n")}`).join("\n")}\n\n## Next best step and related links per page\n\n| Page | Topic | Service | Tool | Read next | Related | Inbound (from these blocks) |\n|---|---|---|---|---|---|---|\n${linksReport.map((r) => `| ${r.p} | ${r.cluster} | ${r.steps.service || ""} | ${r.steps.tool || ""} | ${r.steps.article || ""} | ${r.picks.join(", ")} | ${inbound[r.p] || 0} |`).join("\n")}\n`);
 
 const long = report.filter(([, t, d]) => t > 60 || d > 155);
 if (long.length) throw new Error("title/description too long: " + JSON.stringify(long));
+const declutterHits = declutterReport(); if (lateReport().length) throw new Error("late declutter rules matched nothing: " + lateReport().join(" | "));
+console.log(`decluttered: ${declutterHits} boilerplate blocks, ${wordsCut} words cut`);
 console.log(`built ${ALL.length} pages (${list.length} in sitemap), ${Object.keys(REDIRECTS).length} redirects → dist/`);

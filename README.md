@@ -7,8 +7,8 @@ CasperB2B (services company) and CasperPortal (casperportal.com, sister software
 This site links to CasperPortal once, in the footer ("Sister product"). CasperPortal's product pages are not on this site.
 
 ## Build and check
-- `npm run build` — writes `dist/`: 190 pages (187 in sitemap.xml; /thank-you, /agreement-builder and /affiliate-kit are
-  noindex), ~1,165 redirect pages, 404.html, sitemap.xml, robots.txt (AI crawlers allowed), llms.txt, CNAME, IndexNow key
+- `npm run build` — writes `dist/`: 218 pages (215 in sitemap.xml; /thank-you, /agreement-builder and /affiliate-kit are
+  noindex), ~1,165 redirect pages, 404.html, sitemap.xml, robots.txt (AI crawlers allowed), llms.txt + llms-full.txt (full text of every indexable page, for AI assistants), CNAME, IndexNow key
   file — and regenerates **KEYWORDS.md** and **LINKS.md** in the repo root (commit them).
   The build fails on: a page without exactly one H1; a title over 60 or description over 155 characters; duplicate titles,
   descriptions or primary keywords; a content edit that no longer matches; **any CasperB2B price on a page** (prices are
@@ -26,6 +26,8 @@ This site links to CasperPortal once, in the footer ("Sister product"). CasperPo
   intro, topic cluster, next best steps (service / tool / article), extra FAQs. **Edit this to change SEO targeting.**
 - `data/content-edits.json` — exact find/replace corrections per page (invented stats and claims removed, our prices
   removed, placeholders and dead CTAs fixed). Each must match exactly once or the build fails.
+- `data/cut-edits.json` — second pass of exact edits (fluff, repetition, broken structure), applied after `scripts/declutter.mjs` strips template boilerplate repeated across pages. Dead declutter rules fail the build.
+- `data/locations.json` — the 27 MA/NH towns (county, ZIP codes, neighborhoods, nearby towns, a local note); `scripts/locations.mjs` builds the town pages (/<town>-ma, /<town>-nh) and the state hubs /massachusetts and /new-hampshire. Old town sub-URLs redirect to the town page.
 - `data/redirects.json` — old URL → new URL (chains are resolved at build time).
 - `scripts/ia.mjs` — information architecture: the header menu grouped by visitor goal, topic clusters and hubs, the one
   primary CTA per page, the "Your next best step" block, the trust block and the sticky mobile CTA.
@@ -86,6 +88,11 @@ Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. 
   /blog/implement-missed-call-text-back → /blog/stop-missing-calls.
 - Editorial pass on every page (876 exact edits): removed CasperB2B prices, unverifiable stats, invented claims and
   results, review-gating language, placeholders, dead links and CTAs to the locked agreement builder.
+
+## Positioning
+- Serves businesses worldwide (remote), with a local focus on Massachusetts (North Shore, Merrimack Valley) and New Hampshire (southern NH, Seacoast). Organization schema: areaServed Worldwide + US + MA + NH, knowsAbout. No Google Business Profile (no staffed address), so local reach comes from town pages, consistent facts and reviews rather than the Map Pack.
+- Portfolio projects are listed as CreativeWork items created by CasperB2B (ItemList schema on / and /portfolio) to tie the entities together.
+- Contact form (the booking form): name, email, optional phone, topic, optional note — same GHL payload (name splits into first/last).
 
 ## Owner decisions in force
 - Prices hidden everywhere (kept in `_private/prices.md`). /pricing explains how quotes work. General market ranges on

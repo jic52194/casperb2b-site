@@ -30,11 +30,13 @@ export const ORG_ID = `${SITE}/#organization`;
 export const ORG = {
   "@type": "Organization", "@id": ORG_ID, name: NAME, legalName: NAME, url: SITE + "/",
   logo: { "@type": "ImageObject", url: SITE + LOGO }, image: SITE + OG_DEFAULT,
-  description: "CasperB2B is a business services company providing website design, CRM setup, marketing automation, SEO, cybersecurity, and implementation services for businesses nationwide.",
+  description: "CasperB2B is a business services company providing website design, CRM setup, marketing automation, SEO, cybersecurity, and implementation services for businesses worldwide, with a local focus on Massachusetts and New Hampshire.",
+  slogan: "Get found. Answer every lead. Stay secure.",
+  knowsAbout: ["Local SEO", "Search engine optimization", "Generative engine optimization", "Website design", "Google Ads", "Email marketing", "CRM setup", "Marketing automation", "AI chatbots", "Missed-call text back", "Reputation management", "Cybersecurity for small businesses", "Managed IT services", "Virtual assistants"],
   telephone: PHONE_TEL, email: EMAIL,
   address: { "@type": "PostalAddress", streetAddress: MAIL_ADDR.street, addressLocality: MAIL_ADDR.city, addressRegion: MAIL_ADDR.region, postalCode: MAIL_ADDR.zip, addressCountry: "US", description: "Mailing address" },
-  contactPoint: [{ "@type": "ContactPoint", contactType: "sales", telephone: PHONE_TEL, email: EMAIL, areaServed: "US", availableLanguage: "English" }],
-  areaServed: [{ "@type": "Country", name: "United States" }, { "@type": "AdministrativeArea", name: "North Shore, Massachusetts" }, { "@type": "AdministrativeArea", name: "Southern New Hampshire" }],
+  contactPoint: [{ "@type": "ContactPoint", contactType: "sales", telephone: PHONE_TEL, email: EMAIL, areaServed: "Worldwide", availableLanguage: "English" }],
+  areaServed: [{ "@type": "Place", name: "Worldwide" }, { "@type": "Country", name: "United States" }, { "@type": "State", name: "Massachusetts" }, { "@type": "State", name: "New Hampshire" }],
   founder: [{ "@type": "Person", "@id": `${SITE}/author/jared-casper#person`, name: "Jared Casper", jobTitle: "Founder", url: `${SITE}/author/jared-casper` }, { "@type": "Person", "@id": `${SITE}/mark-casper#person`, name: "Mark Casper", jobTitle: "Co-Founder", url: `${SITE}/mark-casper` }],
   sameAs: ["https://www.linkedin.com/in/jaredcasper94/", "https://www.facebook.com/jaredcasper94/"],
 };

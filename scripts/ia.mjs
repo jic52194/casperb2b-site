@@ -23,6 +23,8 @@ export const CLUSTERS = {
     next: { service: "/services", tool: "/quiz", article: "/how-to-get-more-customers" } },
   resources: { name: "Resources", hub: "/resources", topic: "other",
     next: { service: "/services", tool: "/quiz", article: "/blog" } },
+  local: { name: "Service areas", hub: "/service-areas", topic: "marketing",
+    next: { service: "/services/local-seo", tool: "/tools/website-grader", article: "/get-my-business-on-google" } },
   about: { name: "About", hub: "/about-us", topic: "other",
     next: { service: "/services", tool: "/quiz", article: "/the-49k-story" } },
 };
@@ -35,7 +37,7 @@ export const MENU = [
   ["cyber", [["Cybersecurity & IT overview", "/cybersecurity-and-it"], ["Cybersecurity services", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"], ["Cloud computing", "/services/cloud-computing"], ["Website care (CasperCare)", "/caspercare"], ["Too small to get hacked?", "/is-my-business-too-small-to-hack"], ["What if I get hacked?", "/what-happens-if-i-get-hacked"], ["Do I need an IT person?", "/do-i-need-an-it-person"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
   ["va", [["Casper VA overview", "/casper-va"], ["VA roles", "/casper-va/roles"], ["How to hire a VA", "/casper-va/hiring-guide"], ["VA vs agency", "/casper-va/vs-agency"], ["Executive assistant", "/casper-va/executive-assistant"], ["Sales development rep", "/casper-va/sdr"], ["Customer service VA", "/casper-va/customer-service"], ["ROI of a dedicated VA", "/roi-of-dedicated-va"]]],
   ["tools", [["All free tools", "/tools"], ["Revenue leak quiz", "/quiz"], ["Website grader", "/tools/website-grader"], ["SEO checklist", "/tools/seo-checklist"], ["ROI calculator", "/tools/roi-calculator"], ["Marketing budget calculator", "/tools/marketing-budget-calculator"], ["AI search readiness", "/tools/ai-search-readiness"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
-  ["resources", [["All resources", "/resources"], ["Blog", "/blog"], ["FAQ", "/faq"], ["Glossary", "/glossary"], ["Should I hire an agency?", "/should-i-hire-an-agency-or-do-it-myself"], ["What does a website cost?", "/how-much-does-a-website-cost"], ["Newsletter", "/newsletter"], ["Service areas", "/service-areas"]]],
+  ["resources", [["All resources", "/resources"], ["Blog", "/blog"], ["FAQ", "/faq"], ["Glossary", "/glossary"], ["Should I hire an agency?", "/should-i-hire-an-agency-or-do-it-myself"], ["What does a website cost?", "/how-much-does-a-website-cost"], ["Newsletter", "/newsletter"], ["Service areas", "/service-areas"], ["Massachusetts", "/massachusetts"], ["New Hampshire", "/new-hampshire"]]],
   ["about", [["About CasperB2B", "/about-us"], ["Our process", "/our-process"], ["What we do for you", "/done-for-you"], ["After you sign", "/onboarding"], ["Portfolio", "/portfolio"], ["How pricing works", "/pricing"], ["Jared Casper", "/author/jared-casper"], ["Press kit", "/press-kit"], ["Contact", "/contact"]]],
 ];
 
