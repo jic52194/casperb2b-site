@@ -111,7 +111,8 @@
         var top = Object.keys(s).reduce(function (a, b) { return s[a] >= s[b] ? a : b; }); var d = P[top];
         var r = show(root); $("[data-profile]", r).textContent = d[0]; $("[data-title]", r).textContent = d[1]; $("[data-desc]", r).textContent = d[2]; $("[data-strategy]", r).textContent = d[3];
         $("[data-strengths]", r).innerHTML = li(d[4]); $("[data-blind]", r).innerHTML = li(d[5]); $("[data-stack]", r).textContent = d[6];
-        if (window.casperSubmit) window.casperSubmit("Motivation Quiz Complete", { "contact.motivation_driver": top, "contact.rewards_score": s.Rewards, "contact.ideology_score": s.Ideology, "contact.coercion_score": s.Coercion, "contact.ego_score": s.Ego });
+        // no contact details yet: attach the profile to the quiz's lead form instead of sending an anonymous lead
+        var lf = $("form.lead", root); if (lf) lf.dataset.extra = JSON.stringify({ motivation_driver: top, rewards_score: s.Rewards, ideology_score: s.Ideology, coercion_score: s.Coercion, ego_score: s.Ego, notes: "Motivation quiz profile: " + d[0] + " (" + top + ")" });
       });
     },
     aiready: function (root) {

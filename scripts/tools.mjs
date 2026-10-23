@@ -145,7 +145,7 @@ ${result(`<h2>Your Strategy Maturity Score</h2><p class="result-band" data-band>
 <div><h2 class="h3">What we compare</h2><ul>${COMPARE.map(([l, d]) => `<li><b>${esc(l)}:</b> ${esc(d)}</li>`).join("")}</ul></div></div></div>`,
 
   "/tools/website-grader": (h) => hero(h) + `<div class="tool" data-tool="grader"><h2 class="h3">Grade Your Website</h2><p>Enter your URL and the CasperB2B team will review how your site performs across the four factors that matter most for local business growth.</p>
-${leadForm({ id: "Website Grader Tool", submit: "Grade It", success: "Thanks! We received your URL. Below are the fixes we check for in each area.", fields: [{ name: "website", label: "Your Website URL", type: "url", required: true, placeholder: "https://yourbusiness.com" }, { name: "email", label: "Email (so we can send your review)", type: "email", autocomplete: "email" }] })}
+${leadForm({ id: "Website Grader Tool", submit: "Grade It", success: "Thanks! We received your URL. Below are the fixes we check for in each area.", fields: [{ name: "website", label: "Your Website URL", type: "url", required: true, placeholder: "https://yourbusiness.com" }, { name: "email", label: "Email (so we can send your review)", type: "email", required: true, autocomplete: "email" }] })}
 <div class="grid g2">${GRADER.map(([l, fixes]) => `<div class="card"><h3>${esc(l)}</h3><p class="fine">How to Fix</p><ul>${fixes.map((f) => `<li>${esc(f)}</li>`).join("")}</ul></div>`).join("")}</div>
 <h3>Want CasperB2B to Fix These Issues?</h3><p class="ctas"><a class="btn" href="/contact">Request My 15-Minute Fit Call</a></p></div>`,
 
