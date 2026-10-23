@@ -544,7 +544,9 @@ for (const [from, to] of Object.entries(REDIRECTS)) write(from, redirect(to));
 
 // ── 404 ──
 writeFileSync(join(OUT, "404.html"), page({ path: "/404", title: "Page Not Found | CasperB2B", desc: "We couldn't find the page you're looking for. Let's get you back on track to scaling your business.", noindex: true, sticky: stickyCta({ href: BOOK, label: "Book My 15-Minute Fit Call" }),
-  body: `<div class="content"><section><p class="eyebrow">404</p><h1>Page not found</h1><p>We couldn't find the page you're looking for. Let's get you back on track.</p><p class="ctas"><a class="btn" href="${BOOK}" data-cta="404">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/">Return Home</a></p></section><section><h2>Popular pages</h2><div class="grid g4">${MENU.map(([k]) => [CLUSTERS[k].name, CLUSTERS[k].hub]).map(([n, h]) => `<a class="card-link" href="${h}"><h3>${esc(n)}</h3><p>${esc(cardDesc(h))}</p></a>`).join("")}</div></section></div>` }).replace(/<link rel="canonical"[^>]*>/, ""));
+  body: `<div class="content"><section><p class="eyebrow">404</p><h1>Page not found</h1><p>We couldn't find the page you're looking for. Let's get you back on track.</p><p class="ctas"><a class="btn" href="${BOOK}" data-cta="404">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/">Return Home</a></p></section><section><h2>Popular pages</h2><div class="grid g4">${MENU.map(([k]) => [CLUSTERS[k].name, CLUSTERS[k].hub]).map(([n, h]) => `<a class="card-link" href="${h}"><h3>${esc(n)}</h3><p>${esc(cardDesc(h))}</p></a>`).join("")}</div></section></div>` }).replace(/<link rel="canonical"[^>]*>/, "")
+  // GitHub Pages paths are case-sensitive and old links use capitals (e.g. /SEO-audit): retry the lowercase path once
+  .replace("</head>", `<script>(function(){var p=location.pathname;if(/[A-Z]/.test(p))location.replace(p.toLowerCase()+location.search+location.hash)})()</script></head>`));
 
 // ── sitemap.xml, robots.txt, llms.txt, CNAME, url list for IndexNow ──
 const list = urls.filter(([p]) => p !== "/404");
