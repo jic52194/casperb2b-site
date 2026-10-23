@@ -370,3 +370,11 @@ h2[id]{scroll-margin-top:130px}
   .content>section>ol>li:hover::before{transform:scale(1.12)}
 }
 @media print{.motion .rv{opacity:1!important;transform:none!important}.progress-bar{display:none}}
+
+/* footer = the full menu */
+@media(min-width:760px){.foot .cols{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:34px}}
+@media(min-width:1100px){.foot .cols{grid-template-columns:repeat(8,minmax(0,1fr));column-gap:18px}}
+.foot .cols a{font-size:.88rem;line-height:1.35;padding:3px 0}
+.foot .cols li{margin:.15em 0}
+.foot-head{margin-top:.9em!important;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fdba74}
+.foot .cols ul li.foot-head:first-child{margin-top:0!important}

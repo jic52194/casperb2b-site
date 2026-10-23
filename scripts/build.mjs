@@ -23,7 +23,18 @@ const IMAGES = read("data/images.json");
 const KW = read("data/keywords.json", {});
 const CEDITS = read("data/content-edits.json", {});
 const CUTS = read("data/cut-edits.json", {});
-const ADDS = read("data/additions.json", {}); // extra sections + FAQs for pages that were too thin to rank
+const ADDS = read("data/additions.json", {});
+const FAQX = read("data/faq-extra.json", {}); // extra questions per page (every page ends with a full FAQ)
+function extraFaq(p, html) {
+  const list = FAQX[p]; if (!list?.length) return html;
+  const have = new Set([...html.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map((m) => strip(m[1]).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()));
+  const items = list.filter(({ q }) => !have.has(q.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim())).map(({ q, a }) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  if (!items) return html;
+  // join the last FAQ block on the page; otherwise add one
+  const secs = [...html.matchAll(/<section>(?:(?!<section>)[\s\S])*?<\/section>/g)].filter((m) => /<details>/.test(m[0]));
+  if (secs.length) { const m = secs[secs.length - 1]; const end = m.index + m[0].length - "</section>".length; return html.slice(0, end) + items + html.slice(end); }
+  return html + `<section><h2>Frequently asked questions</h2>${items}</section>`;
+} // extra sections + FAQs for pages that were too thin to rank
 /** Pages captured as one flat run of elements get a <section> per H2 (first chunk = hero), so later steps
  *  (FAQ merging, table of contents, mid-page CTA, alternating backgrounds) work on them too. */
 function sectionize(html) {
@@ -90,7 +101,7 @@ const CL = (p) => clusterOf(p, KW);
 // menu + footer from the IA (every item must be a built page)
 for (const [k, items] of MENU) for (const [, h] of items) if (h && !KEEP.has(h)) throw new Error(`menu links to a page that is not built: ${h}`);
 NAV.menus = MENU.map(([k, items]) => [CLUSTERS[k].name, items]);
-NAV.footer = MENU.map(([k, items]) => [CLUSTERS[k].name, items.filter(([, h]) => h).slice(0, 5)]);
+NAV.footer = MENU.map(([k, items]) => [CLUSTERS[k].name, items]); // the footer carries the whole menu
 const NAVNAME = new Map(MENU.flatMap(([, items]) => items).filter(([, h]) => h).map(([n, h]) => [h, n]));
 
 // ── names, titles, descriptions ──
@@ -457,6 +468,7 @@ for (const P of ALL) {
   html = scrubStory(keywordize(p, html)).replace(/\bbusinesses nationwide\b/g, "businesses worldwide").replace(/we serve businesses nationwide/g, "we work with businesses worldwide").replace(/\bnationwide\b(?![^<]*Affiliate)/g, "worldwide");
   if (p === "/blog") html = blogIndex(html);
   if (TOOLS[p]) html = toolPage(p, html);
+  html = extraFaq(p, html);
   html = placeForms(p, html);
   html = normalizeHero(polish(rewriteMedia(rewriteLinks(html))));
   // nothing left behind when an image, link or claim was removed: empty cards, empty grids, heading-only sections
