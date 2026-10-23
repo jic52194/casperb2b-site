@@ -24,7 +24,18 @@ const KW = read("data/keywords.json", {});
 const CEDITS = read("data/content-edits.json", {});
 const CUTS = read("data/cut-edits.json", {});
 const ADDS = read("data/additions.json", {}); // extra sections + FAQs for pages that were too thin to rank
+/** Pages captured as one flat run of elements get a <section> per H2 (first chunk = hero), so later steps
+ *  (FAQ merging, table of contents, mid-page CTA, alternating backgrounds) work on them too. */
+function sectionize(html) {
+  if (/<section[\s>]/.test(html)) return html;
+  const parts = html.split(/(?=<h2[\s>])/);
+  if (parts.length < 2) return html;
+  const balanced = (s) => ["div", "details", "ul", "ol", "table", "a"].every((t) => (s.match(new RegExp(`<${t}\\b`, "g")) || []).length === (s.match(new RegExp(`</${t}>`, "g")) || []).length);
+  if (!parts.every(balanced)) return html;
+  return parts.map((s) => `<section>${s}</section>`).join("");
+}
 function addContent(p, html) {
+  html = sectionize(html);
   const a = ADDS[p]; if (!a) return html;
   const faqAt = html.search(/<section>(?:(?!<\/section>)[\s\S])*?<details>/);
   if (a.add) html = faqAt >= 0 ? html.slice(0, faqAt) + a.add + html.slice(faqAt) : html + a.add;
@@ -156,7 +167,8 @@ function rewriteLinks(html) {
   return html.replace(/<p class="ctas">\s*<\/p>/g, "");
 }
 // stock photos the old site captioned as "CasperB2B team" — not real staff, so never shown
-const NOT_OUR_TEAM = ["6633f4c6a63e94209e806c1d", "653b16a9cc8c12dc5f1cd56d", "653b1780c3c1a190996b29a5", "653b186d28812040cc078f25", "6540ad401eae187a62401831"];
+const NOT_OUR_TEAM = ["65a3a0d913b3b931caa99c9e", // generic "service results" stand-in
+  "6633f4c6a63e94209e806c1d", "653b16a9cc8c12dc5f1cd56d", "653b1780c3c1a190996b29a5", "653b186d28812040cc078f25", "6540ad401eae187a62401831"];
 let imgCount = 0;
 function rewriteMedia(html) {
   html = html.replace(/<img src="([^"]*)" alt="([^"]*)"[^>]*>/g, (all, src, alt) => {
@@ -184,6 +196,52 @@ function fixHeadings(html) {
     if (prev && l > prev + 1) { const keep = cls ? cls : ` class="h${l}"`; l = prev + 1; prev = l; return `<h${l}${keep}>${inner}</h${l}>`; }
     prev = l; return all;
   });
+}
+/** Pages captured without an opening <section>: wrap everything up to the first H2 as the hero; drop back-links and a
+ *  duplicate title above the H1 (the breadcrumb already does that job). */
+function normalizeHero(html) {
+  const h1 = html.indexOf("<h1"); if (h1 < 0) return html;
+  let pre = html.slice(0, h1).replace(/<p><a href="[^"]*">Back to [^<]*<\/a><\/p>/g, "").replace(/^\s*<a href="\/blog">Blog<\/a>/, "");
+  const title = strip(html.slice(h1).match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || "").toLowerCase();
+  pre = pre.replace(/<p>([^<]{8,120})<\/p>/g, (m, t) => title.startsWith(t.trim().toLowerCase().replace(/[.:]$/, "")) ? "" : m);
+  html = pre + html.slice(h1);
+  if (html.trimStart().startsWith("<section>")) return html;
+  const at = html.indexOf("<h1");
+  const nextH2 = html.indexOf("<h2", at), nextSec = html.indexOf("<section", at);
+  const cut = [nextH2, nextSec].filter((x) => x > 0).sort((x, y) => x - y)[0] ?? html.length;
+  // don't split an open tag: back up to the nearest boundary between top-level blocks
+  let end = cut; const head = html.slice(0, end);
+  const opens = (head.match(/<(div|details|ul|ol|table)\b/g) || []).length, closes = (head.match(/<\/(div|details|ul|ol|table)>/g) || []).length;
+  if (opens !== closes) return html; // unusual markup: leave it as captured
+  return "<section>" + head + "</section>" + html.slice(end);
+}
+// ── reading + conversion aids ──
+const slug = (s) => strip(s).toLowerCase().replace(/&[a-z]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+const MID = { customers: ["Want more calls without more work?", "We set it up and run it for you."], marketing: ["Want this done for you?", "We plan it, build it and report on it every month."],
+  ai: ["Want this automated for you?", "We build the workflow and keep it running."], cyber: ["Not sure how exposed you are?", "We'll tell you what to fix first."],
+  va: ["Need the right person on your team?", "Tell us the role. We'll match and support them."], local: ["Want to be the one they find?", "Local SEO, website and follow-up, done for you."],
+  resources: ["Rather have someone just handle it?", "That's what we do."], about: ["Want to see if we're a fit?", "15 minutes, no pressure."], tools: ["Want help with what you found?", "We'll walk you through it."] };
+const MONTH = new Date(TODAY + "T12:00:00Z").toLocaleString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+function pageAids(p, html, cluster, cta) {
+  if (TOOLS[p] || HUBS[p] || ["/", "/contact", "/thank-you", "/agreement-builder", "/privacy", "/terms", "/affiliate-terms", "/sitemap", "/faq", "/blog"].includes(p)) return html;
+  // ids on H2s + "On this page" when a page has 4+ sections worth jumping to
+  const used = new Set(), heads = [];
+  html = html.replace(/<h2((?: class="[^"]*")?)>([\s\S]*?)<\/h2>/g, (all, cls, inner) => {
+    let id = slug(inner) || "section"; while (used.has(id)) id += "-2"; used.add(id); heads.push([id, strip(inner)]);
+    return `<h2${cls} id="${id}">${inner}</h2>`;
+  });
+  const end = html.indexOf("</section>");
+  const toc = heads.filter(([, t]) => t.length < 80);
+  if (toc.length >= 4 && end > 0) html = html.slice(0, end + 10) + `<nav class="toc" aria-label="On this page"><p>On this page</p><ol>${toc.map(([id, t]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join("")}</ol></nav>` + html.slice(end + 10);
+  // visible freshness on articles and answers
+  if ((isPost(p) || isQuestion(p)) && !/Last updated|Updated /.test(strip(html.slice(0, 3000)))) html = html.replace(/(<p class="answer">[\s\S]*?<\/p>)/, (m) => m + `<p class="updated">Updated <time datetime="${TODAY}">${MONTH}</time> · by <a href="/author/jared-casper">Jared Casper</a></p>`);
+  // one mid-page reminder on long pages (same single action as every other CTA on the page)
+  const secs = [...html.matchAll(/<section>/g)].map((m) => m.index);
+  if (cta && secs.length >= 5 && !/class="cta-band"/.test(html)) {
+    const [h, s] = MID[cluster] || MID.about, at = secs[3];
+    html = html.slice(0, at) + `<aside class="cta-band" aria-label="Book a call"><div><b>${esc(h)}</b><span>${esc(s)} A personal reply within 1 business day.</span></div><a class="btn" href="${cta.href}" data-cta="mid">${esc(cta.label)}</a></aside>` + html.slice(at);
+  }
+  return html;
 }
 function polish(html) {
   html = html.replace(/<p>By Jared Casper<\/p>(?:<p>•<\/p>)?<p>(Last updated: [^<]+)<\/p>/g, '<p class="byline">By <a href="/author/jared-casper">Jared Casper</a> · $1</p>');
@@ -397,7 +455,7 @@ for (const P of ALL) {
   if (p === "/blog") html = blogIndex(html);
   if (TOOLS[p]) html = toolPage(p, html);
   html = placeForms(p, html);
-  html = polish(rewriteMedia(rewriteLinks(html)));
+  html = normalizeHero(polish(rewriteMedia(rewriteLinks(html))));
   // nothing left behind when an image, link or claim was removed: empty cards, empty grids, heading-only sections
   html = html.replace(/<a class="card-link" href="[^"]*"(?: rel="noopener")?>\s*<\/a>/g, "").replace(/<div class="card">\s*<\/div>/g, "").replace(/<div class="grid[^"]*">\s*<\/div>/g, "").replace(/<section>(?:\s*(?:<p class="eyebrow">[^<]*<\/p>|<h[234]>[^<]*<\/h[234]>))*\s*<\/section>/g, "");
   html = fixHeadings(html).replace(/<img ([^>]*?)alt="Jared Casper"/g, (m, pre) => `<img ${pre}alt=""`); // avatar next to the byline text
@@ -420,6 +478,7 @@ for (const P of ALL) {
     if (first.startsWith("<section>") && /<h1/.test(first) && !/<(img|video|iframe)\b/.test(first)) html = "<section>" + heroArt(CLUSTERS[cluster] ? cluster : "about", p) + html.slice("<section>".length);
   }
   html = html.replace(/<div class="card">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, inner, h) => `<div class="card">${iconFor(h)}${inner}`);
+  html = pageAids(p, html, cluster, cta);
   if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
   if (p === "/services") html += allServices();
