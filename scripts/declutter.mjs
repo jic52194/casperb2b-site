@@ -58,3 +58,21 @@ export function declutterLate(p, html) {
   return html.split(/(?=<section>)/).filter((s) => { if (/<h1[\s>]/.test(s)) return true; for (const [re, scope] of LATE) if (scope.test(p) && re.test(s)) { mark("L" + re, 1); return false; } return true; }).join("");
 }
 export function lateReport() { return LATE.filter(([re]) => !used.has("L" + re)).map(([re]) => String(re)); }
+
+// Owner decision 2026-10-23: the $49,000 unpaid-work story is not on the site. Removes the smallest block that mentions it
+// (a section whose heading is about it, an FAQ, a card, a list item, a paragraph). build.mjs fails if any mention survives.
+export const STORY = /\$\s?49(?:,000|k)\b|\b49K story|\$49,000/i;
+const SCRUB = [
+  /<p>\d{4}<\/p><h[34]>[^<]*\$\s?49(?:,000|k)[^<]*<\/h[34]>(?:<p>(?:(?!<\/p>)[\s\S])*<\/p>)?/gi, // a dated timeline entry
+  /<section>(?:(?!<\/section>)[\s\S])*?<h2>[^<]*\$49(?:,000|k)[\s\S]*?<\/section>/gi,
+  /<details>(?:(?!<\/details>)[\s\S])*?\$\s?49(?:,000|k)[\s\S]*?<\/details>/gi,
+  /<div class="card">(?:(?!<div|<\/div>)[\s\S])*?\$\s?49(?:,000|k)(?:(?!<div|<\/div>)[\s\S])*?<\/div>/gi,
+  /<a class="card-link"[^>]*>(?:(?!<\/a>)[\s\S])*?\$\s?49(?:,000|k)[\s\S]*?<\/a>/gi,
+  /<li>(?:(?!<\/?li>)[\s\S])*?\$\s?49(?:,000|k)(?:(?!<\/?li>)[\s\S])*?<\/li>/gi,
+  /(?:<p>·<\/p>)?<a [^>]*>[^<]*\$\s?49(?:,000|k)[^<]*<\/a>/gi,
+  /<(p|h3|h4|blockquote)[^>]*>(?:(?!<\/\1>)[\s\S])*?\$\s?49(?:,000|k)[\s\S]*?<\/\1>/gi,
+];
+export function scrubStory(html) {
+  for (const re of SCRUB) html = html.replace(re, "");
+  return html.replace(/<div class="grid g\d">\s*<\/div>/g, "").replace(/<ul>\s*<\/ul>/g, "").replace(/<section>\s*(?:<p class="eyebrow">[^<]*<\/p>\s*)?<\/section>/g, "");
+}

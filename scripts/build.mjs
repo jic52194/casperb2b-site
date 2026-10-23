@@ -11,7 +11,7 @@ import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page
 import { TOOLS, toolPage } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion } from "./ia.mjs";
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB } from "./pages-extra.mjs";
-import { declutter, declutterReport, declutterLate, lateReport } from "./declutter.mjs";
+import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
 import { locationPages } from "./locations.mjs";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url)).split("\\").join("/");
@@ -378,7 +378,7 @@ for (const P of ALL) {
   else if (p === "/faq") html = faqHub();
   else if (P.generated) { /* town + state pages are built clean */ }
   else if (!P.hand) { html = applyContentEdits(p, html); const w0 = strip(html).split(" ").length; html = addContent(p, declutterLate(p, applyContentEdits(p, declutter(p, html).html, CUTS))); wordsCut += w0 - strip(html).split(" ").length; }
-  html = keywordize(p, html).replace(/\bbusinesses nationwide\b/g, "businesses worldwide").replace(/we serve businesses nationwide/g, "we work with businesses worldwide").replace(/\bnationwide\b(?![^<]*Affiliate)/g, "worldwide");
+  html = scrubStory(keywordize(p, html)).replace(/\bbusinesses nationwide\b/g, "businesses worldwide").replace(/we serve businesses nationwide/g, "we work with businesses worldwide").replace(/\bnationwide\b(?![^<]*Affiliate)/g, "worldwide");
   if (p === "/blog") html = blogIndex(html);
   if (TOOLS[p]) html = toolPage(p, html);
   html = placeForms(p, html);
@@ -424,6 +424,7 @@ for (const P of ALL) {
   const picks = p === "/" || plain || p === BOOK ? [] : relatedPicks(p, new Set(Object.values(steps)));
   const tail = p === BOOK ? TRUST : plain ? "" : related(p, picks) + nextBlock(p, steps, shortName, cardDesc, cta);
   const body = `<div class="content${isPost(p) ? " article" : ""}">${html}${tail}</div>`;
+  if (STORY.test(strip(html)) || STORY.test(title + " " + desc)) throw new Error(`${p}: still mentions the $49,000 story: ${(strip(html).match(new RegExp(".{0,60}" + STORY.source + ".{0,40}", "i")) || [""])[0]}`);
   write(p, page({ path: p, title, desc, body, crumbs: p === "/" ? null : crumbs, noindex, ogType: isPost(p) ? "article" : "website", schema: noindex ? [] : schemaFor(p, html, title, desc), cta: cta || { href: BOOK, label: "Book My 15-Minute Fit Call" }, sticky: stickyCta(cta) }));
   report.push([p, title.length, desc.length]);
   if (!noindex) linksReport.push({ p, cluster, title, h1: strip((html.match(/<h1>([\s\S]*?)<\/h1>/) || [])[1] || ""), steps, picks, cta: cta?.href || "" });

@@ -32,7 +32,7 @@
   "next": {
    "service": "/services",
    "tool": "/quiz",
-   "article": "/the-49k-story"
+   "article": "/our-process"
   }
  },
  "/affiliate": {
@@ -107,7 +107,7 @@
   "next": {
    "service": "/strategy",
    "tool": "/tools/strategy-audit-checklist",
-   "article": "/the-49k-story"
+   "article": "/our-process"
   }
  },
  "/b2b-growth": {
@@ -1200,7 +1200,7 @@
   "next": {
    "service": "/services",
    "tool": "/quiz",
-   "article": "/the-49k-story"
+   "article": "/our-process"
   }
  },
  "/cybersecurity-georgetown-ma": {
@@ -1544,7 +1544,7 @@
   "next": {
    "service": "/services",
    "tool": "/tools/motivation-quiz",
-   "article": "/the-49k-story"
+   "article": "/our-process"
   }
  },
  "/is-marketing-worth-it-for-a-small-business": {
@@ -2307,7 +2307,7 @@
   "next": {
    "service": "/services",
    "tool": "/tools/bundle-builder",
-   "article": "/the-49k-story"
+   "article": "/our-process"
   }
  },
  "/problems": {
@@ -3616,34 +3616,6 @@
    {
     "q": "Do backlinks still matter for local SEO?",
     "a": "Yes, but quality matters more than quantity. Local sponsorships, partnerships and local news features send strong relevance signals."
-   }
-  ]
- },
- "/the-49k-story": {
-  "keyword": "what to do when a client doesn't pay",
-  "secondary": [
-   "unpaid invoice client",
-   "client won't pay for completed work",
-   "why we use deposits and written agreements"
-  ],
-  "title": "What to Do When a Client Doesn't Pay: My $49K Lesson",
-  "desc": "What to do when a client doesn't pay: Jared Casper's $49,000 unpaid-work story and why CasperB2B uses written agreements, deposits and milestones.",
-  "h1": "I Did $49,000 Worth of Work and Didn't Get Paid. What Would You Do?",
-  "intro": "When a client doesn't pay, document everything, send one clean final notice with the balance due, stop work and access, then move to collections or legal review. Prevent it with deposits, written agreements and payment milestones.",
-  "cluster": "about",
-  "next": {
-   "service": "/our-process",
-   "tool": "/quiz",
-   "article": "/in-defense-of-holding-grudges"
-  },
-  "faq": [
-   {
-    "q": "What should I do if a client won't pay for completed work?",
-    "a": "Document every message, deliverable and approval, send one professional final notice stating the balance, stop further work, and move the matter to collections or legal review."
-   },
-   {
-    "q": "Why does CasperB2B use signed agreements and setup fees?",
-    "a": "Because Jared Casper once did $49,000 of work that was never paid. Written agreements, deposits and payment milestones protect both sides."
    }
   ]
  },

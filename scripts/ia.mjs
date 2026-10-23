@@ -26,7 +26,7 @@ export const CLUSTERS = {
   local: { name: "Service areas", hub: "/service-areas", topic: "marketing",
     next: { service: "/services/local-seo", tool: "/tools/website-grader", article: "/get-my-business-on-google" } },
   about: { name: "About", hub: "/about-us", topic: "other",
-    next: { service: "/services", tool: "/quiz", article: "/the-49k-story" } },
+    next: { service: "/services", tool: "/quiz", article: "/our-process" } },
 };
 
 // Header menu, in visitor-goal order. Items must be built pages (the build fails otherwise).
@@ -41,7 +41,7 @@ export const MENU = [
   ["about", [["About CasperB2B", "/about-us"], ["Our process", "/our-process"], ["What we do for you", "/done-for-you"], ["After you sign", "/onboarding"], ["Portfolio", "/portfolio"], ["How pricing works", "/pricing"], ["Jared Casper", "/author/jared-casper"], ["Press kit", "/press-kit"], ["Contact", "/contact"]]],
 ];
 
-const ARTICLES = ["/the-cost-of-inaction", "/the-premium-on-execution", "/vanity-metrics", "/leadership-removing-friction", "/roi-of-dedicated-va", "/in-defense-of-holding-grudges", "/motivation-drivers", "/the-49k-story", "/what-is-an-ai-chatbot-and-do-i-need-one"];
+const ARTICLES = ["/the-cost-of-inaction", "/the-premium-on-execution", "/vanity-metrics", "/leadership-removing-friction", "/roi-of-dedicated-va", "/in-defense-of-holding-grudges", "/motivation-drivers", "/what-is-an-ai-chatbot-and-do-i-need-one"];
 export const isPost = (p) => /^\/blog\/[^/]+$/.test(p) || ARTICLES.includes(p);
 export const isQuestion = (p) => /^\/(how-|why-|is-|should-|make-my-|get-my-|keep-my-|what-happens-|do-i-need-|will-ai-)/.test(p);
 

@@ -96,6 +96,7 @@ Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. 
 - Contact form (the booking form): name, email, optional phone, topic, optional note — same GHL payload (name splits into first/last).
 
 ## Owner decisions in force
+- The $49,000 unpaid-work story is removed (2026-10-23): /the-49k-story redirects to /about-us, `scrubStory()` in scripts/declutter.mjs strips any block that mentions it, and the build fails if a mention survives.
 - Prices hidden everywhere (kept in `_private/prices.md`). /pricing explains how quotes work. General market ranges on
   "how much does X cost" pages stay; affiliate commissions on /affiliate stay.
 - Build Your Agreement is locked: /agreement-builder is a noindex "client access" page, not linked anywhere, no embed.

@@ -26,7 +26,7 @@ export const PRICING = {
 <section><h2>How to get your quote</h2><ol>
 <li><strong>Book a 15-minute fit call.</strong> Tell us what's leaking time or revenue.</li>
 <li><strong>We review your setup.</strong> Website, listings, lead flow and tools.</li>
-<li><strong>You get a signed scope with a fixed price.</strong> We start only after the agreement is signed — <a href="/the-49k-story">here's why</a>.</li>
+<li><strong>You get a signed scope with a fixed price.</strong> We start only after the agreement is signed.</li>
 </ol><p class="ctas"><a class="btn" href="/contact?topic=other">Book My 15-Minute Fit Call</a></p></section>
 <section><h2>Pricing questions</h2>
 <details><summary>Why doesn't CasperB2B publish prices?</summary><p>Because the right scope is different for every business. A quote after a 15-minute fit call is fixed and written, so you know the full cost before any work starts.</p></details>
