@@ -74,7 +74,7 @@ ${nodes.map(ld).join("")}
 </head><body>
 <a class="skip" href="#main">Skip to main content</a>
 <header class="top"><div class="wrap row">
-<a class="logo" href="/" aria-label="${NAME} home"><img src="${LOGO}" alt="${NAME} logo" width="63" height="44"><span>Casper<b>B2B</b></span></a>
+<a class="logo" href="/" aria-label="${NAME} home"><img src="${LOGO}" alt="${NAME}" width="80" height="56"></a>
 <a class="topphone" href="tel:${PHONE_TEL}" data-cta="header-call">${PHONE}</a>
 <a class="btn sm topcta" href="${ctaHref}" data-cta="header">Book a Fit Call</a>
 <button class="burger" type="button" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button></div>
@@ -86,7 +86,7 @@ ${nodes.map(ld).join("")}
 <div class="foot-cta"><div><h2>Ready to grow your business?</h2><p>Tell us what's leaking time or revenue. In 15 minutes we'll tell you what to fix first — and whether we're the right team to fix it.</p><p class="ctas"><a class="btn" href="${ctaHref}" data-cta="footer">Book My 15-Minute Fit Call</a> <a href="/quiz" data-cta="footer-quiz">Not ready? Find your biggest revenue leak →</a></p></div>
 <div class="news"><h2 class="h3">Get Growth Insights</h2><p>Get the growth strategy that actually works for local businesses. One email per week.</p>${newsletterForm("Newsletter Subscription - Footer", ["newsletter_subscriber", "footer_signup"], "foot")}</div></div>
 <nav class="cols" aria-label="Footer">${NAV.footer.map(([n, items]) => `<div><h2 class="h4">${esc(n)}</h2><ul>${items.map(([a, h]) => `<li><a href="${h}">${esc(a)}</a></li>`).join("")}</ul></div>`).join("")}</nav>
-<div class="foot-bottom"><div class="contact"><a class="logo" href="/"><img src="${LOGO}" alt="" width="63" height="44" loading="lazy"><span>Casper<b>B2B</b></span></a>
+<div class="foot-bottom"><div class="contact"><a class="logo" href="/" aria-label="${NAME} home"><img src="${LOGO}" alt="${NAME}" width="80" height="56" loading="lazy"></a>
 <p><a href="tel:${PHONE_TEL}">${PHONE_VANITY} (${PHONE})</a><br>${esc(MAIL_ADDR.street)}, ${MAIL_ADDR.city}, ${MAIL_ADDR.region} ${MAIL_ADDR.zip} (Mailing)<br><a href="mailto:${EMAIL}">${EMAIL}</a></p></div>
 <div><p class="legal"><a href="/service-areas">Service Areas</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/affiliate">Partner program</a><a href="/sitemap">Sitemap</a><a href="#" data-cookie-settings>Cookie settings</a></p>
 <p class="fine">© ${TODAY.slice(0, 4)} Casper B2B. All rights reserved. Sister product: <a href="https://casperportal.com" rel="noopener">CasperPortal</a>, our all-in-one CRM software.</p></div></div>

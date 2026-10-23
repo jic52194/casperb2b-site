@@ -208,3 +208,51 @@ fieldset.q legend{font-size:1.05rem;color:var(--navy);padding:0;margin-bottom:6p
 @media(min-width:760px){.mcta{display:none}}
 .locked{max-width:720px;border:1px dashed #fdba74;background:var(--orange-50);border-radius:var(--radius);padding:22px}
 @media print{.top,.foot,.talk,.mcta,.next,.crumbs,.related,.no-print,#cso-cc{display:none!important}}
+/* ── visual polish (2026-10-23) ── */
+.logo img{width:auto;height:52px}
+.top .row{min-height:74px}
+.foot .logo img{height:56px}
+.mainnav>.wrap{flex-wrap:nowrap;justify-content:space-between;gap:0}
+.menu>button{padding:11px 8px;font-size:.9rem;font-weight:600;color:#334155;white-space:nowrap}
+@media(min-width:1100px) and (max-width:1220px){.menu>button{font-size:.84rem;padding:11px 6px}}
+/* hero: warm glow instead of a flat wash */
+.content>section:first-child:has(h1){background:radial-gradient(1100px 420px at 88% -10%,rgba(249,115,22,.16),transparent 60%),radial-gradient(700px 300px at -10% 110%,rgba(3,7,18,.05),transparent 70%),linear-gradient(180deg,#fff7ed,#fff 88%);box-shadow:0 0 0 100vmax #fff7ed}
+.content>section:first-child h1{max-width:20ch}
+.answer{background:rgba(255,255,255,.7);border-radius:0 12px 12px 0;padding:10px 16px}
+/* section rhythm */
+.content>section{padding:52px 0}
+.content h2{position:relative}
+.content>section>h2:first-child::before,.content>section>.eyebrow+h2::before{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--orange);margin:0 0 14px}
+/* numbered steps become step cards */
+.content>section>ol{list-style:none;counter-reset:step;padding:0;margin:1.2em 0;display:grid;gap:12px;max-width:900px}
+.content>section>ol>li{counter-increment:step;position:relative;margin:0;max-width:none;padding:16px 18px 16px 64px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.content>section>ol>li::before{content:counter(step);position:absolute;left:16px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--orange);color:var(--navy);font-weight:800;font-size:.95rem;display:grid;place-items:center}
+/* bullet lists get check marks */
+.content>section>ul:not(.tags):not(.kv):not(.cols-list){list-style:none;padding:0}
+.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li{position:relative;padding-left:30px}
+.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li::before{content:"";position:absolute;left:2px;top:.45em;width:18px;height:18px;border-radius:50%;background:var(--orange-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23c2410c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;border:1px solid #fed7aa}
+/* cards */
+.card,.card-link{border-radius:16px;padding:22px}
+.card{border-top:3px solid var(--orange-50)}
+.card-link{position:relative}
+.card-link h3::after{content:" →";color:var(--orange);opacity:0;transition:opacity .15s}
+.card-link:hover h3::after{opacity:1}
+.grid{gap:20px}
+/* FAQ */
+details{border-radius:14px;transition:border-color .15s}
+details[open]{border-color:#fdba74;box-shadow:0 4px 14px -6px rgba(249,115,22,.25)}
+/* town facts */
+.kv li span:first-child{color:var(--muted);font-weight:600}
+.kv li span:last-child{text-align:right}
+/* dark footer */
+.foot{background:var(--navy);color:#cbd5e1;border-top:0}
+.foot h2,.foot .h3,.foot .h4{color:#fff}
+.foot p{color:#cbd5e1}
+.foot-cta,.foot .cols{border-color:rgba(255,255,255,.1)}
+@media(min-width:900px){.foot-cta .news{border-color:rgba(255,255,255,.1)}}
+.foot .cols a,.legal a,.foot .fine{color:#94a3b8}
+.foot .cols a:hover,.legal a:hover{color:#fdba74}
+.foot .contact a,.foot-cta .ctas a:not(.btn),.foot .fine a{color:#fdba74}
+.foot form.lead.inline input{background:#0b1220;border-color:#334155;color:#fff}
+.foot form.lead.inline input::placeholder{color:#94a3b8}
+.foot .form-msg.ok{color:#4ade80}

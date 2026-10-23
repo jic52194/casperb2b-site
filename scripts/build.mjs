@@ -82,7 +82,8 @@ const NAVNAME = new Map(MENU.flatMap(([, items]) => items).map(([n, h]) => [h, n
 
 // ── names, titles, descriptions ──
 const HUBNAME = Object.fromEntries(Object.values(CLUSTERS).map((c) => [c.hub, c.name]));
-const shortName = (p) => p === "/" ? "Home" : BY[p]?.name || HUBNAME[p] || NAVNAME.get(p) || clean(KW[p]?.h1 || BY[p]?.h1 || p).replace(/[.:]$/, "").slice(0, 70);
+const CRUMB_NAME = { "/services": "Services", "/niches": "Industries", "/problems": "Problems we solve", "/blog": "Blog", "/strategy": "Strategy", "/casper-va": "Casper VA" };
+const shortName = (p) => p === "/" ? "Home" : BY[p]?.name || CRUMB_NAME[p] || HUBNAME[p] || NAVNAME.get(p) || clean(KW[p]?.h1 || BY[p]?.h1 || p).replace(/[.:]$/, "").slice(0, 70);
 const TITLE_OVERRIDE = {
   "/": "CasperB2B | Marketing, Automation & Cybersecurity",
   "/contact": "Contact CasperB2B | Request a 15-Minute Fit Call",
