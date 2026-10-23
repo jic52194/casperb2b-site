@@ -22,4 +22,16 @@
   if (tb) tb.addEventListener("click", function (e) { e.stopPropagation(); toggleTalk(); });
 
   document.querySelectorAll("[data-cookie-settings]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); window.dispatchEvent(new Event("cso:consent-open")); }); });
+  // CTA analytics: every primary/secondary call to action reports a click to t.js (first-party analytics)
+  function track(type, label, props) { try { if (window.csoTrack) window.csoTrack.event(type, label, props); } catch (e) {} }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-cta], a.btn, button.btn");
+    if (!a || a.type === "submit") return;
+    track("cta_click", (a.textContent || "").trim().slice(0, 60), { cta: a.getAttribute("data-cta") || "content", href: a.getAttribute("href") || "", page: location.pathname });
+  }, true);
+  window.casperTrack = track;
+
+  // /contact?topic=seo preselects "What are you looking for?"
+  var topic = new URLSearchParams(location.search).get("topic"), sel = document.querySelector("select[name=service_requested]");
+  if (topic && sel) Array.prototype.forEach.call(sel.options, function (o) { if (o.value === topic) sel.value = topic; });
 })();

@@ -55,20 +55,19 @@
     stack: function (root) {
       function run() {
         var total = 0; $$("input[type=number]", root).forEach(function (i) { total += parseFloat(i.value) || 0; });
-        var save = Math.max(0, total - 297);
-        set("o-current", usd(total) + "/mo"); set("o-savings", usd(save * 12)); set("s-savings", "That's " + usd(save) + " back in your pocket every single month.");
+        set("o-current", usd(total) + "/mo"); set("o-yearly", usd(total * 12));
+        extra(root, {}, "Current tool spend: " + usd(total) + "/mo (" + usd(total * 12) + "/yr)");
       }
       root.addEventListener("input", run); run();
     },
     webcost: function (root) {
-      var base = { landing: 1500, standard: 3500, ecommerce: 5500, custom: 8500 }, add = { crm: 500, automation: 1000, seo: 1500, copy: 1200, blog: 800, booking: 600 };
-      var labels = {}; $$("label.opt", root).forEach(function (l) { var i = $("input", l); labels[i.value] = l.textContent.split("Starting")[0].split("· +")[0].trim(); });
-      var std = $('input[name=type][value=standard]', root); if (std) std.checked = true;
+      var labels = {}; $$("label.opt", root).forEach(function (l) { var i = $("input", l); labels[i.value] = l.textContent.trim(); });
+      var std = $("input[name=type][value=standard]", root); if (std) std.checked = true;
       function run() {
         var a = ($("input[name=type]:checked", root) || {}).value || "standard", r = v(root, "pages"), o = $$("input[name=addon]:checked", root).map(function (x) { return x.value; });
-        var extraPages = r > 5 ? (r - 5) * 150 : 0, total = (base[a] || 0) + extraPages + o.reduce(function (s, k) { return s + (add[k] || 0); }, 0);
-        set("o-total", usd(total)); set("s-total", extraPages ? "Includes " + usd(extraPages) + " for extra pages" : "Up to 5 pages included");
-        extra(root, {}, "Project: " + a + ", Pages: " + r + ", Features: " + o.join(", ") + ", Total Estimate: $" + total);
+        set("o-total", labels[a] || a); set("s-total", r + (r === 1 ? " page" : " pages"));
+        var ul = $("[data-scope]", root); if (ul) ul.innerHTML = ["Mobile-First Design Included", "Secure Hosting Setup", "Standard Lead Forms"].concat(o.map(function (k) { return labels[k] || k; })).map(function (x) { return "<li>" + x.replace(/</g, "&lt;") + "</li>"; }).join("");
+        extra(root, {}, "Project: " + (labels[a] || a) + ", Pages: " + r + ", Features: " + o.map(function (k) { return labels[k] || k; }).join(", "));
       }
       root.addEventListener("input", run); root.addEventListener("change", run); run();
     },
@@ -134,19 +133,20 @@
         e.preventDefault(); var a = answers(form), need = a.need || [], msg = $(".form-msg", form);
         if (!need.length || !a.stage) { msg.className = "form-msg err"; msg.textContent = !need.length ? "Select at least one bottleneck." : "Choose where your business is currently at."; return; }
         msg.textContent = "";
-        var b = a.stage === "starter" || need.length <= 2 ? ["Software Only Subscription", "Get access to CasperPortal and build it yourself.", "$297/mo", ["Full CasperPortal Platform Access", "CRM & Pipeline Management", "Basic Lead Capture Forms", "Workflow Automations"]]
-          : need.indexOf("followup") > -1 || need.indexOf("admin") > -1 ? ["Done-For-You Setup (Option 1)", "We build your foundation so you can capture and close.", "$399/mo + $1,500 setup", ["Everything in Software Only", "Done-For-You CRM Setup", "Automated Email/SMS Sequences", "Booking & Calendar Setup", "Review Generation System"]]
-          : ["Done-For-You Setup (Option 2) + Pro Services", "Maximum long-term value with professional implementation.", "$199/mo + $3,500 setup", ["Everything in DFY Option 1", "Lower Monthly Subscription Cost", "Recommended: Add SEO Specialist", "Recommended: Add Tech Lead", "Dedicated Growth Strategy"]];
-        var r = show(root); $("[data-name]", r).textContent = b[0]; $("[data-tagline]", r).textContent = b[1]; $("[data-price]", r).textContent = "Starts at " + b[2]; $("[data-services]", r).innerHTML = li(b[3]);
+        var b = a.stage === "starter" || need.length <= 2 ? ["Starter System", "We set up your CRM and lead capture so you can run it yourself.", ["CRM & Pipeline Setup", "Lead Capture Forms", "Workflow Automations", "Training on Your New System"]]
+          : need.indexOf("followup") > -1 || need.indexOf("admin") > -1 ? ["Done-For-You Setup", "We build your foundation so you can capture and close.", ["Everything in the Starter System", "Done-For-You CRM Setup", "Automated Email/SMS Sequences", "Booking & Calendar Setup", "Review Generation System"]]
+          : ["Done-For-You Setup + Growth Services", "Professional implementation plus ongoing growth work.", ["Everything in Done-For-You Setup", "Recommended: Add an SEO Specialist", "Recommended: Add a Tech Lead", "Dedicated Growth Strategy"]];
+        var r = show(root); $("[data-name]", r).textContent = b[0]; $("[data-tagline]", r).textContent = b[1]; $("[data-services]", r).innerHTML = li(b[2]);
+        extra(root, {}, "Bundle: " + b[0] + " · Bottlenecks: " + need.join(", ") + " · Stage: " + a.stage);
       });
     },
     fit: function (root) {
       var form = $("form.quiz", root); retake(root);
       function rec(a) {
-        if (a.budget === "over3000" || (a.budget === "1500to3000" && a.stage === "established")) return ["Premium Growth System", "Full-stack digital growth & technology partner.", "Based on your answers, you're ready for a comprehensive, multi-channel growth system. We'll combine SEO, paid advertising, website optimization, automation, and ongoing reporting into one cohesive plan built specifically for your business.", ["SEO & Local Search Dominance", "Google Ads & PPC Management", "Website Redesign & CRO", "CasperPortal CRM Setup", "AI Chatbot & Automation", "Monthly Strategy Reviews"], "Book Your Premium Strategy Call"];
+        if (a.budget === "over3000" || (a.budget === "1500to3000" && a.stage === "established")) return ["Premium Growth System", "Full-stack digital growth & technology partner.", "Based on your answers, you're ready for a comprehensive, multi-channel growth system. We'll combine SEO, paid advertising, website optimization, automation, and ongoing reporting into one cohesive plan built specifically for your business.", ["SEO & Local Search Dominance", "Google Ads & PPC Management", "Website Redesign & CRO", "CRM & Follow-Up Automation Setup", "AI Chatbot & Automation", "Monthly Strategy Reviews"], "Book Your Premium Strategy Call"];
         if (a.challenge === "security") return ["Managed IT & Security Package", "Protect your business, your data, and your customers.", "Your answers point to a need for structured IT support and cybersecurity. We'll audit your current setup, identify vulnerabilities, and build a protection plan that lets you focus on running your business without worrying about digital threats.", ["Cybersecurity Risk Review", "Network Security Setup", "Data Protection Planning", "Phishing & Threat Awareness", "Access Control Guidance", "Ongoing IT Management"], "Schedule My IT Security Review"];
         if (a.website === "none" || a.website === "basic" || a.challenge === "website") return ["Website & Digital Foundation Package", "Build the right foundation before scaling.", "Your biggest opportunity is a stronger digital foundation. We'll build or redesign your website with lead capture, mobile optimization, local SEO signals, and clear calls-to-action — so every dollar you spend on marketing actually converts.", ["Website Design & Development", "Mobile-First Optimization", "Local SEO Foundation", "Lead Capture Forms", "Speed & Core Web Vitals", "Google Business Profile Setup"], "Start My Website Project"];
-        if (a.challenge === "leads" || a.timeline === "asap") return ["Quick-Win Lead Generation Package", "Start generating leads within 30 days.", "You have the foundation — now you need leads. We'll launch targeted local SEO improvements, Google Ads, and conversion-focused landing pages designed to bring qualified prospects to your door faster.", ["Local SEO Quick Wins", "Google Ads Campaign Launch", "Landing Page Optimization", "Lead Capture Improvements", "Call & Form Tracking", "30-Day Performance Review"], "Get My Lead Generation Plan"];
+        if (a.challenge === "leads" || a.timeline === "asap") return ["Quick-Win Lead Generation Package", "Get more calls from people already searching for you.", "You have the foundation — now you need leads. We'll launch targeted local SEO improvements, Google Ads, and conversion-focused landing pages designed to bring qualified prospects to your door faster.", ["Local SEO Quick Wins", "Google Ads Campaign Launch", "Landing Page Optimization", "Lead Capture Improvements", "Call & Form Tracking", "30-Day Performance Review"], "Get My Lead Generation Plan"];
         return ["Full-Growth Marketing Package", "Visibility, leads, and systems working together.", "Your business is ready to grow strategically. We'll combine local SEO, content marketing, reputation building, and website improvements into a consistent plan that drives more qualified traffic and converts it into real customers.", ["Local SEO & Google Visibility", "Content Strategy & Blog", "Reputation Management", "Website Conversion Improvements", "Business Listings Optimization", "Monthly Performance Reporting"], "Book My Growth Strategy Call"];
       }
       form.addEventListener("submit", function (e) {
@@ -166,7 +166,7 @@
       root.addEventListener("change", upd); upd();
       f.addEventListener("casper:sent", function () {
         var l = score(), r = show(root); $("[data-band]", r).textContent = l + "%";
-        $("[data-text]", r).textContent = l > 80 ? "Your business has a strong foundation. You're ready for advanced scaling and automation." : l > 50 ? "You have some systems in place, but critical gaps are causing you to lose leads every day." : "Your digital strategy needs immediate attention. You're likely leaving 60-70% of potential revenue on the table.";
+        $("[data-text]", r).textContent = l > 80 ? "Your business has a strong foundation. You're ready for advanced scaling and automation." : l > 50 ? "You have some systems in place, but critical gaps are causing you to lose leads every day." : "Your digital strategy needs immediate attention. You're likely leaving revenue on the table.";
       });
     },
     keywords: function (root) {

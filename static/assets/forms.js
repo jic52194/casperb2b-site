@@ -35,6 +35,7 @@
       if (f.dataset.extra) { try { var x = JSON.parse(f.dataset.extra); for (var k in x) data[k] = x[k]; } catch (er) {} }
       var tags = (f.dataset.tags || "").split(",").filter(Boolean).map(function (t) { return fill(t, data).replace(/\s+/g, "_").toLowerCase(); });
       if (f.dataset.notes) data.calendar_notes = fill(f.dataset.notes, data);
+      if (window.csoTrack) try { window.csoTrack.event("form_submit", f.dataset.formId, { page: location.pathname }); } catch (er) {}
       btn.disabled = true; var label = btn.textContent; btn.textContent = "Sending...";
       submit(f.dataset.formId, data, tags).then(function (ok) {
         btn.disabled = false; btn.textContent = label;

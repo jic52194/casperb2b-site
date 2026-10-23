@@ -1,0 +1,3669 @@
+{
+ "/": {
+  "keyword": "marketing and it services for small businesses",
+  "secondary": [
+   "casperb2b",
+   "small business lead follow-up system",
+   "small business cybersecurity and marketing",
+   "dedicated virtual assistant for small business"
+  ],
+  "title": "Marketing & IT Services for Small Businesses | CasperB2B",
+  "desc": "Marketing and IT services for small businesses: websites, SEO, CRM automation, AI chatbots, cybersecurity and VAs. Book a free 15-minute fit call.",
+  "h1": "Marketing & IT Services That Stop Small Businesses Losing Leads",
+  "intro": "CasperB2B is a small business services company that builds websites, local SEO, CRM and follow-up automation, AI chatbots, cybersecurity and managed IT, and provides dedicated virtual assistants, so every inquiry is captured, answered and moved forward.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services",
+   "tool": "/quiz",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/about-us": {
+  "keyword": "about casperb2b",
+  "secondary": [
+   "casperb2b founders",
+   "jared casper and mark casper",
+   "who owns casperb2b"
+  ],
+  "title": "About CasperB2B: Founders, Story & Values | CasperB2B",
+  "desc": "About CasperB2B: founded by Jared Casper with Co-Founder Mark Casper, helping businesses with websites, SEO, CRM, automation and security. Book a fit call.",
+  "h1": "About CasperB2B",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/quiz",
+   "article": "/the-49k-story"
+  }
+ },
+ "/affiliate": {
+  "keyword": "marketing agency affiliate program",
+  "secondary": [
+   "recurring commission affiliate program",
+   "casperb2b partner program",
+   "refer clients to a marketing agency"
+  ],
+  "title": "Marketing Agency Affiliate Program | CasperB2B",
+  "desc": "Join the CasperB2B marketing agency affiliate program: earn $150/mo recurring for each business you refer that stays active. Free to join. Apply today.",
+  "h1": "Marketing Agency Affiliate Program: Build Recurring Income",
+  "intro": "The CasperB2B Partner Program is a free affiliate program that pays $150 per month for each business you refer while it stays an active client, plus team overrides on referrals from partners you recruit.",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/tools",
+   "article": "/about-us"
+  }
+ },
+ "/affiliate-kit": {
+  "cluster": "about",
+  "noindex": true
+ },
+ "/agreement-builder": {
+  "cluster": "about",
+  "noindex": true
+ },
+ "/ai-services": {
+  "keyword": "generative engine optimization services",
+  "secondary": [
+   "ai search optimization",
+   "get recommended by chatgpt",
+   "ai services for small business"
+  ],
+  "title": "Generative Engine Optimization & AI Services | CasperB2B",
+  "desc": "Generative engine optimization services plus AI chatbots and automation, so ChatGPT and Google AI can find and cite your business. Book a free fit call.",
+  "h1": "Generative Engine Optimization & AI Services for Small Business",
+  "intro": "Generative engine optimization (GEO) structures your website and business information so AI assistants like ChatGPT, Perplexity and Google AI Overviews can understand and cite you. CasperB2B pairs GEO with AI chatbots and follow-up automation.",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/ai-search-readiness",
+   "article": "/will-ai-replace-my-business"
+  },
+  "faq": [
+   {
+    "q": "What is generative engine optimization (GEO)?",
+    "a": "GEO is the work of structuring your website, schema and content so AI search tools like ChatGPT, Perplexity and Google AI Overviews can understand your business and cite it in their answers."
+   },
+   {
+    "q": "How is GEO different from SEO?",
+    "a": "SEO aims to rank your pages in Google's list of links; GEO aims to get your business named inside the answer an AI assistant gives. They share a foundation: a claimed Google Business Profile, structured data and clear, entity-based content."
+   },
+   {
+    "q": "How do I know if AI search recommends my business?",
+    "a": "Take the free AI Search Readiness test. It shows where you stand in about 60 seconds, and a 15-minute fit call can walk through what to fix first."
+   }
+  ]
+ },
+ "/author/jared-casper": {
+  "keyword": "jared casper",
+  "secondary": [
+   "jared casper casperb2b",
+   "casperb2b founder",
+   "jared casper georgetown ma"
+  ],
+  "title": "Jared Casper, Founder of CasperB2B | CasperB2B",
+  "desc": "Jared Casper is the founder of CasperB2B, helping businesses with websites, local SEO, CRM and automation. Read his articles or book a fit call.",
+  "h1": "Jared Casper",
+  "cluster": "about",
+  "next": {
+   "service": "/strategy",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/the-49k-story"
+  }
+ },
+ "/blog": {
+  "keyword": "small business marketing blog",
+  "secondary": [
+   "local seo tips",
+   "small business cybersecurity tips",
+   "marketing automation guides"
+  ],
+  "title": "Small Business Marketing Blog | CasperB2B",
+  "desc": "Small business marketing blog with plain-English guides on local SEO, websites, automation, AI and cybersecurity. Book a free 15-minute fit call.",
+  "h1": "Small Business Marketing Blog: SEO, Automation, AI & Security",
+  "intro": "Practical, plain-English guides from Jared Casper on getting found on Google, converting more website visitors, automating follow-up, and protecting your business from cyber threats.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services",
+   "tool": "/quiz",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/blog/10-minute-website-audit": {
+  "keyword": "website audit checklist",
+  "secondary": [
+   "how to audit your own website",
+   "small business website checklist",
+   "website mobile speed test"
+  ],
+  "title": "Website Audit Checklist: 10-Minute DIY Test | CasperB2B",
+  "desc": "A 10-minute website audit checklist: test mobile speed, above-the-fold clarity, trust, forms and service pages yourself. Book a free 15-minute fit call.",
+  "h1": "The 10-Minute Website Audit: Is Your Site Costing You Customers?",
+  "intro": "You can audit your own website in 10 minutes with five checks: mobile load speed, above-the-fold clarity, trust signals, your contact form's follow-up, and dedicated service pages.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/blog/high-converting-landing-page"
+  },
+  "faq": [
+   {
+    "q": "How can I quickly audit my small business website?",
+    "a": "Check five things on your phone: load speed, whether visitors instantly see what you do and how to contact you, real trust signals, what happens after a form is submitted, and whether each main service has its own page."
+   },
+   {
+    "q": "Why does each service need its own page?",
+    "a": "Dedicated service pages rank better on Google and convert better than one generic \"Services\" page because they answer a specific search directly."
+   }
+  ]
+ },
+ "/blog/ai-workflows-contractors": {
+  "keyword": "ai for contractors",
+  "secondary": [
+   "ai automation for contractors",
+   "contractor lead follow-up automation",
+   "ai scheduling for contractors"
+  ],
+  "title": "AI for Contractors: 5 Workflows to Automate | CasperB2B",
+  "desc": "AI for contractors: 5 workflows that qualify leads, book estimates, chase quotes and request reviews automatically. Book a free 15-minute fit call.",
+  "h1": "5 AI Workflows Every North Shore Contractor Needs",
+  "intro": "Contractors can use AI to qualify new leads by text, schedule estimates, follow up on open quotes, request Google reviews after a job, and answer website questions 24/7.",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/digital-maturity-quiz",
+   "article": "/blog/automate-lead-follow-up"
+  },
+  "faq": [
+   {
+    "q": "What can AI automate for a contractor?",
+    "a": "Lead qualification by text, estimate scheduling, estimate follow-ups, post-job review requests, and a website chatbot that answers common questions and captures leads."
+   }
+  ]
+ },
+ "/blog/automate-lead-follow-up": {
+  "keyword": "how to automate lead follow-up",
+  "secondary": [
+   "automated follow-up text examples",
+   "personalized follow-up automation",
+   "lead follow-up sequence"
+  ],
+  "title": "How to Automate Lead Follow-Up (and Sound Human) | CasperB2B",
+  "desc": "How to automate lead follow-up without sounding like a robot: write like you speak, personalize, keep it short. Book a free 15-minute fit call.",
+  "h1": "How to Automate Lead Follow-Up Without Losing the Personal Touch",
+  "intro": "To automate lead follow-up without sounding robotic, write messages the way you would text a customer yourself, personalize them with name, service and town, keep them short, and end with a simple question.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/blog/email-automation-campaigns"
+  },
+  "faq": [
+   {
+    "q": "Is automated follow-up better than no follow-up?",
+    "a": "Yes. No follow-up at all is much worse than an automated one, as long as the message is short, personal and written the way you actually talk."
+   }
+  ]
+ },
+ "/blog/cost-of-data-breach": {
+  "keyword": "cost of a data breach for a small business",
+  "secondary": [
+   "hidden costs of a data breach",
+   "ransomware cost small business",
+   "201 cmr 17.00 breach fines"
+  ],
+  "title": "Cost of a Data Breach for a Small Business | CasperB2B",
+  "desc": "The real cost of a data breach for a small business: ransom, IT cleanup, downtime, legal liability and lost trust. Book a free 15-minute fit call.",
+  "h1": "The True Cost of a Data Breach for a Small Local Business",
+  "intro": "A data breach costs a small business far more than IT fees: ransom demands, emergency IT remediation, lost revenue from downtime, legal fines and lawsuits, and customers who never come back.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/breach-response-plan",
+   "article": "/what-happens-if-i-get-hacked"
+  },
+  "faq": [
+   {
+    "q": "What are the costs of a data breach for a small business?",
+    "a": "The main costs are ransom payments, emergency IT remediation, lost revenue during downtime, fines and lawsuits under laws like Massachusetts 201 CMR 17.00, and reputational damage."
+   },
+   {
+    "q": "Is it cheaper to prevent a breach than recover from one?",
+    "a": "Yes. Investing in proper cybersecurity costs a fraction of what recovering from a breach does."
+   }
+  ]
+ },
+ "/blog/crm-vs-spreadsheets": {
+  "keyword": "crm vs spreadsheet",
+  "secondary": [
+   "when to switch from excel to a crm",
+   "signs you need a crm",
+   "crm for small business"
+  ],
+  "title": "CRM vs Spreadsheet: When to Upgrade | CasperB2B",
+  "desc": "CRM vs spreadsheet: 5 signs your business has outgrown Excel, from leads slipping through the cracks to zero automation. Book a free 15-minute fit call.",
+  "h1": "CRM vs. Spreadsheets: When Is It Time to Upgrade?",
+  "intro": "A spreadsheet works for your first customers, but it's time to switch to a CRM when leads slip through the cracks, only one person understands the sheet, you can't see your pipeline at a glance, or nothing is automated.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/blog/secure-crm-data"
+  },
+  "faq": [
+   {
+    "q": "When should a small business switch from a spreadsheet to a CRM?",
+    "a": "When leads fall through the cracks, only one person understands the system, you can't see your pipeline at a glance, nothing is automated, or customer data is easy to copy or delete."
+   }
+  ]
+ },
+ "/blog/email-automation-campaigns": {
+  "keyword": "email automation examples for small business",
+  "secondary": [
+   "welcome email sequence",
+   "customer reactivation email",
+   "seasonal reminder email"
+  ],
+  "title": "Email Automation Examples for Small Business | CasperB2B",
+  "desc": "Email automation examples for small business: a welcome series, a win-back email and seasonal reminders. Book a free 15-minute fit call.",
+  "h1": "Email Automation: 3 Campaigns You Should Be Running Right Now",
+  "intro": "Three email automations every local business should run: a 3-part welcome sequence for new leads, a plain-text reactivation email for past customers, and seasonal reminders sent before your busy season.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/automate-lead-follow-up"
+  },
+  "faq": [
+   {
+    "q": "What email automations should a small business set up first?",
+    "a": "Start with a welcome sequence for new leads, a reactivation email for past customers who haven't bought in a year, and seasonal reminders sent about 30 days before your busy season."
+   }
+  ]
+ },
+ "/blog/fix-google-maps-ranking": {
+  "keyword": "why isn't my business showing up on google maps",
+  "secondary": [
+   "google maps ranking factors",
+   "not in google local pack",
+   "google business profile primary category"
+  ],
+  "title": "Why Isn't My Business Showing Up on Google Maps? | CasperB2B",
+  "desc": "Why isn't my business showing up on Google Maps? Usually category, NAP, reviews or an empty profile. Here's the fix. Book a free fit call.",
+  "h1": "Why Your Business Isn't Showing Up on Google Maps (And How to Fix It)",
+  "intro": "Most businesses missing from Google Maps have one of four problems: the wrong primary category, inconsistent name/address/phone across the web, too few recent reviews, or an empty Google Business Profile.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/get-my-business-on-google"
+  },
+  "faq": [
+   {
+    "q": "Why is my business not showing on Google Maps?",
+    "a": "The usual causes are a wrong primary category, inconsistent name, address and phone across directories, too few recent reviews, or a profile with no photos, posts or service descriptions."
+   }
+  ]
+ },
+ "/blog/high-converting-landing-page": {
+  "keyword": "home service landing page",
+  "secondary": [
+   "landing page for google ads",
+   "landing page vs homepage",
+   "message match landing page"
+  ],
+  "title": "Home Service Landing Page That Converts | CasperB2B",
+  "desc": "Build a home service landing page that converts ad traffic: message match, a focused hero, trust signals, one CTA. Book a free 15-minute fit call.",
+  "h1": "How to Build a High-Converting Landing Page for Home Services",
+  "intro": "A high-converting home service landing page has one job — get the lead. It matches the ad's exact offer, uses a clear hero with a real photo, shows trust signals, and removes navigation so the only actions are call or fill out the form.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/10-minute-website-audit"
+  },
+  "faq": [
+   {
+    "q": "Should I send Google Ads traffic to my homepage?",
+    "a": "No. A homepage has many links and services; a dedicated landing page that matches the ad and has one call to action converts paid traffic better."
+   }
+  ]
+ },
+ "/blog/massachusetts-cybersecurity-guide": {
+  "keyword": "massachusetts small business cybersecurity requirements",
+  "secondary": [
+   "201 cmr 17.00 wisp",
+   "massachusetts data privacy law small business",
+   "written information security program"
+  ],
+  "title": "Massachusetts Small Business Cybersecurity Guide | CasperB2B",
+  "desc": "Massachusetts small business cybersecurity requirements: 201 CMR 17.00, your WISP and 4 must-have security layers. Book a free fit call.",
+  "h1": "The Small Business Guide to Cybersecurity in Massachusetts",
+  "intro": "Massachusetts businesses that collect residents' personal information must keep a Written Information Security Program (WISP) under 201 CMR 17.00, and should back it with MFA, endpoint protection, tested backups and staff training.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/why-antivirus-isnt-enough"
+  },
+  "faq": [
+   {
+    "q": "Does my Massachusetts small business need a WISP?",
+    "a": "If you collect personal information about Massachusetts residents, 201 CMR 17.00 requires you to have a Written Information Security Program."
+   },
+   {
+    "q": "What security layers does a small business need?",
+    "a": "At minimum: multi-factor authentication, modern endpoint detection and response, automated encrypted backups that are tested, and employee phishing training."
+   }
+  ]
+ },
+ "/blog/mastering-local-seo": {
+  "keyword": "how to improve local seo",
+  "secondary": [
+   "local seo tips georgetown ma",
+   "google business profile optimization",
+   "nap consistency"
+  ],
+  "title": "How to Improve Local SEO: Georgetown MA Guide | CasperB2B",
+  "desc": "How to improve local SEO: Google Business Profile, service pages, NAP, reviews and local content, in priority order. Book a free 15-minute fit call.",
+  "h1": "How Georgetown MA Businesses Can Improve Local SEO in 2026",
+  "intro": "To improve local SEO, start with your Google Business Profile, fix name/address/phone consistency, build one page per core service, collect reviews systematically, fix technical issues, then publish local content.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/fix-google-maps-ranking"
+  },
+  "faq": [
+   {
+    "q": "What should I do first to improve local SEO?",
+    "a": "Claim and optimize your Google Business Profile — it has the fastest impact on local visibility and costs nothing. Then fix NAP consistency and build dedicated service pages."
+   },
+   {
+    "q": "Is local SEO a one-time project?",
+    "a": "No. Local SEO is an ongoing system; the businesses that lead local search have invested in it consistently for months or years."
+   }
+  ]
+ },
+ "/blog/newburyport-web-design": {
+  "keyword": "newburyport ma web design",
+  "secondary": [
+   "website conversion newburyport",
+   "newburyport business website",
+   "website design north shore ma"
+  ],
+  "title": "Newburyport MA Web Design That Converts | CasperB2B",
+  "desc": "Newburyport MA web design: the 5 website issues costing local businesses leads, from buried CTAs to long forms. Book a free 15-minute fit call.",
+  "h1": "Why Newburyport Businesses Need Better Website Conversion",
+  "intro": "Newburyport customers judge your website like your storefront. The five issues that cost local businesses the most leads are no clear call to action, slow mobile load times, generic service copy, no local social proof, and forms that are too long or too vague.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/blog/spotlight-newburyport-ma"
+  },
+  "faq": [
+   {
+    "q": "What should a local service contact form ask?",
+    "a": "Name, phone, email and one qualifying question such as which service they need. Longer forms get abandoned; shorter ones don't give you enough to respond well."
+   }
+  ]
+ },
+ "/blog/phishing-scams-small-business": {
+  "keyword": "how to spot a phishing email",
+  "secondary": [
+   "phishing red flags",
+   "ceo gift card scam",
+   "phishing training for employees"
+  ],
+  "title": "How to Spot a Phishing Email: 5 Red Flags | CasperB2B",
+  "desc": "How to spot a phishing email: urgency, mismatched senders, odd requests from the boss, bad links, generic greetings. Book a free fit call.",
+  "h1": "Phishing Scams Targeting Small Businesses: What to Look For",
+  "intro": "You can spot most phishing emails by five red flags: false urgency, a sender address that doesn't match the display name, unusual requests from \"leadership,\" unexpected links or attachments, and generic greetings.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/keep-my-business-safe-from-hackers"
+  },
+  "faq": [
+   {
+    "q": "What is the most common phishing scam against small businesses?",
+    "a": "A classic one is an email pretending to be the owner or CEO asking an employee to quickly buy gift cards or wire money. Always verify unusual requests by phone or in person."
+   }
+  ]
+ },
+ "/blog/roi-website-redesign": {
+  "keyword": "website redesign roi",
+  "secondary": [
+   "is a new website worth it",
+   "website conversion rate math",
+   "benefits of a website redesign"
+  ],
+  "title": "Website Redesign ROI: Is a New Site Worth It? | CasperB2B",
+  "desc": "Website redesign ROI explained: how conversion rate, SEO, lead quality and less admin turn a new site into revenue. Book a free 15-minute fit call.",
+  "h1": "The ROI of a Professional Website Redesign: What to Expect",
+  "intro": "A website redesign pays off when it converts more of the traffic you already have, ranks better, attracts better-fit leads, and feeds leads straight into your CRM — small conversion-rate gains multiply against your average job value.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/how-much-does-a-website-cost"
+  },
+  "faq": [
+   {
+    "q": "How do I calculate the ROI of a website redesign?",
+    "a": "Multiply your monthly visitors by the expected change in conversion rate to get extra leads, then multiply by your close rate and average job value."
+   }
+  ]
+ },
+ "/blog/secure-crm-data": {
+  "keyword": "crm data security",
+  "secondary": [
+   "crm security best practices",
+   "mfa for crm",
+   "least privilege access"
+  ],
+  "title": "CRM Data Security: 4 Rules for Small Business | CasperB2B",
+  "desc": "CRM data security for small business: enforce MFA, limit permissions, watch sessions, offboard fast. Book a free 15-minute fit call.",
+  "h1": "How to Secure Your Customer Data in a Cloud-Based CRM",
+  "intro": "Cloud CRMs are secure on the provider's side; the risk is your logins. Protect CRM data by enforcing MFA, giving each user only the access they need, reviewing active sessions, and revoking access the moment someone leaves.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/crm-vs-spreadsheets"
+  },
+  "faq": [
+   {
+    "q": "Is customer data safe in a cloud CRM?",
+    "a": "The cloud provider's servers are usually well protected; the bigger risk is stolen employee logins. MFA, least-privilege permissions and fast offboarding close most of that gap."
+   }
+  ]
+ },
+ "/blog/spotlight-georgetown-ma": {
+  "keyword": "georgetown ma small business marketing tips",
+  "secondary": [
+   "georgetown ma google business profile",
+   "georgetown ma local search",
+   "essex county small business marketing"
+  ],
+  "title": "Georgetown MA Small Business Marketing Tips | CasperB2B",
+  "desc": "Georgetown MA small business marketing tips: fix your Google profile, service pages, listings and reviews. Book a free 15-minute fit call.",
+  "h1": "Local Business Spotlight: Georgetown MA — What It Takes to Win Online",
+  "intro": "Georgetown MA businesses compete with Haverhill, Newburyport and Boxford companies for the same Essex County searches. Fix four things first: your Google Business Profile, mobile-friendly service pages, consistent listings, and a steady review system.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/seo-services-georgetown-ma",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/mastering-local-seo"
+  },
+  "faq": [
+   {
+    "q": "What should a Georgetown MA business fix first online?",
+    "a": "Start with the Google Business Profile — accurate categories, a description mentioning Georgetown and nearby towns, steady reviews, weekly posts and correct hours — then build mobile-friendly service pages."
+   }
+  ]
+ },
+ "/blog/spotlight-newbury-ma": {
+  "keyword": "newbury ma small business marketing",
+  "secondary": [
+   "plum island business marketing",
+   "multi-town seo north shore",
+   "newbury ma local seo"
+  ],
+  "title": "Newbury MA Small Business Marketing Tips | CasperB2B",
+  "desc": "Newbury MA small business marketing: multi-town SEO, Plum Island seasonality, real photos and reviews. Book a free 15-minute fit call.",
+  "h1": "Local Business Spotlight: Newbury MA — The Gateway to the North Shore",
+  "intro": "Newbury businesses serve customers spread across Rowley, Georgetown and Newburyport plus seasonal Plum Island visitors, so they need service-plus-town pages for each nearby town, accurate seasonal hours, real photos, and reviews on Google, Yelp and TripAdvisor.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/keyword-research",
+   "article": "/blog/spotlight-newburyport-ma"
+  },
+  "faq": [
+   {
+    "q": "How can a Newbury MA business get more customers online?",
+    "a": "Build pages that target your service plus each nearby town, keep seasonal hours accurate before summer, use real local photography, and collect reviews on more than one platform."
+   }
+  ]
+ },
+ "/blog/spotlight-newburyport-ma": {
+  "keyword": "newburyport ma small business marketing",
+  "secondary": [
+   "newburyport local seo",
+   "newburyport reputation management",
+   "newburyport ma digital marketing"
+  ],
+  "title": "Newburyport MA Small Business Marketing | CasperB2B",
+  "desc": "Newburyport MA small business marketing: a premium website, a steady review strategy and Newburyport-focused local SEO. Book a free 15-minute fit call.",
+  "h1": "Newburyport MA Small Business Marketing: Standing Out Online",
+  "intro": "Newburyport customers compare options, read reviews and judge you by your website first. Businesses here should prioritize a premium mobile-first website, an active review strategy, and local SEO that targets Newburyport, North Shore and Essex County searches.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/reputation-management",
+   "tool": "/tools/compare-my-business",
+   "article": "/blog/newburyport-web-design"
+  },
+  "faq": [
+   {
+    "q": "What matters most for marketing a Newburyport business?",
+    "a": "A website that looks as professional as your work, a steady flow of recent reviews you respond to, and local SEO pages built around Newburyport and nearby North Shore searches."
+   }
+  ]
+ },
+ "/blog/stop-missing-calls": {
+  "keyword": "how to set up missed call text back",
+  "secondary": [
+   "missed call text back",
+   "cost of a missed call",
+   "lead response time",
+   "stop missing business calls"
+  ],
+  "title": "How to Stop Missing Calls: Set Up Text Back | CasperB2B",
+  "desc": "How to set up missed call text back: what it does, what you need and the math on a lost call, so missed calls stop costing you leads. Book a free fit call.",
+  "h1": "How to Stop Missing Calls and Losing Leads",
+  "intro": "Missed-call text back stops lost leads by automatically texting anyone whose call you don't answer within seconds. To set it up you need an automation-ready business number, a \"missed call → send SMS\" rule, a message template, and a CRM to log the conversation.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/roi-calculator",
+   "article": "/make-my-phone-ring"
+  },
+  "faq": [
+   {
+    "q": "What is missed-call text back?",
+    "a": "An automation that texts a caller within seconds when your business phone goes unanswered, so the prospect starts a conversation with you instead of calling a competitor."
+   },
+   {
+    "q": "What do I need to set up missed-call text back?",
+    "a": "A business number that can trigger automations (usually VoIP or CRM-connected), a rule that sends an SMS on a missed call, a pre-written message, and a CRM to track the lead."
+   }
+  ]
+ },
+ "/blog/why-antivirus-isnt-enough": {
+  "keyword": "is antivirus enough for a business",
+  "secondary": [
+   "layered security",
+   "defense in depth small business",
+   "edr vs antivirus"
+  ],
+  "title": "Is Antivirus Enough for a Business? | CasperB2B",
+  "desc": "Is antivirus enough for a business? No. The 5 layers of defense in depth: firewall, email filtering, EDR, training, backups. Book a free fit call.",
+  "h1": "Why Antivirus Isn't Enough: Layered Security for Modern Businesses",
+  "intro": "Antivirus alone isn't enough for a business because it only catches known threats. Layered security adds firewalls and DNS filtering, email filtering, endpoint detection and response (EDR), staff training, and encrypted off-site backups.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/massachusetts-cybersecurity-guide"
+  },
+  "faq": [
+   {
+    "q": "What is the difference between antivirus and EDR?",
+    "a": "Traditional antivirus compares files against a list of known threats; EDR watches behavior and can stop a process, such as ransomware encrypting files, even if the threat is new."
+   }
+  ]
+ },
+ "/brand-kit": {
+  "keyword": "brand kit generator",
+  "secondary": [
+   "brand color palette picker",
+   "brand font pairing tool",
+   "free brand builder"
+  ],
+  "title": "Free Brand Kit Generator: Colors & Fonts | CasperB2B",
+  "desc": "Free brand kit generator: pick your brand color and typography and preview them on a real interface before handing off to your designer. Try it free.",
+  "h1": "Free Brand Kit Generator",
+  "intro": "This free brand kit generator lets you choose a brand color and typography and preview them on a sample interface, so you can hand consistent choices to your designer or developer.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/brand-style-guides",
+   "tool": "/tools/website-grader",
+   "article": "/blog/roi-website-redesign"
+  }
+ },
+ "/carsalessoftware-setup": {
+  "keyword": "dealership crm setup",
+  "secondary": [
+   "carsalessoftware.com setup",
+   "car dealership crm implementation",
+   "used car dealership software setup"
+  ],
+  "title": "Dealership CRM Setup for CarSalesSoftware.com | CasperB2B",
+  "desc": "Dealership CRM setup for CarSalesSoftware.com: pipelines, forms, automations, website alignment and staff onboarding. Book a 15-minute fit call.",
+  "h1": "CarSalesSoftware.com Dealership CRM Setup Services",
+  "cluster": "ai",
+  "next": {
+   "service": "/niches/car-dealerships",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/blog/crm-vs-spreadsheets"
+  }
+ },
+ "/casper-va": {
+  "keyword": "dedicated virtual assistant",
+  "secondary": [
+   "hire a virtual assistant for small business",
+   "managed virtual assistant service",
+   "virtual assistant services"
+  ],
+  "title": "Hire a Dedicated Virtual Assistant | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual assistant recruited and managed by CasperB2B for admin, follow-up, marketing and support. Book a free 15-minute fit call.",
+  "h1": "Hire a dedicated virtual assistant who works inside your lead system.",
+  "intro": "Casper VA gives you one dedicated virtual assistant, recruited and managed by CasperB2B, who handles your inbox, lead follow-up, admin and marketing execution inside your own systems, for a flat monthly rate.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/quiz",
+   "article": "/roi-of-dedicated-va"
+  },
+  "faq": [
+   {
+    "q": "What is a dedicated virtual assistant?",
+    "a": "A dedicated virtual assistant is one remote professional who works only for your business, not a shared pool bouncing between clients. With Casper VA, CasperB2B recruits and manages the VA and handles payroll and vetting, and you assign the daily tasks."
+   },
+   {
+    "q": "Who manages a Casper VA?",
+    "a": "You direct the daily tasks and give feedback; CasperB2B handles recruiting, payroll, compliance and vetting. VAs are matched to your time zone and work your business hours."
+   },
+   {
+    "q": "How much does a dedicated virtual assistant cost?",
+    "a": "A Casper VA is a flat monthly rate with no payroll taxes or benefits to cover. Your exact rate depends on the role and is quoted on a 15-minute fit call."
+   }
+  ]
+ },
+ "/casper-va/bookkeeping": {
+  "keyword": "virtual bookkeeping assistant",
+  "secondary": [
+   "quickbooks virtual assistant",
+   "remote bookkeeper for small business",
+   "outsourced bank reconciliation"
+  ],
+  "title": "Virtual Bookkeeping Assistant | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual bookkeeping assistant to reconcile accounts, categorize expenses and send invoices in QuickBooks or Xero. Book a fit call.",
+  "h1": "Hire a Dedicated Virtual Bookkeeping Assistant",
+  "intro": "A virtual bookkeeping assistant from Casper VA is a dedicated remote professional who reconciles bank statements, categorizes expenses, prepares invoices and keeps your QuickBooks or Xero records accurate.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/roi-of-dedicated-va"
+  }
+ },
+ "/casper-va/content-writer": {
+  "keyword": "hire a content writer",
+  "secondary": [
+   "dedicated content writer",
+   "remote copywriter for small business",
+   "blog and email copywriter"
+  ],
+  "title": "Hire a Content Writer: Dedicated Remote Writer | CasperB2B",
+  "desc": "Hire a content writer dedicated to your business for blog posts, web pages, ad copy and email sequences. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Content Writer",
+  "intro": "When you hire a content writer through Casper VA, you get one dedicated remote writer for your website pages, blog posts, emails, ads, captions and scripts, keeping your message clear and consistent.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/content-marketing",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/email-automation-campaigns"
+  }
+ },
+ "/casper-va/customer-service": {
+  "keyword": "customer service virtual assistant",
+  "secondary": [
+   "outsourced customer support",
+   "live chat support assistant",
+   "remote customer service rep"
+  ],
+  "title": "Customer Service Virtual Assistant | CasperB2B",
+  "desc": "Hire a dedicated customer service virtual assistant to answer email, live chat and phone support, resolve tickets and process refunds. Book a fit call.",
+  "h1": "Hire a Dedicated Customer Service Virtual Assistant",
+  "intro": "A customer service virtual assistant from Casper VA is a dedicated remote support rep who answers your customers by email, live chat or phone, resolves tickets, handles FAQs and processes refunds.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/ai-chatbots",
+   "tool": "/quiz",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/casper-va/data-entry": {
+  "keyword": "data entry virtual assistant",
+  "secondary": [
+   "outsourced data entry",
+   "crm data entry services",
+   "data cleanup specialist"
+  ],
+  "title": "Data Entry Virtual Assistant | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated data entry virtual assistant to update your CRM, manage spreadsheets and scrub bad records. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Data Entry Virtual Assistant",
+  "intro": "A data entry virtual assistant from Casper VA is a dedicated remote specialist who inputs, updates and cleans the data in your CRM, spreadsheets or database so your records stay accurate without eating your team’s time.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/blog/crm-vs-spreadsheets"
+  }
+ },
+ "/casper-va/executive-assistant": {
+  "keyword": "virtual executive assistant",
+  "secondary": [
+   "remote executive assistant",
+   "hire an executive assistant for a small business owner",
+   "executive assistant inbox and travel management"
+  ],
+  "title": "Virtual Executive Assistant | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual executive assistant to triage your inbox, manage complex schedules, book travel and coordinate stakeholders. Book a fit call.",
+  "h1": "Hire a Dedicated Virtual Executive Assistant",
+  "intro": "A virtual executive assistant from Casper VA is a dedicated remote right hand who triages your inbox, manages complex schedules, books travel, prepares reports and coordinates with stakeholders on your behalf.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va",
+   "tool": "/quiz",
+   "article": "/roi-of-dedicated-va"
+  }
+ },
+ "/casper-va/graphic-designer": {
+  "keyword": "virtual graphic designer",
+  "secondary": [
+   "dedicated graphic designer",
+   "remote graphic designer for small business",
+   "social media graphics designer"
+  ],
+  "title": "Virtual Graphic Designer | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual graphic designer for ad creatives, social media graphics and brand assets that stay on-brand. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Virtual Graphic Designer",
+  "intro": "A virtual graphic designer from Casper VA is a dedicated remote designer who creates your ad creatives, social media graphics and brand assets for digital and print, keeping your brand consistent.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/graphic-design",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/high-converting-landing-page"
+  }
+ },
+ "/casper-va/hiring-guide": {
+  "keyword": "how to hire a virtual assistant",
+  "secondary": [
+   "virtual assistant hiring process",
+   "steps to hire a va",
+   "onboarding a virtual assistant"
+  ],
+  "title": "How to Hire a Virtual Assistant: 5 Steps | CasperB2B",
+  "desc": "How to hire a virtual assistant with Casper VA: a 15-minute call, role choice, matching, onboarding into your CRM and running in days. Book your fit call.",
+  "h1": "How to Hire a Virtual Assistant with Casper VA",
+  "intro": "Hiring a Casper VA takes five steps: a 15-minute fit call, choosing the role and signing your agreement, being matched with one dedicated VA, onboarding into your CRM, and handing off tasks within days.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/quiz",
+   "article": "/casper-va/vs-agency"
+  },
+  "faq": [
+   {
+    "q": "How long does it take to hire a virtual assistant through Casper VA?",
+    "a": "Most of the work happens before day one: after a 15-minute fit call you choose the role, are matched with a dedicated VA and onboarded, and your VA is running in days."
+   },
+   {
+    "q": "Do I need software before hiring a VA?",
+    "a": "Not necessarily. The fit call defines whether you need hands, software, or both; your VA works inside the CRM and tools you use, and CasperB2B can set up the CRM if you do not have one."
+   }
+  ]
+ },
+ "/casper-va/it-support": {
+  "keyword": "remote it support engineer",
+  "secondary": [
+   "dedicated remote it support",
+   "virtual it support for small business",
+   "remote help desk technician"
+  ],
+  "title": "Remote IT Support Engineer, Dedicated | CasperB2B",
+  "desc": "Hire a dedicated remote IT support engineer to troubleshoot software, manage cloud accounts and configure tools for your team. Book a fit call.",
+  "h1": "Hire a Dedicated Remote IT Support Engineer",
+  "intro": "A remote IT support engineer from Casper VA is a dedicated technician who fixes software problems, manages cloud account access and configures tools for your team remotely. On-site hardware setup is not included.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/casper-va/jr-dev": {
+  "keyword": "hire a junior developer",
+  "secondary": [
+   "remote junior developer",
+   "website maintenance developer",
+   "developer for routine updates and bug fixes"
+  ],
+  "title": "Hire a Junior Developer (Remote) | Casper VA | CasperB2B",
+  "desc": "Hire a junior developer, dedicated and remote, for routine updates, simple bug fixes, configuration changes and testing. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Junior Developer",
+  "intro": "When you hire a junior developer through Casper VA, you get a dedicated remote developer who handles routine updates, simple bug fixes, configuration changes and testing so larger projects keep moving.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/the-premium-on-execution"
+  }
+ },
+ "/casper-va/lead-gen": {
+  "keyword": "lead generation virtual assistant",
+  "secondary": [
+   "b2b list building service",
+   "linkedin prospecting assistant",
+   "lead research specialist"
+  ],
+  "title": "Lead Generation Virtual Assistant | CasperB2B",
+  "desc": "Hire a dedicated lead generation virtual assistant to build targeted prospect lists from LinkedIn, directories and web research. Book a fit call.",
+  "h1": "Hire a Dedicated Lead Generation Virtual Assistant",
+  "intro": "A lead generation virtual assistant from Casper VA is a dedicated remote researcher who builds targeted prospect lists and gathers contact details from LinkedIn, directories and the web to fuel your sales pipeline.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
+ "/casper-va/marketing-mgr": {
+  "keyword": "virtual marketing manager",
+  "secondary": [
+   "remote digital marketing manager",
+   "hire a marketing manager for a small business",
+   "outsourced marketing manager"
+  ],
+  "title": "Virtual Marketing Manager | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual marketing manager to own campaign strategy, budget allocation and performance analysis for your business. Book a fit call.",
+  "h1": "Hire a Dedicated Virtual Marketing Manager",
+  "intro": "A virtual marketing manager from Casper VA is a dedicated remote digital marketing manager who owns your campaign priorities, channels, budget allocation and performance analysis, keeping marketing tied to growth.",
+  "cluster": "va",
+  "next": {
+   "service": "/strategy/marketing",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/vanity-metrics"
+  }
+ },
+ "/casper-va/mid-dev": {
+  "keyword": "hire a mid-level developer",
+  "secondary": [
+   "dedicated remote developer",
+   "api integration developer",
+   "automation developer for small business"
+  ],
+  "title": "Hire a Mid-Level Developer (Remote) | CasperB2B",
+  "desc": "Hire a mid-level developer, dedicated and remote, to build features, API integrations and automations, and fix bugs. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Mid-Level Developer",
+  "intro": "When you hire a mid-level developer through Casper VA, you get a dedicated remote developer who builds the features, API integrations and automations your business runs on and fixes bugs along the way.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/custom-apps",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/the-premium-on-execution"
+  }
+ },
+ "/casper-va/network-eng": {
+  "keyword": "hire a cloud network engineer",
+  "secondary": [
+   "remote network engineer",
+   "vpn setup and management",
+   "cloud network security engineer"
+  ],
+  "title": "Hire a Cloud Network Engineer (Remote) | CasperB2B",
+  "desc": "Hire a cloud network engineer, dedicated and remote, to design, stabilize and secure your cloud networks and VPNs. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Cloud Network Engineer",
+  "intro": "When you hire a cloud network engineer through Casper VA, you get a dedicated remote engineer who designs, stabilizes and secures your cloud infrastructure, virtual networks and VPNs without an on-site visit.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/cloud-computing",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/secure-crm-data"
+  }
+ },
+ "/casper-va/perf-marketing": {
+  "keyword": "hire a ppc specialist",
+  "secondary": [
+   "performance marketing specialist",
+   "remote paid ads specialist",
+   "dedicated ad campaign manager"
+  ],
+  "title": "Hire a PPC Specialist: Dedicated Paid Ads VA | CasperB2B",
+  "desc": "Hire a PPC specialist dedicated to your business: ad creation, bid management and A/B testing focused on lower lead cost. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated PPC & Performance Marketing Specialist",
+  "intro": "When you hire a PPC specialist through Casper VA, you get a dedicated performance marketing specialist who builds ads, manages bids and runs A/B tests across platforms to track lead cost and cut wasted spend.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/is-marketing-worth-it-for-a-small-business"
+  }
+ },
+ "/casper-va/pm": {
+  "keyword": "virtual project manager",
+  "secondary": [
+   "remote project manager",
+   "dedicated project coordinator",
+   "sprint planning support"
+  ],
+  "title": "Virtual Project Manager | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated virtual project manager to run sprint planning, clear blockers and keep clients and distributed teams updated. Book a fit call.",
+  "h1": "Hire a Dedicated Virtual Project Manager",
+  "intro": "A virtual project manager from Casper VA is a dedicated remote coordinator who plans sprints, follows up on blockers and keeps people, timelines, deliverables and client updates on track across distributed teams.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/leadership-removing-friction"
+  }
+ },
+ "/casper-va/qa": {
+  "keyword": "hire a remote qa engineer",
+  "secondary": [
+   "dedicated qa tester",
+   "manual and automated testing",
+   "outsourced software testing"
+  ],
+  "title": "Hire a Remote QA Engineer | Casper VA | CasperB2B",
+  "desc": "Hire a remote QA engineer dedicated to your business for manual and automated testing and bug reports before changes go live. Book a fit call.",
+  "h1": "Hire a Dedicated Remote QA Engineer",
+  "intro": "When you hire a remote QA engineer through Casper VA, you get a dedicated tester who runs manual and automated tests and reports bugs before websites, apps or workflows reach your customers or staff.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/the-premium-on-execution"
+  }
+ },
+ "/casper-va/roles": {
+  "keyword": "virtual staffing services",
+  "secondary": [
+   "types of virtual assistants",
+   "remote staff for small business",
+   "hire remote employees through a staffing partner"
+  ],
+  "title": "Virtual Staffing Services: All Casper VA Roles | CasperB2B",
+  "desc": "Virtual staffing services for small businesses: compare 20+ dedicated remote roles from admin VAs to SDRs, marketers and developers. Book a fit call.",
+  "h1": "Virtual Staffing Services: Every Casper VA Role",
+  "intro": "Casper VA virtual staffing services give you a dedicated remote professional in admin, sales, finance, marketing, creative, IT or development, recruited and managed by CasperB2B for one flat monthly rate.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va",
+   "tool": "/quiz",
+   "article": "/casper-va/vs-agency"
+  }
+ },
+ "/casper-va/sdr": {
+  "keyword": "outsourced sdr",
+  "secondary": [
+   "hire a sales development representative",
+   "outsourced appointment setting",
+   "remote sdr for small business"
+  ],
+  "title": "Outsourced SDR: Dedicated Appointment Setter | CasperB2B",
+  "desc": "Hire an outsourced SDR who does cold outreach, qualifies inbound leads and books appointments on your calendar. Book a free 15-minute fit call.",
+  "h1": "Hire an Outsourced SDR (Sales Development Rep)",
+  "intro": "An outsourced SDR from Casper VA is a dedicated sales development rep who prospects with cold outreach, follows up and qualifies inbound leads, and books appointments directly onto your calendar.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/casper-va/sec-eng": {
+  "keyword": "hire a remote security engineer",
+  "secondary": [
+   "dedicated security engineer",
+   "remote threat monitoring",
+   "security compliance audit help"
+  ],
+  "title": "Hire a Remote Security Engineer (L2) | CasperB2B",
+  "desc": "Hire a remote security engineer dedicated to your business for threat monitoring, compliance audits and data protection. Book a fit call.",
+  "h1": "Hire a Dedicated Remote Security Engineer (L2)",
+  "intro": "When you hire a remote security engineer through Casper VA, you get a dedicated level-2 engineer who monitors your systems for threats, runs compliance audits and protects customer payments and private records.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/why-antivirus-isnt-enough"
+  }
+ },
+ "/casper-va/seo": {
+  "keyword": "seo virtual assistant",
+  "secondary": [
+   "hire a remote seo specialist",
+   "dedicated seo specialist",
+   "on-page seo assistant"
+  ],
+  "title": "SEO Virtual Assistant: Dedicated SEO Specialist | CasperB2B",
+  "desc": "Hire a dedicated SEO virtual assistant for keyword research, on-page optimization and technical SEO, working inside your business. Book a fit call.",
+  "h1": "Hire a Dedicated SEO Virtual Assistant",
+  "intro": "An SEO virtual assistant from Casper VA is a dedicated remote SEO specialist who handles keyword research, on-page optimization and technical SEO so customers can find you without relying only on paid ads.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/how-much-does-seo-cost"
+  }
+ },
+ "/casper-va/social-media": {
+  "keyword": "social media virtual assistant",
+  "secondary": [
+   "social media assistant for small business",
+   "remote social media manager",
+   "community management assistant"
+  ],
+  "title": "Social Media Virtual Assistant | Casper VA | CasperB2B",
+  "desc": "Hire a dedicated social media virtual assistant to schedule posts, manage comments and messages, and monitor trends. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Social Media Virtual Assistant",
+  "intro": "A social media virtual assistant from Casper VA is a dedicated remote professional who schedules your posts, manages comments and messages, and monitors trends so your channels stay active and consistent.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/social-media-growth",
+   "tool": "/tools/content-idea-generator",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/casper-va/tech-lead": {
+  "keyword": "hire a remote tech lead",
+  "secondary": [
+   "dedicated technical lead",
+   "software architecture oversight",
+   "code review lead"
+  ],
+  "title": "Hire a Remote Tech Lead | Casper VA | CasperB2B",
+  "desc": "Hire a remote tech lead dedicated to your projects for architecture design, code reviews and technical strategy on your software projects. Book a fit call.",
+  "h1": "Hire a Dedicated Remote Tech Lead",
+  "intro": "When you hire a remote tech lead through Casper VA, you get a dedicated senior engineer who designs the architecture, reviews code and sets technical strategy so new features and platforms are built right from the start.",
+  "cluster": "va",
+  "next": {
+   "service": "/services/custom-apps",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/the-premium-on-execution"
+  }
+ },
+ "/casper-va/virtual-assistant": {
+  "keyword": "virtual administrative assistant",
+  "secondary": [
+   "general virtual assistant",
+   "hire a virtual assistant for email and scheduling",
+   "remote admin assistant"
+  ],
+  "title": "Virtual Administrative Assistant for Hire | CasperB2B",
+  "desc": "Hire a dedicated virtual administrative assistant for email, scheduling, data entry and file organization. Book a free 15-minute fit call.",
+  "h1": "Hire a Dedicated Virtual Administrative Assistant",
+  "intro": "A virtual administrative assistant from Casper VA is one dedicated remote professional who handles your email, calendar, basic data entry and file organization, while CasperB2B handles HR, payroll and management.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va",
+   "tool": "/quiz",
+   "article": "/roi-of-dedicated-va"
+  }
+ },
+ "/casper-va/vs-agency": {
+  "keyword": "virtual assistant vs agency",
+  "secondary": [
+   "va vs in-house employee",
+   "dedicated va vs agency retainer",
+   "virtual assistant or hire an employee"
+  ],
+  "title": "Virtual Assistant vs Agency vs In-House Hire | CasperB2B",
+  "desc": "Virtual assistant vs agency vs in-house hire: compare cost structure, attention and management burden to choose the right model. Book a fit call.",
+  "h1": "Virtual Assistant vs. Agency vs. In-House Hire",
+  "intro": "A dedicated virtual assistant is best for day-to-day execution, an agency retainer is best for high-level strategy from a shared team, and an in-house hire is best when you need someone physically on site.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va/roles",
+   "tool": "/quiz",
+   "article": "/should-i-hire-an-agency-or-do-it-myself"
+  },
+  "faq": [
+   {
+    "q": "Is a virtual assistant cheaper than an agency?",
+    "a": "Usually for execution work: with a dedicated VA you pay one flat monthly rate for one person, while an agency retainer also covers shared account management and agency overhead. Agencies are the better fit when you need high-level strategy."
+   },
+   {
+    "q": "Should I hire a virtual assistant or an employee?",
+    "a": "Hire in-house when the role strictly requires physical presence. Otherwise a dedicated VA avoids payroll taxes, benefits, recruiting risk and HR work, while still working your hours and learning your business."
+   }
+  ]
+ },
+ "/caspercare": {
+  "keyword": "website maintenance services",
+  "secondary": [
+   "website care plan",
+   "website security monitoring",
+   "seo maintenance"
+  ],
+  "title": "CasperCare Website Maintenance Services | CasperB2B",
+  "desc": "CasperCare website maintenance services: plugin updates, backups, uptime and SEO monitoring, malware scans and patching. Book a fit call to pick a plan.",
+  "h1": "CasperCare Website Maintenance: Peace of Mind for Your Site",
+  "intro": "CasperCare is CasperB2B's website care plan: ongoing maintenance, SEO monitoring and security protection, so updates, broken links and malware are handled before they hurt your business. Pricing is a flat monthly rate quoted on a 15-minute fit call.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/blog/10-minute-website-audit"
+  },
+  "faq": [
+   {
+    "q": "What does a CasperCare website maintenance plan include?",
+    "a": "Plugin updates, cloud backups, uptime monitoring and speed checks; monthly technical SEO audits, broken-link fixes and Search Console monitoring; and malware scanning, firewall setup, brute-force protection and vulnerability patching."
+   },
+   {
+    "q": "How much does CasperCare cost?",
+    "a": "Pricing is a flat monthly rate quoted on a 15-minute fit call, based on which plan fits your site."
+   }
+  ]
+ },
+ "/contact": {
+  "keyword": "contact casperb2b",
+  "secondary": [
+   "casperb2b phone number",
+   "book a 15-minute fit call",
+   "casperb2b email"
+  ],
+  "title": "Contact CasperB2B: Request a 15-Minute Fit Call",
+  "desc": "Contact CasperB2B: call 1-207-222-7737, email contact@casperb2b.com, or send a message to request a 15-minute fit call. Jared reviews every request.",
+  "h1": "Request a 15-Minute Fit Call",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/quiz",
+   "article": "/the-49k-story"
+  }
+ },
+ "/cybersecurity-georgetown-ma": {
+  "keyword": "cybersecurity services georgetown ma",
+  "secondary": [
+   "massachusetts wisp compliance",
+   "ransomware protection north shore ma",
+   "it security for small business georgetown"
+  ],
+  "title": "Cybersecurity Services Georgetown MA | CasperB2B",
+  "desc": "Cybersecurity services in Georgetown MA: risk reviews, MFA and email security, immutable backups and Massachusetts WISP help. Book a free fit call.",
+  "h1": "Cybersecurity Services Georgetown MA",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/massachusetts-cybersecurity-guide"
+  }
+ },
+ "/cybersecurity-hesitancy": {
+  "keyword": "is cybersecurity worth it for a small business",
+  "secondary": [
+   "cost of downtime for a small business",
+   "why small businesses skip cybersecurity",
+   "cybersecurity roi for small business"
+  ],
+  "title": "Is Cybersecurity Worth It for a Small Business? | CasperB2B",
+  "desc": "Is cybersecurity worth it for a small business? See why owners hesitate, how automated attacks work, and what downtime really costs. Book a free fit call.",
+  "h1": "Is Cybersecurity Worth It? Why Small Businesses Hesitate",
+  "intro": "Yes. For most small businesses, cybersecurity is worth it because a single day of downtime from ransomware or a breach can cost more than ongoing protection, and automated attacks hit businesses of every size.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/cost-of-data-breach"
+  },
+  "faq": [
+   {
+    "q": "Is cybersecurity worth the cost for a small business?",
+    "a": "For most small businesses, yes. Lost labor and lost revenue from even a single day of downtime add up quickly, before counting recovery fees, legal costs, fines or reputation damage."
+   },
+   {
+    "q": "Do hackers really target small local businesses?",
+    "a": "Not by hand. Modern attacks are automated: bots scan the internet for unpatched systems, open ports and weak passwords, and attack whatever they find, whatever the size of the business."
+   },
+   {
+    "q": "How do I calculate the cost of downtime?",
+    "a": "Multiply the number of employees by their hourly labor cost and by the hours you are down, then add the revenue you would normally earn in those hours. Recovery fees, fines and ransom are on top of that."
+   }
+  ]
+ },
+ "/do-i-need-an-it-person": {
+  "keyword": "do i need an it person for my small business",
+  "secondary": [
+   "managed it vs in-house it",
+   "outsourced it for small business",
+   "how much does managed it cost"
+  ],
+  "title": "Do I Need an IT Person for My Small Business? | CasperB2B",
+  "desc": "Do I need an IT person for my small business? Usually not full-time. See what managed IT covers: security, backups, help desk. Book a fit call.",
+  "h1": "Do I need an IT person for my small business?",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/keep-my-business-safe-from-hackers"
+  }
+ },
+ "/done-for-you": {
+  "keyword": "done for you marketing services",
+  "secondary": [
+   "done for you crm setup",
+   "done for you website and seo",
+   "marketing implementation services"
+  ],
+  "title": "Done-For-You Marketing Services | CasperB2B",
+  "desc": "Done for you marketing services: CRM setup, websites, local SEO, automation, AI chatbots and security, built and managed for you. Book a fit call.",
+  "h1": "Done-For-You Marketing Services: We Don't Just Advise. We Execute.",
+  "intro": "CasperB2B's done-for-you services mean we build, configure and manage the work for you: CRM and automation setup, websites and landing pages, local SEO, AI chatbots, and cybersecurity and IT basics.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services",
+   "tool": "/tools/bundle-builder",
+   "article": "/the-premium-on-execution"
+  },
+  "faq": [
+   {
+    "q": "What does done-for-you include?",
+    "a": "CasperB2B builds and configures your CRM and automations, website and landing pages, local SEO, AI chatbots and core security controls, instead of handing you advice to carry out yourself."
+   },
+   {
+    "q": "How do I get started?",
+    "a": "Book a 15-minute fit call; pricing is a flat monthly rate quoted on that call, with a clear written scope before work begins."
+   }
+  ]
+ },
+ "/georgetown-ma": {
+  "keyword": "digital marketing georgetown ma",
+  "secondary": [
+   "marketing agency georgetown ma",
+   "georgetown ma small business marketing",
+   "north shore digital marketing"
+  ],
+  "title": "Digital Marketing in Georgetown MA | CasperB2B",
+  "desc": "Digital marketing in Georgetown MA: websites, local SEO, ads, automation and IT from a Georgetown-raised founder. Book a free 15-minute fit call.",
+  "h1": "Digital Marketing, Web Design, SEO & IT in Georgetown MA",
+  "cluster": "marketing",
+  "next": {
+   "service": "/seo-services-georgetown-ma",
+   "tool": "/tools/website-grader",
+   "article": "/blog/spotlight-georgetown-ma"
+  }
+ },
+ "/get-my-business-on-google": {
+  "keyword": "how to get my business on google maps",
+  "secondary": [
+   "how to get my business on google",
+   "google business profile setup",
+   "rank in the google map pack"
+  ],
+  "title": "How to Get Your Business on Google Maps | CasperB2B",
+  "desc": "How to get your business on Google Maps: claim and verify your Google Business Profile, fill out every service, and earn reviews. Book a free fit call.",
+  "h1": "How do I get my business on Google Maps?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/fix-google-maps-ranking"
+  }
+ },
+ "/glossary": {
+  "keyword": "local seo glossary",
+  "secondary": [
+   "crm terms glossary",
+   "digital marketing terms for small business",
+   "what is nap consistency"
+  ],
+  "title": "Local SEO & CRM Glossary: Key Terms Explained | CasperB2B",
+  "desc": "Local SEO glossary for small business owners: plain-English definitions of NAP, citations, the Local Pack, CRM, pipelines, funnels and automation.",
+  "h1": "Local SEO & CRM Glossary",
+  "intro": "A plain-English glossary of local SEO and CRM terms — from NAP consistency, citations and the Google Local Pack to pipelines, drip campaigns and workflow automation — for small business owners.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/strategy/seo"
+  },
+  "faq": [
+   {
+    "q": "What is NAP consistency in local SEO?",
+    "a": "NAP stands for Name, Address and Phone number. NAP consistency means those three details are identical on your website and every online directory, which helps search engines trust your business information."
+   },
+   {
+    "q": "What is the difference between a sales funnel and a pipeline?",
+    "a": "A pipeline tracks the seller's actions as leads move through stages from first contact to closed deal. A funnel tracks the buyer's journey toward a purchase."
+   }
+  ]
+ },
+ "/how-much-does-a-website-cost": {
+  "keyword": "how much does a website cost for a small business",
+  "secondary": [
+   "small business website cost",
+   "website design cost",
+   "website maintenance cost per month"
+  ],
+  "title": "How Much Does a Small Business Website Cost? | CasperB2B",
+  "desc": "How much does a website cost for a small business? Typical market ranges for DIY, freelancer and lead-generation sites. Book a free fit call.",
+  "h1": "How much does a website cost for a small business?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/blog/roi-website-redesign"
+  }
+ },
+ "/how-much-does-seo-cost": {
+  "keyword": "how much does seo cost for a small business",
+  "secondary": [
+   "local seo cost",
+   "seo pricing for small business",
+   "monthly seo cost"
+  ],
+  "title": "How Much Does SEO Cost for a Small Business? | CasperB2B",
+  "desc": "How much does SEO cost for a small business? Typical local SEO market ranges, what the monthly fee pays for, and how to spot scams. Book a free fit call.",
+  "h1": "How much does SEO cost for a small business?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/strategy/seo"
+  }
+ },
+ "/how-to-beat-my-competitors": {
+  "keyword": "how to beat local competitors online",
+  "secondary": [
+   "how to outrank competitors on google",
+   "local competitor analysis",
+   "speed to lead"
+  ],
+  "title": "How to Beat Local Competitors Online | CasperB2B",
+  "desc": "How to beat local competitors online: win the review count, take more of page one, and respond to leads first. Book a free 15-minute fit call.",
+  "h1": "How do I beat my competitors online?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/compare-my-business",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/how-to-fill-my-restaurant-on-weeknights": {
+  "keyword": "how to fill a restaurant on slow nights",
+  "secondary": [
+   "restaurant marketing ideas for slow nights",
+   "how to get more restaurant customers",
+   "restaurant sms marketing"
+  ],
+  "title": "How to Fill Your Restaurant on Slow Weeknights | CasperB2B",
+  "desc": "How to fill a restaurant on slow nights: own \"near me\" searches, build a customer text and email list, and protect your rating. Book a free fit call.",
+  "h1": "How do I fill my restaurant on weeknights?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/content-idea-generator",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/how-to-get-more-5-star-reviews": {
+  "keyword": "how to get more google reviews",
+  "secondary": [
+   "how to get more 5-star reviews",
+   "how to ask customers for reviews",
+   "review request text message"
+  ],
+  "title": "How to Get More Google Reviews (5-Star) | CasperB2B",
+  "desc": "How to get more Google reviews: text every customer a one-click link right after the job, automate the ask, and reply to every one. Book a free fit call.",
+  "h1": "How do I get more 5-star Google reviews for my business?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/reputation-management",
+   "tool": "/tools/compare-my-business",
+   "article": "/problems/reviews-stagnant"
+  }
+ },
+ "/how-to-get-more-buyers-as-a-real-estate-agent": {
+  "keyword": "how to get more real estate clients",
+  "secondary": [
+   "how to get more buyers as a real estate agent",
+   "real estate lead generation",
+   "how to get more listings"
+  ],
+  "title": "How to Get More Real Estate Clients | CasperB2B",
+  "desc": "How to get more real estate clients: win hyper-local search, build your own Google reviews, and automate lead follow-up. Book a free 15-minute fit call.",
+  "h1": "How do I get more buyers and sellers as a real estate agent?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/website-grader",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/how-to-get-more-clients-for-my-law-firm": {
+  "keyword": "how to get more clients for a law firm",
+  "secondary": [
+   "law firm marketing",
+   "how to get more legal clients",
+   "lawyer local seo"
+  ],
+  "title": "How to Get More Clients for a Law Firm | CasperB2B",
+  "desc": "How to get more clients for a law firm: rank for specific legal problems, build trust with reviews, and respond to inquiries first. Book a free fit call.",
+  "h1": "How do I get more clients for my law firm?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/website-grader",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/how-to-get-more-customers": {
+  "keyword": "how to get more customers for a small business",
+  "secondary": [
+   "how to get more local customers",
+   "get more customers online",
+   "small business customer acquisition"
+  ],
+  "title": "How to Get More Customers for a Small Business | CasperB2B",
+  "desc": "How to get more customers for a small business: show up in search, win the Google map, and get called back. A plain-English plan. Book a free fit call.",
+  "h1": "How do I get more customers for my small business?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/website-grader",
+   "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/how-to-get-more-customers-for-my-hvac-business": {
+  "keyword": "how to get more hvac customers",
+  "secondary": [
+   "hvac lead generation",
+   "how to get more hvac leads",
+   "hvac local seo"
+  ],
+  "title": "How to Get More HVAC Customers | CasperB2B",
+  "desc": "How to get more HVAC customers: rank for emergency repair searches, win the map pack, and never lose a missed call. Book a free 15-minute fit call.",
+  "h1": "How do I get more customers for my HVAC business?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/how-to-get-more-patients-for-my-dental-practice": {
+  "keyword": "how to get more dental patients",
+  "secondary": [
+   "dental patient acquisition",
+   "how to attract new dental patients",
+   "dental practice reviews"
+  ],
+  "title": "How to Get More Dental Patients | CasperB2B",
+  "desc": "How to get more dental patients: rank for implants and cosmetic treatments, build your Google reviews, and let patients book online. Book a free fit call.",
+  "h1": "How do I get more patients for my dental practice?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/website-grader",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/in-defense-of-holding-grudges": {
+  "keyword": "is it ok to hold a grudge",
+  "secondary": [
+   "in defense of holding grudges",
+   "forgiveness vs access",
+   "holding a grudge in business"
+  ],
+  "title": "Is It OK to Hold a Grudge? In Defense of Grudges | CasperB2B",
+  "desc": "Is it OK to hold a grudge? Jared Casper on the difference between bitterness and awareness, and why forgiveness doesn't mean giving back access.",
+  "h1": "In Defense of Holding Grudges",
+  "intro": "Holding a grudge can be healthy when it means remembering what happened and refusing to give someone the same access again — without letting anger control you. Forgiveness is personal; access is practical.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services",
+   "tool": "/tools/motivation-quiz",
+   "article": "/the-49k-story"
+  }
+ },
+ "/is-marketing-worth-it-for-a-small-business": {
+  "keyword": "is marketing worth it for a small business",
+  "secondary": [
+   "does marketing work for small business",
+   "small business marketing roi",
+   "brand awareness vs lead generation"
+  ],
+  "title": "Is Marketing Worth It for a Small Business? | CasperB2B",
+  "desc": "Is marketing worth it for a small business? Only if you can measure the return. Learn to tell real lead generation from vanity metrics. Book a fit call.",
+  "h1": "Is marketing worth it for a small business?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/vanity-metrics"
+  }
+ },
+ "/is-my-business-too-small-to-hack": {
+  "keyword": "is my small business too small to get hacked",
+  "secondary": [
+   "do hackers target small businesses",
+   "why hackers target small businesses",
+   "small business cyber attacks"
+  ],
+  "title": "Is My Small Business Too Small to Get Hacked? | CasperB2B",
+  "desc": "Is my small business too small to get hacked? No. Automated attacks scan every business for weak passwords and missing backups. Book a free fit call.",
+  "h1": "Is my small business too small to get hacked?",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/keep-my-business-safe-from-hackers"
+  }
+ },
+ "/keep-my-business-safe-from-hackers": {
+  "keyword": "how to protect my small business from hackers",
+  "secondary": [
+   "small business cybersecurity tips",
+   "immutable backups",
+   "edr for small business"
+  ],
+  "title": "How to Protect Your Small Business From Hackers | CasperB2B",
+  "desc": "How to protect your small business from hackers: EDR that stops attacks, backups that can't be deleted, and staff training. Book a free 15-minute fit call.",
+  "h1": "How do I keep my business safe from hackers?",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/why-antivirus-isnt-enough"
+  }
+ },
+ "/leadership-removing-friction": {
+  "keyword": "removing friction in business",
+  "secondary": [
+   "leadership removing friction",
+   "job of a ceo",
+   "remove bottlenecks in your business"
+  ],
+  "title": "Removing Friction in Business: A CEO's Real Job | CasperB2B",
+  "desc": "Removing friction in business is a leader's real job. Spot the bottlenecks and ask 3 weekly questions that clear them. Book a free 15-minute fit call.",
+  "h1": "Leadership is About Removing Friction: The Real Job of a CEO",
+  "intro": "The real job of a CEO is removing friction — anything that makes it harder for your team to do great work or for customers to buy. Find it by asking what the dumbest process is, where you rely on willpower instead of systems, and whether you are the bottleneck.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/the-cost-of-inaction"
+  },
+  "faq": [
+   {
+    "q": "What does friction mean in business?",
+    "a": "Friction is anything that makes it harder for your team to do their best work or for customers to give you money — clunky software, slow approvals, buried pricing, unnecessary meetings."
+   }
+  ]
+ },
+ "/make-my-phone-ring": {
+  "keyword": "how to get more phone calls for my business",
+  "secondary": [
+   "make my phone ring",
+   "how to get more calls from google",
+   "missed call text back"
+  ],
+  "title": "How to Get More Phone Calls for Your Business | CasperB2B",
+  "desc": "How to get more phone calls for your business: rank on Google, out-review competitors, make your number one tap, and catch missed calls. Book a fit call.",
+  "h1": "How do I make my phone ring more?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/managed-it-georgetown-ma": {
+  "keyword": "managed it services georgetown ma",
+  "secondary": [
+   "it support georgetown ma",
+   "outsourced it department north shore",
+   "help desk support for small business"
+  ],
+  "title": "Managed IT Services Georgetown MA | CasperB2B",
+  "desc": "Managed IT services in Georgetown MA: proactive monitoring, local help desk, Microsoft 365 and vendor management for a flat monthly rate. Book a call.",
+  "h1": "Managed IT Services Georgetown MA",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/mark-casper": {
+  "keyword": "mark casper",
+  "secondary": [
+   "mark casper casperb2b",
+   "casperb2b co-founder",
+   "mark casper sales training"
+  ],
+  "title": "Mark Casper, Co-Founder of CasperB2B | CasperB2B",
+  "desc": "Mark Casper is Co-Founder of CasperB2B. His automotive sales background shaped its operator-first approach to follow-up. Book a fit call.",
+  "h1": "Mark Casper",
+  "cluster": "about",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/quiz",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/motivation-drivers": {
+  "keyword": "mice motivation framework",
+  "secondary": [
+   "rewards ideology coercion ego",
+   "what motivates people in business",
+   "marketing to different motivations"
+  ],
+  "title": "MICE Motivation Framework for Business | CasperB2B",
+  "desc": "The MICE motivation framework for business: how rewards, ideology, coercion and ego drive buyers and teams. Take the free motivation quiz.",
+  "h1": "What Motivates People? Rewards, Ideology, Coercion or Ego",
+  "intro": "People act for four main reasons — rewards, ideology, coercion (pressure) and ego — adapted from the intelligence world's MICE framework. Most people mix all four but have one dominant driver, and your marketing converts better when it speaks to it.",
+  "cluster": "resources",
+  "next": {
+   "service": "/strategy",
+   "tool": "/tools/motivation-quiz",
+   "article": "/vanity-metrics"
+  },
+  "faq": [
+   {
+    "q": "What does MICE stand for?",
+    "a": "Money, Ideology, Coercion (or Compromise) and Ego — a framework from the intelligence world for why people take major decisions. In business it maps to rewards, belief, pressure and pride."
+   },
+   {
+    "q": "How do I market to different motivations?",
+    "a": "Show reward-driven buyers the results, ideology-driven buyers the mission, pressure-driven buyers the cost of waiting, and ego-driven buyers the standard they can reach."
+   }
+  ]
+ },
+ "/news": {
+  "keyword": "casperb2b news",
+  "secondary": [
+   "casperb2b press releases",
+   "casperb2b announcements",
+   "casperb2b company updates"
+  ],
+  "title": "CasperB2B News & Press Announcements | CasperB2B",
+  "desc": "CasperB2B news: company announcements, new services, free tools and founder articles from Jared Casper. Read the latest or contact us for press.",
+  "h1": "CasperB2B News & Press",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/press-kit"
+  }
+ },
+ "/newsletter": {
+  "keyword": "small business marketing newsletter",
+  "secondary": [
+   "local seo newsletter",
+   "casperb2b newsletter",
+   "small business growth tips"
+  ],
+  "title": "Small Business Marketing Newsletter | CasperB2B",
+  "desc": "A small business marketing newsletter with practical tips on local SEO, website conversion, follow-up automation and security. Subscribe free.",
+  "h1": "Small Business Marketing Newsletter for Serious Owners",
+  "intro": "The CasperB2B Growth Newsletter is a free email for small business owners with practical advice on local SEO, website conversion, follow-up automation and protecting the business.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog"
+  }
+ },
+ "/niches": {
+  "keyword": "industry specific digital marketing",
+  "secondary": [
+   "digital marketing by industry",
+   "marketing agency for local businesses",
+   "industries we serve"
+  ],
+  "title": "Industry-Specific Digital Marketing | CasperB2B",
+  "desc": "Industry-specific digital marketing for home services, healthcare, legal, real estate and more. Pick your industry and book a 15-minute fit call.",
+  "h1": "Industry-Specific Digital Marketing for Local Businesses",
+  "cluster": "customers",
+  "next": {
+   "service": "/services",
+   "tool": "/quiz",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/niches/beauty-salons": {
+  "keyword": "salon marketing services",
+  "secondary": [
+   "spa marketing",
+   "beauty salon digital marketing",
+   "salon website design"
+  ],
+  "title": "Salon Marketing Services for Salons & Spas | CasperB2B",
+  "desc": "Salon marketing services: Google Business Profile, local SEO, social content, online booking and rebooking campaigns. Book a free 15-minute fit call.",
+  "h1": "Salon Marketing Services for Beauty Salons & Spas",
+  "intro": "CasperB2B provides salon marketing services for beauty salons and spas: Google Business Profile optimization, local SEO, social content, online booking with reminders, review requests and campaigns that bring lapsed clients back.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/social-media-growth",
+   "tool": "/tools/content-idea-generator",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/niches/car-dealerships": {
+  "keyword": "car dealership marketing agency",
+  "secondary": [
+   "automotive digital marketing",
+   "dealership seo",
+   "car dealer lead generation"
+  ],
+  "title": "Car Dealership Marketing Agency | CasperB2B",
+  "desc": "Car dealership marketing agency for inventory-page SEO, Google Ads, fast lead response and review automation. Book a free 15-minute fit call.",
+  "h1": "Car Dealership Marketing That Wins the Appointment",
+  "intro": "CasperB2B is a car dealership marketing agency for franchise and independent dealers: inventory-page SEO, Google Ads for new and pre-owned searches, lead response within minutes, post-sale review requests and nurture for shoppers who are not ready yet.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/niches/construction-companies": {
+  "keyword": "construction marketing agency",
+  "secondary": [
+   "contractor marketing",
+   "construction company website design",
+   "general contractor seo"
+  ],
+  "title": "Construction Marketing Agency for Contractors | CasperB2B",
+  "desc": "Construction marketing agency for contractors: portfolio websites, local SEO, Google Ads and automated quote follow-up. Book a 15-minute fit call.",
+  "h1": "Construction Marketing for Contractors and Builders",
+  "intro": "CasperB2B is a construction marketing agency that builds portfolio websites, local SEO and service-area pages, Google Ads for high-value projects, and automated follow-up on quotes so construction companies win more bids beyond referrals.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/blog/ai-workflows-contractors"
+  }
+ },
+ "/niches/consulting-firms": {
+  "keyword": "marketing for consulting firms",
+  "secondary": [
+   "consulting firm website design",
+   "consultant lead generation",
+   "thought leadership content"
+  ],
+  "title": "Marketing for Consulting Firms | CasperB2B",
+  "desc": "Marketing for consulting firms: clear positioning, authority websites, content and SEO, LinkedIn and proposal follow-up. Book a 15-minute fit call.",
+  "h1": "Marketing for Consulting Firms That Want Inbound Clients",
+  "intro": "CasperB2B helps consulting firms move from referral-dependent to inbound with clear positioning, an authority-focused website, content and SEO, LinkedIn strategy, lead magnets and automated proposal follow-up.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/content-marketing",
+   "tool": "/tools/content-idea-generator",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/niches/dental-clinics": {
+  "keyword": "dental marketing services",
+  "secondary": [
+   "dental seo",
+   "dentist marketing agency",
+   "dental practice website design"
+  ],
+  "title": "Dental Marketing Services for Practices | CasperB2B",
+  "desc": "Dental marketing services: local SEO, Google Business Profile, review requests, reminders and recall campaigns. Book a 15-minute fit call.",
+  "h1": "Dental Marketing Services for Dental Clinics",
+  "intro": "CasperB2B provides dental marketing services for single and multi-location practices: local SEO for dentist searches, Google Business Profile management, automated review requests, appointment reminders and campaigns that re-engage lapsed patients.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/compare-my-business",
+   "article": "/how-to-get-more-patients-for-my-dental-practice"
+  }
+ },
+ "/niches/electricians": {
+  "keyword": "electrician marketing",
+  "secondary": [
+   "seo for electricians",
+   "electrical contractor marketing",
+   "electrician website design"
+  ],
+  "title": "Electrician Marketing & SEO | CasperB2B",
+  "desc": "Electrician marketing: local SEO, service-area pages, missed-call text-back, quote follow-up and Google Ads for panel upgrades. Book a 15-minute fit call.",
+  "h1": "Electrician Marketing That Keeps the Phone Ringing",
+  "intro": "CasperB2B handles electrician marketing end to end: local SEO and service-area pages for nearby towns, missed-call text-back while you are on a job, automated quote follow-up, review requests and Google Ads for high-value work like panel upgrades and EV chargers.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/niches/event-planners": {
+  "keyword": "event planner marketing",
+  "secondary": [
+   "wedding planner marketing",
+   "event planning website design",
+   "event planner seo"
+  ],
+  "title": "Event Planner Marketing & Websites | CasperB2B",
+  "desc": "Event planner marketing: portfolio websites, local SEO for wedding and event searches, consultation booking and off-season email. Book a fit call.",
+  "h1": "Event Planner Marketing That Books Consultations",
+  "intro": "CasperB2B helps event and wedding planners turn admirers into consultation requests with portfolio-forward websites, local SEO, consultation booking with automated follow-up, review requests and off-season email campaigns.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/email-automation-campaigns"
+  }
+ },
+ "/niches/financial-advisors": {
+  "keyword": "financial advisor marketing agency",
+  "secondary": [
+   "seo for financial advisors",
+   "wealth management marketing",
+   "financial advisor lead generation"
+  ],
+  "title": "Financial Advisor Marketing Agency | CasperB2B",
+  "desc": "Financial advisor marketing agency: compliance-reviewed websites, local SEO, lead magnets and email nurture. Book a free 15-minute fit call.",
+  "h1": "Financial Advisor Marketing Built on Trust",
+  "intro": "CasperB2B is a financial advisor marketing agency that builds authority websites, local SEO for wealth management and planning searches, lead magnets, long-term email nurture and automated meeting scheduling, with all public content reviewed by your compliance officer.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/niches/fitness-centers-gyms": {
+  "keyword": "gym marketing agency",
+  "secondary": [
+   "fitness marketing",
+   "gym seo",
+   "gym membership marketing"
+  ],
+  "title": "Gym Marketing Agency for Fitness Centers | CasperB2B",
+  "desc": "Gym marketing agency for local SEO, free-trial funnels, member re-engagement and seasonal sign-up campaigns. Book a free 15-minute fit call.",
+  "h1": "Gym Marketing for Fitness Centers & Gyms",
+  "intro": "CasperB2B is a gym marketing agency that helps fitness centers win new members and keep existing ones: local SEO, free-trial lead capture with automated nurture, member re-engagement campaigns, social content and seasonal sign-up promotions.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/social-media-growth",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/email-automation-campaigns"
+  }
+ },
+ "/niches/hvac-home-services": {
+  "keyword": "hvac marketing agency",
+  "secondary": [
+   "hvac seo",
+   "home service marketing",
+   "hvac lead generation"
+  ],
+  "title": "HVAC Marketing Agency for Home Service Companies | CasperB2B",
+  "desc": "HVAC marketing agency: local SEO, Google Local Services Ads, missed-call text-back, review requests and quote follow-up. Book a free 15-minute fit call.",
+  "h1": "HVAC Marketing That Turns Searches and Missed Calls Into Booked Jobs",
+  "intro": "CasperB2B is an HVAC marketing agency for HVAC and home service companies: local SEO and service-area pages, Google Local Services and Search Ads, missed-call text-back, review requests after each job and automated quote follow-up.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/how-to-get-more-customers-for-my-hvac-business"
+  }
+ },
+ "/niches/insurance-agencies": {
+  "keyword": "insurance agency marketing",
+  "secondary": [
+   "insurance agent seo",
+   "insurance lead generation",
+   "independent insurance agency website"
+  ],
+  "title": "Insurance Agency Marketing for Agents | CasperB2B",
+  "desc": "Insurance agency marketing: local SEO, quote-request pages with follow-up, renewal and cross-sell email, and referral requests. Book a 15-minute fit call.",
+  "h1": "Insurance Agency Marketing for Independent Agents",
+  "intro": "CasperB2B helps independent insurance agencies compete with direct carriers: a website that explains local-agent value, local SEO, quote-request pages with automated follow-up, renewal and cross-sell email, and referral requests for happy clients.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/compare-my-business",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/niches/it-services": {
+  "keyword": "msp marketing agency",
+  "secondary": [
+   "it services marketing",
+   "managed service provider seo",
+   "it company lead generation"
+  ],
+  "title": "MSP Marketing Agency for IT Services Companies | CasperB2B",
+  "desc": "MSP marketing agency for IT services firms: jargon-free websites, local SEO, nurture email and case studies. Book a free 15-minute fit call.",
+  "h1": "MSP Marketing for IT Services Companies",
+  "intro": "CasperB2B is an MSP marketing agency for IT services companies: jargon-free websites for non-technical buyers, local SEO for IT support and cybersecurity searches, nurture email for long sales cycles, case studies and Google Ads.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/content-marketing",
+   "tool": "/tools/keyword-research",
+   "article": "/strategy/sales"
+  }
+ },
+ "/niches/legal-firms": {
+  "keyword": "law firm marketing agency",
+  "secondary": [
+   "attorney seo",
+   "legal marketing services",
+   "law firm website design"
+  ],
+  "title": "Law Firm Marketing Agency | CasperB2B",
+  "desc": "Law firm marketing agency for practice-area SEO, Google Business Profile, compliant legal PPC and consultation booking. Book a 15-minute fit call.",
+  "h1": "Law Firm Marketing for Solo Attorneys and Growing Firms",
+  "intro": "CasperB2B is a law firm marketing agency that builds practice-area landing pages, local SEO for attorney searches, Google Business Profile optimization, compliant legal PPC and clear consultation booking paths, without guaranteeing outcomes.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/seo",
+   "tool": "/tools/keyword-research",
+   "article": "/how-to-get-more-clients-for-my-law-firm"
+  }
+ },
+ "/niches/medical-spas": {
+  "keyword": "med spa marketing",
+  "secondary": [
+   "medical spa seo",
+   "aesthetics marketing",
+   "med spa website design"
+  ],
+  "title": "Med Spa Marketing & Websites | CasperB2B",
+  "desc": "Med spa marketing: premium websites, treatment-page SEO, compliant ads for injectables, rebooking reminders and missed-call text-back. Book a fit call.",
+  "h1": "Med Spa Marketing for Medical Spas",
+  "intro": "CasperB2B provides med spa marketing: premium websites with before/after galleries, SEO pages for each core treatment, compliant ads for injectables, rebooking reminders, membership campaigns and missed-call text-back.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/niches/pest-control": {
+  "keyword": "pest control marketing",
+  "secondary": [
+   "pest control seo",
+   "pest control lead generation",
+   "pest control google ads"
+  ],
+  "title": "Pest Control Marketing & SEO | CasperB2B",
+  "desc": "Pest control marketing: Map Pack SEO, Local Services Ads, missed-call text-back, recurring-plan campaigns and review requests. Book a 15-minute fit call.",
+  "h1": "Pest Control Marketing That Captures Urgent Calls",
+  "intro": "CasperB2B handles pest control marketing: local SEO and pest-specific service pages, Google Local Services and Search Ads, missed-call text-back for emergency calls, recurring-plan campaigns and review requests after each service.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/make-my-phone-ring"
+  }
+ },
+ "/niches/real-estate-agents": {
+  "keyword": "real estate agent marketing services",
+  "secondary": [
+   "realtor seo",
+   "realtor website design",
+   "real estate lead follow-up"
+  ],
+  "title": "Real Estate Agent Marketing Services | CasperB2B",
+  "desc": "Real estate agent marketing services: IDX-ready websites, local SEO, CRM pipeline and automated lead follow-up. Book a free 15-minute fit call.",
+  "h1": "Real Estate Agent Marketing Services for Realtors",
+  "intro": "CasperB2B provides real estate agent marketing services: IDX-ready websites with lead capture, local SEO for your neighborhoods, Google Business Profile optimization, a CRM pipeline and automated text and email follow-up so leads do not go cold.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/how-to-get-more-buyers-as-a-real-estate-agent"
+  }
+ },
+ "/niches/real-estate-development": {
+  "keyword": "real estate development marketing",
+  "secondary": [
+   "new development marketing",
+   "pre-construction marketing",
+   "real estate project launch marketing"
+  ],
+  "title": "Real Estate Development Marketing | CasperB2B",
+  "desc": "Real estate development marketing: project branding, launch landing pages, Google and Meta ads, waitlist nurture and buyer CRM. Book a 15-minute fit call.",
+  "h1": "Real Estate Development Marketing for Project Launches",
+  "intro": "CasperB2B markets real estate development projects before and during launch: project branding, landing pages with renderings and waitlist capture, Google and Meta ads, investor and buyer email nurture, and a CRM pipeline to track every lead.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/social-media-ads",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/niches/restaurants": {
+  "keyword": "restaurant marketing agency",
+  "secondary": [
+   "restaurant seo",
+   "restaurant social media marketing",
+   "restaurant google business profile"
+  ],
+  "title": "Restaurant Marketing Agency | CasperB2B",
+  "desc": "Restaurant marketing agency for Google Business Profile, local SEO, social content, reviews and email/SMS promotions. Book a 15-minute fit call.",
+  "h1": "Restaurant Marketing That Fills Tables",
+  "intro": "CasperB2B is a restaurant marketing agency that handles Google Business Profile photos and menus, local SEO, social content, review requests and responses, email and SMS promotions, and websites with ordering or reservations.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/social-media-growth",
+   "tool": "/tools/content-idea-generator",
+   "article": "/how-to-fill-my-restaurant-on-weeknights"
+  }
+ },
+ "/niches/roofing-companies": {
+  "keyword": "roofing marketing agency",
+  "secondary": [
+   "roofing seo",
+   "roofing lead generation",
+   "roofer google ads"
+  ],
+  "title": "Roofing Marketing Agency | CasperB2B",
+  "desc": "Roofing marketing agency that builds your own exclusive leads with local SEO, Google Ads, text-back and quote follow-up. Book a 15-minute fit call.",
+  "h1": "Roofing Marketing That Generates Your Own Leads",
+  "intro": "CasperB2B is a roofing marketing agency that replaces shared lead platforms with your own exclusive leads: local SEO and service-area pages, roof-replacement Google Ads, missed-call text-back for storm calls, quote follow-up and review requests.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/roi-calculator",
+   "article": "/blog/high-converting-landing-page"
+  }
+ },
+ "/onboarding": {
+  "keyword": "marketing agency onboarding process",
+  "secondary": [
+   "what happens after signing with an agency",
+   "casperb2b onboarding",
+   "client onboarding timeline"
+  ],
+  "title": "Marketing Agency Onboarding Process | CasperB2B",
+  "desc": "Our marketing agency onboarding process, day by day: access and kickoff, setup, drafts and approval, then launch with weekly updates. Book a fit call.",
+  "h1": "What Happens After You Sign? Our Onboarding Process",
+  "intro": "After you sign, CasperB2B onboarding runs on a set timeline: access and welcome on day 1, a kickoff call on days 2-3, system setup on days 4-7, drafts and approval on days 8-14, and launch with weekly updates from day 15.",
+  "cluster": "about",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/quiz",
+   "article": "/our-process"
+  },
+  "faq": [
+   {
+    "q": "How long does onboarding take?",
+    "a": "Systems typically launch from day 15, after setup on days 4-7 and drafts, feedback and approval on days 8-14."
+   },
+   {
+    "q": "How will I get updates after launch?",
+    "a": "You get weekly status updates and a monthly strategy review, so you always know what is being worked on and who is responsible."
+   }
+  ]
+ },
+ "/our-process": {
+  "keyword": "marketing agency process",
+  "secondary": [
+   "how casperb2b works",
+   "digital marketing process steps",
+   "marketing audit and strategy process"
+  ],
+  "title": "Our Marketing Agency Process: How We Work | CasperB2B",
+  "desc": "Our marketing agency process in four steps: audit, strategy blueprint, execution and launch, then optimization with monthly reports. Book a fit call.",
+  "h1": "How We Work: Our 4-Step Marketing Agency Process",
+  "intro": "CasperB2B works in four steps: a discovery audit of your website, local SEO and systems; a written strategy and blueprint; execution and launch; then ongoing optimization with monthly reporting and quarterly reviews.",
+  "cluster": "about",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/onboarding"
+  },
+  "faq": [
+   {
+    "q": "What happens in the first step?",
+    "a": "We start with a discovery audit of your website, local SEO signals, conversion paths and digital systems to find where you are losing customers."
+   },
+   {
+    "q": "Do you lock clients into long-term contracts?",
+    "a": "No. Jared Casper says CasperB2B does not believe in long-term lock-ins; the scope is agreed in writing before work begins."
+   },
+   {
+    "q": "How do I know what you are working on?",
+    "a": "You get monthly performance reporting and quarterly strategy reviews, so you always know what is being done and why."
+   }
+  ]
+ },
+ "/portfolio": {
+  "keyword": "web design portfolio",
+  "secondary": [
+   "casperb2b portfolio",
+   "small business website examples",
+   "crm and automation projects"
+  ],
+  "title": "Web Design Portfolio: Projects We Built | CasperB2B",
+  "desc": "Our web design portfolio: live sites and systems CasperB2B built, including CarSales AI, FMYCAR, NextWeigh, MC Sales Training and FBK Marketing.",
+  "h1": "Our Portfolio: Websites and Systems We Built",
+  "intro": "This portfolio lists live projects CasperB2B built, led by CarSales AI, FMYCAR, NextWeigh, MC Sales Training and FBK Marketing, with links so you can see each one working.",
+  "cluster": "about",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/blog/roi-website-redesign"
+  }
+ },
+ "/press-kit": {
+  "keyword": "casperb2b press kit",
+  "secondary": [
+   "casperb2b logo",
+   "casperb2b company boilerplate",
+   "jared casper bio"
+  ],
+  "title": "CasperB2B Press Kit: Logos, Bio & Boilerplate",
+  "desc": "The CasperB2B press kit: logo files, brand colors and fonts, Jared Casper's founder bio, approved boilerplate and key facts. Contact us for media.",
+  "h1": "CasperB2B Press Kit",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/brand-kit",
+   "article": "/news"
+  }
+ },
+ "/pricing": {
+  "keyword": "casperb2b pricing",
+  "secondary": [
+   "how much does casperb2b cost",
+   "flat monthly rate marketing services",
+   "casperb2b setup fee"
+  ],
+  "title": "CasperB2B Pricing: How Our Pricing Works",
+  "desc": "How CasperB2B pricing works: a flat monthly rate quoted on a 15-minute fit call, with a clear written scope before you commit. Book your fit call.",
+  "h1": "CasperB2B Pricing: How It Works",
+  "intro": "CasperB2B pricing is a flat monthly rate quoted on a 15-minute fit call, based on the services you need, with a clear written scope before you commit.",
+  "cluster": "about",
+  "next": {
+   "service": "/services",
+   "tool": "/tools/bundle-builder",
+   "article": "/the-49k-story"
+  }
+ },
+ "/problems": {
+  "keyword": "small business revenue leaks",
+  "secondary": [
+   "why small businesses lose leads",
+   "lead leakage",
+   "common small business growth problems"
+  ],
+  "title": "Small Business Revenue Leaks We Fix | CasperB2B",
+  "desc": "The small business revenue leaks we fix: missed calls, lost leads, no follow-up, low conversion and stagnant reviews. Book a 15-minute fit call.",
+  "h1": "The quiet revenue leaks that kill local growth.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/quiz",
+   "article": "/make-my-phone-ring"
+  },
+  "faq": [
+   {
+    "q": "What are the most common revenue leaks in a small business?",
+    "a": "The most common leaks are missed calls, slow follow-up and lost leads, followed by low conversion, no pipeline visibility, too many disconnected tools and stagnant reviews."
+   },
+   {
+    "q": "How do you fix revenue leaks?",
+    "a": "You fix them with one CRM and automation system that captures and follows up on every lead, run day to day by a dedicated virtual assistant. CasperB2B sets up the system and provides the Casper VA."
+   }
+  ]
+ },
+ "/problems/low-conversion": {
+  "keyword": "turn inquiries into appointments",
+  "secondary": [
+   "website traffic not converting",
+   "improve lead conversion rate",
+   "online booking links"
+  ],
+  "title": "Turn Inquiries Into Appointments | CasperB2B",
+  "desc": "Turn inquiries into appointments: remove friction with instant replies, clear booking links and a VA who books the rest. Book a 15-minute fit call.",
+  "h1": "Turn inquiries into scheduled appointments.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/tools/website-grader",
+   "article": "/blog/high-converting-landing-page"
+  }
+ },
+ "/problems/missed-calls": {
+  "keyword": "missed call text back service",
+  "secondary": [
+   "missed call text back",
+   "auto reply text for missed calls",
+   "virtual assistant to answer missed calls"
+  ],
+  "title": "Missed Call Text Back Service | CasperB2B",
+  "desc": "Missed call text back service: callers get an instant text and a dedicated VA replies and books the job. Book a free 15-minute fit call.",
+  "h1": "Stop missed calls with missed-call text back.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/quiz",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/problems/missed-leads": {
+  "keyword": "unified inbox for small business",
+  "secondary": [
+   "stop losing leads",
+   "leads falling through the cracks",
+   "how fast to respond to a new lead"
+  ],
+  "title": "Unified Inbox for Small Business Leads | CasperB2B",
+  "desc": "A unified inbox for small business: every form, email, text and DM in one place, watched by a dedicated VA. Book a free 15-minute fit call.",
+  "h1": "Stop losing leads to gaps and handoffs with one unified inbox.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/quiz",
+   "article": "/blog/stop-missing-calls"
+  }
+ },
+ "/problems/no-follow-up": {
+  "keyword": "why leads go cold",
+  "secondary": [
+   "lead follow-up system",
+   "how many times to follow up with a lead",
+   "text and email follow-up sequences"
+  ],
+  "title": "Why Leads Go Cold & How to Fix Follow-Up | CasperB2B",
+  "desc": "Why leads go cold: follow-up depends on memory. Automated email and text sequences plus a VA who steps in on replies fix it. Book a 15-minute fit call.",
+  "h1": "Why leads go cold — and how to make follow-up automatic.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/quiz",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/problems/no-pipeline-visibility": {
+  "keyword": "sales pipeline tracking for small business",
+  "secondary": [
+   "crm pipeline dashboard",
+   "how to track sales leads",
+   "virtual assistant crm management"
+  ],
+  "title": "Sales Pipeline Tracking for Small Business | CasperB2B",
+  "desc": "Sales pipeline tracking for small business: a visual CRM kept current daily by a dedicated virtual assistant. Book a free 15-minute fit call.",
+  "h1": "See pipeline movement without guessing.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/blog/crm-vs-spreadsheets"
+  }
+ },
+ "/problems/reviews-stagnant": {
+  "keyword": "automated review requests",
+  "secondary": [
+   "review request text message",
+   "automate google review requests",
+   "reply to google reviews"
+  ],
+  "title": "Automated Review Requests | CasperB2B",
+  "desc": "Stagnant reviews? Send automated review requests by text and email the moment a job is done, with a VA replying to every review. Book a fit call.",
+  "h1": "Get a repeatable review engine with automated review requests.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/reputation-management",
+   "tool": "/tools/compare-my-business",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/problems/too-many-tools": {
+  "keyword": "consolidate small business software",
+  "secondary": [
+   "software tool sprawl",
+   "all-in-one crm for small business",
+   "reduce software subscriptions"
+  ],
+  "title": "Consolidate Small Business Software | CasperB2B",
+  "desc": "Consolidate small business software: CRM, email, calendar and reviews in one system run by one VA. Book a free 15-minute fit call.",
+  "h1": "Reduce tool sprawl and consolidate your business software.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/blog/crm-vs-spreadsheets"
+  }
+ },
+ "/quiz": {
+  "keyword": "small business growth quiz",
+  "secondary": [
+   "what marketing services does my business need",
+   "revenue leak quiz",
+   "marketing needs assessment"
+  ],
+  "title": "Find Your Biggest Revenue Leak: Growth Quiz | CasperB2B",
+  "desc": "Take the 2-minute small business growth quiz: 6 questions find your biggest revenue leak and the CasperB2B services that fix it first. Get your plan free.",
+  "h1": "Find Your Biggest Revenue Leak: 2-Minute Growth Quiz",
+  "intro": "This 2-minute small business growth quiz asks 6 questions about your stage, biggest challenge, budget, website and timeline, then shows where your business is most likely losing revenue and which services to fix first.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/roi-of-dedicated-va": {
+  "keyword": "roi of a virtual assistant",
+  "secondary": [
+   "is a virtual assistant worth it",
+   "cost of doing it all yourself",
+   "what does a dedicated va do"
+  ],
+  "title": "ROI of a Virtual Assistant: The Math | CasperB2B",
+  "desc": "The ROI of a virtual assistant: what your hour is worth, what a dedicated VA takes off your plate, and the math. Book a free 15-minute fit call.",
+  "h1": "The True ROI of a Dedicated VA: Stop Doing $15/hr Tasks",
+  "intro": "A dedicated virtual assistant pays off when the hours you get back are worth more than the VA costs: if your time is worth $125 an hour, every hour of inbox, scheduling or data entry you delegate is an hour back for selling and growth.",
+  "cluster": "va",
+  "next": {
+   "service": "/casper-va",
+   "tool": "/tools/roi-calculator",
+   "article": "/casper-va/vs-agency"
+  },
+  "faq": [
+   {
+    "q": "Is a virtual assistant worth it for a small business?",
+    "a": "Usually yes once your own hourly value is well above the cost of the tasks you are doing. If a VA saves you 15 hours a week, that is 60 hours a month you can spend on deals, product and partnerships."
+   },
+   {
+    "q": "How much does a Casper VA cost?",
+    "a": "Casper VA pricing is a flat monthly rate quoted on a 15-minute fit call."
+   }
+  ]
+ },
+ "/seo-audit": {
+  "keyword": "seo audit cost",
+  "secondary": [
+   "free seo audit",
+   "professional seo audit",
+   "what is included in an seo audit"
+  ],
+  "title": "SEO Audit Cost in 2026 + Free SEO Audit | CasperB2B",
+  "desc": "What does an SEO audit cost? Typical market ranges, what a professional SEO audit includes, and how to get a free manual audit of your site. Request yours.",
+  "h1": "What Does a Professional SEO Audit Cost in 2026?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/seo",
+   "tool": "/tools/website-grader",
+   "article": "/how-much-does-seo-cost"
+  }
+ },
+ "/seo-services-georgetown-ma": {
+  "keyword": "seo services georgetown ma",
+  "secondary": [
+   "local seo georgetown ma",
+   "google map pack north shore ma",
+   "seo company essex county ma"
+  ],
+  "title": "SEO Services Georgetown MA | CasperB2B",
+  "desc": "Local SEO services in Georgetown MA: Google Business Profile, citations, town service pages and call tracking to win the Map Pack. Book a free fit call.",
+  "h1": "SEO Services Georgetown MA",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/roi-calculator",
+   "article": "/blog/mastering-local-seo"
+  }
+ },
+ "/serious-business-owners": {
+  "keyword": "how to work with a marketing agency",
+  "secondary": [
+   "what agencies expect from clients",
+   "agency client requirements",
+   "casperb2b client standards"
+  ],
+  "title": "How to Work With a Marketing Agency: Our Standards",
+  "desc": "How to work with a marketing agency and get results: what CasperB2B expects from owners, who we are not for, and what we build. Book a fit call.",
+  "h1": "For Serious Business Owners Only: How We Work With Clients",
+  "intro": "Working with CasperB2B means providing access and assets quickly, making clear decisions, paying on time and staying involved; in return we build the websites, CRM, automation and local SEO systems that support growth.",
+  "cluster": "about",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/quiz",
+   "article": "/should-i-hire-an-agency-or-do-it-myself"
+  },
+  "faq": [
+   {
+    "q": "What does CasperB2B expect from clients?",
+    "a": "You provide the required access and assets, answer questions quickly, approve or reject clearly, make decisions and pay on time. You do not need to know the technical details."
+   },
+   {
+    "q": "Who is CasperB2B not a fit for?",
+    "a": "Owners who take weeks to send basic information, delay access, constantly change direction or expect results without participating."
+   }
+  ]
+ },
+ "/service-areas": {
+  "keyword": "digital marketing north shore ma",
+  "secondary": [
+   "marketing agency essex county ma",
+   "web design north shore massachusetts",
+   "southern nh digital marketing"
+  ],
+  "title": "Digital Marketing on the North Shore MA | CasperB2B",
+  "desc": "Digital marketing, web design, local SEO and IT for North Shore MA and southern NH businesses, from a Georgetown-based team. Book a fit call.",
+  "h1": "Digital Marketing & IT Services on the North Shore of MA",
+  "intro": "CasperB2B provides digital marketing, web design, local SEO and IT services to businesses across the North Shore of Massachusetts and southern New Hampshire, with its home base in Georgetown, MA, and works with businesses nationwide.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/keyword-research",
+   "article": "/get-my-business-on-google"
+  }
+ },
+ "/services": {
+  "keyword": "digital marketing services for small business",
+  "secondary": [
+   "small business growth services",
+   "marketing and it services for small business",
+   "crm and marketing automation setup"
+  ],
+  "title": "Digital Marketing Services for Small Business | CasperB2B",
+  "desc": "Digital marketing services for small business: websites, SEO, ads, email, CRM automation, AI chatbots, cybersecurity and managed IT. Book a free fit call.",
+  "h1": "Digital Marketing & IT Services for Small Businesses",
+  "intro": "CasperB2B provides digital marketing and business technology services for small businesses: websites, SEO, paid ads, email, CRM and automation, AI chatbots, cybersecurity and managed IT, plus dedicated virtual assistants, all from one team.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/bundle-builder",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/services/ai-automation": {
+  "keyword": "ai automation for small business",
+  "secondary": [
+   "automated lead follow-up",
+   "missed call text back service",
+   "workflow automation services"
+  ],
+  "title": "AI Automation for Small Business | CasperB2B",
+  "desc": "AI automation for small business: missed-call text-back, automated lead follow-up, review requests and CRM workflows, set up for you. Book a free fit call.",
+  "h1": "AI Automation for Small Business: Stop Losing Leads to Slow Follow-Up",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-chatbots",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/services/ai-chatbots": {
+  "keyword": "ai chatbot services",
+  "secondary": [
+   "ai chatbot for small business website",
+   "website chatbot for lead capture",
+   "appointment booking chatbot"
+  ],
+  "title": "AI Chatbot Services for Small Business | CasperB2B",
+  "desc": "AI chatbot services: custom chatbots trained on your business that answer questions, qualify leads and book appointments. Book a free fit call.",
+  "h1": "AI Chatbot Services: Capture Leads While You Sleep",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/ai-search-readiness",
+   "article": "/what-is-an-ai-chatbot-and-do-i-need-one"
+  },
+  "faq": [
+   {
+    "q": "What can an AI chatbot do on my website?",
+    "a": "It answers common questions about your services, hours and location, asks qualifying questions, and offers visitors a slot on your calendar, any time of day."
+   },
+   {
+    "q": "How does the chatbot learn about my business?",
+    "a": "CasperB2B trains it on your website content, FAQs, PDFs and internal documents so its answers match how your business actually works."
+   },
+   {
+    "q": "Can a person take over the conversation?",
+    "a": "Yes. You get a text notification when a high-value conversation happens, so your team can step in."
+   }
+  ]
+ },
+ "/services/analytics-data": {
+  "keyword": "marketing analytics services",
+  "secondary": [
+   "ga4 setup",
+   "marketing roi attribution",
+   "looker studio dashboards"
+  ],
+  "title": "Marketing Analytics Services & GA4 Setup | CasperB2B",
+  "desc": "Marketing analytics services: GA4 setup, server-side tracking, CRM-linked dashboards and ROI attribution that show where revenue comes from. Book a call.",
+  "h1": "Marketing Analytics Services: Stop Guessing, Start Growing",
+  "intro": "Marketing analytics services set up the tracking and dashboards that connect your ad spend, website and CRM, so you can see which campaigns, keywords and channels produce leads and revenue. CasperB2B handles GA4, tracking and reporting setup.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/vanity-metrics"
+  },
+  "faq": [
+   {
+    "q": "What do marketing analytics services include?",
+    "a": "Google Analytics 4 setup with custom events and conversions, server-side tracking, CRM integration for closed-loop reporting, and custom dashboards in Looker Studio or your preferred BI tool."
+   },
+   {
+    "q": "Can you show which campaigns bring in revenue?",
+    "a": "Yes. Full-funnel tracking follows a lead from the first ad click to a closed deal in your CRM, so revenue can be attributed to the campaign, keyword or channel that produced it."
+   }
+  ]
+ },
+ "/services/brand-style-guides": {
+  "keyword": "brand style guide services",
+  "secondary": [
+   "brand guidelines for small business",
+   "brand color palette and typography",
+   "logo usage guidelines"
+  ],
+  "title": "Brand Style Guide Services | CasperB2B",
+  "desc": "Brand style guide services that set your colors, fonts, logo rules and voice so every ad, page and print piece looks consistent. Book a free fit call.",
+  "h1": "Brand Style Guide Services: The Instruction Manual for Your Brand",
+  "intro": "A brand style guide is a reference document that sets your logo usage rules, color codes, fonts and brand voice so everything your business publishes looks and sounds consistent. CasperB2B builds style guides for small businesses.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/logo-design",
+   "tool": "/brand-kit",
+   "article": "/blog/roi-website-redesign"
+  },
+  "faq": [
+   {
+    "q": "What is included in a brand style guide?",
+    "a": "HEX/RGB/CMYK color palettes, font pairings, logo usage rules, brief brand-voice guidance and a central folder of high-resolution brand files."
+   },
+   {
+    "q": "Do I need a style guide if I already have a logo?",
+    "a": "Yes, if more than one person or vendor creates your marketing. The guide is what keeps their work looking like it came from the same business."
+   }
+  ]
+ },
+ "/services/business-listings": {
+  "keyword": "business listings management",
+  "secondary": [
+   "local citation building",
+   "nap consistency",
+   "duplicate listing removal"
+  ],
+  "title": "Business Listings Management & Citations | CasperB2B",
+  "desc": "Business listings management that keeps your name, address and phone consistent on Google, Apple Maps, Bing, Yelp and more. Book a free fit call.",
+  "h1": "Business Listings Management: Control Your Data Across the Web",
+  "intro": "Business listings management keeps your business name, address, phone number and hours accurate and consistent across Google, Apple Maps, Bing, Yelp and other directories, which helps search engines trust and rank you locally.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/get-my-business-on-google"
+  },
+  "faq": [
+   {
+    "q": "What is NAP consistency?",
+    "a": "NAP stands for Name, Address and Phone number. Keeping them identical everywhere your business is listed helps Google verify you exist and trust your information."
+   },
+   {
+    "q": "Why do duplicate listings hurt local SEO?",
+    "a": "Duplicates split your reviews and signals and confuse search engines about which listing is real. Finding and removing them is part of listings management."
+   }
+  ]
+ },
+ "/services/cloud-computing": {
+  "keyword": "cloud migration services for small business",
+  "secondary": [
+   "microsoft 365 setup",
+   "google workspace setup",
+   "cloud backup and disaster recovery"
+  ],
+  "title": "Cloud Migration Services for Small Business | CasperB2B",
+  "desc": "Cloud migration services for small business: secure remote access, Microsoft 365 or Google Workspace setup, and tested cloud backups. Book a free fit call.",
+  "h1": "Cloud Migration Services: Modernize Your Infrastructure",
+  "intro": "Cloud migration moves your files, email and business applications from on-premise servers to secure cloud services, so your team can work from any device and your data stays backed up. CasperB2B plans and handles the move for small businesses.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/blog/secure-crm-data"
+  },
+  "faq": [
+   {
+    "q": "Will moving to the cloud disrupt my business?",
+    "a": "The migration is planned so your team keeps working: CasperB2B handles the move and sets up secure remote access before switching you over."
+   },
+   {
+    "q": "Do you set up Microsoft 365 or Google Workspace?",
+    "a": "Yes. Setup and management of Microsoft 365 or Google Workspace is part of the service, along with cloud storage and automated backups."
+   }
+  ]
+ },
+ "/services/content-marketing": {
+  "keyword": "content marketing services",
+  "secondary": [
+   "seo content writing",
+   "blog writing services for small business",
+   "local seo content"
+  ],
+  "title": "Content Marketing Services for Small Business | CasperB2B",
+  "desc": "Content marketing services that plan, write and publish blog posts and service pages built to rank on Google and win leads. Book a free fit call.",
+  "h1": "Content Marketing Services: Content That Ranks and Converts",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/seo",
+   "tool": "/tools/content-idea-generator",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/services/conversion-optimization": {
+  "keyword": "conversion rate optimization services",
+  "secondary": [
+   "cro for small business",
+   "website conversion optimization",
+   "landing page optimization"
+  ],
+  "title": "Conversion Rate Optimization Services | CasperB2B",
+  "desc": "Conversion rate optimization services that find where visitors drop off and fix forms, copy and mobile UX so traffic becomes leads. Book a fit call.",
+  "h1": "Conversion Rate Optimization: Make Every Visitor Count",
+  "intro": "Conversion rate optimization (CRO) increases the share of website visitors who call, fill out a form or book. CasperB2B reviews your analytics, finds where visitors drop off, and fixes the copy, forms and mobile experience.",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/problems/low-conversion"
+  },
+  "faq": [
+   {
+    "q": "How do I know if I have a conversion problem?",
+    "a": "If your site gets traffic but few calls, form fills or bookings, you have a conversion problem rather than a traffic problem."
+   },
+   {
+    "q": "What does conversion rate optimization include?",
+    "a": "An analytics review of where visitors click, scroll and leave, layout and offer testing, mobile UX fixes, sharper headlines and simpler forms."
+   }
+  ]
+ },
+ "/services/custom-apps": {
+  "keyword": "custom business app development",
+  "secondary": [
+   "internal tools development",
+   "client portal development",
+   "custom web application for small business"
+  ],
+  "title": "Custom Business App Development | CasperB2B",
+  "desc": "Custom business app development: internal dashboards, client portals and workflow tools built around how your team works, plus support. Book a call.",
+  "h1": "Custom Business App Development for Your Exact Workflows",
+  "intro": "Custom business app development means building web-based tools, such as internal dashboards, client portals and workflow automations, around the way your team already works instead of forcing it into generic software.",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/problems/too-many-tools"
+  },
+  "faq": [
+   {
+    "q": "What kinds of custom apps do you build?",
+    "a": "Internal dashboards for real-time business data, client portals where customers log in to work with your team, and custom code that connects your existing tools and automates manual steps."
+   },
+   {
+    "q": "Do you support the app after launch?",
+    "a": "Yes. CasperB2B maintains and updates the app as your business needs change."
+   }
+  ]
+ },
+ "/services/cybersecurity": {
+  "keyword": "small business cybersecurity services",
+  "secondary": [
+   "security risk assessment",
+   "mfa and email security setup",
+   "ransomware protection for small business"
+  ],
+  "title": "Small Business Cybersecurity Services | CasperB2B",
+  "desc": "Small business cybersecurity services: a risk review of access, email, devices and backups, then MFA, EDR and tested backups. Request a risk review today.",
+  "h1": "Small Business Cybersecurity Services That Reduce Real Risk",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/keep-my-business-safe-from-hackers"
+  }
+ },
+ "/services/email-marketing": {
+  "keyword": "email marketing services for small business",
+  "secondary": [
+   "email automation",
+   "lead nurture sequences",
+   "customer reactivation campaigns"
+  ],
+  "title": "Email Marketing Services for Small Business | CasperB2B",
+  "desc": "Email marketing services for small business: automated follow-up sequences, reactivation campaigns and newsletters that bring customers back. Book a call.",
+  "h1": "Email Marketing Services That Follow Up and Bring People Back",
+  "intro": "Email marketing services set up automated follow-up sequences, reactivation campaigns and newsletters that keep your business in front of leads and past customers. CasperB2B writes, designs, segments and tracks them for you.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/email-automation-campaigns"
+  },
+  "faq": [
+   {
+    "q": "What email campaigns should a small business run?",
+    "a": "Start with three: a lead nurture sequence for new inquiries, a reactivation campaign for past customers, and a regular newsletter that keeps you top of mind."
+   },
+   {
+    "q": "Do you write and design the emails?",
+    "a": "Yes. CasperB2B writes the copy, builds mobile-responsive templates that match your brand, segments your list and tracks opens, clicks and conversions."
+   }
+  ]
+ },
+ "/services/graphic-design": {
+  "keyword": "graphic design services for small business",
+  "secondary": [
+   "ad creative design",
+   "social media graphics",
+   "print marketing design"
+  ],
+  "title": "Graphic Design Services for Small Business | CasperB2B",
+  "desc": "Graphic design services for small business: ad creatives, social graphics, brochures and print pieces that match your brand. Book a free fit call.",
+  "h1": "Graphic Design Services: Visuals That Demand Attention",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/logo-design",
+   "tool": "/brand-kit",
+   "article": "/blog/high-converting-landing-page"
+  },
+  "faq": [
+   {
+    "q": "What graphic design services do you offer?",
+    "a": "Social media graphics, ad creatives for Facebook, Instagram and Google Ads, website banners, custom illustrations, and print pieces such as business cards, brochures and direct mail."
+   },
+   {
+    "q": "Will the designs match my existing brand?",
+    "a": "Yes. Every piece is designed to match your core brand identity, so your ads, social posts and print materials look consistent."
+   }
+  ]
+ },
+ "/services/lead-generation": {
+  "keyword": "lead generation services for small business",
+  "secondary": [
+   "local lead generation",
+   "landing page and funnel building",
+   "exclusive leads vs lead aggregators"
+  ],
+  "title": "Lead Generation Services for Small Business | CasperB2B",
+  "desc": "Lead generation services for small business that combine SEO, ads, landing pages and automated follow-up so leads become booked jobs. Book a free fit call.",
+  "h1": "Lead Generation Services: More Leads, More Booked Jobs",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/services/local-seo": {
+  "keyword": "local seo services",
+  "secondary": [
+   "google map pack ranking",
+   "google business profile optimization",
+   "local citations and reviews"
+  ],
+  "title": "Local SEO Services for Small Businesses | CasperB2B",
+  "desc": "Local SEO services that optimize your Google Business Profile, citations, location pages and reviews to get you into the Map Pack. Book a free fit call.",
+  "h1": "Local SEO Services: Stop Being Invisible in Your Own Backyard",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/business-listings",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/fix-google-maps-ranking"
+  }
+ },
+ "/services/logo-design": {
+  "keyword": "logo design for small business",
+  "secondary": [
+   "brand identity design",
+   "professional logo design",
+   "logo files and brand kit"
+  ],
+  "title": "Logo Design for Small Business & Brand Identity | CasperB2B",
+  "desc": "Professional logo design for small business, with a brand identity system: colors, fonts, usage rules and every file format. Book a free fit call.",
+  "h1": "Logo Design for Small Business: Brands That Build Trust",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/brand-style-guides",
+   "tool": "/brand-kit",
+   "article": "/blog/roi-website-redesign"
+  }
+ },
+ "/services/managed-it": {
+  "keyword": "managed it services for small business",
+  "secondary": [
+   "it help desk support",
+   "proactive it monitoring",
+   "microsoft 365 management"
+  ],
+  "title": "Managed IT Services for Small Business | CasperB2B",
+  "desc": "Managed IT services for small business: proactive monitoring, patching, help desk and Microsoft 365 or Google Workspace management. Book a fit call.",
+  "h1": "Managed IT Services: Stop Wasting Time Fixing Computers",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/services/ppc": {
+  "keyword": "ppc management services",
+  "secondary": [
+   "google ads management",
+   "pay per click advertising for small business",
+   "google ads setup"
+  ],
+  "title": "PPC Management Services & Google Ads | CasperB2B",
+  "desc": "PPC management services for Google Ads and paid social: tight targeting, landing pages and call and form tracking for every lead. Book a fit call.",
+  "h1": "PPC Management: Stop Wasting Ad Budget, Start Generating Leads",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/high-converting-landing-page"
+  }
+ },
+ "/services/reputation-management": {
+  "keyword": "online reputation management for small business",
+  "secondary": [
+   "review management service",
+   "responding to negative reviews",
+   "review request automation"
+  ],
+  "title": "Online Reputation Management for Small Business | CasperB2B",
+  "desc": "Online reputation management for small business: automated review requests, review monitoring and response plans for Google and Yelp. Book a free fit call.",
+  "h1": "Online Reputation Management: Take Control of Your Reviews",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/compare-my-business",
+   "article": "/how-to-get-more-5-star-reviews"
+  }
+ },
+ "/services/seo": {
+  "keyword": "seo services for small business",
+  "secondary": [
+   "technical seo",
+   "on-page seo",
+   "seo company for small business"
+  ],
+  "title": "SEO Services for Small Business | CasperB2B",
+  "desc": "SEO services for small business: technical fixes, on-page SEO, service pages and content that rank on Google and turn searches into leads. Book a call.",
+  "h1": "SEO Services for Small Business: Get Found on Google",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/website-grader",
+   "article": "/how-much-does-seo-cost"
+  }
+ },
+ "/services/social-media-ads": {
+  "keyword": "social media advertising services",
+  "secondary": [
+   "facebook ads management",
+   "instagram ads for small business",
+   "linkedin ads management"
+  ],
+  "title": "Social Media Advertising Services | CasperB2B",
+  "desc": "Social media advertising services for Facebook, Instagram and LinkedIn: audience targeting, ad creative, lead forms and retargeting. Book a free fit call.",
+  "h1": "Social Media Advertising Services That Capture Leads",
+  "intro": "Social media advertising services plan, create and manage paid campaigns on Facebook, Instagram and LinkedIn that reach your ideal customers and capture leads with in-app forms and retargeting. CasperB2B builds and tracks them for you.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/social-media-growth",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/vanity-metrics"
+  },
+  "faq": [
+   {
+    "q": "Which social platforms do you advertise on?",
+    "a": "Facebook, Instagram and LinkedIn, chosen based on where your ideal customers spend their time."
+   },
+   {
+    "q": "How do social ads capture leads?",
+    "a": "Lead forms inside the social app let people send their details without leaving it, and retargeting keeps you in front of people who visited your site but did not contact you."
+   }
+  ]
+ },
+ "/services/social-media-growth": {
+  "keyword": "social media management services",
+  "secondary": [
+   "social media management for small business",
+   "social media content creation",
+   "community management"
+  ],
+  "title": "Social Media Management Services | CasperB2B",
+  "desc": "Social media management services: content calendars, custom graphics and video, posting and replies on Facebook, Instagram and LinkedIn. Book a call.",
+  "h1": "Social Media Management: Build a Brand People Care About",
+  "intro": "Social media management services plan, create and publish your posts and reply to comments and messages, so your profiles stay active and build trust before customers call. CasperB2B manages Facebook, Instagram, LinkedIn and Google Business Profile.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/social-media-ads",
+   "tool": "/tools/content-idea-generator",
+   "article": "/vanity-metrics"
+  },
+  "faq": [
+   {
+    "q": "What does social media management include?",
+    "a": "A content calendar planned weeks ahead, custom graphics and short-form video, posting, replies to comments and messages, and monthly reports on reach and engagement."
+   },
+   {
+    "q": "Which platforms do you manage?",
+    "a": "Facebook, Instagram, LinkedIn and your Google Business Profile."
+   }
+  ]
+ },
+ "/services/speed-optimization": {
+  "keyword": "website speed optimization service",
+  "secondary": [
+   "core web vitals optimization",
+   "improve page load speed",
+   "mobile site speed"
+  ],
+  "title": "Website Speed Optimization Service | CasperB2B",
+  "desc": "Website speed optimization service that fixes Core Web Vitals, compresses images, cleans up code and adds caching and a CDN. Book a free fit call.",
+  "h1": "Website Speed Optimization: Don't Let a Slow Site Kill Sales",
+  "intro": "Website speed optimization makes your pages load faster by fixing Core Web Vitals, compressing images, minifying code and adding caching and a CDN. Faster pages keep more visitors and support your Google rankings.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/blog/10-minute-website-audit"
+  },
+  "faq": [
+   {
+    "q": "What slows a small business website down?",
+    "a": "Usually oversized images, bloated CSS and JavaScript, no caching, a slow database and assets served from a single distant server."
+   },
+   {
+    "q": "What are Core Web Vitals?",
+    "a": "Google's page-experience measurements: LCP (loading), INP (responsiveness) and CLS (visual stability). Improving them is part of speed optimization."
+   }
+  ]
+ },
+ "/services/web-development": {
+  "keyword": "small business website development",
+  "secondary": [
+   "website design for small business",
+   "mobile-first website",
+   "lead generation website"
+  ],
+  "title": "Small Business Website Development | CasperB2B",
+  "desc": "Small business website development: fast, mobile-first sites with SEO structure, lead capture and tracking built in to convert. Book a free fit call.",
+  "h1": "Small Business Website Development: Sites Built to Convert",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/how-much-does-a-website-cost"
+  }
+ },
+ "/should-i-hire-an-agency-or-do-it-myself": {
+  "keyword": "should i hire a marketing agency or do it myself",
+  "secondary": [
+   "marketing agency vs freelancer",
+   "diy marketing vs agency",
+   "how much does a marketing agency cost"
+  ],
+  "title": "Should I Hire a Marketing Agency or DIY? | CasperB2B",
+  "desc": "Should I hire a marketing agency or do it myself? An honest look at DIY, freelancer and agency costs, time and results. Book a free fit call.",
+  "h1": "Should I hire a marketing agency or do it myself?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/is-marketing-worth-it-for-a-small-business"
+  }
+ },
+ "/solutions": {
+  "keyword": "marketing solutions by industry",
+  "secondary": [
+   "local business marketing solutions",
+   "solutions for missed calls and follow-up",
+   "industry-specific marketing systems"
+  ],
+  "title": "Marketing Solutions by Industry & Problem | CasperB2B",
+  "desc": "Marketing solutions by industry and problem: real estate, HVAC, dental, legal, restaurants, missed calls, follow-up and conversion. Book a fit call.",
+  "h1": "Marketing Solutions Built for Your Industry and Problem",
+  "intro": "Find the CasperB2B solution for your situation by industry (real estate, HVAC and home services, dental, legal, restaurants) or by problem (missed calls, no follow-up, low visibility, low conversion).",
+  "cluster": "customers",
+  "next": {
+   "service": "/services",
+   "tool": "/tools/roi-calculator",
+   "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/strategy": {
+  "keyword": "digital marketing strategy consulting",
+  "secondary": [
+   "online growth strategy for small business",
+   "small business strategy consultant",
+   "website and local seo strategy"
+  ],
+  "title": "Digital Marketing Strategy Consulting | CasperB2B",
+  "desc": "Digital marketing strategy consulting with Jared Casper: website, local SEO, reputation, CRM and automation planned together, then built. Book a fit call.",
+  "h1": "Digital Marketing Strategy Consulting for Clear Online Growth",
+  "intro": "CasperB2B strategy consulting reviews your website, local SEO, reputation, CRM and follow-up together, finds where customers are being lost, and turns it into a clear roadmap that CasperB2B can then build.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/strategy/marketing": {
+  "keyword": "full funnel marketing strategy",
+  "secondary": [
+   "marketing funnel stages",
+   "top middle bottom of funnel marketing",
+   "customer retention marketing"
+  ],
+  "title": "Full-Funnel Marketing Strategy Guide | CasperB2B",
+  "desc": "A full funnel marketing strategy guide: what to do at awareness, consideration, conversion and retention, with practical tactics. Book a strategy call.",
+  "h1": "Full-Funnel Marketing Strategy",
+  "intro": "A full-funnel marketing strategy plans what you do at each stage of the buyer journey: awareness content and ads, lead magnets and nurture emails, conversion-focused landing pages and retargeting, then onboarding, reviews and referrals after the sale.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services/email-marketing",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/blog/email-automation-campaigns"
+  },
+  "faq": [
+   {
+    "q": "What are the stages of a marketing funnel?",
+    "a": "Top of funnel (awareness), middle (consideration), bottom (conversion) and post-purchase (retention and advocacy). Each stage needs different content and offers."
+   },
+   {
+    "q": "Does marketing stop after the sale?",
+    "a": "No. Keeping existing customers is usually cheaper than winning new ones, so onboarding, check-ins, review requests and referral programs are part of the funnel."
+   }
+  ]
+ },
+ "/strategy/sales": {
+  "keyword": "b2b sales pipeline strategy",
+  "secondary": [
+   "consultative sales process",
+   "ideal customer profile b2b",
+   "sales pipeline management"
+  ],
+  "title": "B2B Sales Pipeline Strategy Guide | CasperB2B",
+  "desc": "A B2B sales pipeline strategy guide: define your ICP, run consultative discovery, manage and automate your pipeline, and handle objections. Read the guide.",
+  "h1": "B2B Sales & Pipeline Strategy",
+  "intro": "A B2B sales pipeline strategy has four parts: define your ideal customer profile and disqualify early, run consultative discovery, keep CRM stages clean with automated follow-up, and handle objections before closing.",
+  "cluster": "resources",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/blog/crm-vs-spreadsheets"
+  },
+  "faq": [
+   {
+    "q": "What metrics should I track in a sales pipeline?",
+    "a": "Conversion rates between stages, average deal size and sales cycle length, so you can find and fix the bottlenecks."
+   },
+   {
+    "q": "What is the consultative sales process?",
+    "a": "Diagnose before you pitch: ask questions to find the root cause of the prospect's problem, then present solutions tied to what they told you, using frameworks like BANT or MEDDIC."
+   }
+  ]
+ },
+ "/strategy/seo": {
+  "keyword": "local seo strategy",
+  "secondary": [
+   "local seo strategy guide",
+   "google business profile strategy",
+   "local link building"
+  ],
+  "title": "Local SEO Strategy: The Complete Guide | CasperB2B",
+  "desc": "A local SEO strategy guide: on-page foundations, Google Business Profile and citations, topic clusters and local link building. Get a free SEO audit.",
+  "h1": "The Ultimate Local SEO Strategy Guide",
+  "intro": "A local SEO strategy combines four things: a technically sound site with clear service and town pages, an active Google Business Profile with consistent NAP citations, topic-cluster content that answers customer questions, and local links.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/fix-google-maps-ranking"
+  },
+  "faq": [
+   {
+    "q": "What is the most important part of local SEO?",
+    "a": "Your Google Business Profile is often the first thing people see, so keep it updated with photos, accurate hours and consistent name, address and phone details."
+   },
+   {
+    "q": "Do backlinks still matter for local SEO?",
+    "a": "Yes, but quality matters more than quantity. Local sponsorships, partnerships and local news features send strong relevance signals."
+   }
+  ]
+ },
+ "/the-49k-story": {
+  "keyword": "what to do when a client doesn't pay",
+  "secondary": [
+   "unpaid invoice client",
+   "client won't pay for completed work",
+   "why we use deposits and written agreements"
+  ],
+  "title": "What to Do When a Client Doesn't Pay: My $49K Lesson",
+  "desc": "What to do when a client doesn't pay: Jared Casper's $49,000 unpaid-work story and why CasperB2B uses written agreements, deposits and milestones.",
+  "h1": "I Did $49,000 Worth of Work and Didn't Get Paid. What Would You Do?",
+  "intro": "When a client doesn't pay, document everything, send one clean final notice with the balance due, stop work and access, then move to collections or legal review. Prevent it with deposits, written agreements and payment milestones.",
+  "cluster": "about",
+  "next": {
+   "service": "/our-process",
+   "tool": "/quiz",
+   "article": "/in-defense-of-holding-grudges"
+  },
+  "faq": [
+   {
+    "q": "What should I do if a client won't pay for completed work?",
+    "a": "Document every message, deliverable and approval, send one professional final notice stating the balance, stop further work, and move the matter to collections or legal review."
+   },
+   {
+    "q": "Why does CasperB2B use signed agreements and setup fees?",
+    "a": "Because Jared Casper once did $49,000 of work that was never paid. Written agreements, deposits and payment milestones protect both sides."
+   }
+  ]
+ },
+ "/the-cost-of-inaction": {
+  "keyword": "cost of inaction in business",
+  "secondary": [
+   "bias for action",
+   "colin powell 40/70 rule",
+   "cost of delay calculation"
+  ],
+  "title": "The Cost of Inaction in Business | CasperB2B",
+  "desc": "The cost of inaction in business is often higher than the cost of failure. Calculate what waiting costs and build a bias for action. Book a fit call.",
+  "h1": "The Hidden Cost of Inaction: Why Waiting Is So Expensive",
+  "intro": "The cost of inaction is what you lose by not deciding: the hours, leads and revenue a delayed fix would have produced. For example, 5 lost leads a month at $2,000 each is $120,000 a year spent on waiting.",
+  "cluster": "resources",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/tools/roi-calculator",
+   "article": "/the-premium-on-execution"
+  },
+  "faq": [
+   {
+    "q": "How do you calculate the cost of inaction?",
+    "a": "Estimate what the fix would produce or save per month — hours, leads or revenue — and multiply by how long you delay it."
+   }
+  ]
+ },
+ "/the-premium-on-execution": {
+  "keyword": "ideas vs execution in business",
+  "secondary": [
+   "why execution matters",
+   "done-for-you vs consulting",
+   "execution over strategy"
+  ],
+  "title": "Ideas vs Execution in Business: Why DFY Wins | CasperB2B",
+  "desc": "Ideas vs execution in business: advice is everywhere, execution is rare, and done-for-you is the new standard. Book a free 15-minute fit call.",
+  "h1": "The Premium on Execution: Why 'Done-For-You' is the New Standard",
+  "cluster": "resources",
+  "next": {
+   "service": "/done-for-you",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/the-cost-of-inaction"
+  },
+  "faq": [
+   {
+    "q": "What is the difference between consulting and done-for-you?",
+    "a": "Consulting tells you what to do; a done-for-you partner takes the checklist, executes every item and hands you the finished result."
+   }
+  ]
+ },
+ "/tools": {
+  "keyword": "free marketing tools for small business",
+  "secondary": [
+   "free seo tools",
+   "small business marketing calculators",
+   "free local seo tools"
+  ],
+  "title": "Free Marketing Tools for Small Business | CasperB2B",
+  "desc": "Free marketing tools for small business: local SEO checklist, website grader, keyword research, cyber risk quiz and calculators. Find what to fix first.",
+  "h1": "Free Marketing Tools for Small Businesses",
+  "intro": "CasperB2B's free tools help small businesses find what to fix first: a local SEO checklist, website grader, competitor comparison, keyword research, cyber risk quiz, breach response plan and marketing calculators.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/quiz",
+   "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/tools/ai-search-readiness": {
+  "keyword": "ai search readiness test",
+  "secondary": [
+   "will chatgpt recommend my business",
+   "google ai overviews for local business",
+   "ai seo checker"
+  ],
+  "title": "AI Search Readiness Test: Will AI Recommend You? | CasperB2B",
+  "desc": "Free AI search readiness test: 10 yes/no questions show whether Google AI Overviews and ChatGPT are likely to recommend your business. Get your score now.",
+  "h1": "AI Search Readiness Test: Will AI Recommend Your Business?",
+  "intro": "This free AI search readiness test asks 10 yes/no questions about your Google Business Profile, reviews, website and listings to score how ready your business is to be recommended by Google AI Overviews and ChatGPT.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/seo-checklist",
+   "article": "/ai-services"
+  }
+ },
+ "/tools/breach-response-plan": {
+  "keyword": "incident response plan template for small business",
+  "secondary": [
+   "data breach response plan",
+   "ransomware response plan",
+   "cybersecurity incident response plan generator"
+  ],
+  "title": "Free Incident Response Plan Template for Small Business",
+  "desc": "Free incident response plan template for small business: enter your contacts, critical systems and backups to generate a printable breach plan in minutes.",
+  "h1": "Free Incident Response Plan Template for Small Businesses",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/what-happens-if-i-get-hacked"
+  },
+  "faq": [
+   {
+    "q": "What should a small business incident response plan include?",
+    "a": "At minimum: who leads the response and how to reach them, your IT provider's emergency contact, the critical systems to disconnect or protect first, and where your clean backups are stored. This generator builds a printable plan from exactly those details."
+   },
+   {
+    "q": "Who should be the incident lead?",
+    "a": "Usually the owner or a senior manager who can make decisions quickly, with your IT provider as the technical contact. Write both names and phone numbers into the plan before anything happens."
+   }
+  ]
+ },
+ "/tools/bundle-builder": {
+  "title": "Service Bundle Builder | CasperB2B",
+  "desc": "Tell us your biggest bottlenecks and business stage to see which mix of marketing, automation and security services fits. Book a free 15-minute fit call.",
+  "h1": "Find Your Perfect Service Bundle",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/quiz",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/tools/compare-my-business": {
+  "keyword": "local competitor analysis",
+  "secondary": [
+   "compare my business to competitors",
+   "google business profile competitor comparison",
+   "competitor analysis tool for small business"
+  ],
+  "title": "Free Local Competitor Analysis | CasperB2B",
+  "desc": "Free local competitor analysis: we compare your Google profile, reviews, site speed, mobile and local content with a top competitor and email you the gaps.",
+  "h1": "Free Local Competitor Analysis",
+  "intro": "Enter your business and your top local competitor, and CasperB2B will compare both on Google Business Profile, review volume and recency, site speed, mobile experience and local content — then email you the gaps.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/keyword-research",
+   "article": "/how-to-beat-my-competitors"
+  }
+ },
+ "/tools/content-idea-generator": {
+  "keyword": "content idea generator",
+  "secondary": [
+   "blog topic ideas for small business",
+   "content marketing ideas",
+   "lead magnet ideas"
+  ],
+  "title": "Free Content Idea Generator for Small Business | CasperB2B",
+  "desc": "Free content idea generator: enter your industry and audience to get blog, video and lead magnet ideas for a month of posts. Need them written? Let's talk.",
+  "h1": "Content Idea Generator",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/content-marketing",
+   "tool": "/tools/keyword-research",
+   "article": "/strategy/marketing"
+  }
+ },
+ "/tools/cyber-risk-quiz": {
+  "keyword": "small business cyber risk assessment",
+  "secondary": [
+   "cybersecurity risk quiz",
+   "ransomware risk assessment",
+   "is my business at risk of a cyber attack"
+  ],
+  "title": "Small Business Cyber Risk Assessment Quiz | CasperB2B",
+  "desc": "Free small business cyber risk assessment: answer 5 questions on remote access, backups, phishing, updates and IT management to see your risk profile.",
+  "h1": "What Is Your Actual Cyber Risk?",
+  "intro": "This free small business cyber risk assessment asks 5 questions about remote access, backups, phishing protection, software updates and who manages your IT, then shows your risk profile and the next steps to take.",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/breach-response-plan",
+   "article": "/is-my-business-too-small-to-hack"
+  }
+ },
+ "/tools/digital-maturity-quiz": {
+  "keyword": "digital maturity assessment",
+  "secondary": [
+   "digital maturity quiz",
+   "small business digital marketing assessment",
+   "online presence score"
+  ],
+  "title": "Digital Maturity Assessment for Small Business | CasperB2B",
+  "desc": "Free digital maturity assessment: four questions on your website, local visibility, lead follow-up and reviews give you a score and a plan to improve it.",
+  "h1": "Digital Maturity Assessment",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/tools/keyword-research": {
+  "keyword": "local keyword research tool",
+  "secondary": [
+   "local seo keywords",
+   "find keywords for my business",
+   "keyword research for small business"
+  ],
+  "title": "Free Local Keyword Research Tool | CasperB2B",
+  "desc": "Free local keyword research tool: share your industry, town and competitors and get a custom report of the buyer-intent keywords your customers search.",
+  "h1": "Local Keyword Research Tool",
+  "intro": "Tell us your industry, town and top competitors, and Jared reviews your market and emails you a custom report of the local, buyer-intent keywords your customers actually search for, sorted by search intent.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/seo",
+   "tool": "/tools/content-idea-generator",
+   "article": "/strategy/seo"
+  }
+ },
+ "/tools/ltv-cac-calculator": {
+  "keyword": "ltv to cac ratio calculator",
+  "secondary": [
+   "ltv cac ratio",
+   "customer lifetime value calculator",
+   "customer acquisition cost calculator"
+  ],
+  "title": "LTV to CAC Ratio Calculator | CasperB2B",
+  "desc": "Free LTV to CAC ratio calculator: enter revenue per account, margin, churn and marketing spend to see lifetime value, acquisition cost and your ratio.",
+  "h1": "LTV to CAC Ratio Calculator",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/strategy/sales"
+  },
+  "faq": [
+   {
+    "q": "What is a good LTV to CAC ratio?",
+    "a": "Between 3:1 and 5:1 is generally considered the sweet spot. Below 3:1 margins are tight; above 5:1 you may be underinvesting in marketing and growing slower than you could."
+   },
+   {
+    "q": "How is LTV calculated here?",
+    "a": "Lifetime value is average monthly revenue per account times gross margin, divided by monthly churn rate. CAC is monthly sales and marketing spend divided by new customers acquired that month."
+   }
+  ]
+ },
+ "/tools/marketing-budget-calculator": {
+  "keyword": "marketing budget calculator",
+  "secondary": [
+   "max cpc calculator",
+   "target cpa calculator",
+   "cost per lead calculator"
+  ],
+  "title": "Marketing Budget & Max CPC Calculator | CasperB2B",
+  "desc": "Free marketing budget calculator: enter customer value and conversion rates to find your max CPC, target cost per lead and CPA, and project ad results.",
+  "h1": "Marketing Budget & CPC Calculator",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/ppc",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/is-marketing-worth-it-for-a-small-business"
+  },
+  "faq": [
+   {
+    "q": "How do I calculate my max cost per click?",
+    "a": "Start with the share of a customer's value you are willing to spend to win them (your target CPA). Multiply it by your lead-to-sale rate to get your target cost per lead, then multiply that by your click-to-lead rate to get your max CPC."
+   }
+  ]
+ },
+ "/tools/motivation-quiz": {
+  "keyword": "business motivation quiz",
+  "secondary": [
+   "rewards ideology coercion ego",
+   "what motivates me as a business owner",
+   "leadership style quiz"
+  ],
+  "title": "Business Motivation Quiz: What Drives You? | CasperB2B",
+  "desc": "Take the 2-minute business motivation quiz to find your dominant driver — Rewards, Ideology, Coercion or Ego — and the growth strategy that fits it.",
+  "h1": "What Truly Moves Your Business?",
+  "intro": "This 2-minute business motivation quiz asks 5 questions to identify your dominant driver — Rewards, Ideology, Coercion or Ego — and shows your strengths, blind spots and the growth strategy that fits your style.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/lead-generation",
+   "tool": "/quiz",
+   "article": "/motivation-drivers"
+  }
+ },
+ "/tools/roi-calculator": {
+  "keyword": "local seo roi calculator",
+  "secondary": [
+   "seo roi calculator",
+   "how much revenue can seo bring",
+   "google ranking revenue calculator"
+  ],
+  "title": "Local SEO ROI Calculator | CasperB2B",
+  "desc": "Free local SEO ROI calculator: enter local searches, your rank, conversion rate and customer value to estimate the revenue a higher ranking could bring.",
+  "h1": "Local SEO ROI Calculator",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/keyword-research",
+   "article": "/how-much-does-seo-cost"
+  }
+ },
+ "/tools/seo-checklist": {
+  "keyword": "local seo checklist",
+  "secondary": [
+   "google business profile checklist",
+   "local seo audit checklist",
+   "small business seo checklist"
+  ],
+  "title": "Local SEO Checklist for Small Businesses | CasperB2B",
+  "desc": "Free local SEO checklist for small businesses: Google Business Profile, on-page SEO and review steps ranked by priority. Get the printable version free.",
+  "h1": "Local SEO Checklist",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/compare-my-business",
+   "article": "/blog/fix-google-maps-ranking"
+  }
+ },
+ "/tools/strategy-audit-checklist": {
+  "keyword": "small business marketing audit checklist",
+  "secondary": [
+   "marketing audit template",
+   "growth gap analysis",
+   "lead follow-up audit"
+  ],
+  "title": "Small Business Marketing Audit Checklist | CasperB2B",
+  "desc": "Free small business marketing audit checklist: score your website, local SEO, reviews and CRM follow-up in minutes and get a gap analysis report.",
+  "h1": "Small Business Marketing Audit Checklist",
+  "intro": "This free marketing audit checklist has 9 yes/no checkpoints across your website, local SEO and reviews, and CRM follow-up; tick what's true for your business to get a strategy score and a gap analysis report.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/quiz",
+   "article": "/make-my-phone-ring"
+  }
+ },
+ "/tools/tech-stack-roi": {
+  "keyword": "tech stack cost calculator",
+  "secondary": [
+   "small business software cost calculator",
+   "saas subscription cost calculator",
+   "software consolidation savings"
+  ],
+  "title": "Tech Stack Cost Calculator for Small Business | CasperB2B",
+  "desc": "Free tech stack cost calculator: add up your CRM, email, funnel, scheduling, form and SMS subscriptions to see your yearly software spend in seconds.",
+  "h1": "Tech Stack Cost Calculator",
+  "intro": "Add up what your business pays every month for separate CRM, email marketing, funnel, hosting, scheduling, form and SMS tools to see your true yearly software cost — then ask CasperB2B where consolidating could cut it.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/problems/too-many-tools"
+  }
+ },
+ "/tools/website-cost-estimator": {
+  "keyword": "website project planner",
+  "secondary": [
+   "website planning tool",
+   "website requirements checklist",
+   "website design quote"
+  ],
+  "title": "Website Project Planner: Scope Your New Site | CasperB2B",
+  "desc": "Free website project planner: pick your site type, page count and features like booking, CRM or a blog, then request a personalized quote. No obligation.",
+  "h1": "Website Project Planner",
+  "intro": "Plan your website project in a few minutes: choose the type of site, how many pages you need and features like CRM integration, online booking or a blog, then request a personalized quote from CasperB2B.",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-grader",
+   "article": "/how-much-does-a-website-cost"
+  }
+ },
+ "/tools/website-grader": {
+  "keyword": "free website grader",
+  "secondary": [
+   "website audit tool",
+   "check my website speed and seo",
+   "website conversion checklist"
+  ],
+  "title": "Free Website Grader: Speed, Mobile, SEO | CasperB2B",
+  "desc": "Free website grader: send us your URL and get a review of page speed, mobile experience, SEO basics and conversion readiness, with specific fixes for each.",
+  "h1": "Free Website Grader",
+  "cluster": "tools",
+  "next": {
+   "service": "/services/conversion-optimization",
+   "tool": "/tools/seo-checklist",
+   "article": "/blog/10-minute-website-audit"
+  }
+ },
+ "/vanity-metrics": {
+  "keyword": "what are vanity metrics",
+  "secondary": [
+   "vanity metrics vs actionable metrics",
+   "marketing metrics that matter",
+   "cac and ltv"
+  ],
+  "title": "What Are Vanity Metrics? What to Track Instead | CasperB2B",
+  "desc": "What are vanity metrics? Likes, followers, traffic and impressions that look good but don't pay the bills, and the actionable metrics to track instead.",
+  "h1": "What Are Vanity Metrics? The Trap That Hides Your Real ROI",
+  "intro": "Vanity metrics are numbers that look impressive — likes, followers, raw traffic, email opens, ad impressions — but don't show whether you are making money. Track customer acquisition cost, lifetime value, lead-to-close ratio and qualified booked calls instead.",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/analytics-data",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/motivation-drivers"
+  },
+  "faq": [
+   {
+    "q": "What is an example of a vanity metric?",
+    "a": "Social followers, raw website traffic, email open rates since Apple's iOS 15 privacy changes, and ad impressions — all can rise while revenue stays flat."
+   },
+   {
+    "q": "What should I track instead of vanity metrics?",
+    "a": "Customer acquisition cost (CAC), lifetime value (LTV), lead-to-close ratio, and qualified booked calls."
+   }
+  ]
+ },
+ "/web-design-georgetown-ma": {
+  "keyword": "web design georgetown ma",
+  "secondary": [
+   "website design north shore ma",
+   "small business website georgetown ma",
+   "mobile-first web design"
+  ],
+  "title": "Web Design Georgetown MA | CasperB2B",
+  "desc": "Web design in Georgetown MA: fast, mobile-first websites with SEO structure and CRM-connected lead capture that turn visitors into leads. Get an estimate.",
+  "h1": "Web Design Georgetown MA",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/web-development",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/how-much-does-a-website-cost"
+  }
+ },
+ "/what-happens-if-i-get-hacked": {
+  "keyword": "what happens if my small business gets hacked",
+  "secondary": [
+   "what to do if your business gets hacked",
+   "ransomware attack small business",
+   "small business data breach"
+  ],
+  "title": "What Happens If My Small Business Gets Hacked? | CasperB2B",
+  "desc": "What happens if your small business gets hacked? The lockout, the ransom demand and the fallout, hour by hour, and how to prevent it. Book a free fit call.",
+  "h1": "What happens if my small business gets hacked?",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/breach-response-plan",
+   "article": "/blog/cost-of-data-breach"
+  }
+ },
+ "/what-is-an-ai-chatbot-and-do-i-need-one": {
+  "keyword": "what is an ai chatbot",
+  "secondary": [
+   "do i need an ai chatbot",
+   "ai chatbot for small business cost",
+   "ai chatbot appointment booking"
+  ],
+  "title": "What Is an AI Chatbot and Do I Need One? | CasperB2B",
+  "desc": "What is an AI chatbot? Website software that answers questions and books appointments 24/7. See if you need one. Book a free 15-minute fit call.",
+  "h1": "What is an AI chatbot and do I need one?",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-chatbots",
+   "tool": "/tools/ai-search-readiness",
+   "article": "/will-ai-replace-my-business"
+  }
+ },
+ "/why-cant-people-find-me-online": {
+  "keyword": "why can't customers find my business online",
+  "secondary": [
+   "why is my business not on google",
+   "business not showing up in search",
+   "nap consistency"
+  ],
+  "title": "Why Can't People Find My Business Online? | CasperB2B",
+  "desc": "Why can't customers find your business online? Usually inconsistent listings, a website missing the right words, or too few reviews. Book a free fit call.",
+  "h1": "Why can't people find my business online?",
+  "cluster": "marketing",
+  "next": {
+   "service": "/services/business-listings",
+   "tool": "/tools/seo-checklist",
+   "article": "/get-my-business-on-google"
+  }
+ },
+ "/why-isnt-my-business-growing": {
+  "keyword": "why isn't my business growing",
+  "secondary": [
+   "why is my small business not growing",
+   "business growth plateau",
+   "how to grow a small business"
+  ],
+  "title": "Why Isn't My Small Business Growing? | CasperB2B",
+  "desc": "Why isn't my business growing? Usually one of three leaks: nobody finds you, they don't trust you, or buying is too hard. Find yours. Book a free fit call.",
+  "h1": "Why isn't my business growing?",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/local-seo",
+   "tool": "/tools/strategy-audit-checklist",
+   "article": "/how-to-get-more-customers"
+  }
+ },
+ "/will-ai-replace-my-business": {
+  "keyword": "will ai replace small businesses",
+  "secondary": [
+   "how small businesses can use ai",
+   "ai for local business",
+   "ai receptionist for small business"
+  ],
+  "title": "Will AI Replace My Small Business? | CasperB2B",
+  "desc": "Will AI replace small businesses? No, but a competitor who uses AI to answer leads at 2 AM might win your customers. Book a free fit call.",
+  "h1": "Will AI replace my small business?",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/ai-automation",
+   "tool": "/tools/ai-search-readiness",
+   "article": "/what-is-an-ai-chatbot-and-do-i-need-one"
+  }
+ }
+}

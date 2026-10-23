@@ -1,2 +1,5 @@
 node_modules/
 dist/
+
+_sources/
+_private/

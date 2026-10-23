@@ -3,6 +3,7 @@
 // describes it the way casperb2b.com does today and links out to it; nothing here speaks for casperportal.com.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 export const SITE = "https://casperb2b.com";
 export const NAME = "CasperB2B";
@@ -11,7 +12,7 @@ export const PHONE_VANITY = "1-207-2-CASPER";
 export const PHONE_TEL = "+12072227737";
 export const EMAIL = "contact@casperb2b.com";
 export const MAIL_ADDR = { street: "252 Daniel Webster Hwy #1093", city: "Nashua", region: "NH", zip: "03060" };
-export const OUT = new URL("../dist/", import.meta.url).pathname;
+export const OUT = fileURLToPath(new URL("../dist/", import.meta.url));
 export const BUILT = new Date().toISOString();
 export const TODAY = BUILT.slice(0, 10);
 export const LOGO = "/img/logo.png"; // 240px-wide copy of the live logo (scripts/images.mjs map → static/img/logo.png)
@@ -21,20 +22,9 @@ export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&a
 export const ld = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`;
 export const strip = (h) => String(h).replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\s+/g, " ").trim();
 
-// Header menus exactly as the live site's dropdowns; footer columns as the live footer.
-export const MENUS = [
-  ["Software", [["What is CasperPortal", "/software/casperportal"], ["Pricing & Plans", "/pricing"], ["Contact Sales", "/contact"], ["Compare vs other CRMs", "/compare/casperportal"], ["Build Your Agreement", "/agreement-builder"]]],
-  ["Virtual Assistants", [["Overview", "/casper-va"], ["Core VA Roles", "/casper-va/roles"], ["Hiring Guide", "/casper-va/hiring-guide"], ["VA vs Agency", "/casper-va/vs-agency"]]],
-  ["Problems We Solve", [["Missed Calls", "/problems/missed-calls"], ["Missed Leads", "/problems/missed-leads"], ["No Follow-Up", "/problems/no-follow-up"], ["No Pipeline Visibility", "/problems/no-pipeline-visibility"], ["Too Many Tools", "/problems/too-many-tools"], ["Low Conversion", "/problems/low-conversion"], ["Reviews Stagnant", "/problems/reviews-stagnant"]]],
-  ["Services", [["Lead Generation", "/services/lead-generation"], ["Email Marketing", "/services/email-marketing"], ["Reputation Management", "/services/reputation-management"], ["Social Media Growth", "/services/social-media-growth"], ["SEO Services", "/services/seo"], ["Local SEO", "/services/local-seo"], ["PPC Management", "/services/ppc"], ["Social Media Ads", "/services/social-media-ads"], ["Web Development", "/services/web-development"], ["Graphic Design", "/services/graphic-design"], ["Cybersecurity", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"], ["AI Chatbots", "/ai-services"]]],
-];
-export const FOOTER = [
-  ["Software", [["What is CasperPortal", "/software/casperportal"], ["Pricing", "/pricing"], ["Contact Sales", "/contact"], ["Compare vs other CRMs", "/compare/casperportal"], ["Build Your Agreement", "/agreement-builder"]]],
-  ["Virtual Assistants", [["Overview", "/casper-va"], ["Core VA Roles", "/casper-va/roles"], ["Hiring Guide", "/casper-va/hiring-guide"], ["VA vs Agency", "/casper-va/vs-agency"]]],
-  ["Problems We Solve", MENUS[2][1]],
-  ["Services", [["Lead Generation", "/services/lead-generation"], ["SEO Services", "/services/seo"], ["PPC Management", "/services/ppc"], ["Web Development", "/services/web-development"], ["Cybersecurity", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"]]],
-  ["Company", [["About", "/about-us"], ["Our Team", "/our-team"], ["Contact", "/contact"], ["Blog", "/blog"], ["Free Tools", "/tools"]]],
-];
+// Header menus and footer columns: set by build.mjs from scripts/ia.mjs (grouped by visitor goal).
+// menus/footer = [[label, [[name, path], ...]], ...]
+export const NAV = { menus: [], footer: [] };
 
 export const ORG_ID = `${SITE}/#organization`;
 export const ORG = {
@@ -62,7 +52,8 @@ export function write(path, html) {
 const navLink = (n, h, path) => `<a href="${h}"${path === h ? ' aria-current="page"' : ""}>${esc(n)}</a>`;
 
 /** The page shell. crumbs = [[name, path], ...] (visible breadcrumb + BreadcrumbList). */
-export function page({ path, title, desc, body, schema = [], crumbs, noindex = false, ogType = "website", image, lastmod = TODAY }) {
+export function page({ path, title, desc, body, schema = [], crumbs, noindex = false, ogType = "website", image, lastmod = TODAY, cta = { href: "/contact", label: "Book My 15-Minute Fit Call" }, sticky = "" }) {
+  const ctaHref = cta ? cta.href : "/contact";
   const url = SITE + (path === "/" ? "/" : path);
   const og = SITE + (image || OG_DEFAULT);
   const nodes = [{ "@context": "https://schema.org", "@type": "WebPage", "@id": url + "#webpage", url, name: title, description: desc, inLanguage: "en-US", dateModified: lastmod,
@@ -82,21 +73,22 @@ ${nodes.map(ld).join("")}
 <a class="skip" href="#main">Skip to main content</a>
 <header class="top"><div class="wrap row">
 <a class="logo" href="/" aria-label="${NAME} home"><img src="${LOGO}" alt="${NAME} logo" width="63" height="44"><span>Casper<b>B2B</b></span></a>
-<nav class="mainnav" aria-label="Main">${MENUS.map(([n, items]) => `<div class="menu"><button type="button" aria-expanded="false" aria-haspopup="true">${esc(n)}</button><div class="drop">${items.map(([a, h]) => navLink(a, h, path)).join("")}</div></div>`).join("")}</nav>
-<a class="btn sm topcta" href="/contact">Request My 15-Minute Fit Call</a>
+<a class="topphone" href="tel:${PHONE_TEL}" data-cta="header-call">${PHONE}</a>
+<a class="btn sm topcta" href="${ctaHref}" data-cta="header">Book a Fit Call</a>
 <button class="burger" type="button" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button></div>
-<nav class="drawer" id="drawer" data-drawer aria-label="Mobile" hidden>${MENUS.map(([n, items]) => `<details><summary>${esc(n)}</summary>${items.map(([a, h]) => navLink(a, h, path)).join("")}</details>`).join("")}<a href="/about-us">About</a><a href="/blog">Blog</a><a href="/tools">Free Tools</a><a class="btn" href="/contact">Request My 15-Minute Fit Call</a></nav></header>
+<nav class="mainnav" aria-label="Main"><div class="wrap">${NAV.menus.map(([n, items], i) => `<div class="menu${i >= NAV.menus.length - 2 ? " end" : ""}"><button type="button" aria-expanded="false" aria-haspopup="true">${esc(n)}</button><div class="drop">${items.map(([a, h]) => navLink(a, h, path)).join("")}</div></div>`).join("")}</div></nav>
+<nav class="drawer" id="drawer" data-drawer aria-label="Mobile" hidden>${NAV.menus.map(([n, items]) => `<details><summary>${esc(n)}</summary>${items.map(([a, h]) => navLink(a, h, path)).join("")}</details>`).join("")}<a class="btn" href="${ctaHref}" data-cta="drawer">Book My 15-Minute Fit Call</a></nav></header>
 <main id="main" tabindex="-1">${crumbs && crumbs.length > 1 ? `<nav class="crumbs wrap" aria-label="Breadcrumb"><ol>${crumbs.map(([n, p], i) => `<li>${i < crumbs.length - 1 ? `<a href="${p}">${esc(n)}</a>` : `<span aria-current="page">${esc(n)}</span>`}</li>`).join("")}</ol></nav>` : ""}${body}</main>
 <footer class="foot">
 <div class="wrap">
-<div class="foot-cta"><div><h2>Ready to grow your business?</h2><p>Stop wasting money on random marketing. Get a structured plan from a team you can trust.</p><p class="ctas"><a class="btn" href="/contact">Request My 15-Minute Fit Call</a> <a class="btn ghost" href="/quiz">Find My Biggest Revenue Leak</a></p></div>
+<div class="foot-cta"><div><h2>Ready to grow your business?</h2><p>Tell us what's leaking time or revenue. In 15 minutes we'll tell you what to fix first — and whether we're the right team to fix it.</p><p class="ctas"><a class="btn" href="${ctaHref}" data-cta="footer">Book My 15-Minute Fit Call</a> <a href="/quiz" data-cta="footer-quiz">Not ready? Find your biggest revenue leak →</a></p></div>
 <div class="news"><h2 class="h3">Get Growth Insights</h2><p>Get the growth strategy that actually works for local businesses. One email per week.</p>${newsletterForm("Newsletter Subscription - Footer", ["newsletter_subscriber", "footer_signup"], "foot")}</div></div>
-<nav class="cols" aria-label="Footer">${FOOTER.map(([n, items]) => `<div><h2 class="h4">${esc(n)}</h2><ul>${items.map(([a, h]) => `<li><a href="${h}">${esc(a)}</a></li>`).join("")}</ul></div>`).join("")}</nav>
+<nav class="cols" aria-label="Footer">${NAV.footer.map(([n, items]) => `<div><h2 class="h4">${esc(n)}</h2><ul>${items.map(([a, h]) => `<li><a href="${h}">${esc(a)}</a></li>`).join("")}</ul></div>`).join("")}</nav>
 <div class="foot-bottom"><div class="contact"><a class="logo" href="/"><img src="${LOGO}" alt="" width="63" height="44" loading="lazy"><span>Casper<b>B2B</b></span></a>
 <p><a href="tel:${PHONE_TEL}">${PHONE_VANITY} (${PHONE})</a><br>${esc(MAIL_ADDR.street)}, ${MAIL_ADDR.city}, ${MAIL_ADDR.region} ${MAIL_ADDR.zip} (Mailing)<br><a href="mailto:${EMAIL}">${EMAIL}</a></p></div>
-<div><p class="legal"><a href="/service-areas">Service Areas</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/agreement-builder">Agreement Builder</a><a href="/sitemap">Sitemap</a><a href="#" data-cookie-settings>Cookie settings</a></p>
-<p class="fine">© ${TODAY.slice(0, 4)} Casper B2B. All rights reserved. CasperPortal is a separate software platform at <a href="https://casperportal.com" rel="noopener">casperportal.com</a>.</p></div></div>
-</div></footer>
+<div><p class="legal"><a href="/service-areas">Service Areas</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/affiliate">Partner program</a><a href="/sitemap">Sitemap</a><a href="#" data-cookie-settings>Cookie settings</a></p>
+<p class="fine">© ${TODAY.slice(0, 4)} Casper B2B. All rights reserved. Sister product: <a href="https://casperportal.com" rel="noopener">CasperPortal</a>, our all-in-one CRM software.</p></div></div>
+</div></footer>${sticky}
 <div class="talk" data-talk><button type="button" class="talk-btn" aria-expanded="false" aria-controls="talk-panel"><img src="/img/jared-casper.webp" alt="" width="36" height="36" loading="lazy"><span>Let's talk</span></button>
 <div class="talk-panel" id="talk-panel" hidden><p class="talk-who"><b>Jared Casper</b><span>Founder of CasperB2B</span></p><p>I help businesses build systems that actually bring in customers.</p><p class="ctas"><a class="btn sm" href="tel:${PHONE_TEL}">Call (207) 222-7737</a> <a class="btn sm ghost" href="sms:${PHONE_TEL}">Text us</a></p><p class="fine">Text us from your phone at (207) 222-7737</p></div></div>
 <script src="/assets/site.js?v=${TODAY}" defer></script><script src="/assets/forms.js?v=${TODAY}" defer></script><script src="/assets/t.js" data-site="casperb2b" data-banner="1" defer></script>
