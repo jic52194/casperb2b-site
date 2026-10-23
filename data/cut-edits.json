@@ -1856,8 +1856,8 @@
  "/done-for-you": [
   {
    "find": "<p>Ideas are cheap. Implementation is where the money is made. Here is exactly what CasperB2B builds, configures, and manages for you.</p>",
-   "replace": "<p>Here is exactly what CasperB2B builds, configures, and manages for you.</p>",
-   "why": "fluff"
+   "replace": "<h2>Everything we build, configure and manage for you</h2>",
+   "why": "fluff; section heading for the service grid"
   },
   {
    "find": "<li>Custom high-converting UI/UX design</li>",
@@ -1868,6 +1868,16 @@
    "find": "<div class=\"card\"><h2>Stop Planning. Start Executing.</h2><p>If you're tired of doing it yourself or managing freelancers who don't understand the big picture, let's talk.</p><p class=\"ctas\"><a href=\"/contact\">Request My 15-Minute Fit Call</a> <a href=\"/pricing\">How Pricing Works</a></p></div>",
    "replace": "<p>Tired of doing it yourself or managing freelancers who don't understand the big picture? <a href=\"/contact\">Request My 15-Minute Fit Call</a> or see <a href=\"/pricing\">how pricing works</a>.</p>",
    "why": "cta"
+  },
+  {
+   "find": "<p><a href=\"/\">Home</a><a href=\"/services\">Services</a> Done-For-You Execution</p>",
+   "replace": "",
+   "why": "stray legacy breadcrumb (the page has a real one)"
+  },
+  {
+   "find": "<p class=\"eyebrow\">The Execution Standard</p>",
+   "replace": "<p class=\"eyebrow\">We don't just advise. We execute.</p>",
+   "why": "keeps the tagline when the H1 is shortened"
   }
  ],
  "/georgetown-ma": [

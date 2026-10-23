@@ -104,6 +104,7 @@ const P = {
   wrench: '<path d="M14.5 5.5a4 4 0 0 0 5 5L12 18l-3 3-3-3 3-3 7.5-7.5"/>',
 };
 const RULES = [
+  [/\bcrm\b/i, "users"], [/marketing automation/i, "zap"],
   [/missed call|call|phone|ring|answer/i, "phone"], [/appointment|meeting|book|calendar|schedul/i, "calendar"], [/review|reputation|rating|star/i, "star"],
   [/map|local|town|google business|listing|citation|near/i, "pin"], [/seo|search|keyword|rank|audit|visib/i, "search"], [/security|cyber|threat|phishing|ransom|protect|compliance|hipaa/i, "shield"],
   [/password|access|identity|lock|encrypt/i, "lock"], [/backup|recover|restore|storage|data protect/i, "database"], [/server|network|infrastructure|uptime/i, "server"],

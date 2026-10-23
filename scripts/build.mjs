@@ -478,7 +478,12 @@ for (const P of ALL) {
   // visuals: an outcome illustration beside the hero (pages without their own hero media) and an icon on every card
   if (!NO_ART.has(p) && !/^\/(privacy|terms|affiliate-terms)$/.test(p)) {
     const end = html.indexOf("</section>"), first = end > 0 ? html.slice(0, end) : "";
-    if (first.startsWith("<section>") && /<h1/.test(first) && !/<(img|video|iframe)\b/.test(first)) html = "<section>" + heroArt(CLUSTERS[cluster] ? cluster : "about", p) + html.slice("<section>".length);
+    if (first.startsWith("<section>") && /<h1/.test(first) && !/<(img|video|iframe)\b/.test(first)) {
+      html = "<section>" + heroArt(CLUSTERS[cluster] ? cluster : "about", p) + html.slice("<section>".length);
+      // a card grid inside the hero would be squeezed into the text column beside the art: start a new section at the grid (with its lead-in heading or paragraph)
+      const g = html.indexOf('<div class="grid'), e = html.indexOf("</section>");
+      if (g > 0 && g < e) { const lead = html.slice(0, g).match(/<(h2|p)>(?:(?!<\/?(?:h2|p)\b)[\s\S])*<\/\1>$/); const cut = lead ? g - lead[0].length : g; html = html.slice(0, cut) + "</section><section>" + html.slice(cut); }
+    }
   }
   html = html.replace(/<div class="card">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, inner, h) => `<div class="card">${iconFor(h)}${inner}`);
   html = pageAids(p, html, cluster, cta);
