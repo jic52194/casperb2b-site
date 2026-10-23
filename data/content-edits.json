@@ -1985,6 +1985,11 @@
    "find": "<p><strong>What to do:</strong> Claim your Google Business Profile. Google will mail you a postcard with a code to prove you actually operate there.",
    "replace": "<p><strong>What to do:</strong> Claim your Google Business Profile. Google will ask you to verify that you actually operate there (by postcard, phone, email or video, depending on your business).",
    "why": "outdated: Google no longer verifies only by postcard"
+  },
+  {
+   "find": "pically costs between <strong>$800 and $1,500",
+   "replace": "pically costs between <strong>$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/how-much-does-seo-cost": [
@@ -2055,6 +2060,11 @@
    "find": "builds these exact systems for top-producing agents.",
    "replace": "builds these exact systems for real estate agents.",
    "why": "implied client claim (\"top-producing agents\") not on record"
+  },
+  {
+   "find": "pically costs between <strong>$800 and $2,000",
+   "replace": "pically costs between <strong>$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/how-to-get-more-clients-for-my-law-firm": [
@@ -2072,6 +2082,11 @@
    "find": "they see a list of you and 20 of your competitors.",
    "replace": "they see a list of you and many of your competitors.",
    "why": "invented number"
+  },
+  {
+   "find": "pically costs between <strong>$1,500 and $4,000 per month",
+   "replace": "pically costs between <strong>$800 and $2,500 per month, with competitive practice areas toward the top of that range",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/how-to-get-more-customers": [
@@ -2084,6 +2099,11 @@
    "find": "<p>Probably not. A good full-time marketing manager costs $70,000+ a year. For a fraction of that,",
    "replace": "<p>Probably not. A good full-time marketing manager is a full salary plus benefits. For a fraction of that,",
    "why": "unattributed salary figure removed"
+  },
+  {
+   "find": "pically costs between <strong>$800 and $2,400",
+   "replace": "pically costs between <strong>$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/how-to-get-more-customers-for-my-hvac-business": [
@@ -2106,6 +2126,11 @@
    "find": "But HVAC clicks are expensive (often $20-$40 per click).",
    "replace": "But HVAC clicks are expensive.",
    "why": "unattributed cost-per-click figure removed"
+  },
+  {
+   "find": "pically costs between <strong>$800 and $2,400",
+   "replace": "pically costs between <strong>$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/how-to-get-more-patients-for-my-dental-practice": [
@@ -2113,6 +2138,11 @@
    "find": "If your front desk just says \"please leave a review,\" 95% of people forget by the time they hit their car.",
    "replace": "If your front desk just says \"please leave a review,\" most people forget by the time they hit their car.",
    "why": "unattributed stat removed, point kept"
+  },
+  {
+   "find": "pically costs between <strong>$1,200 and $3,000 per month",
+   "replace": "pically costs between <strong>$800 and $2,500 per month, with competitive specialties toward the top of that range",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/in-defense-of-holding-grudges": [
@@ -2200,6 +2230,11 @@
    "find": "they sell the exact same lead to five of your competitors at the same time.",
    "replace": "they often sell the exact same lead to several of your competitors at the same time.",
    "why": "unverified number"
+  },
+  {
+   "find": "pically costs between <strong>$800 and $2,400",
+   "replace": "pically costs between <strong>$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/managed-it-georgetown-ma": [
@@ -3424,6 +3459,11 @@
    "find": "SEO is a long-term investment that eventually drives your cost-per-lead down to near zero.",
    "replace": "SEO is a long-term investment that lowers your cost per lead over time.",
    "why": "Overclaim (\"near zero\")"
+  },
+  {
+   "find": "orgetown typically range from $800 to $2,400",
+   "replace": "orgetown typically range from $800 to $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/service-areas": [
@@ -3981,6 +4021,26 @@
    "find": "managing citations across 50+ directories",
    "replace": "managing citations across dozens of directories",
    "why": "Unverified directory count"
+  },
+  {
+   "find": "rvices typically cost between $1,500 and $3,500",
+   "replace": "rvices typically cost between $800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
+  },
+  {
+   "find": "ted: October 2026</p><p>Local SEO costs between $1,500 and $3,500 p",
+   "replace": "ted: October 2026</p><p>Local SEO costs between $1$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
+  },
+  {
+   "find": "p>Local SEO costs between $1,500 and $3,500 per",
+   "replace": "p>Local SEO costs between $1,5$800 and $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
+  },
+  {
+   "find": "O typically ranges from $1,500 to $3,500 per m",
+   "replace": "O typically ranges from $1,500$800 to $2,500",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/services/logo-design": [
@@ -4634,6 +4694,11 @@
    "find": "<a href=\"/blog/why-most-b2b-websites-fail\">Why Most B2B Websites Fail</a>",
    "replace": "<a href=\"/blog/10-minute-website-audit\">The 10-Minute Website Audit</a>",
    "why": "Broken link (/blog/why-most-b2b-websites-fail does not exist)"
+  },
+  {
+   "find": "n Georgetown typically ranges from $3,500 for a streamlined local service site to $10,000+ for complex builds",
+   "replace": "n Georgetown typically ranges from $2,500 for a streamlined local service site to $8,000 for complex builds",
+   "why": "owner decision: market ranges match the 'how much does X cost' pages"
   }
  ],
  "/what-happens-if-i-get-hacked": [
