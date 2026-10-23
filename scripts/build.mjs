@@ -141,9 +141,6 @@ const EDITS = {
   // VA pricing: /pricing says "VA rates start at $800/mo" (and so "From $1,097/mo" total) while the Data Entry Specialist role is $700/mo.
   "/": [[/<p>From \$1,097\/mo<\/p>/, ""]],
   "/pricing": [[/<p>From \$1,097\/mo total<\/p>/, ""], [/ VA rates start at \$800\/mo\./, ""]],
-  // Mark Casper's role: "Co-Founder & Sales Strategist" on /about-us vs "Advisor, CasperB2B" on /mark-casper.
-  "/about-us": [[/<p class="eyebrow">Co-Founder &amp; Sales Strategist<\/p>/, ""], [/alt="Mark Casper — Co-Founder &amp; Sales Strategist at CasperB2B"/, 'alt="Mark Casper"'], [/<h3>Meet the Founders<\/h3>/, ""]],
-  "/mark-casper": [[/<p>Advisor, CasperB2B<\/p>/, ""], [/<p class="eyebrow">Founder Profile<\/p>|<p>Founder Profile<\/p>/, ""]],
 };
 function applyEdits(p, html) { for (const [re, to] of EDITS[p] || []) { if (!re.test(html)) throw new Error(`edit did not match on ${p}: ${re}`); html = html.replace(re, to); } return html; }
 
@@ -243,7 +240,7 @@ function schemaFor(p, html, title, desc) {
     s.push({ "@context": "https://schema.org", "@type": "BlogPosting", headline: clean(BY[p].h1).slice(0, 110), description: desc, url: SITE + p, mainEntityOfPage: SITE + p, author: JARED, publisher: ORG_REF, ...(iso ? { datePublished: iso } : {}), image: SITE + (img || "/og.png"), inLanguage: "en-US" });
   }
   if (p === "/author/jared-casper") s.push({ "@context": "https://schema.org", ...JARED, jobTitle: "Founder", worksFor: ORG_REF, sameAs: ["https://www.linkedin.com/in/jaredcasper94/", "https://www.facebook.com/jaredcasper94/"], image: SITE + "/img/jared-casper.webp" });
-  if (p === "/mark-casper") s.push({ "@context": "https://schema.org", "@type": "Person", "@id": `${SITE}/mark-casper#person`, name: "Mark Casper", url: SITE + p, worksFor: ORG_REF });
+  if (p === "/mark-casper") s.push({ "@context": "https://schema.org", "@type": "Person", "@id": `${SITE}/mark-casper#person`, name: "Mark Casper", jobTitle: "Co-Founder", url: SITE + p, worksFor: ORG_REF, image: SITE + "/img/6961d9d4f13bc3f87b316c89-7ea04d.webp" });
   if (/^\/services\/[^/]+$/.test(p) || p === "/ai-services") s.push({ "@context": "https://schema.org", "@type": "Service", name: shortName(p), description: desc, url: SITE + p, provider: ORG_REF, areaServed: { "@type": "Country", name: "United States" } });
   const faq = faqSchema(html); if (faq) s.push(faq);
   return s;

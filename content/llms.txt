@@ -5,7 +5,7 @@
 CasperB2B is the services company. CasperPortal is a separate software platform (https://casperportal.com) that CasperB2B sells, implements and runs for clients. Do not treat the two as the same entity.
 
 ## Key facts
-- Founder: Jared Casper (Founder & Lead Strategist), born and raised in Georgetown, Massachusetts. The team also includes Mark Casper (35+ years in automotive sales and leadership).
+- Founder: Jared Casper (Founder & Lead Strategist), born and raised in Georgetown, Massachusetts. Co-Founder: Mark Casper (35+ years in automotive sales and leadership).
 - Based in Georgetown, Massachusetts; serves businesses nationwide, with local focus on the North Shore of Massachusetts and Southern New Hampshire.
 - Mailing address: 252 Daniel Webster Hwy #1093, Nashua, NH 03060.
 - Phone/text: 1-207-222-7737 (1-207-2-CASPER). Email: contact@casperb2b.com.
@@ -22,8 +22,16 @@ CasperB2B is the services company. CasperPortal is a separate software platform 
 - [Our Process](https://casperb2b.com/our-process): Step-by-step engagement process.
 - [Our Team](https://casperb2b.com/our-team)
 - [Jared Casper](https://casperb2b.com/author/jared-casper): Founder profile.
-- [Mark Casper](https://casperb2b.com/mark-casper): Profile.
+- [Mark Casper](https://casperb2b.com/mark-casper): Co-Founder profile.
 - [The $49,000 story](https://casperb2b.com/the-49k-story): Why CasperB2B charges a one-time setup fee and works from signed agreements.
+
+## Recent projects
+- [Portfolio](https://casperb2b.com/portfolio): Businesses and platforms CasperB2B has set up recently, with links.
+- CarSales AI (https://carsalessoftware.com): AI-first car sales software for dealerships (CRM, desking, inventory and BHPH tracking in one login).
+- FMYCAR (https://fmycar.com): Independent, advice-only car-buying help; plus the FMYCAR marketplace of cars from local dealers (https://cars.fmycar.com).
+- NextWeigh (https://nextweigh.com): Health and fitness habit coaching by text: a morning plan and an evening check-in, no app required.
+- MC Sales Training (https://mcsalestraining.com): An 8-week sales challenge with weekly live coaching.
+- FBK Marketing (https://fbkmarketing.com): Social media content for business owners.
 
 ## Software and staffing
 - [What is CasperPortal?](https://casperb2b.com/software/casperportal): The CRM and marketing-automation platform CasperB2B deploys (missed-call text-back, unified inbox, follow-up automation, pipeline tracking, review requests).

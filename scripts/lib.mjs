@@ -45,7 +45,7 @@ export const ORG = {
   address: { "@type": "PostalAddress", streetAddress: MAIL_ADDR.street, addressLocality: MAIL_ADDR.city, addressRegion: MAIL_ADDR.region, postalCode: MAIL_ADDR.zip, addressCountry: "US", description: "Mailing address" },
   contactPoint: [{ "@type": "ContactPoint", contactType: "sales", telephone: PHONE_TEL, email: EMAIL, areaServed: "US", availableLanguage: "English" }],
   areaServed: [{ "@type": "Country", name: "United States" }, { "@type": "AdministrativeArea", name: "North Shore, Massachusetts" }, { "@type": "AdministrativeArea", name: "Southern New Hampshire" }],
-  founder: { "@type": "Person", "@id": `${SITE}/author/jared-casper#person`, name: "Jared Casper", url: `${SITE}/author/jared-casper` },
+  founder: [{ "@type": "Person", "@id": `${SITE}/author/jared-casper#person`, name: "Jared Casper", jobTitle: "Founder", url: `${SITE}/author/jared-casper` }, { "@type": "Person", "@id": `${SITE}/mark-casper#person`, name: "Mark Casper", jobTitle: "Co-Founder", url: `${SITE}/mark-casper` }],
   sameAs: ["https://www.linkedin.com/in/jaredcasper94/", "https://www.facebook.com/jaredcasper94/"],
 };
 export const ORG_REF = { "@type": "Organization", "@id": ORG_ID, name: NAME, url: SITE + "/" };

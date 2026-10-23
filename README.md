@@ -95,10 +95,13 @@ IDs); to keep GA4 add `data-ga4="G-6E61E6C8B7"` to the t.js tag in scripts/lib.m
 - Kept out of the copy because two pages disagree (see `EDITS` in build.mjs):
   - VA pricing: /pricing said "VA rates start at $800/mo" and "From $1,097/mo total" (home: "From $1,097/mo"), but the
     Data Entry Specialist role is $700/mo. Per-role prices are kept.
-  - Mark Casper: "Co-Founder & Sales Strategist" (/about-us) vs "Advisor, CasperB2B" (/mark-casper). Both removed;
-    Mark is not listed as a founder in the schema. His page also shows a different phone (1-240-628-7246) — kept.
-- /portfolio lists NextWeigh as "Industrial scales"; nextweigh.com is SMS habit coaching.
-  Left as is — please confirm.
+- Mark Casper is Co-Founder (owner decision): "Co-Founder" on /about-us and /mark-casper, jobTitle "Co-Founder" in his
+  Person schema, and listed with Jared as founder in the Organization schema. His page also shows a different phone
+  (1-240-628-7246) — kept.
+- Portfolio (owner decision): /portfolio, the home logo strip and the "Real projects we actually built" blocks list the
+  recent setups first — CarSales AI (carsalessoftware.com), FMYCAR (+ cars.fmycar.com marketplace), NextWeigh (health
+  and fitness coaching by text, not "industrial scales"), MC Sales Training, FBK Marketing — each described with its
+  own homepage wording, then the earlier projects. CasperPortal is not a portfolio item. No metrics or quotes.
 - Removed "[TODO: …]" placeholder lines that the live VA role pages displayed.
 - Website Grader and Compare My Business showed invented scores (from the URL length / random numbers); they now send
   the same request and show only the checklist. Removed the grader's "Your data is never stored or shared" line, since
