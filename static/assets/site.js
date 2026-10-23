@@ -30,6 +30,10 @@
     track("cta_click", (a.textContent || "").trim().slice(0, 60), { cta: a.getAttribute("data-cta") || "content", href: a.getAttribute("href") || "", page: location.pathname });
   }, true);
   window.casperTrack = track;
+  // footer link groups: collapsed on phones (tap to open), always open on wider screens
+  var fg = document.querySelectorAll(".fgroup"), narrow = matchMedia("(max-width: 759px)");
+  function syncFooter() { fg.forEach(function (d) { if (narrow.matches) d.removeAttribute("open"); else d.setAttribute("open", ""); }); }
+  syncFooter(); if (narrow.addEventListener) narrow.addEventListener("change", syncFooter);
 
   // header: compact with a shadow once the page scrolls; reading progress on long articles
   var top = document.querySelector(".top"), longread = document.querySelector(".longread"), bar;
