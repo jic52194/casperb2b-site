@@ -104,7 +104,11 @@ const CL = (p) => clusterOf(p, KW);
 // menu + footer from the IA (every item must be a built page)
 for (const [k, items] of MENU) for (const [, h] of items) if (h && !KEEP.has(h)) throw new Error(`menu links to a page that is not built: ${h}`);
 NAV.menus = MENU.map(([k, items]) => [CLUSTERS[k].name, items]);
-NAV.footer = MENU.map(([k, items]) => [CLUSTERS[k].name, items]); // the footer carries the whole menu
+// the footer carries the whole menu; the long Marketing & SEO menu splits in two so the columns stay even
+NAV.footer = MENU.flatMap(([k, items]) => {
+  const cut = items.findIndex(([a, h]) => !h && /^advertising$/i.test(a));
+  return cut > 0 ? [[CLUSTERS[k].name, items.slice(0, cut)], ["Advertising & design", items.slice(cut)]] : [[CLUSTERS[k].name, items]];
+});
 const NAVNAME = new Map(MENU.flatMap(([, items]) => items).filter(([, h]) => h).map(([n, h]) => [h, n]));
 
 // ── names, titles, descriptions ──
