@@ -13,12 +13,12 @@ export const CLUSTERS = {
     next: { service: "/services/lead-generation", tool: "/quiz", article: "/make-my-phone-ring" } },
   marketing: { name: "Marketing & SEO", hub: "/marketing-and-seo", topic: "seo",
     next: { service: "/services/local-seo", tool: "/tools/website-grader", article: "/how-much-does-seo-cost" } },
-  ai: { name: "AI & automation", hub: "/ai-services", topic: "automation",
+  ai: { name: "AI, apps & automation", hub: "/ai-services", topic: "automation",
     next: { service: "/services/ai-automation", tool: "/tools/ai-search-readiness", article: "/what-is-an-ai-chatbot-and-do-i-need-one" } },
   cyber: { name: "Cybersecurity & IT", hub: "/cybersecurity-and-it", topic: "cybersecurity",
     next: { service: "/services/cybersecurity", tool: "/tools/cyber-risk-quiz", article: "/is-my-business-too-small-to-hack" } },
-  va: { name: "Virtual assistants", hub: "/casper-va", topic: "va",
-    next: { service: "/casper-va/roles", tool: "/tools/roi-calculator", article: "/roi-of-dedicated-va" } },
+  va: { name: "Staffing & VAs", hub: "/staffing", topic: "va",
+    next: { service: "/staffing/it-staffing", tool: "/tools/roi-calculator", article: "/casper-va/hiring-guide" } },
   tools: { name: "Free tools", hub: "/tools", topic: "other",
     next: { service: "/services", tool: "/quiz", article: "/how-to-get-more-customers" } },
   resources: { name: "Resources", hub: "/resources", topic: "other",
@@ -31,11 +31,11 @@ export const CLUSTERS = {
 
 // Header menu, in visitor-goal order. Items must be built pages (the build fails otherwise).
 export const MENU = [
-  ["customers", [["How to get more customers", "/how-to-get-more-customers"], ["Make my phone ring", "/make-my-phone-ring"], ["Lead generation", "/services/lead-generation"], ["Get more 5-star reviews", "/how-to-get-more-5-star-reviews"], ["Beat my competitors", "/how-to-beat-my-competitors"], ["Problems we solve", "/problems"], ["Industries we serve", "/niches"], ["Find my biggest revenue leak", "/quiz"]]],
+  ["customers", [["How to get more customers", "/how-to-get-more-customers"], ["Make my phone ring", "/make-my-phone-ring"], ["Local lead generation", "/services/lead-generation"], ["B2B pipeline generation", "/b2b-growth"], ["B2B lead generation", "/services/b2b-lead-generation"], ["Appointment setting", "/services/appointment-setting"], ["Demand generation", "/services/demand-generation"], ["Account-based marketing", "/services/account-based-marketing"], ["Get more 5-star reviews", "/how-to-get-more-5-star-reviews"], ["Industries we serve", "/niches"], ["Find my biggest revenue leak", "/quiz"]]],
   ["marketing", [["Marketing & SEO overview", "/marketing-and-seo"], ["SEO services", "/services/seo"], ["Local SEO", "/services/local-seo"], ["Get on Google Maps", "/get-my-business-on-google"], ["PPC & Google Ads", "/services/ppc"], ["Website design", "/services/web-development"], ["Email marketing", "/services/email-marketing"], ["Social media", "/services/social-media-growth"], ["Free SEO audit", "/seo-audit"], ["What does SEO cost?", "/how-much-does-seo-cost"]]],
-  ["ai", [["AI services overview", "/ai-services"], ["AI automation", "/services/ai-automation"], ["AI chatbots", "/services/ai-chatbots"], ["Do I need an AI chatbot?", "/what-is-an-ai-chatbot-and-do-i-need-one"], ["Will AI replace my business?", "/will-ai-replace-my-business"], ["Custom apps", "/services/custom-apps"], ["Analytics & data", "/services/analytics-data"], ["AI search readiness check", "/tools/ai-search-readiness"]]],
-  ["cyber", [["Cybersecurity & IT overview", "/cybersecurity-and-it"], ["Cybersecurity services", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"], ["Cloud computing", "/services/cloud-computing"], ["Website care (CasperCare)", "/caspercare"], ["Too small to get hacked?", "/is-my-business-too-small-to-hack"], ["What if I get hacked?", "/what-happens-if-i-get-hacked"], ["Do I need an IT person?", "/do-i-need-an-it-person"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
-  ["va", [["Casper VA overview", "/casper-va"], ["VA roles", "/casper-va/roles"], ["How to hire a VA", "/casper-va/hiring-guide"], ["VA vs agency", "/casper-va/vs-agency"], ["Executive assistant", "/casper-va/executive-assistant"], ["Sales development rep", "/casper-va/sdr"], ["Customer service VA", "/casper-va/customer-service"], ["ROI of a dedicated VA", "/roi-of-dedicated-va"]]],
+  ["ai", [["AI services overview", "/ai-services"], ["AI automation", "/services/ai-automation"], ["AI chatbots", "/services/ai-chatbots"], ["Do I need an AI chatbot?", "/what-is-an-ai-chatbot-and-do-i-need-one"], ["Will AI replace my business?", "/will-ai-replace-my-business"], ["Custom apps", "/services/custom-apps"], ["Mobile app development", "/services/mobile-app-development"], ["App maintenance & support", "/services/application-maintenance"], ["Software testing & QA", "/services/software-testing"], ["Analytics & data", "/services/analytics-data"], ["AI search readiness check", "/tools/ai-search-readiness"]]],
+  ["cyber", [["Cybersecurity & IT overview", "/cybersecurity-and-it"], ["Cybersecurity services", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"], ["IT infrastructure", "/services/it-infrastructure"], ["Cloud computing", "/services/cloud-computing"], ["Backup & recovery", "/services/backup-and-recovery"], ["Performance monitoring", "/services/performance-monitoring"], ["Website care (CasperCare)", "/caspercare"], ["Too small to get hacked?", "/is-my-business-too-small-to-hack"], ["What if I get hacked?", "/what-happens-if-i-get-hacked"], ["Do I need an IT person?", "/do-i-need-an-it-person"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
+  ["va", [["Staffing overview", "/staffing"], ["IT staffing", "/staffing/it-staffing"], ["Contingent staffing", "/staffing/contingent-staffing"], ["Project staffing", "/staffing/project-staffing"], ["Direct hire", "/staffing/direct-hire"], ["AI, ML & data staffing", "/staffing/ai-ml-data-staffing"], ["Cloud staffing", "/staffing/cloud-staffing"], ["Casper VA: dedicated remote staff", "/casper-va"], ["VA roles", "/casper-va/roles"], ["Join our talent network", "/careers"]]],
   ["tools", [["All free tools", "/tools"], ["Revenue leak quiz", "/quiz"], ["Website grader", "/tools/website-grader"], ["SEO checklist", "/tools/seo-checklist"], ["ROI calculator", "/tools/roi-calculator"], ["Marketing budget calculator", "/tools/marketing-budget-calculator"], ["AI search readiness", "/tools/ai-search-readiness"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
   ["resources", [["All resources", "/resources"], ["Blog", "/blog"], ["FAQ", "/faq"], ["Glossary", "/glossary"], ["Should I hire an agency?", "/should-i-hire-an-agency-or-do-it-myself"], ["What does a website cost?", "/how-much-does-a-website-cost"], ["Newsletter", "/newsletter"], ["Service areas", "/service-areas"], ["Massachusetts", "/massachusetts"], ["New Hampshire", "/new-hampshire"]]],
   ["about", [["About CasperB2B", "/about-us"], ["Our process", "/our-process"], ["What we do for you", "/done-for-you"], ["After you sign", "/onboarding"], ["Portfolio", "/portfolio"], ["How pricing works", "/pricing"], ["Jared Casper", "/author/jared-casper"], ["Press kit", "/press-kit"], ["Contact", "/contact"]]],
@@ -63,6 +63,7 @@ export function clusterOf(p, kw = {}) {
 export function primaryCta(p, cluster) {
   const topic = CLUSTERS[cluster]?.topic || "other";
   if (p === BOOK || p === "/thank-you") return null;
+  if (p === "/careers") return { href: "/careers#apply", label: "Apply to the Talent Network" }; // candidates, not buyers
   return { href: `${BOOK}?topic=${topic}`, label: BOOK_LABEL };
 }
 

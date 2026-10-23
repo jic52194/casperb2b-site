@@ -1,6 +1,6 @@
 # CasperB2B
 
-> CasperB2B is a founder-led business services company that helps small and local businesses get more customers and stop losing leads: websites, local SEO and SEO, paid ads, CRM setup and marketing automation, AI chatbots, cybersecurity and managed IT, and trained dedicated virtual assistants ("Casper VAs") — set up and run for the client ("done for you").
+> CasperB2B is a founder-led business services company that helps small and local businesses get more customers and stop losing leads: websites, local SEO and SEO, paid ads, CRM setup and marketing automation, AI chatbots, cybersecurity and managed IT, trained dedicated virtual assistants ("Casper VAs"), B2B pipeline generation (B2B lead generation, appointment setting, demand generation, account-based marketing), app development and IT infrastructure, and staffing (IT, contingent, project, direct hire, cloud and AI/data staffing) — set up and run for the client ("done for you").
 
 CasperB2B is the services company. CasperPortal (https://casperportal.com) is a separate sister software product (an all-in-one CRM) with its own website. Do not treat the two as the same entity.
 

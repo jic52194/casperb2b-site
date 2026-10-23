@@ -110,6 +110,23 @@
    "article": "/the-49k-story"
   }
  },
+ "/b2b-growth": {
+  "keyword": "b2b pipeline generation services",
+  "secondary": [
+   "b2b growth services",
+   "outsourced pipeline generation",
+   "b2b sales pipeline services"
+  ],
+  "title": "B2B Pipeline Generation Services | CasperB2B",
+  "desc": "B2B pipeline generation services: lead gen, appointment setting, demand gen, syndication, ABM, outbound. Book a 15-minute fit call to pick one.",
+  "h1": "B2B Pipeline Generation Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/b2b-lead-generation",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
  "/blog": {
   "keyword": "small business marketing blog",
   "secondary": [
@@ -621,6 +638,23 @@
    "service": "/services/brand-style-guides",
    "tool": "/tools/website-grader",
    "article": "/blog/roi-website-redesign"
+  }
+ },
+ "/careers": {
+  "keyword": "casperb2b careers",
+  "secondary": [
+   "remote tech jobs",
+   "join a talent network",
+   "contract it jobs"
+  ],
+  "title": "CasperB2B Careers: Join Our Talent Network",
+  "desc": "CasperB2B careers: join our talent network for contract, permanent and dedicated remote roles in IT, cloud, data, sales and marketing. Apply today.",
+  "h1": "CasperB2B Careers: Join Our Talent Network",
+  "cluster": "about",
+  "next": {
+   "service": "/staffing",
+   "tool": "/tools/motivation-quiz",
+   "article": "/about-us"
   }
  },
  "/carsalessoftware-setup": {
@@ -1791,6 +1825,23 @@
    "article": "/strategy/marketing"
   }
  },
+ "/niches/cybersecurity-companies": {
+  "keyword": "lead generation for cybersecurity companies",
+  "secondary": [
+   "cybersecurity appointment setting",
+   "cybersecurity marketing",
+   "selling to cisos"
+  ],
+  "title": "Lead Generation for Cybersecurity Companies | CasperB2B",
+  "desc": "Lead generation for cybersecurity companies: reach security leaders and IT buyers with credible outreach, ABM and content. Book a 15-minute fit call.",
+  "h1": "Lead Generation for Cybersecurity Companies",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/account-based-marketing",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
  "/niches/dental-clinics": {
   "keyword": "dental marketing services",
   "secondary": [
@@ -1863,6 +1914,23 @@
    "article": "/strategy/marketing"
   }
  },
+ "/niches/fintech": {
+  "keyword": "fintech lead generation",
+  "secondary": [
+   "fintech appointment setting",
+   "b2b fintech marketing",
+   "selling to banks and finance teams"
+  ],
+  "title": "Fintech Lead Generation for B2B Companies | CasperB2B",
+  "desc": "Fintech lead generation for B2B companies: reach finance, risk and compliance buyers with careful outreach and ABM. Book a 15-minute fit call.",
+  "h1": "Fintech Lead Generation for B2B Companies",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/account-based-marketing",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
  "/niches/fitness-centers-gyms": {
   "keyword": "gym marketing agency",
   "secondary": [
@@ -1879,6 +1947,40 @@
    "service": "/services/social-media-growth",
    "tool": "/tools/content-idea-generator",
    "article": "/blog/email-automation-campaigns"
+  }
+ },
+ "/niches/government": {
+  "keyword": "it staffing for government contractors",
+  "secondary": [
+   "government contractor it support",
+   "federal contractor staffing",
+   "it staffing for public sector contracts"
+  ],
+  "title": "IT Staffing for Government Contractors | CasperB2B",
+  "desc": "IT staffing for government contractors: developers, QA, IT support, network and security engineers. Book a 15-minute fit call to review your roles.",
+  "h1": "IT Staffing for Government Contractors",
+  "cluster": "cyber",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/casper-va/hiring-guide"
+  }
+ },
+ "/niches/healthcare": {
+  "keyword": "healthcare it services",
+  "secondary": [
+   "medical practice it support",
+   "hipaa it support",
+   "healthcare it staffing"
+  ],
+  "title": "Healthcare IT Services for Practices | CasperB2B",
+  "desc": "Healthcare IT services for practices and clinics: managed IT, security, tested backups and IT staff. Book a 15-minute fit call to find your biggest gaps.",
+  "h1": "Healthcare IT Services for Practices and Clinics",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/backup-and-recovery",
+   "tool": "/tools/breach-response-plan",
+   "article": "/blog/cost-of-data-breach"
   }
  },
  "/niches/hvac-home-services": {
@@ -2059,6 +2161,40 @@
    "service": "/services/lead-generation",
    "tool": "/tools/roi-calculator",
    "article": "/blog/high-converting-landing-page"
+  }
+ },
+ "/niches/saas": {
+  "keyword": "saas lead generation",
+  "secondary": [
+   "saas appointment setting",
+   "b2b saas demand generation",
+   "saas outbound"
+  ],
+  "title": "SaaS Lead Generation for B2B Software | CasperB2B",
+  "desc": "SaaS lead generation for B2B software companies: outbound, demos booked with buying committees, and demand gen tied to pipeline. Book a 15-minute fit call.",
+  "h1": "SaaS Lead Generation for B2B Software Companies",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/appointment-setting",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
+ "/niches/telecom": {
+  "keyword": "it staffing and services for telecom companies",
+  "secondary": [
+   "telecom it staffing",
+   "noc staffing services",
+   "telecom network engineer staffing"
+  ],
+  "title": "IT Staffing & Services for Telecom Companies | CasperB2B",
+  "desc": "IT staffing and services for telecom companies: network, NOC, support and software people, plus monitoring. Book a 15-minute fit call to scope roles.",
+  "h1": "IT Staffing and Services for Telecom Companies",
+  "cluster": "cyber",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/do-i-need-an-it-person"
   }
  },
  "/onboarding": {
@@ -2464,6 +2600,23 @@
    "article": "/how-to-get-more-customers"
   }
  },
+ "/services/account-based-marketing": {
+  "keyword": "account based marketing services",
+  "secondary": [
+   "abm agency",
+   "target account marketing",
+   "buying committee mapping"
+  ],
+  "title": "Account Based Marketing Services | CasperB2B",
+  "desc": "Account based marketing services: target accounts, buying-committee mapping, personalized plays and account-level reporting. Book a 15-minute fit call.",
+  "h1": "Account Based Marketing Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/outbound-prospecting",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
  "/services/ai-automation": {
   "keyword": "ai automation for small business",
   "secondary": [
@@ -2539,6 +2692,74 @@
     "a": "Yes. Full-funnel tracking follows a lead from the first ad click to a closed deal in your CRM, so revenue can be attributed to the campaign, keyword or channel that produced it."
    }
   ]
+ },
+ "/services/application-maintenance": {
+  "keyword": "application maintenance and support services",
+  "secondary": [
+   "legacy application modernization",
+   "software maintenance services",
+   "take over an existing app"
+  ],
+  "title": "Application Maintenance and Support Services | CasperB2B",
+  "desc": "Application maintenance and support services: bug fixes, security patches, upgrades and small enhancements for your existing apps. Book a fit call.",
+  "h1": "Application Maintenance and Support Services",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/software-testing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/services/performance-monitoring"
+  }
+ },
+ "/services/appointment-setting": {
+  "keyword": "b2b appointment setting services",
+  "secondary": [
+   "appointment setting company",
+   "sales meeting booking service",
+   "outsourced appointment setters"
+  ],
+  "title": "B2B Appointment Setting Services | CasperB2B",
+  "desc": "B2B appointment setting services: our SDRs book qualified meetings with decision-makers onto your calendar. Book a 15-minute fit call to see if it fits.",
+  "h1": "B2B Appointment Setting Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/outbound-prospecting",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
+ "/services/b2b-lead-generation": {
+  "keyword": "b2b lead generation services",
+  "secondary": [
+   "b2b lead generation company",
+   "sales qualified leads",
+   "ideal customer profile leads"
+  ],
+  "title": "B2B Lead Generation Services | CasperB2B",
+  "desc": "B2B lead generation services: researched decision-makers, multichannel outreach and qualified leads sent to your CRM. Book a 15-minute fit call.",
+  "h1": "B2B Lead Generation Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/appointment-setting",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/strategy/sales"
+  }
+ },
+ "/services/backup-and-recovery": {
+  "keyword": "business data backup and recovery services",
+  "secondary": [
+   "microsoft 365 backup",
+   "ransomware recovery plan",
+   "3-2-1 backup strategy"
+  ],
+  "title": "Business Data Backup and Recovery Services | CasperB2B",
+  "desc": "Business data backup and recovery services: 3-2-1 backups, Microsoft 365 and Google Workspace backup, restore tests and a ransomware plan. Book a fit call.",
+  "h1": "Business Data Backup and Recovery Services",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/cybersecurity",
+   "tool": "/tools/breach-response-plan",
+   "article": "/what-happens-if-i-get-hacked"
+  }
  },
  "/services/brand-style-guides": {
   "keyword": "brand style guide services",
@@ -2641,6 +2862,23 @@
    "article": "/strategy/marketing"
   }
  },
+ "/services/content-syndication": {
+  "keyword": "b2b content syndication services",
+  "secondary": [
+   "content syndication lead generation",
+   "whitepaper promotion",
+   "opt-in b2b leads"
+  ],
+  "title": "B2B Content Syndication Services | CasperB2B",
+  "desc": "B2B content syndication services: we promote your guides and webinars to a targeted audience and deliver verified opt-in leads. Book a 15-minute fit call.",
+  "h1": "B2B Content Syndication Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/demand-generation",
+   "tool": "/tools/content-idea-generator",
+   "article": "/blog/email-automation-campaigns"
+  }
+ },
  "/services/conversion-optimization": {
   "keyword": "conversion rate optimization services",
   "secondary": [
@@ -2714,6 +2952,23 @@
    "article": "/keep-my-business-safe-from-hackers"
   }
  },
+ "/services/demand-generation": {
+  "keyword": "b2b demand generation services",
+  "secondary": [
+   "demand generation agency",
+   "demand gen vs lead gen",
+   "b2b demand capture"
+  ],
+  "title": "B2B Demand Generation Services | CasperB2B",
+  "desc": "B2B demand generation services that create, capture and convert demand, with reporting tied to pipeline. Book a 15-minute fit call to review your plan.",
+  "h1": "B2B Demand Generation Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/account-based-marketing",
+   "tool": "/tools/marketing-budget-calculator",
+   "article": "/strategy/marketing"
+  }
+ },
  "/services/email-marketing": {
   "keyword": "email marketing services for small business",
   "secondary": [
@@ -2768,6 +3023,23 @@
     "a": "Yes. Every piece is designed to match your core brand identity, so your ads, social posts and print materials look consistent."
    }
   ]
+ },
+ "/services/it-infrastructure": {
+  "keyword": "it infrastructure services",
+  "secondary": [
+   "network design for small business",
+   "server setup services",
+   "identity and access management setup"
+  ],
+  "title": "IT Infrastructure Services for Business | CasperB2B",
+  "desc": "IT infrastructure services: server and cloud setup, network design, storage, identity and access, migrations and documentation. Book a fit call to plan.",
+  "h1": "IT Infrastructure Services: Servers, Networks, Cloud and Access",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/cyber-risk-quiz",
+   "article": "/do-i-need-an-it-person"
+  }
  },
  "/services/lead-generation": {
   "keyword": "lead generation services for small business",
@@ -2835,6 +3107,57 @@
    "service": "/services/cybersecurity",
    "tool": "/tools/cyber-risk-quiz",
    "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/services/mobile-app-development": {
+  "keyword": "mobile app development services",
+  "secondary": [
+   "ios and android app development",
+   "cross-platform app development",
+   "app store launch support"
+  ],
+  "title": "Mobile App Development Services | CasperB2B",
+  "desc": "Mobile app development services for iOS and Android: discovery, UX, build, testing, store launch and support. Book a 15-minute fit call to scope your app.",
+  "h1": "Mobile App Development Services for iOS and Android",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/custom-apps",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/services/software-testing"
+  }
+ },
+ "/services/outbound-prospecting": {
+  "keyword": "outbound sales prospecting services",
+  "secondary": [
+   "cold email outreach service",
+   "linkedin prospecting service",
+   "cold calling for b2b"
+  ],
+  "title": "Outbound Sales Prospecting Services | CasperB2B",
+  "desc": "Outbound sales prospecting services: cold email, LinkedIn and calling sequences with reply handling and sound deliverability. Book a 15-minute fit call.",
+  "h1": "Outbound Sales Prospecting Services",
+  "cluster": "customers",
+  "next": {
+   "service": "/services/appointment-setting",
+   "tool": "/tools/ltv-cac-calculator",
+   "article": "/blog/automate-lead-follow-up"
+  }
+ },
+ "/services/performance-monitoring": {
+  "keyword": "it performance monitoring services",
+  "secondary": [
+   "uptime monitoring service",
+   "server and network monitoring",
+   "application performance monitoring"
+  ],
+  "title": "IT Performance Monitoring Services | CasperB2B",
+  "desc": "IT performance monitoring services: uptime, server, app and network monitoring with alerts, dashboards and root-cause follow-up. Book a fit call to start.",
+  "h1": "IT Performance Monitoring Services",
+  "cluster": "cyber",
+  "next": {
+   "service": "/services/managed-it",
+   "tool": "/tools/website-grader",
+   "article": "/services/it-infrastructure"
   }
  },
  "/services/ppc": {
@@ -2944,6 +3267,23 @@
    }
   ]
  },
+ "/services/software-testing": {
+  "keyword": "software testing and qa services",
+  "secondary": [
+   "automated regression testing",
+   "cross-browser testing",
+   "mobile app testing"
+  ],
+  "title": "Software Testing and QA Services | CasperB2B",
+  "desc": "Software testing and QA services: manual and automated tests, regression, mobile and cross-browser checks, test plans and bug reports. Book a fit call.",
+  "h1": "Software Testing and QA Services",
+  "cluster": "ai",
+  "next": {
+   "service": "/services/application-maintenance",
+   "tool": "/tools/website-grader",
+   "article": "/casper-va/qa"
+  }
+ },
  "/services/speed-optimization": {
   "keyword": "website speed optimization service",
   "secondary": [
@@ -3022,6 +3362,159 @@
    "service": "/services",
    "tool": "/tools/roi-calculator",
    "article": "/why-isnt-my-business-growing"
+  }
+ },
+ "/staffing": {
+  "keyword": "staffing solutions for businesses",
+  "secondary": [
+   "technology staffing company",
+   "contract vs direct hire",
+   "contract to hire staffing"
+  ],
+  "title": "Staffing Solutions for Businesses | CasperB2B",
+  "desc": "Staffing solutions for businesses: IT, contract, project, direct hire, cloud and data talent, plus dedicated remote teams. Book a 15-minute fit call.",
+  "h1": "Staffing Solutions for Businesses: Contract, Direct Hire and Remote",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/casper-va/vs-agency"
+  }
+ },
+ "/staffing/ai-ml-data-staffing": {
+  "keyword": "ai and data science staffing",
+  "secondary": [
+   "hire machine learning engineers",
+   "data engineer staffing",
+   "data analyst staffing"
+  ],
+  "title": "AI and Data Science Staffing | CasperB2B",
+  "desc": "AI and data science staffing: data engineers, data scientists, ML engineers and analysts, screened on real work before you interview. Book a fit call.",
+  "h1": "AI and Data Science Staffing: Engineers, Scientists and Analysts",
+  "cluster": "va",
+  "next": {
+   "service": "/services/analytics-data",
+   "tool": "/tools/ai-search-readiness",
+   "article": "/will-ai-replace-my-business"
+  }
+ },
+ "/staffing/cloud-staffing": {
+  "keyword": "cloud engineer staffing",
+  "secondary": [
+   "devops engineer staffing",
+   "aws engineer staffing",
+   "cloud security engineer staffing"
+  ],
+  "title": "Cloud Engineer Staffing: AWS, Azure, GCP | CasperB2B",
+  "desc": "Cloud engineer staffing for AWS, Azure and GCP: cloud engineers, DevOps, cloud security and architects, technically screened. Book a 15-minute fit call.",
+  "h1": "Cloud Engineer Staffing for AWS, Azure and GCP",
+  "cluster": "va",
+  "next": {
+   "service": "/services/cloud-computing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/staffing/contingent-staffing": {
+  "keyword": "contingent staffing services",
+  "secondary": [
+   "contingent workforce",
+   "temporary contract workers",
+   "flexible staffing"
+  ],
+  "title": "Contingent Staffing Services | CasperB2B",
+  "desc": "Contingent staffing services: flexible contract workers for busy seasons, backlogs and leave coverage, scaled up or down. Book a 15-minute fit call.",
+  "h1": "Contingent Staffing Services for Peaks, Projects and Gaps",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/project-staffing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/casper-va/vs-agency"
+  }
+ },
+ "/staffing/direct-hire": {
+  "keyword": "direct hire recruiting services",
+  "secondary": [
+   "permanent placement services",
+   "direct hire staffing",
+   "executive search for small business"
+  ],
+  "title": "Direct Hire Recruiting Services | CasperB2B",
+  "desc": "Direct hire recruiting services: intake, search, screening, interview coordination and offer support for permanent roles. Book a 15-minute fit call.",
+  "h1": "Direct Hire Recruiting Services for Permanent Roles",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/casper-va/hiring-guide"
+  }
+ },
+ "/staffing/hire-train-deploy": {
+  "keyword": "hire train deploy staffing",
+  "secondary": [
+   "hire train deploy model",
+   "build your own talent pipeline",
+   "close tech skills gaps"
+  ],
+  "title": "Hire Train Deploy Staffing | CasperB2B",
+  "desc": "Hire train deploy staffing: we recruit people, train them on your tools and stack, then deploy them as productive team members. Book a 15-minute fit call.",
+  "h1": "Hire Train Deploy Staffing: Talent Trained on Your Stack",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/digital-maturity-quiz",
+   "article": "/roi-of-dedicated-va"
+  }
+ },
+ "/staffing/it-staffing": {
+  "keyword": "it staffing services",
+  "secondary": [
+   "it staffing agency",
+   "technical recruiting",
+   "it contractors for hire"
+  ],
+  "title": "IT Staffing Services | CasperB2B",
+  "desc": "IT staffing services for developers, infrastructure, security, data and support roles, with technical assessments before you interview. Book a fit call.",
+  "h1": "IT Staffing Services for Development, Infrastructure and Security",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/cloud-staffing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/do-i-need-an-it-person"
+  }
+ },
+ "/staffing/msp-partners": {
+  "keyword": "msp staffing partner",
+  "secondary": [
+   "staffing supplier for vms programs",
+   "managed service provider staffing",
+   "requisition fulfillment"
+  ],
+  "title": "MSP Staffing Partner | CasperB2B",
+  "desc": "MSP staffing partner for managed service providers and vendor-management programs: requisition fulfillment, quality screening, clear updates. Book a call.",
+  "h1": "MSP Staffing Partner for Requisitions and Vendor Programs",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/tech-stack-roi",
+   "article": "/serious-business-owners"
+  }
+ },
+ "/staffing/project-staffing": {
+  "keyword": "project staffing services",
+  "secondary": [
+   "project based staffing",
+   "staff a technology project",
+   "project team augmentation"
+  ],
+  "title": "Project Staffing Services | CasperB2B",
+  "desc": "Project staffing services: we assemble the roles your defined project needs, set the timeline, and plan the handoff at the end. Book a 15-minute fit call.",
+  "h1": "Project Staffing Services: A Team Built for One Defined Project",
+  "cluster": "va",
+  "next": {
+   "service": "/staffing/it-staffing",
+   "tool": "/tools/website-cost-estimator",
+   "article": "/casper-va/vs-agency"
   }
  },
  "/strategy": {

@@ -218,6 +218,9 @@ const CONTACT_FORM = leadForm({ id: "Contact Us Form", tags: ["website_contact",
     { name: "calendar_notes", label: "Anything we should know? (optional)", type: "textarea", rows: 3, placeholder: "What is leaking time or revenue right now?" }] });
 const PAGE_FORMS = {
   "/contact": () => CONTACT_FORM,
+  "/careers": () => `<div id="apply">` + leadForm({ id: "Talent Network Application", tags: ["talent_network"], submit: "Join the Talent Network", success: "Thanks — your profile is in. We'll reach out when a role fits your skills.",
+    fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }, { name: "phone", label: "Phone (optional)", type: "tel", autocomplete: "tel" },
+      { name: "contact.role", label: "Role or skills", required: true, placeholder: "e.g. DevOps engineer, AWS, Terraform" }, { name: "contact.profile_url", label: "LinkedIn or resume link (optional)", type: "url", placeholder: "https://" }, { name: "contact.location", label: "Where are you based? (optional)", autocomplete: "address-level2" }] }) + `</div>`,
   "/newsletter": () => leadForm({ id: "Newsletter Subscription - Archive Page", tags: ["newsletter_subscriber"], submit: "Subscribe Now", success: "Subscribed! You'll receive our next growth insights email.", note: "Unsubscribe at any time.",
     fields: [{ name: "first_name", label: "First Name", autocomplete: "given-name" }, { name: "email", label: "Email Address", type: "email", required: true, autocomplete: "email" }] }),
   "/seo-audit": () => leadForm({ id: "SEO Audit Page", tags: ["website_seo_audit"], submit: "Get My Free SEO Audit", success: "Request received. Expect a personal reply within 1 business day.",
@@ -324,7 +327,7 @@ function faqSchema(html) {
   const qs = [...html.matchAll(/<details><summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g)].map((m) => [strip(m[1]), strip(m[2])]).filter(([q, a]) => q && a);
   return qs.length ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: qs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) } : null;
 }
-const isService = (p) => !!BY[p]?.location ||  /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
+const isService = (p) => !!BY[p]?.location || /^\/staffing(\/|$)/.test(p) ||  /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
 function schemaFor(p, html, title, desc) {
   const s = [];
   if (p === "/" || p === "/about-us") s.push({ "@context": "https://schema.org", ...ORG });

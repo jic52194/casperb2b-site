@@ -32,7 +32,7 @@ export const ORG = {
   logo: { "@type": "ImageObject", url: SITE + LOGO }, image: SITE + OG_DEFAULT,
   description: "CasperB2B is a business services company providing website design, CRM setup, marketing automation, SEO, cybersecurity, and implementation services for businesses worldwide, with a local focus on Massachusetts and New Hampshire.",
   slogan: "Get found. Answer every lead. Stay secure.",
-  knowsAbout: ["Local SEO", "Search engine optimization", "Generative engine optimization", "Website design", "Google Ads", "Email marketing", "CRM setup", "Marketing automation", "AI chatbots", "Missed-call text back", "Reputation management", "Cybersecurity for small businesses", "Managed IT services", "Virtual assistants"],
+  knowsAbout: ["Local SEO", "Search engine optimization", "Generative engine optimization", "Website design", "Google Ads", "Email marketing", "CRM setup", "Marketing automation", "AI chatbots", "Missed-call text back", "Reputation management", "Cybersecurity for small businesses", "Managed IT services", "Virtual assistants", "B2B lead generation", "B2B appointment setting", "Demand generation", "Account-based marketing", "Mobile app development", "Software testing", "IT infrastructure", "Data backup and recovery", "IT staffing", "Contingent staffing", "Direct hire recruiting", "Cloud staffing"],
   telephone: PHONE_TEL, email: EMAIL,
   address: { "@type": "PostalAddress", streetAddress: MAIL_ADDR.street, addressLocality: MAIL_ADDR.city, addressRegion: MAIL_ADDR.region, postalCode: MAIL_ADDR.zip, addressCountry: "US", description: "Mailing address" },
   contactPoint: [{ "@type": "ContactPoint", contactType: "sales", telephone: PHONE_TEL, email: EMAIL, areaServed: "Worldwide", availableLanguage: "English" }],

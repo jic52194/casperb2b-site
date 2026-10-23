@@ -7,7 +7,7 @@ CasperB2B (services company) and CasperPortal (casperportal.com, sister software
 This site links to CasperPortal once, in the footer ("Sister product"). CasperPortal's product pages are not on this site.
 
 ## Build and check
-- `npm run build` — writes `dist/`: 218 pages (215 in sitemap.xml; /thank-you, /agreement-builder and /affiliate-kit are
+- `npm run build` — writes `dist/`: 247 pages (244 in sitemap.xml; /thank-you, /agreement-builder and /affiliate-kit are
   noindex), ~1,165 redirect pages, 404.html, sitemap.xml, robots.txt (AI crawlers allowed), llms.txt + llms-full.txt (full text of every indexable page, for AI assistants), CNAME, IndexNow key
   file — and regenerates **KEYWORDS.md** and **LINKS.md** in the repo root (commit them).
   The build fails on: a page without exactly one H1; a title over 60 or description over 155 characters; duplicate titles,
