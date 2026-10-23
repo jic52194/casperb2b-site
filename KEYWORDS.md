@@ -350,15 +350,20 @@ Every page gets: the title and meta description below, an H1 aligned to the keyw
 
 ## Merged and moved URLs (redirect → page that now owns the keyword)
 
-Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted here (all in data/redirects.json, 1224 in total).
+Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted here (all in data/redirects.json, 1500 in total).
 
 | Old URL | Now |
 |---|---|
+| /ad-campaign-specialist-va | /casper-va/perf-marketing |
 | /amesbury | /service-areas |
 | /andover | /service-areas |
 | /app-development | /services/custom-apps |
+| /app-development-augmented-reality-apps | /services/custom-apps |
+| /app-development-custom-app-development | /services/custom-apps |
+| /app-development-ecommerce-app-development | /services/custom-apps |
 | /bedford | /service-areas |
 | /beverly | /service-areas |
+| /blockchain-services | /services/custom-apps |
 | /blog/automation-for-smbs | /services/ai-automation |
 | /blog/contact-page-killing-conversions | /blog/high-converting-landing-page |
 | /blog/conversion-rate-optimization-guide | /services/conversion-optimization |
@@ -417,7 +422,12 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /brand-voice-and-tone | /services/brand-style-guides |
 | /bundled-seo-services | /services/bundled-seo |
 | /business-listings | /services/business-listings |
+| /business-listings-24-7-support | /services/business-listings |
+| /business-listings-ongoing-management | /services/business-listings |
+| /business-rescue-plan | /why-isnt-my-business-growing |
 | /campaign-analysis-pro-va | /casper-va/perf-marketing |
+| /casper-care | /caspercare |
+| /casper-care-best-plan-request-quote | /caspercare |
 | /casper-care-better-plan-request-quote | /caspercare |
 | /casper-care-va-bundles | /caspercare |
 | /casper-va/bookkeeping-va | /casper-va/bookkeeping |
@@ -454,8 +464,10 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /caspercare/web-design | /caspercare |
 | /caspercare/website-maintenance | /caspercare |
 | /casperportal | /services/ai-automation |
+| /casperportal-demo | /services/ai-automation |
 | /chatbot-development | /services/ai-chatbots |
 | /chatbot-development-ai-powered-chatbots | /services/ai-chatbots |
+| /chatbot-development-analytics-optimization | /services/ai-chatbots |
 | /chatbot-development-conversational-ai-solutions | /services/ai-chatbots |
 | /client-retention-maximizer | /problems/no-follow-up |
 | /cloud-computing | /services/cloud-computing |
@@ -467,25 +479,38 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /compare/hubspot | /problems/too-many-tools |
 | /compare/salesforce | /problems/too-many-tools |
 | /compare/va-vs-agency | /casper-va/vs-agency |
+| /competitor-conversion-campaign | /how-to-beat-my-competitors |
 | /competitor-takeover-strategy | /how-to-beat-my-competitors |
 | /contact-us | /contact |
+| /content-creation-innovator-va | /casper-va/content-writer |
 | /content-marketing-package | /services/content-marketing |
 | /conversion-optimization-expert-va | /services/conversion-optimization |
 | /conversion-rate-optimization | /services/conversion-optimization |
 | /coverage-map | /service-areas |
+| /cyber-security | /services/cybersecurity |
 | /cybersecurity | /services/cybersecurity |
 | /danvers | /service-areas |
+| /data-analytics | /services/analytics-data |
 | /demo | /contact |
+| /demo/email-marketing | /services/email-marketing |
 | /demo/graphic-design | /services/graphic-design |
+| /demo/seo-audit | /seo-audit |
+| /digital-detox-service | /services |
 | /domain-transfer-service | /services/hosting-support |
 | /e-commerce-seo-package | /services/seo |
+| /e-commerce-website-hosting | /services/hosting-support |
 | /email-marketing | /services/email-marketing |
 | /expansion-kit | /services |
+| /feild-service-management495773788843378787 | /niches/hvac-home-services |
+| /fieldservicemanagementpage905648 | /niches/hvac-home-services |
 | /free-trial | /contact |
 | /georgetown | /georgetown-ma |
 | /google-ads-campaign-setup | /services/ppc |
 | /groveland | /service-areas |
+| /growth-guarantee-program | /services |
 | /haverhill | /service-areas |
+| /home-593158 | / |
+| /home-spa-755880-802394 | /niches/medical-spas |
 | /integrations | /services/ai-automation |
 | /integrations/activecampaign | /services/ai-automation |
 | /integrations/facebook-ads | /services/ai-automation |
@@ -496,6 +521,8 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /integrations/zapier | /services/ai-automation |
 | /ipswich | /service-areas |
 | /jared-casper | /author/jared-casper |
+| /joe1-669125 | / |
+| /lead-generation-service | /services/lead-generation |
 | /lead-generation-strategist-va | /casper-va/lead-gen |
 | /lead-recycling-program | /problems/no-follow-up |
 | /local-directory | /service-areas |
@@ -507,6 +534,7 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /newbury | /service-areas |
 | /newburyport | /service-areas |
 | /niches/accounting-firms | /niches |
+| /niches/agencies | /niches |
 | /niches/air-conditioning | /niches |
 | /niches/antique-shops | /niches |
 | /niches/architectural-firms | /niches |
@@ -539,6 +567,7 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /niches/day-spas | /niches |
 | /niches/distilleries | /niches |
 | /niches/doctors-offices | /niches |
+| /niches/e-commerce | /niches |
 | /niches/educational-supplies | /niches |
 | /niches/electronics-stores | /niches |
 | /niches/employment-agencies | /niches |
@@ -599,13 +628,19 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /our-team | /about-us |
 | /partnership-profit-engine | /affiliate |
 | /portsmouth | /service-areas |
+| /post | /blog |
+| /ppc-advertising | /services/ppc |
+| /ppc-advertising-management | /services/ppc |
 | /ppc-campaigns | /services/ppc |
+| /presentation-design | /services/graphic-design |
 | /preview | / |
 | /privacy-policy | /privacy |
 | /problems/no-visibility | /problems/no-pipeline-visibility |
 | /profit-multiplier-system | /services |
 | /programs | /services |
+| /programs/co-pilot-program | /services |
 | /read-our-blogs | /blog |
+| /rejection-rehab | /blog |
 | /reputation-management | /services/reputation-management |
 | /request-quote | /contact |
 | /resume-for-507322 | /careers |
@@ -613,24 +648,38 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /rowley | /service-areas |
 | /salem | /service-areas |
 | /salisbury | /service-areas |
+| /schema-maker | /services/seo |
+| /schema-maker-702940 | /services/seo |
 | /search | /sitemap |
 | /search-engine-marketing | /services/ppc |
+| /security-operation-center | /services/cybersecurity |
 | /seo-and-sem-services | /services/seo |
 | /seo-research-optimization-va | /casper-va/seo |
 | /seo-services | /services/seo |
+| /serp-features-explained | /blog/mastering-local-seo |
 | /services-web-and-mobile-design | /services/web-development |
 | /services/branding | /services/graphic-design |
+| /services/casper-portal-suite | /services/ai-automation |
 | /services/chatbot-development | /services/ai-chatbots |
+| /services/crm-setup | /services/ai-automation |
 | /services/google-ads-setup | /services/ppc |
+| /services/integrations-reporting | /services/analytics-data |
+| /services/marketing | /marketing-and-seo |
+| /services/marketing-automation | /services/ai-automation |
 | /services/marketing-budget-calculator | /tools/marketing-budget-calculator |
+| /services/paid-ads | /services/ppc |
 | /services/ppc-advertising | /services/ppc |
 | /services/ppc-management | /services/ppc |
 | /services/reviews-reputation | /services/reputation-management |
 | /services/seo-audit | /seo-audit |
 | /services/seo-services | /services/seo |
+| /services/virtual-receptionist | /casper-va/customer-service |
+| /services/virtual-receptionist-837694 | /casper-va/customer-service |
 | /services/website-development | /services/web-development |
+| /services/websites-landing-pages | /services/web-development |
 | /setup | /done-for-you |
 | /side-hustle-accelerator | /affiliate |
+| /social-media-advertising | /services/social-media-ads |
 | /social-media-advertising-package | /services/social-media-ads |
 | /social-media-engagement-va | /casper-va/social-media |
 | /social-media-growth-service | /services/social-media-growth |
@@ -638,6 +687,8 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /software | /services/ai-automation |
 | /software-defined-networking | /services/it-infrastructure |
 | /software/casperportal | /services/ai-automation |
+| /solutions-legal-marketing | /niches/legal-firms |
+| /solutions-real-estate-marketing | /niches/real-estate-agents |
 | /stationery-design | /services/design-services |
 | /strategy/b2b-lead-generation | /services/lead-generation |
 | /strategy/content-marketing | /services/content-marketing |
@@ -646,13 +697,18 @@ Town × service, town FAQ, playbook and CasperPortal feature URLs are omitted he
 | /strategy/reputation-management | /services/reputation-management |
 | /tech-stack-consolidation | /problems/too-many-tools |
 | /templates | /tools |
+| /terms-and-conditions | /terms |
 | /the-49k-story | /about-us |
 | /tools/incident-response-team | /tools/breach-response-plan |
 | /topsfield | /service-areas |
 | /truth-about-lead-gen-agencies | /should-i-hire-an-agency-or-do-it-myself |
+| /video-marketing | /services/content-marketing |
 | /video-marketing-services | /services/content-marketing |
 | /web-and-mobile-design | /services/web-development |
 | /website-analytics-setup | /services/analytics-data |
+| /website-building-expert-va | /casper-va |
 | /website-development | /services/web-development |
+| /website-development-886024 | /services/web-development |
+| /website-development-packages | /services/web-development |
 | /website-speed-optimization | /services/speed-optimization |
 | /workflow-implementation-va | /casper-va/pm |
