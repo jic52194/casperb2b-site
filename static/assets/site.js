@@ -31,6 +31,35 @@
   }, true);
   window.casperTrack = track;
 
+  // header: compact with a shadow once the page scrolls; reading progress on long articles
+  var top = document.querySelector(".top"), longread = document.querySelector(".longread"), bar;
+  if (longread) { bar = document.createElement("div"); bar.className = "progress-bar"; bar.setAttribute("aria-hidden", "true"); document.body.appendChild(bar); }
+  function onScroll() {
+    var y = window.scrollY || 0;
+    if (top) top.classList.toggle("scrolled", y > 12);
+    if (bar) { var h = document.documentElement.scrollHeight - window.innerHeight; bar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%"; }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // reveal on scroll (content stays visible without JS, for crawlers, in print and with reduced motion)
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var sel = ".content>section:not(:first-child)>h2, .content>section:not(:first-child)>p, .card, .card-link, .content>section>ol>li, details, .cta-band, .toc, .trust, .table-wrap, .tool, form.lead, .founder-card";
+    var els = Array.prototype.slice.call(document.querySelectorAll(sel)).filter(function (el) { return !el.closest(".content>section:first-child") || el.matches(".card,.card-link"); });
+    document.documentElement.classList.add("motion");
+    var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    els.forEach(function (el) {
+      var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      if (el.matches(".card,.card-link,li")) el.style.transitionDelay = (sib % 4) * 70 + "ms";
+      el.classList.add("rv"); io.observe(el);
+    });
+    window.addEventListener("beforeprint", function () { els.forEach(function (el) { el.classList.add("in"); }); });
+    // jump links and fast scrolling: anything already above the fold reveals at once
+    var pending = false;
+    function sweep() { pending = false; var vh = window.innerHeight; els.forEach(function (el) { if (!el.classList.contains("in") && el.getBoundingClientRect().top < vh) { el.classList.add("in"); io.unobserve(el); } }); }
+    window.addEventListener("scroll", function () { if (!pending) { pending = true; setTimeout(sweep, 150); } }, { passive: true });
+    window.addEventListener("hashchange", sweep);
+  }
+
   // printing: open every FAQ so answers are on paper, then put them back
   var opened = [];
   window.addEventListener("beforeprint", function () { document.querySelectorAll("details:not([open])").forEach(function (d) { d.setAttribute("open", ""); opened.push(d); }); });

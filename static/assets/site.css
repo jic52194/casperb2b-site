@@ -330,3 +330,43 @@ h2[id]{scroll-margin-top:130px}
 .menu.grouped .drop{columns:4;column-gap:4px;min-width:820px;padding:10px}
 .menu.grouped .drop .drop-head{break-before:column}.menu.grouped .drop .drop-head:first-child{break-before:auto}
 .drawer .drop-head{padding:10px 0 2px 12px}
+/* logos designed for dark backgrounds: black tile in the logo strip, black panel behind the logo on project cards */
+.logos .card-link:has(> img[alt="Flight Salem NH"]),.logos .card-link:has(> img[alt="Everyday Perform"]),.logos .card-link:has(> img[alt="Elite Security Services LLC"]){background:#000;border-color:#000}
+.logos .card-link:has(> img[alt="Flight Salem NH"]):hover,.logos .card-link:has(> img[alt="Everyday Perform"]):hover,.logos .card-link:has(> img[alt="Elite Security Services LLC"]):hover{border-color:var(--orange)}
+:not(.logos)>.card-link>img:is([alt="Flight Salem NH"],[alt="Everyday Perform"],[alt="Elite Security Services LLC"]){background:#000;padding:18px;border-radius:12px;width:100%;max-height:200px;object-fit:contain;box-sizing:border-box}
+
+/* ── portfolio: every logo in the same frame ── */
+[data-path="/portfolio"] .card-link>img:first-child{display:block;width:100%;height:170px;object-fit:contain;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:20px;margin:0 0 14px;box-sizing:border-box}
+[data-path="/portfolio"] .card-link>img:first-child:is([alt="Flight Salem NH"],[alt="Everyday Perform"],[alt="Elite Security Services LLC"]){background:#000;border-color:#000;max-height:none}
+[data-path="/portfolio"] .grid{align-items:stretch}
+
+/* ── motion (only when the visitor hasn't asked for reduced motion) ── */
+.top{transition:box-shadow .25s,background .25s}
+.top .row{transition:min-height .25s}
+.top .logo img{transition:height .25s}
+.top.scrolled{box-shadow:0 6px 20px -10px rgba(3,7,18,.25)}
+.top.scrolled .row{min-height:60px}
+.top.scrolled .logo img{height:42px}
+.progress-bar{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--orange),#fb923c);z-index:70;transition:width .1s linear}
+@media (prefers-reduced-motion:no-preference){
+  .motion .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+  .motion .rv.in{opacity:1;transform:none}
+  .hero-art svg{animation:art-in .9s cubic-bezier(.22,1,.36,1) both, art-float 7s ease-in-out 1s infinite}
+  @keyframes art-in{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+  @keyframes art-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .content>section:first-child:has(h1){background-size:160% 160%,140% 140%,100% 100%;animation:hero-glow 14s ease-in-out infinite alternate}
+  @keyframes hero-glow{from{background-position:100% 0,0 100%,0 0}to{background-position:70% 20%,20% 80%,0 0}}
+  .content>section:first-child h1{animation:art-in .7s cubic-bezier(.22,1,.36,1) both}
+  .content>section:first-child .answer{animation:art-in .7s .08s cubic-bezier(.22,1,.36,1) both}
+  .content>section:first-child .ctas{animation:art-in .7s .16s cubic-bezier(.22,1,.36,1) both}
+  .btn{position:relative;overflow:hidden}
+  .btn:not(.ghost)::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn:not(.ghost):hover::after{left:120%}
+  .card-link,.card{transition:border-color .2s,box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .ico{transition:transform .25s}
+  .card:hover .ico,.card-link:hover .ico{transform:scale(1.08) rotate(-3deg)}
+  .content>section>ol>li::before{transition:transform .25s}
+  .content>section>ol>li:hover::before{transform:scale(1.12)}
+}
+@media print{.motion .rv{opacity:1!important;transform:none!important}.progress-bar{display:none}}

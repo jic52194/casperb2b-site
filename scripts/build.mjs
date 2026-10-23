@@ -345,10 +345,13 @@ const family = (p) => {
   return all.filter((x) => CL(x) === CL(p));
 };
 function relatedPicks(p, exclude) {
-  const fam = family(p).filter((x) => x !== p && !exclude.has(x));
-  const i = Math.max(0, family(p).indexOf(p));
+  // same-topic siblings first (rotating from this page's position so neighbours differ), then the rest of the family
+  const all = family(p), same = all.filter((x) => CL(x) === CL(p)), rest = all.filter((x) => CL(x) !== CL(p));
+  const i = Math.max(0, same.indexOf(p));
+  const ring = same.length ? same.map((_, k) => same[(i + 1 + k) % same.length]) : [];
+  const fam = [...ring, ...rest].filter((x, k, a) => x !== p && !exclude.has(x) && a.indexOf(x) === k);
   const pick = [];
-  for (let k = 0; k < fam.length && pick.length < 3; k++) pick.push(fam[(i + k) % fam.length]);
+  for (let k = 0; k < fam.length && pick.length < 3; k++) pick.push(fam[k]);
   const hub = CLUSTERS[CL(p)]?.hub; if (hub && hub !== p && KEEP.has(hub) && !pick.includes(hub) && !exclude.has(hub)) pick.push(hub);
   for (const x of ["/services", "/how-to-get-more-customers", "/tools", "/blog"]) if (pick.length < 3 && x !== p && !pick.includes(x) && !exclude.has(x)) pick.push(x);
   return pick;
@@ -512,7 +515,7 @@ for (const P of ALL) {
   const plain = ["/thank-you", "/agreement-builder"].includes(p);
   const picks = p === "/" || plain || p === BOOK ? [] : relatedPicks(p, new Set(Object.values(steps)));
   const tail = p === BOOK ? TRUST : plain ? "" : related(p, picks) + nextBlock(p, steps, shortName, cardDesc, cta);
-  const body = `<div class="content${isPost(p) ? " article" : ""}">${html}${tail}</div>`;
+  const body = `<div class="content${isPost(p) ? " article" : ""}${isPost(p) || isQuestion(p) ? " longread" : ""}" data-path="${p}">${html}${tail}</div>`;
   if (STORY.test(strip(html)) || STORY.test(title + " " + desc)) throw new Error(`${p}: still mentions the $49,000 story: ${(strip(html).match(new RegExp(".{0,60}" + STORY.source + ".{0,40}", "i")) || [""])[0]}`);
   write(p, page({ path: p, title, desc, body, crumbs: p === "/" ? null : crumbs, noindex, ogType: isPost(p) ? "article" : "website", schema: noindex ? [] : schemaFor(p, html, title, desc), cta: cta || { href: BOOK, label: "Book My 15-Minute Fit Call" }, sticky: stickyCta(cta) }));
   report.push([p, title.length, desc.length]);
