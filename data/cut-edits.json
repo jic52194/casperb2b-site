@@ -86,68 +86,6 @@
    "why": "cta"
   }
  ],
- "/about-us": [
-  {
-   "find": "<p class=\"ctas\"><a href=\"/contact\" class=\"btn\">Talk With CasperB2B</a> <a href=\"/strategy\" class=\"btn ghost\">Strategize With Us</a></p><p>If you're evaluating systems, we can map your current lead flow first and keep the conversation focused on outcomes.</p>",
-   "replace": "",
-   "why": "cta"
-  },
-  {
-   "find": "<p>We didn't learn how to build businesses by reading books. We learned by operating them, making mistakes, and fixing the bottlenecks.</p>",
-   "replace": "<p>We learned by operating businesses, making mistakes, and fixing the bottlenecks.</p>",
-   "why": "tighten"
-  },
-  {
-   "find": "<p>Every business has a moment that changes how they operate forever. This was ours. It's the reason we prioritize",
-   "replace": "<p>It's the reason we prioritize",
-   "why": "fluff"
-  },
-  {
-   "find": "<div class=\"card\"><p>\"Respect is not proven by compliments. Respect is proven by payment.\"</p></div>",
-   "replace": "",
-   "why": "repeat"
-  },
-  {
-   "find": "<p class=\"eyebrow\">Focus Areas</p><p>Local SEO</p><p>Website Development</p><p>Marketing Automation</p><p>CRM Strategy</p><p>Conversion Optimization</p>",
-   "replace": "<p class=\"eyebrow\">Focus Areas</p><ul><li>Local SEO</li><li>Website Development</li><li>Marketing Automation</li><li>CRM Strategy</li><li>Conversion Optimization</li></ul>",
-   "why": "structure"
-  },
-  {
-   "find": "<p class=\"eyebrow\">Focus Areas</p><p>Sales Strategy</p><p>Client Relationships</p><p>Business Development</p><p>Operator Consulting</p><p>Team Leadership</p>",
-   "replace": "<p class=\"eyebrow\">Focus Areas</p><ul><li>Sales Strategy</li><li>Client Relationships</li><li>Business Development</li><li>Operator Consulting</li><li>Team Leadership</li></ul>",
-   "why": "structure"
-  },
-  {
-   "find": "<p>Four pillars that keep the platform and implementations grounded in reality.</p>",
-   "replace": "",
-   "why": "fluff"
-  },
-  {
-   "find": "<p>Owners who want fewer tools and fewer handoffs</p></li></ul><p class=\"ctas\"><a href=\"/contact\" class=\"btn\">Get Free Audit</a></p>",
-   "replace": "<p>Owners who want fewer tools and fewer handoffs</p></li></ul>",
-   "why": "cta"
-  },
-  {
-   "find": "<p>Simple automation for confirmations and reminders</p></li></ul><p class=\"ctas\"><a href=\"/contact\" class=\"btn\">Get Free Audit</a></p>",
-   "replace": "<p>Simple automation for confirmations and reminders</p></li></ul>",
-   "why": "cta"
-  },
-  {
-   "find": "<p>Train teams on simple, repeatable steps</p></li></ul><p class=\"ctas\"><a href=\"/contact\" class=\"btn\">Get Free Audit</a></p>",
-   "replace": "<p>Train teams on simple, repeatable steps</p></li></ul>",
-   "why": "cta"
-  },
-  {
-   "find": "<p>Reduce tool sprawl and duplicated work</p></li></ul><p class=\"ctas\"><a href=\"/contact\" class=\"btn\">Get Free Audit</a></p>",
-   "replace": "<p>Reduce tool sprawl and duplicated work</p></li></ul>",
-   "why": "cta"
-  },
-  {
-   "find": "<h3>What drives our decisions</h3><div class=\"grid g3\"><div class=\"card\"><h4>Radical Honesty</h4><p>We don't sell things you don't need. If a system won't help you grow, we'll tell you.</p></div><div class=\"card\"><h4>Operator First</h4><p>We build for the people doing the work. If it's too complex to use daily, it's broken.</p></div><div class=\"card\"><h4>Speed to Value</h4><p>We focus on quick wins that generate momentum, rather than endless planning cycles.</p></div></div>",
-   "replace": "<p>We don't sell things you don't need. If a system won't help you grow, we'll tell you.</p>",
-   "why": "repeat"
-  }
- ],
  "/affiliate": [
   {
    "find": "<p>Join a recurring payout program built for people who refer business owners. We pay you $150/mo per client plus massive leadership overrides.</p><p class=\"ctas\"><a href=\"/affiliate-kit\">Download Affiliate Marketing Kit</a></p>",

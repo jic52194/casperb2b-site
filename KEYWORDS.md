@@ -278,7 +278,7 @@ Every page gets: the title and meta description below, an H1 aligned to the keyw
 
 | Page | Primary keyword | Secondary | Title | H1 |
 |---|---|---|---|---|
-| /about-us | about casperb2b | casperb2b founders; jared casper and mark casper; who owns casperb2b | About CasperB2B: Founders, Story & Values \| CasperB2B | About CasperB2B |
+| /about-us | about casperb2b | who is casperb2b; casperb2b company; done-for-you marketing company | About CasperB2B: How We Help Your Business Grow | About CasperB2B |
 | /affiliate | marketing agency affiliate program | recurring commission affiliate program; casperb2b partner program; refer clients to a marketing agency | Marketing Agency Affiliate Program \| CasperB2B | Marketing Agency Affiliate Program: Build Recurring Income |
 | /affiliate-terms | — |  | Affiliate Terms and Conditions \| CasperB2B | Affiliate Terms and Conditions |
 | /author/jared-casper | jared casper | jared casper casperb2b; casperb2b founder; jared casper georgetown ma | Jared Casper, Founder of CasperB2B \| CasperB2B | Jared Casper |

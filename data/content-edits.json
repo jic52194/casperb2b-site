@@ -26,28 +26,6 @@
    "why": "owner decision: portfolio led by these five"
   }
  ],
- "/about-us": [
-  {
-   "find": "We realized local businesses were losing 40% of their leads simply because they didn't reply fast enough.",
-   "replace": "We realized local businesses were losing leads simply because they didn't reply fast enough.",
-   "why": "invented 40% stat"
-  },
-  {
-   "find": "We saw operators working 80-hour weeks manually sending texts and emails.",
-   "replace": "We saw operators working long weeks manually sending texts and emails.",
-   "why": "invented 80-hour figure"
-  },
-  {
-   "find": "<a href=\"/jared-casper\" class=\"btn ghost\">Full Profile</a>",
-   "replace": "<a href=\"/author/jared-casper\" class=\"btn ghost\">Full Profile</a>",
-   "why": "broken link: /jared-casper does not exist"
-  },
-  {
-   "find": "<p>Yes. It's built for busy operators who need one place to manage inquiries, follow-up, and next steps without extra complexity.</p><p>Speed-to-response, consistent follow-up, and clear pipeline visibility. Those three remove the biggest sources of lost opportunities.</p><p>Yes. Depending on your plan, we can configure workflows, map stages, and train the team so the system is usable from day one.</p><p>That's common. We start by mapping what you use today, then recommend the simplest path to reduce overlap and keep follow-up consistent.</p>",
-   "replace": "<details><summary>Is CasperB2B a fit for a small, busy team?</summary><p>Yes. It's built for busy operators who need one place to manage inquiries, follow-up, and next steps without extra complexity.</p></details><details><summary>What should we fix first?</summary><p>Speed-to-response, consistent follow-up, and clear pipeline visibility. Those three remove the biggest sources of lost opportunities.</p></details><details><summary>Do you set it up and train our team?</summary><p>Yes. Depending on your plan, we can configure workflows, map stages, and train the team so the system is usable from day one.</p></details><details><summary>We already use several tools. Is that a problem?</summary><p>That's common. We start by mapping what you use today, then recommend the simplest path to reduce overlap and keep follow-up consistent.</p></details>",
-   "why": "broken FAQ: answers had no questions"
-  }
- ],
  "/affiliate": [
   {
    "find": "Join the most aggressive recurring payout program in the agency space. We pay you",

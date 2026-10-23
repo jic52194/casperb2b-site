@@ -16,9 +16,6 @@ const SECTIONS = [
   [/Fragmented &amp; Inconsistent/],
   [/<h2>Is this happening in your business\?<\/h2>/],
   [/>Related Local Services/],
-  [/<h2>Latest Insights<\/h2>/, /^\/about-us$/],
-  [/Want to see your workflow mapped/],
-  [/<h2>The Ecosystem<\/h2>/],
   [/<h2>Why we do things differently<\/h2>/, /^\/(seo-audit|pricing)$/],
   [/<h2>Real projects we actually built<\/h2>/, /^\/(seo-audit|georgetown-ma|services)$/],
 ];
