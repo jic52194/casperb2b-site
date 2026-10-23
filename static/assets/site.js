@@ -31,6 +31,11 @@
   }, true);
   window.casperTrack = track;
 
+  // printing: open every FAQ so answers are on paper, then put them back
+  var opened = [];
+  window.addEventListener("beforeprint", function () { document.querySelectorAll("details:not([open])").forEach(function (d) { d.setAttribute("open", ""); opened.push(d); }); });
+  window.addEventListener("afterprint", function () { opened.forEach(function (d) { d.removeAttribute("open"); }); opened = []; });
+
   // /contact?topic=seo preselects "What are you looking for?"
   var topic = new URLSearchParams(location.search).get("topic"), sel = document.querySelector("select[name=service_requested]");
   if (topic && sel) Array.prototype.forEach.call(sel.options, function (o) { if (o.value === topic) sel.value = topic; });

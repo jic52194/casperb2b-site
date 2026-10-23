@@ -67,7 +67,7 @@ export function page({ path, title, desc, body, schema = [], crumbs, noindex = f
 <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1"}">
 <meta property="og:type" content="${ogType}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="en_US"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(NAME)} — Business Growth Services">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${og}">
-<meta name="theme-color" content="#f97316"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="theme-color" content="#f97316"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${TODAY}">
 ${nodes.map(ld).join("")}
@@ -80,6 +80,7 @@ ${nodes.map(ld).join("")}
 <button class="burger" type="button" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button></div>
 <nav class="mainnav" aria-label="Main"><div class="wrap">${NAV.menus.map(([n, items], i) => `<div class="menu${i >= NAV.menus.length - 2 ? " end" : ""}"><button type="button" aria-expanded="false" aria-haspopup="true">${esc(n)}</button><div class="drop">${items.map(([a, h]) => navLink(a, h, path)).join("")}</div></div>`).join("")}</div></nav>
 <nav class="drawer" id="drawer" data-drawer aria-label="Mobile" hidden>${NAV.menus.map(([n, items]) => `<details><summary>${esc(n)}</summary>${items.map(([a, h]) => navLink(a, h, path)).join("")}</details>`).join("")}<a class="btn" href="${ctaHref}" data-cta="drawer">Book My 15-Minute Fit Call</a></nav></header>
+<div class="print-head" aria-hidden="true"><img src="${LOGO}" alt="" width="57" height="40"><span>casperb2b.com · ${PHONE} · ${EMAIL}</span><span class="print-url">${url}</span></div>
 <main id="main" tabindex="-1">${crumbs && crumbs.length > 1 ? `<nav class="crumbs wrap" aria-label="Breadcrumb"><ol>${crumbs.map(([n, p], i) => `<li>${i < crumbs.length - 1 ? `<a href="${p}">${esc(n)}</a>` : `<span aria-current="page">${esc(n)}</span>`}</li>`).join("")}</ol></nav>` : ""}${body}</main>
 <footer class="foot">
 <div class="wrap">

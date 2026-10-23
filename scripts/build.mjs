@@ -13,6 +13,7 @@ import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stic
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB } from "./pages-extra.mjs";
 import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
 import { locationPages } from "./locations.mjs";
+import { heroArt, iconFor } from "./visuals.mjs";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url)).split("\\").join("/");
 const read = (f, d) => existsSync(ROOT + f) ? JSON.parse(readFileSync(ROOT + f, "utf8")) : d;
@@ -36,6 +37,7 @@ function addContent(p, html) {
   return html;
 } // second pass: fluff cuts, applied after declutter()
 const LOC = read("data/locations.json");
+const NO_ART = new Set(["/contact", "/thank-you", "/agreement-builder", "/sitemap", "/faq", "/blog", "/careers"]);
 const NOINDEX = new Set(["/thank-you", "/agreement-builder"]);
 
 // ── pages that are written here rather than captured ──
@@ -153,10 +155,13 @@ function rewriteLinks(html) {
   });
   return html.replace(/<p class="ctas">\s*<\/p>/g, "");
 }
+// stock photos the old site captioned as "CasperB2B team" — not real staff, so never shown
+const NOT_OUR_TEAM = ["6633f4c6a63e94209e806c1d", "653b16a9cc8c12dc5f1cd56d", "653b1780c3c1a190996b29a5", "653b186d28812040cc078f25", "6540ad401eae187a62401831"];
 let imgCount = 0;
 function rewriteMedia(html) {
   html = html.replace(/<img src="([^"]*)" alt="([^"]*)"[^>]*>/g, (all, src, alt) => {
     const m = IMAGES[src.replace(/&amp;/g, "&")] || (src.startsWith("/img/") ? { src, w: 0, h: 0 } : null); if (!m) return "";
+    if (NOT_OUR_TEAM.some((id) => m.src.includes(id))) return ""; // stock photos that were captioned as our team
     const eager = imgCount++ === 0;
     return `<img src="${m.src}" alt="${alt}"${m.w ? ` width="${m.w}" height="${m.h}"` : ""}${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">`;
   });
@@ -340,6 +345,7 @@ function htmlSitemap(html) {
 
 // ── schema ──
 const PROJECTS = [["CarSales AI", "https://carsalessoftware.com", "AI-first car sales software for dealerships"], ["FMYCAR", "https://fmycar.com", "Independent car-buying help and a marketplace of cars from local dealers"], ["NextWeigh", "https://nextweigh.com", "A health and fitness program: habit coaching by text"], ["MC Sales Training", "https://mcsalestraining.com", "An 8-week sales challenge with live coaching"], ["FBK Marketing", "https://fbkmarketing.com", "Social media content for business owners"]];
+const FIRST_LIVE = "2026-10-23"; // first published on this static site (pages without their own date)
 const JARED = { "@type": "Person", "@id": `${SITE}/author/jared-casper#person`, name: "Jared Casper", url: `${SITE}/author/jared-casper` };
 function faqSchema(html) {
   const qs = [...html.matchAll(/<details><summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g)].map((m) => [strip(m[1]), strip(m[2])]).filter(([q, a]) => q && a);
@@ -349,12 +355,12 @@ const isService = (p) => !!BY[p]?.location || /^\/staffing(\/|$)/.test(p) ||  /^
 function schemaFor(p, html, title, desc) {
   const s = [];
   if (p === "/" || p === "/about-us") s.push({ "@context": "https://schema.org", ...ORG });
-  if (p === "/") s.push({ "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE}/#website`, url: SITE + "/", name: NAME, publisher: ORG_REF, inLanguage: "en-US" });
+  if (p === "/") s.push({ "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE}/#website`, url: SITE + "/", name: NAME, alternateName: ["Casper B2B", "casperb2b.com"], publisher: ORG_REF, inLanguage: "en-US" });
   if (isPost(p) || isQuestion(p)) {
     const date = (html.match(/(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, 20\d\d/) || [])[0];
     const iso = date ? new Date(date + " 12:00 UTC").toISOString().slice(0, 10) : undefined;
     const img = (html.match(/<img src="([^"]+)"/) || [])[1];
-    s.push({ "@context": "https://schema.org", "@type": isPost(p) ? "BlogPosting" : "Article", headline: strip((html.match(/<h1>([\s\S]*?)<\/h1>/) || [, title])[1]).slice(0, 110), description: desc, url: SITE + p, mainEntityOfPage: SITE + p, author: JARED, publisher: ORG_REF, ...(iso ? { datePublished: iso } : {}), dateModified: TODAY, image: SITE + (img || "/og.png"), inLanguage: "en-US", ...(KW[p]?.keyword ? { about: KW[p].keyword } : {}) });
+    s.push({ "@context": "https://schema.org", "@type": isPost(p) ? "BlogPosting" : "Article", headline: strip((html.match(/<h1>([\s\S]*?)<\/h1>/) || [, title])[1]).slice(0, 110), description: desc, url: SITE + p, mainEntityOfPage: SITE + p, author: JARED, publisher: ORG_REF, datePublished: iso || FIRST_LIVE, dateModified: TODAY, image: SITE + (img || "/og.png"), inLanguage: "en-US", ...(KW[p]?.keyword ? { about: KW[p].keyword } : {}) });
   }
   if (p === "/author/jared-casper") s.push({ "@context": "https://schema.org", ...JARED, jobTitle: "Founder", worksFor: ORG_REF, sameAs: ["https://www.linkedin.com/in/jaredcasper94/", "https://www.facebook.com/jaredcasper94/"], image: SITE + "/img/jared-casper.webp" });
   if (p === "/portfolio" || p === "/") s.push({ "@context": "https://schema.org", "@type": "ItemList", name: "Projects built by CasperB2B", itemListElement: PROJECTS.map(([name, url, about], i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name, url, about, creator: ORG_REF } })) });
@@ -383,6 +389,8 @@ for (const P of ALL) {
   if (TOOLS[p]) html = toolPage(p, html);
   html = placeForms(p, html);
   html = polish(rewriteMedia(rewriteLinks(html)));
+  // nothing left behind when an image, link or claim was removed: empty cards, empty grids, heading-only sections
+  html = html.replace(/<a class="card-link" href="[^"]*"(?: rel="noopener")?>\s*<\/a>/g, "").replace(/<div class="card">\s*<\/div>/g, "").replace(/<div class="grid[^"]*">\s*<\/div>/g, "").replace(/<section>(?:\s*(?:<p class="eyebrow">[^<]*<\/p>|<h[234]>[^<]*<\/h[234]>))*\s*<\/section>/g, "");
   html = oneCta(html, cta);
   // the primary CTA is visible in the first screen of every page (tools convert inside the tool)
   if (cta && !TOOLS[p] && !["/agreement-builder", "/thank-you"].includes(p)) {
@@ -396,6 +404,13 @@ for (const P of ALL) {
     }
   }
   if (p === "/sitemap") html = htmlSitemap(html);
+  // visuals: an outcome illustration beside the hero (pages without their own hero media) and an icon on every card
+  if (!NO_ART.has(p) && !/^\/(privacy|terms|affiliate-terms)$/.test(p)) {
+    const end = html.indexOf("</section>"), first = end > 0 ? html.slice(0, end) : "";
+    if (first.startsWith("<section>") && /<h1/.test(first) && !/<(img|video|iframe)\b/.test(first)) html = "<section>" + heroArt(CLUSTERS[cluster] ? cluster : "about", p) + html.slice("<section>".length);
+  }
+  html = html.replace(/<div class="card">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, inner, h) => `<div class="card">${iconFor(h)}${inner}`);
+  if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
   if (p === "/services") html += allServices();
   if (p === "/niches") html += `<section class="hub-group"><h2>Every industry we work with</h2><div class="grid g3">${all.filter((x) => /^\/niches\/./.test(x)).map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>`;

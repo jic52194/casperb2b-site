@@ -76,11 +76,11 @@ export function nextSteps(p, cluster, kw = {}, exists = () => true) {
 }
 
 // Trust block: only verifiable facts (founders, real portfolio, how to reach a person).
-export const TRUST = `<div class="trust" aria-label="Why CasperB2B"><ul>
+export const TRUST = `<div class="trust" aria-label="Why CasperB2B"><div class="trust-who"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="72" height="72" decoding="async"><div><b>Talk to the founder.</b><span>Jared Casper reviews every new request.</span></div></div><ul>
 <li><b>Founder-led.</b> Built by <a href="/author/jared-casper">Jared Casper</a> (Founder) and <a href="/mark-casper">Mark Casper</a> (Co-Founder).</li>
-<li><b>Real projects.</b> We built and run <a href="/portfolio">CarSales AI, FMYCAR, NextWeigh, MC Sales Training and FBK Marketing</a>.</li>
 <li><b>A person answers.</b> Every request gets a personal reply within 1 business day. Call or text <a href="tel:${PHONE_TEL}" data-cta="trust-call">${PHONE}</a>.</li>
-<li><b>Done for you.</b> We build, set up and run the system — <a href="/done-for-you">see exactly what we do</a>.</li></ul></div>`;
+<li><b>Done for you.</b> We build, set up and run the system — <a href="/done-for-you">see exactly what we do</a>.</li></ul>
+<a class="trust-logos" href="/portfolio" aria-label="Projects we built: CarSales AI, FMYCAR, NextWeigh, MC Sales Training and FBK Marketing"><span>Projects we built and run</span><img src="/img/t-logo-carsales-ai.png" alt="CarSales AI" width="80" height="40" loading="lazy" decoding="async"><img src="/img/t-logo-fmycar.png" alt="FMYCAR" width="40" height="40" loading="lazy" decoding="async"><img src="/img/t-logo-nextweigh.png" alt="NextWeigh" width="40" height="40" loading="lazy" decoding="async"><img src="/img/t-logo-mc-sales-training.png" alt="MC Sales Training" width="40" height="40" loading="lazy" decoding="async"><img src="/img/t-logo-fbk-marketing.png" alt="FBK Marketing" width="40" height="40" loading="lazy" decoding="async"></a></div>`;
 
 export function nextBlock(p, steps, names, descs, cta) {
   const card = (kind, label, href) => href ? `<a class="card-link step" href="${href}" data-cta="next-${kind}"><p class="eyebrow">${label}</p><h3>${esc(names(href))}</h3><p>${esc(descs(href))}</p></a>` : "";
