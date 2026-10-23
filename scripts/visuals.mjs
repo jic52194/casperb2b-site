@@ -117,6 +117,6 @@ const RULES = [
 ];
 export function iconFor(text) {
   const t = String(text).replace(/<[^>]+>/g, " ");
-  const k = (RULES.find(([re]) => re.test(t)) || [, "check"])[1];
+  const k = P[t] ? t : (RULES.find(([re]) => re.test(t)) || [, "check"])[1];
   return `<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${P[k]}</svg></span>`;
 }

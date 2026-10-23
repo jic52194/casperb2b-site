@@ -176,6 +176,15 @@ function rewriteMedia(html) {
   });
   return html;
 }
+/** Heading levels only step down one at a time (a11y + outline): a skipped level is renamed, its size kept via class. */
+function fixHeadings(html) {
+  let prev = 0;
+  return html.replace(/<h([1-4])((?: class="[^"]*")?)>([\s\S]*?)<\/h\1>/g, (all, lv, cls, inner) => {
+    let l = +lv;
+    if (prev && l > prev + 1) { const keep = cls ? cls : ` class="h${l}"`; l = prev + 1; prev = l; return `<h${l}${keep}>${inner}</h${l}>`; }
+    prev = l; return all;
+  });
+}
 function polish(html) {
   html = html.replace(/<p>By Jared Casper<\/p>(?:<p>•<\/p>)?<p>(Last updated: [^<]+)<\/p>/g, '<p class="byline">By <a href="/author/jared-casper">Jared Casper</a> · $1</p>');
   html = html.replace(/<a class="card-link" href="\/author\/jared-casper">(?:<img [^>]*>)?<p class="eyebrow">Jared Casper<\/p><\/a>((?:<p class="eyebrow">[^<]{3,30}<\/p>){0,2})/g, (all, rest) => `<p class="byline">By <a href="/author/jared-casper">Jared Casper</a>${[...rest.matchAll(/<p class="eyebrow">([^<]+)<\/p>/g)].map((m) => " · " + m[1]).join("")}</p>`);
@@ -391,6 +400,7 @@ for (const P of ALL) {
   html = polish(rewriteMedia(rewriteLinks(html)));
   // nothing left behind when an image, link or claim was removed: empty cards, empty grids, heading-only sections
   html = html.replace(/<a class="card-link" href="[^"]*"(?: rel="noopener")?>\s*<\/a>/g, "").replace(/<div class="card">\s*<\/div>/g, "").replace(/<div class="grid[^"]*">\s*<\/div>/g, "").replace(/<section>(?:\s*(?:<p class="eyebrow">[^<]*<\/p>|<h[234]>[^<]*<\/h[234]>))*\s*<\/section>/g, "");
+  html = fixHeadings(html).replace(/<img ([^>]*?)alt="Jared Casper"/g, (m, pre) => `<img ${pre}alt=""`); // avatar next to the byline text
   html = oneCta(html, cta);
   // the primary CTA is visible in the first screen of every page (tools convert inside the tool)
   if (cta && !TOOLS[p] && !["/agreement-builder", "/thank-you"].includes(p)) {
@@ -413,6 +423,11 @@ for (const P of ALL) {
   if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
   if (p === "/services") html += allServices();
+  if (p === "/") { // every service line in one screen, right after the hero
+    const LINES = [["Get more customers", "/how-to-get-more-customers", "phone", "Answer every call, follow up fast and win the local search."], ["Marketing & SEO", "/marketing-and-seo", "search", "Local SEO, websites, Google Ads, email and social media."], ["B2B pipeline", "/b2b-growth", "target", "B2B lead generation, appointment setting and account-based marketing."], ["AI, apps & automation", "/ai-services", "bot", "AI chatbots, automated follow-up, custom and mobile apps."], ["Cybersecurity & IT", "/cybersecurity-and-it", "shield", "Protection, backups, managed IT and infrastructure."], ["Staffing & VAs", "/staffing", "users", "IT and contract staffing, direct hire and dedicated remote team members."], ["Free tools", "/tools", "gauge", "Quizzes and calculators that show where you're losing revenue."], ["Massachusetts & New Hampshire", "/service-areas", "pin", "Local pages for the towns we serve — and remote work worldwide."]].filter(([, h]) => KEEP.has(h));
+    const grid = `<section class="lines"><h2>What we do</h2><div class="grid g4">${LINES.map(([n, h, icon, d]) => `<a class="card-link" href="${h}">${iconFor(icon)}<h3>${esc(n)}</h3><p>${esc(d)}</p></a>`).join("")}</div></section>`;
+    const end = html.indexOf("</section>"); if (end > 0) html = html.slice(0, end + 10) + grid + html.slice(end + 10);
+  }
   if (p === "/niches") html += `<section class="hub-group"><h2>Every industry we work with</h2><div class="grid g3">${all.filter((x) => /^\/niches\/./.test(x)).map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>`;
   imgCount = 0;
   const h1s = (html.match(/<h1[\s>]/g) || []).length;

@@ -171,7 +171,7 @@ export function toolPage(p, html) {
   const t = TOOLS[p]; let out = t(html);
   if (CAPTURE[p] && !/class="lead/.test(out)) {
     const [id, h, sub] = CAPTURE[p];
-    out = out.replace(/<\/div>$/, `<div class="capture"><h3>${esc(h)}</h3><p>${esc(sub)}</p>${leadForm({ id, submit: "Send It to Me", success: "Got it. Expect a personal reply within 1 business day.", fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] })}</div></div>`);
+    out = out.replace(/<\/div>$/, `<div class="capture"><h2 class="h3">${esc(h)}</h2><p>${esc(sub)}</p>${leadForm({ id, submit: "Send It to Me", success: "Got it. Expect a personal reply within 1 business day.", fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] })}</div></div>`);
   }
   return `${out}<script src="/assets/tools.js" defer></script>`;
 }
