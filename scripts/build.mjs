@@ -91,7 +91,10 @@ function finalTarget(to, seen = new Set()) {
   if (REDIRECTS[p] && !seen.has(p)) { seen.add(p); return finalTarget(REDIRECTS[p], seen); }
   throw new Error(`redirect ends at a page that is not built: ${to}`);
 }
-for (const k of Object.keys(REDIRECTS)) { const m = k.match(/^\/(?:strategy\/ai\/|strategy\/|faq\/|compare\/national-agencies\/|blog\/spotlight-)?([a-z-]+-(?:ma|nh))(?:\/.*)?$/); if (m && KEEP.has("/" + m[1]) && LOCS.slugs.includes(m[1])) REDIRECTS[k] = "/" + m[1]; }
+// old town × service URLs → the matching town service page when one exists, else the town page
+const TOWN_SUB = [[/^\/(cybersecurity|data-protection|cloud-computing|hosting-support|it-support|managed-it|backup-and-recovery|it-infrastructure)$/, "managed-it"], [/^\/(web-development|website-development|web-design|speed-optimization|conversion-optimization)$/, "web-development"]];
+for (const k of Object.keys(REDIRECTS)) { const m = k.match(/^\/(?:strategy\/ai\/|strategy\/|faq\/|compare\/national-agencies\/|blog\/spotlight-)?([a-z-]+-(?:ma|nh))(\/.*)?$/); if (!(m && KEEP.has("/" + m[1]) && LOCS.slugs.includes(m[1]))) continue;
+  const sub = k.startsWith("/" + m[1] + "/") && m[2] ? TOWN_SUB.find(([re]) => re.test(m[2])) : null; const to = sub && `/${m[1]}/${sub[1]}`; REDIRECTS[k] = to && KEEP.has(to) ? to : "/" + m[1]; }
 for (const k of Object.keys(REDIRECTS)) REDIRECTS[k] = finalTarget(REDIRECTS[k]);
 
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
