@@ -1,11 +1,67 @@
-// casperb2b.com forms → the same GoHighLevel inbound webhook and the same JSON payload the live site's React app sent
-// (src: submitToCrm in the old bundle). Every <form class="lead" data-form-id="…"> is handled here; tools.js reuses
-// window.casperSubmit for its result forms. Nothing is sent until the visitor presses the submit button.
+// casperb2b.com forms → Cloudflare Worker (bot check) → GoHighLevel inbound webhook. Same JSON payload as before.
+// Every <form class="lead" data-form-id="…"> is handled here; tools.js reuses window.casperSubmit for its result forms.
+// Bot protection: Cloudflare Turnstile ("I'm not a robot", verified server-side by the Worker), a hidden honeypot
+// field, and a minimum fill time. The GHL webhook URL lives only in the Worker, never in this public file.
+// Nothing is sent until the visitor presses the submit button.
 (function () {
-  var HOOK = "https://services.leadconnectorhq.com/hooks/TLBXLD9M7LensL45PB90/webhook-trigger/bee537ba-8323-4437-9b8a-6d861e808c0e";
+  var ENDPOINT = "https://casperb2b-forms.carsalenow.workers.dev/"; // ← your Worker URL
+  var SITEKEY = "0x4AAAAAAFkKgu6V0ZL0bVaL";                               // ← Turnstile site key (public)
+  var APPEARANCE = "interaction-only"; // "interaction-only" = shows only when Cloudflare is unsure; "always" = always-visible box
   var ERR = "Something went wrong. Please call us directly at 1-207-222-7737.";
+  var BOT_ERR = "Please complete the \"I'm not a robot\" check and try again.";
+  var HP = "_gotcha";
+  var loadedAt = Date.now();
   var recent = {};
-  function submit(formId, data, tags, notes) {
+
+  // ---- Turnstile ---------------------------------------------------------------------------------
+  var tsLoad;
+  function loadTurnstile() {
+    if (!tsLoad) tsLoad = new Promise(function (res, rej) {
+      window.__casperTsReady = res;
+      var s = document.createElement("script");
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__casperTsReady";
+      s.async = true; s.defer = true; s.onerror = function () { tsLoad = null; rej(new Error("turnstile")); };
+      document.head.appendChild(s);
+    });
+    return tsLoad;
+  }
+  // One widget per host (a form, or a floating box for tools.js calls). Renders lazily on first interaction.
+  function widget(host, box) {
+    if (host.__ts) return host.__ts;
+    var st = host.__ts = { token: "", waiters: [], id: null };
+    function flush(t) { st.waiters.splice(0).forEach(function (w) { w(t); }); }
+    st.ready = loadTurnstile().then(function () {
+      st.id = window.turnstile.render(box, {
+        sitekey: SITEKEY, appearance: APPEARANCE, "refresh-expired": "auto", action: "form",
+        callback: function (t) { st.token = t; flush(t); },
+        "expired-callback": function () { st.token = ""; },
+        "error-callback": function () { st.token = ""; flush(""); }
+      });
+    }).catch(function () { flush(""); });
+    return st;
+  }
+  function takeToken(st) {
+    function done(t) { st.token = ""; if (st.id != null) try { window.turnstile.reset(st.id); } catch (e) {} return t; }
+    if (st.token) return Promise.resolve(done(st.token));
+    return st.ready.then(function () {
+      return new Promise(function (res) {
+        var timer = setTimeout(function () { res(""); }, 45000);
+        st.waiters.push(function (t) { clearTimeout(timer); res(t); });
+      });
+    }).then(function (t) { return t ? done(t) : ""; });
+  }
+  var floatHost;
+  function globalWidget() {
+    if (!floatHost) {
+      floatHost = document.createElement("div");
+      floatHost.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2147483000";
+      document.body.appendChild(floatHost);
+    }
+    return widget(floatHost, floatHost);
+  }
+
+  // ---- Submit ------------------------------------------------------------------------------------
+  function submit(formId, data, tags, notes, st, hp) {
     var key = formId + JSON.stringify(data);
     if (recent[key]) return Promise.resolve(true);
     var name = data.name || "";
@@ -16,30 +72,60 @@
       tags: (tags || []).concat(["source_" + formId.toLowerCase().replace(/\s+/g, "_")]), notes: notes || data.notes || "" };
     for (var k in data) if (Object.prototype.hasOwnProperty.call(data, k)) p[k] = data[k];
     delete p.name;
-    return fetch(HOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p) })
-      .then(function (r) { if (r.ok) { recent[key] = 1; setTimeout(function () { delete recent[key]; }, 10000); } return r.ok; })
-      .catch(function () { return false; });
+    return takeToken(st || globalWidget()).then(function (token) {
+      if (!token) return "captcha";
+      p._ts = token; p._hp = hp || ""; p._t = Date.now() - (st && st.started || loadedAt);
+      return fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p) })
+        .then(function (r) {
+          if (r.ok) { recent[key] = 1; setTimeout(function () { delete recent[key]; }, 10000); return true; }
+          return r.status === 403 ? "captcha" : false;
+        })
+        .catch(function () { return false; });
+    });
   }
-  window.casperSubmit = submit;
+  // tools.js signature unchanged: casperSubmit(formId, data, tags, notes) → Promise<boolean>
+  window.casperSubmit = function (formId, data, tags, notes) {
+    return submit(formId, data, tags, notes).then(function (r) { return r === true; });
+  };
 
+  // ---- Wire up forms -----------------------------------------------------------------------------
   function fill(tpl, data) { return tpl.replace(/\{([\w.]+)(?:\|(\w*))?\}/g, function (_, k, d) { return data[k] ? data[k] : (d || ""); }); }
   document.querySelectorAll("form.lead[data-form-id]").forEach(function (f) {
+    var btn = f.querySelector("button[type=submit]");
+    // honeypot: invisible to people, tempting to bots
+    var hp = document.createElement("input");
+    hp.type = "text"; hp.name = HP; hp.tabIndex = -1; hp.autocomplete = "off"; hp.setAttribute("aria-hidden", "true");
+    hp.style.cssText = "position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0";
+    f.appendChild(hp);
+    // Turnstile box sits just above the submit button
+    var box = document.createElement("div");
+    box.className = "cf-ts"; box.style.cssText = "margin:6px 0";
+    if (btn && btn.parentNode) btn.parentNode.insertBefore(box, btn); else f.appendChild(box);
+    function start() { var st = widget(f, box); if (!st.started) st.started = Date.now(); }
+    f.addEventListener("focusin", start, { once: true });
+    f.addEventListener("pointerdown", start, { once: true });
+
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var msg = f.querySelector(".form-msg"), btn = f.querySelector("button[type=submit]");
+      var msg = f.querySelector(".form-msg");
       var bad = Array.prototype.filter.call(f.elements, function (el) { return el.willValidate && !el.checkValidity(); });
-      Array.prototype.forEach.call(f.elements, function (el) { if (el.willValidate) el.setAttribute("aria-invalid", String(!el.checkValidity())); });
+      Array.prototype.forEach.call(f.elements, function (el) { if (el.willValidate && el.name !== HP) el.setAttribute("aria-invalid", String(!el.checkValidity())); });
       if (bad.length) { msg.className = "form-msg err"; msg.textContent = "Please check the highlighted fields."; bad[0].focus(); return; }
       var data = {};
-      Array.prototype.forEach.call(f.elements, function (el) { if (el.name && el.type !== "submit") { if (el.type === "checkbox") { if (el.checked) data[el.name] = (data[el.name] ? data[el.name] + ", " : "") + el.value; } else data[el.name] = el.value.trim(); } });
+      Array.prototype.forEach.call(f.elements, function (el) {
+        if (!el.name || el.type === "submit" || el.name === HP || el.name.indexOf("cf-turnstile") === 0) return;
+        if (el.type === "checkbox") { if (el.checked) data[el.name] = (data[el.name] ? data[el.name] + ", " : "") + el.value; } else data[el.name] = el.value.trim();
+      });
       if (f.dataset.extra) { try { var x = JSON.parse(f.dataset.extra); for (var k in x) data[k] = x[k]; } catch (er) {} }
       var tags = (f.dataset.tags || "").split(",").filter(Boolean).map(function (t) { return fill(t, data).replace(/\s+/g, "_").toLowerCase(); });
       if (f.dataset.notes) data.calendar_notes = fill(f.dataset.notes, data);
       if (window.csoTrack) try { window.csoTrack.event("form_submit", f.dataset.formId, { page: location.pathname }); } catch (er) {}
+      start();
       btn.disabled = true; var label = btn.textContent; btn.textContent = "Sending...";
-      submit(f.dataset.formId, data, tags).then(function (ok) {
+      submit(f.dataset.formId, data, tags, null, f.__ts, hp.value).then(function (r) {
+        var ok = r === true;
         btn.disabled = false; btn.textContent = label;
-        msg.className = "form-msg " + (ok ? "ok" : "err"); msg.textContent = ok ? f.dataset.success : ERR;
+        msg.className = "form-msg " + (ok ? "ok" : "err"); msg.textContent = ok ? f.dataset.success : (r === "captcha" ? BOT_ERR : ERR);
         if (ok) { f.reset(); if (window.csoTrack) window.csoTrack.event("lead", f.dataset.formId); f.dispatchEvent(new CustomEvent("casper:sent", { bubbles: true })); }
       });
     });
