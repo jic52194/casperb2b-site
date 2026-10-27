@@ -378,6 +378,37 @@ function relatedPicks(p, exclude) {
 }
 const related = (p, picks) => picks.length ? `<section class="related"><h2>Related in ${esc(CLUSTERS[CL(p)]?.name || "this topic")}</h2><div class="grid g${Math.min(picks.length, 4)}">${picks.map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>` : "";
 
+// "Keep reading" card halfway down long pages, for readers who leave before the end blocks. It suggests a guide in the
+// same topic and the matching service, skipping pages this page already links to or suggests at the end.
+const READS = () => ALL.map((x) => x.path).filter((x) => (isPost(x) || isQuestion(x)) && KEEP.has(x) && !NOINDEX.has(x) && !KW[x]?.noindex);
+let readPool = null;
+const STOP = new Set("what with your that this from have does will when they them their more much should into about small business businesses services service company near best how why".split(" "));
+function midRead(p, html, cluster, steps, picks) {
+  const starts = [...html.matchAll(/<section[\s>]/g)].map((m) => m.index);
+  if (starts.length < 4 || /class="midread"/.test(html)) return html;
+  const linked = new Set([...html.matchAll(/href="(\/[^"#?]*)/g)].map((m) => m[1].replace(/\/+$/, "") || "/"));
+  const taken = new Set([p, ...Object.values(steps), ...picks, ...linked]);
+  readPool ||= READS();
+  const same = readPool.filter((x) => CL(x) === cluster && !taken.has(x)), any = readPool.filter((x) => !taken.has(x));
+  // industry guides (dental, law firm, HVAC...) only on pages about that industry
+  const NICHE = /dental|patients|law-firm|hvac|real-estate|restaurant/;
+  const fits = (x) => { const m = x.match(NICHE); return !m || p.includes(m[0]) || (m[0] === "patients" && p.includes("dental")); };
+  const pool = (same.filter(fits).length ? same : any).filter(fits); if (!pool.length) return html;
+  // most relevant guide: the one sharing the most keyword words with this page (ties broken per page, so suggestions vary)
+  const words = (x) => new Set(clean([KW[x]?.keyword, ...(KW[x]?.secondary || []), KW[x]?.h1 || BY[x]?.h1, x.replace(/[/-]/g, " ")].join(" ")).toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(" ").filter((w) => w.length > 3 && !STOP.has(w)));
+  const mine = words(p);
+  let h = 0; for (const ch of p) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const score = (x) => [...words(x)].filter((w) => mine.has(w)).length;
+  // with no keyword match, prefer general guides over industry-specific ones (dental, law firm, HVAC...)
+  const niche = (x) => /dental|patients|law-firm|hvac|real-estate|restaurant|spotlight/.test(x) ? 1 : 0;
+  const ranked = pool.map((x, k) => [x, score(x), niche(x), (k + h) % pool.length]).sort((a, b) => b[1] - a[1] || a[2] - b[2] || a[3] - b[3]);
+  const read = ranked[0][0];
+  const svc = [steps.service, CLUSTERS[cluster]?.next?.service, "/services"].find((x) => x && x !== p && KEEP.has(x));
+  const card = `<aside class="midread" aria-label="Keep reading"><p class="eyebrow">Keep reading</p><a class="mr-main" href="${read}" data-cta="midread-article"><b>${esc(shortName(read))}</b><span>${esc(cardDesc(read))}</span></a>${svc ? `<p class="mr-alt">Rather have it done for you? <a href="${svc}" data-cta="midread-service">See ${esc(shortName(svc))}</a></p>` : ""}</aside>`;
+  const at = starts[Math.floor(starts.length / 2)];
+  return html.slice(0, at) + card + html.slice(at);
+}
+
 // ── hubs ──
 const kind = (x) => /^\/(staffing\/.|b2b-growth$)/.test(x) ? "Services" : BY[x]?.location ? (BY[x].location.st === "nh" ? "New Hampshire towns" : "Massachusetts towns") : /^\/(massachusetts|new-hampshire)$/.test(x) ? "States" : x === "/georgetown-ma" ? "Massachusetts towns" : x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
 const KIND_ORDER = ["States", "Massachusetts towns", "New Hampshire towns", "Services", "Questions answered", "Problems we fix", "Industries", "Free tools", "Guides & articles", "More"];
@@ -544,6 +575,7 @@ for (const P of ALL) {
   const steps = nextSteps(p, cluster, KW, (x) => KEEP.has(x) && !NOINDEX.has(x));
   const plain = ["/thank-you", "/agreement-builder"].includes(p);
   const picks = p === "/" || plain || p === BOOK ? [] : relatedPicks(p, new Set(Object.values(steps)));
+  if (!plain && !noindex && p !== "/" && p !== BOOK && !TOOLS[p] && !HUBS[p]) html = midRead(p, html, cluster, steps, picks);
   const concerns = !plain && p !== BOOK && !noindex && !TOOLS[p] && !/^\/(privacy|terms|affiliate-terms|sitemap|blog|faq)$/.test(p) ? concernsBlock(p, cluster, cta, iconFor) : "";
   const tail = p === BOOK ? TRUST : plain ? "" : concerns + related(p, picks) + nextBlock(p, steps, shortName, cardDesc, cta);
   const body = `<div class="content${isPost(p) ? " article" : ""}${isPost(p) || isQuestion(p) ? " longread" : ""}" data-path="${p}">${html}${tail}</div>`;

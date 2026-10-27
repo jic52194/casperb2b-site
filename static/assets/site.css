@@ -590,3 +590,15 @@ details>summary:focus-visible{outline:3px solid #fdba74;outline-offset:2px;borde
 @keyframes mcta-in{from{transform:translateY(100%)}to{transform:none}}
 @media(prefers-reduced-motion:reduce){.mcta{animation:none}}
 @media print{.concerns,.assure{display:none!important}}
+/* "Keep reading" card halfway down long pages */
+.content>.midread{margin:8px 0 8px;padding:18px 20px;max-width:760px;background:linear-gradient(135deg,#fff7ed,#fff 70%);border:1px solid #fed7aa;border-left:4px solid var(--orange);border-radius:var(--radius);box-shadow:0 6px 18px -10px rgba(249,115,22,.35)}
+.midread .eyebrow{margin:0 0 6px;background:none;border:0;padding:0}
+.mr-main{display:block;text-decoration:none;color:inherit}
+.mr-main b{display:block;color:var(--navy);font-size:1.08rem;line-height:1.3}
+.mr-main b::after{content:" →";color:var(--orange)}
+.mr-main span{display:block;margin-top:4px;color:var(--muted);font-size:.95rem;line-height:1.5}
+.mr-main:hover b{color:var(--orange-d)}
+.mr-alt{margin:12px 0 0;padding-top:10px;border-top:1px dashed #fed7aa;font-size:.92rem;color:var(--muted)}
+.mr-alt a{font-weight:700}
+@media(max-width:759px){.content>.midread{padding:16px}.mr-main b{font-size:1.02rem}}
+@media print{.midread{display:none!important}}
