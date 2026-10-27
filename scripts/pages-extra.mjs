@@ -68,3 +68,43 @@ export const FAQ_HUB = { keyword: "small business marketing questions", title: "
   desc: "Short, direct answers to the questions small business owners ask about SEO, websites, leads, AI, cybersecurity and virtual assistants.",
   h1: "Frequently asked questions",
   intro: "Short, direct answers to the questions small business owners ask us most, grouped by goal. Every answer links to the page with the full explanation." };
+
+// Dedicated restaurant offer page. Owner decision (2026-10-26): this one page shows its price ($149/month).
+export const RESTAURANT_AI = {
+  path: "/ai-restaurant-ordering",
+  keyword: "ai phone ordering for restaurants",
+  title: "AI Order Taking for Restaurants, $149/mo | CasperB2B",
+  desc: "We install an AI employee that takes your restaurant's orders and books reservations for $149/month, and alerts your team the moment each one comes in.",
+  h1: "The best AI employee your restaurant will ever hire",
+  html: `<section><p class="eyebrow">AI for restaurants</p><h1>The best AI employee your restaurant will ever hire</h1>
+<p class="answer">CasperB2B installs AI that takes your restaurant's orders and books reservations for you, for <strong>$149 per month</strong>. Every time an order is placed or a table is booked, your team gets an internal notification right away, so nothing slips through during the rush.</p>
+<p class="price-tag"><strong>$149</strong> per month · we install it for you</p>
+<p class="ctas"><a class="btn" href="/contact">Get My AI Order-Taker</a> <a class="btn ghost" href="#how-it-works">See how it works</a></p></section>
+<section><h2>What your AI employee does</h2><div class="grid g3">
+<div class="card"><h3>Takes your orders</h3><p>Customers place their order with the AI instead of waiting on hold or getting a busy signal. Your staff stays focused on the food and the guests in front of them.</p></div>
+<div class="card"><h3>Books reservations</h3><p>Guests can book a table any time, including before you open and after you close, without anyone on your team picking up the phone.</p></div>
+<div class="card"><h3>Notifies your team instantly</h3><p>The moment an order is made or a reservation is booked, your team gets an internal notification with the details, so the kitchen and front of house always know what's coming.</p></div>
+<div class="card"><h3>Never calls in sick</h3><p>It works every shift, every day, through the dinner rush and the slow afternoons, and it never needs a break.</p></div>
+<div class="card"><h3>Never misses a call</h3><p>When every line is busy on a Friday night, the AI still answers. A missed call is a missed order; this employee doesn't miss them.</p></div>
+<div class="card"><h3>Set up for your restaurant</h3><p>We install it and set it up around your restaurant. You don't need to learn new software or hire anyone to run it.</p></div>
+</div></section>
+<section><h2>How it works</h2><ol>
+<li><strong>Book a 15-minute call.</strong> Tell us how you take orders and reservations today.</li>
+<li><strong>We install your AI employee.</strong> We set it up for your restaurant and choose who on your team gets the notifications.</li>
+<li><strong>It starts taking orders.</strong> Orders and reservations come in, and your team is notified the moment each one is made.</li>
+</ol><p class="ctas"><a class="btn" href="/contact">Get My AI Order-Taker</a></p></section>
+<section><h2>One simple price</h2><div class="card price-card"><p class="eyebrow">AI order-taking for restaurants</p><p class="price"><strong>$149</strong> <span>per month</span></p><ul>
+<li>We install and set it up for you</li>
+<li>Takes customer orders</li>
+<li>Books reservations</li>
+<li>Internal notifications for every order and reservation</li>
+</ul><p class="ctas"><a class="btn" href="/contact">Get My AI Order-Taker</a></p></div></section>
+<section><h2>Want more customers too?</h2><p>Your AI employee handles the orders. If you also want more people calling in the first place, see our <a href="/niches/restaurants">restaurant marketing</a> and the guide on <a href="/how-to-fill-my-restaurant-on-weeknights">how to fill your restaurant on slow weeknights</a>. Curious how this compares to a website chatbot? Read about <a href="/services/ai-chatbots">AI chatbots</a>.</p></section>
+<section><h2>Questions restaurant owners ask</h2>
+<details><summary>How much does the AI order-taker cost?</summary><p>$149 per month. We install it and set it up for you.</p></details>
+<details><summary>What does it do?</summary><p>It takes your customers' orders and books reservations, and sends your team an internal notification every time an order is made or a reservation is booked.</p></details>
+<details><summary>Will my team know when an order comes in?</summary><p>Yes. Every order and every reservation triggers an internal notification to your team right away, so nothing gets missed.</p></details>
+<details><summary>Do I have to set it up myself?</summary><p>No. We install it for you. Book a 15-minute call and we'll take it from there.</p></details>
+<details><summary>How do I get started?</summary><p><a href="/contact">Book a 15-minute call</a> or call or text 1-207-222-7737. You'll get a personal reply within 1 business day.</p></details>
+</section>`,
+};

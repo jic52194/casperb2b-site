@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page, redirect, esc, strip, leadForm, newsletterForm } from "./lib.mjs";
 import { TOOLS, toolPage } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion } from "./ia.mjs";
-import { PRICING, AGREEMENT, HUBS, FAQ_HUB } from "./pages-extra.mjs";
+import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI } from "./pages-extra.mjs";
 import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
 import { locationPages } from "./locations.mjs";
 import { heroArt, iconFor } from "./visuals.mjs";
@@ -66,6 +66,7 @@ const NOINDEX = new Set(["/thank-you", "/agreement-builder"]);
 const byPath = Object.fromEntries(PAGES.map((p) => [p.path, p]));
 byPath["/pricing"] = { ...(byPath["/pricing"] || { path: "/pricing" }), title: PRICING.title, desc: PRICING.desc, h1: PRICING.h1, html: PRICING.html, hand: true };
 byPath["/agreement-builder"] = { ...(byPath["/agreement-builder"] || { path: "/agreement-builder" }), title: AGREEMENT.title, desc: AGREEMENT.desc, h1: AGREEMENT.h1, html: AGREEMENT.html, hand: true };
+{ const R = RESTAURANT_AI; byPath[R.path] = { path: R.path, title: R.title, desc: R.desc, h1: R.h1, html: R.html, hand: true, name: "AI ordering for restaurants" }; }
 // town pages + state hubs (data/locations.json)
 const LOCS = locationPages(LOC, (h) => !!byPath[h] || h === "/casper-va");
 for (const x of LOCS.pages) { byPath[x.path] = { ...x, generated: true }; KW[x.path] = { ...LOCS.kw[x.path], ...(KW[x.path] || {}) }; }
@@ -76,6 +77,7 @@ byPath["/faq"] = { path: "/faq", title: FAQ_HUB.title, desc: FAQ_HUB.desc, h1: F
 for (const [p, h] of [...Object.entries(HUBS), ["/faq", FAQ_HUB]]) KW[p] = { keyword: h.keyword, title: h.title, desc: h.desc, h1: h.h1, intro: h.intro, cluster: h.cluster || "resources", ...(KW[p] || {}) };
 KW["/pricing"] = { cluster: "about", ...(KW["/pricing"] || {}), title: PRICING.title, desc: PRICING.desc, h1: PRICING.h1, intro: null };
 KW["/agreement-builder"] = { cluster: "about", noindex: true };
+KW[RESTAURANT_AI.path] = { cluster: "ai", ...(KW[RESTAURANT_AI.path] || {}), keyword: RESTAURANT_AI.keyword, title: RESTAURANT_AI.title, desc: RESTAURANT_AI.desc, h1: RESTAURANT_AI.h1, intro: null, next: { service: "/niches/restaurants", tool: "/tools/roi-calculator", article: "/how-to-fill-my-restaurant-on-weeknights" } };
 const ALL = Object.values(byPath);
 const BY = byPath;
 const KEEP = new Set(ALL.map((p) => p.path));
@@ -318,7 +320,7 @@ const CONTACT_FORM = leadForm({ id: "Contact Us Form", tags: ["website_contact",
   note: "We’ll use your details only to respond to this request. Marketing updates are optional.",
   fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name", placeholder: "Jane Smith" },
     { name: "email", label: "Email", type: "email", required: true, autocomplete: "email", placeholder: "jane@yourbusiness.com" }, { name: "phone", label: "Phone (optional — fastest reply)", type: "tel", autocomplete: "tel", placeholder: "(555) 123-4567" },
-    { name: "service_requested", label: "What do you need help with?", type: "select", options: [["marketing", "Getting more customers"], ["seo", "SEO & Google visibility"], ["website", "A new or better website"], ["automation", "AI, CRM & automation"], ["va", "A virtual assistant"], ["cybersecurity", "Cybersecurity & IT"], ["other", "Not sure yet"]] },
+    { name: "service_requested", label: "What do you need help with?", type: "select", options: [["marketing", "Getting more customers"], ["seo", "SEO & Google visibility"], ["website", "A new or better website"], ["automation", "AI, CRM & automation"], ["restaurant", "AI order-taking for my restaurant"], ["va", "A virtual assistant"], ["cybersecurity", "Cybersecurity & IT"], ["other", "Not sure yet"]] },
     { name: "calendar_notes", label: "Anything we should know? (optional)", type: "textarea", rows: 3, placeholder: "What is leaking time or revenue right now?" }] });
 const PAGE_FORMS = {
   "/contact": () => CONTACT_FORM,
@@ -512,7 +514,9 @@ for (const P of ALL) {
   if (p === "/") { // every service line in one screen, right after the hero
     const LINES = [["Get more customers", "/how-to-get-more-customers", "phone", "Answer every call, follow up fast and win the local search."], ["Marketing & SEO", "/marketing-and-seo", "search", "Local SEO, websites, Google Ads, email and social media."], ["B2B pipeline", "/b2b-growth", "target", "B2B lead generation, appointment setting and account-based marketing."], ["AI, apps & automation", "/ai-services", "bot", "AI chatbots, automated follow-up, custom and mobile apps."], ["Cybersecurity & IT", "/cybersecurity-and-it", "shield", "Protection, backups, managed IT and infrastructure."], ["Staffing & VAs", "/staffing", "users", "IT and contract staffing, direct hire and dedicated remote team members."], ["Free tools", "/tools", "gauge", "Quizzes and calculators that show where you're losing revenue."], ["Massachusetts & New Hampshire", "/service-areas", "pin", "Local pages for the towns we serve — and remote work worldwide."]].filter(([, h]) => KEEP.has(h));
     const grid = `<section class="lines"><h2>What we do</h2><div class="grid g4">${LINES.map(([n, h, icon, d]) => `<a class="card-link" href="${h}">${iconFor(icon)}<h3>${esc(n)}</h3><p>${esc(d)}</p></a>`).join("")}</div></section>`;
-    const end = html.indexOf("</section>"); if (end > 0) html = html.slice(0, end + 10) + grid + html.slice(end + 10);
+    // the restaurant offer, right after the service lines (no price here: the price guard keeps prices off "/")
+    const feature = KEEP.has(RESTAURANT_AI.path) ? `<section class="feature-band"><p class="eyebrow">New for restaurants</p><h2>An AI employee that takes your orders</h2><p>We install AI that takes your restaurant's orders and books reservations, and notifies your team the moment each one comes in. One low monthly price.</p><p class="ctas"><a class="btn ghost" href="${RESTAURANT_AI.path}" data-cta="home-restaurant">See AI ordering for restaurants</a></p></section>` : "";
+    const end = html.indexOf("</section>"); if (end > 0) html = html.slice(0, end + 10) + grid + feature + html.slice(end + 10);
   }
   if (p === "/niches") html += `<section class="hub-group"><h2>Every industry we work with</h2><div class="grid g3">${all.filter((x) => /^\/niches\/./.test(x)).map((x) => `<a class="card-link" href="${x}"><h3>${esc(shortName(x))}</h3><p>${esc(cardDesc(x))}</p></a>`).join("")}</div></section>`;
   imgCount = 0;
