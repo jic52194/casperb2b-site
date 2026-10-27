@@ -93,3 +93,26 @@ export function nextBlock(p, steps, names, descs, cta) {
 
 /** Sticky mobile CTA bar (hidden on wide screens by CSS). */
 export const stickyCta = (cta) => cta ? `<div class="mcta" role="region" aria-label="Quick contact"><a class="btn" href="${cta.href}" data-cta="sticky">${esc(cta.label)}</a><a class="btn ghost call" href="tel:${PHONE_TEL}" data-cta="sticky-call" aria-label="Call ${PHONE}">Call</a></div>` : "";
+
+// "Common concerns, answered": the objections owners raise before booking, answered with facts stated elsewhere on the
+// site (fixed written quote, signed scope, month-to-month plans, done for you, founder reply within 1 business day).
+// [icon, concern, answer HTML]. Each cluster can swap in its own most common concern.
+const CONCERNS = {
+  cost: ["file", "What will this cost me?", "You get a fixed, written quote before any work starts. Nothing begins until you've seen the full price and signed the scope. <a href=\"/pricing\">How pricing works</a>."],
+  burned: ["refresh", "I've been burned by an agency before.", "Your signed scope lists exactly what's delivered, so there's no guessing. Monthly plans are month-to-month, with no long-term contract."],
+  time: ["wrench", "I don't have time to manage another project.", "You don't have to. It's done for you: we build, set up and run it. <a href=\"/done-for-you\">See exactly what we handle</a>."],
+  person: ["chat", "Will I actually reach a person?", `Yes. Founder Jared Casper reviews every new request and you get a personal reply within 1 business day. Or call or text <a href="tel:${PHONE_TEL}">${PHONE}</a>.`],
+  ai: ["bot", "I'm not technical.", "You don't need to be. We set up and run the AI and automations for you, so there's no new software for you to learn."],
+  cyber: ["shield", "We're too small to be a target.", "Small businesses get hit by the same phishing, ransomware and password attacks as big ones. <a href=\"/is-my-business-too-small-to-hack\">Here's why size doesn't protect you</a>."],
+  va: ["users", "Hiring is a hassle.", "For Casper VA roles we handle recruiting, HR and payroll, so there are no payroll taxes or benefits for you to manage."],
+  marketing: ["chart", "How will I know it's working?", "Marketing is quoted as a monthly scope with clear deliverables you can see every month."],
+  restaurant: ["file", "What does it cost?", "$149 per month, and we install it for you. No new software to learn and no one to hire."],
+};
+const CONCERN_SET = { ai: ["cost", "ai", "burned", "person"], cyber: ["cyber", "cost", "time", "person"], va: ["va", "cost", "burned", "person"],
+  marketing: ["marketing", "cost", "burned", "person"], customers: ["cost", "burned", "time", "person"], local: ["cost", "burned", "time", "person"] };
+export function concernsBlock(p, cluster, cta, icon) {
+  const keys = p === "/ai-restaurant-ordering" ? ["restaurant", "ai", "time", "person"] : CONCERN_SET[cluster] || ["cost", "burned", "time", "person"];
+  const cards = keys.map((k) => { const [ic, q, a] = CONCERNS[k]; return `<div class="concern">${icon(ic)}<div><h3>“${esc(q)}”</h3><p>${a}</p></div></div>`; }).join("");
+  return `<section class="concerns" aria-labelledby="concerns-h"><p class="eyebrow">Before you book</p><h2 id="concerns-h">Common concerns, answered</h2><div class="concern-grid">${cards}</div><p class="concerns-cta"><a class="btn" href="${cta ? cta.href : BOOK}" data-cta="concerns">${esc(cta ? cta.label : BOOK_LABEL)}</a><span>Free 15-minute call · No obligation</span></p></section>`;
+}
+export const ASSURE = `<p class="assure"><span>Free 15-minute call</span><span>No obligation</span><span>Personal reply within 1 business day</span></p>`;

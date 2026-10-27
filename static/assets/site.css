@@ -518,3 +518,71 @@ h2[id]{scroll-margin-top:130px}
 .feature-band h2,.feature-band p{color:#fff}.feature-band .eyebrow{color:#fdba74}
 .feature-band .btn.ghost{background:transparent;color:#fff;border-color:#fff}.feature-band .btn.ghost:hover{border-color:#fdba74;color:#fdba74}
 @media print{.feature-band{background:none;color:inherit}.feature-band h2,.feature-band p{color:inherit}}
+
+/* ── 2026-10-27 polish: risk reversal, concerns block, mobile-first layout ── */
+/* risk reversal under the first CTA */
+.assure{display:flex;flex-wrap:wrap;gap:6px 16px;margin:-.3em 0 1.2em;padding:0;font-size:.88rem;color:var(--muted);max-width:none}
+.assure span{display:inline-flex;align-items:center;gap:6px}
+.assure span::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat}
+/* common concerns, answered */
+.content>.concerns{position:relative;padding:48px 0;margin:0}
+.concern-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.concern-grid{grid-template-columns:1fr 1fr;gap:18px}}
+.concern{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:var(--radius);padding:18px 18px 16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.concern .ico{margin:0}
+.concern h3{margin:0 0 .3em;font-size:1.05rem;font-style:italic;color:var(--navy)}
+.concern p{margin:0;color:var(--muted);font-size:.96rem;max-width:none}
+.concerns-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:22px 0 0}
+.concerns-cta span{font-size:.9rem;color:var(--muted)}
+/* touch screens have no hover: show the "tap me" arrow on link cards */
+@media(hover:none){.card-link h3::after{opacity:1}}
+details>summary{min-height:24px}
+details>summary:focus-visible{outline:3px solid #fdba74;outline-offset:2px;border-radius:12px}
+
+@media(max-width:759px){
+  .content>section,.content>.concerns{padding:34px 0}
+  .content>section:first-child,.content>.hero{padding-top:20px}
+  h1{font-size:clamp(1.9rem,8.6vw,2.45rem);line-height:1.08;letter-spacing:-.035em}
+  h2{font-size:clamp(1.4rem,6.4vw,1.7rem);line-height:1.15}
+  .answer{font-size:1rem;line-height:1.6;padding:2px 0 2px 12px}
+  /* first-screen CTAs: full-width, thumb-sized */
+  .content>section:first-child .ctas{flex-direction:column;align-items:stretch;gap:10px;align-self:stretch;width:100%}
+  .content>section:first-child>p:not(.eyebrow):not(.ctas):not(.assure){font-size:1rem;line-height:1.6}
+  .content>section:first-child>.assure{align-self:stretch}
+  .content>section:first-child .ctas .btn{width:100%;min-height:52px;font-size:1.02rem}
+  .assure{flex-direction:column;gap:6px;margin-top:0}
+  /* compact cards: icon beside the text instead of stacked above it */
+  .grid{gap:12px}
+  .grid>.card,.grid>.card-link{padding:16px 16px 15px;border-radius:14px}
+  .grid>.card:has(>.ico),.grid>.card-link:has(>.ico){display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-content:start}
+  .grid>.card:has(>.ico)>*,.grid>.card-link:has(>.ico)>*{grid-column:2}
+  .grid>.card>.ico,.grid>.card-link>.ico{grid-column:1;grid-row:1/span 6;width:40px;height:40px;margin:2px 0 0}
+  .grid>.card>.ico svg,.grid>.card-link>.ico svg{width:20px;height:20px}
+  .grid .card h3,.grid .card-link h3{margin:0 0 .2em;font-size:1.04rem}
+  .grid .card p,.grid .card-link p{font-size:.93rem;line-height:1.55;margin:.15em 0 0}
+  /* next best step: titles only on phones, two per row */
+  .next .grid{grid-template-columns:1fr 1fr}
+  .next .grid>.step{padding:14px}
+  .next .grid>.step:not(.book)>p:not(.eyebrow){display:none}
+  .next .grid>.step h3{font-size:.98rem}
+  .next .grid>.book{grid-column:1/-1}
+  .trust{padding:16px}
+  .trust-who img{width:56px;height:56px}
+  .trust-logos img{height:32px}
+  /* FAQs: bigger tap targets, readable answers */
+  details{margin:8px 0}
+  details>summary{padding:15px 44px 15px 16px;font-size:.98rem;line-height:1.4}
+  details>:not(summary){padding:0 16px;font-size:.96rem}
+  .concern{padding:16px 14px 14px;grid-template-columns:40px 1fr;gap:12px}
+  .concern .ico{width:40px;height:40px}
+  .concerns-cta{flex-direction:column;align-items:stretch;text-align:center}
+  .concerns-cta .btn{width:100%;min-height:52px}
+  .feature-band{padding:26px 20px!important}
+  .feature-band .btn{width:100%}
+  /* sticky bar: slide in, leave room for the home indicator */
+  .mcta{animation:mcta-in .35s cubic-bezier(.22,1,.36,1) both}
+  .mcta .btn{min-height:50px;font-size:1rem}
+}
+@keyframes mcta-in{from{transform:translateY(100%)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.mcta{animation:none}}
+@media print{.concerns,.assure{display:none!important}}

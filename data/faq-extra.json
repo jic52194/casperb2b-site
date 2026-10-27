@@ -4364,5 +4364,31 @@
    "q": "What tasks can AI automate for a local service business?",
    "a": "Answering common questions, instant text replies to new leads, appointment booking and follow-up reminders. These are the repetitive tasks that slow most owners down."
   }
+ ],
+ "/contact": [
+  {
+   "q": "Is the 15-minute fit call really free?",
+   "a": "Yes. The fit call is free and there is no obligation. It is 15 minutes to talk through what is leaking time or revenue in your business and whether we are the right team to fix it."
+  },
+  {
+   "q": "What happens on the fit call?",
+   "a": "You tell us what you need and what is not working today. If we are a fit, we review your setup (website, listings, lead flow and tools) and send a fixed, written quote. Work starts only after you sign the scope."
+  },
+  {
+   "q": "How fast will I hear back?",
+   "a": "Every request gets a personal reply within 1 business day. Our hours are Monday to Friday, 9:00 AM to 5:00 PM."
+  },
+  {
+   "q": "Do I need to prepare anything?",
+   "a": "No. Just come ready to talk about your business and where you are losing leads, time or money. If you already have a website, include it in the form."
+  },
+  {
+   "q": "Can I call or text instead of filling out the form?",
+   "a": "Yes. Call or text 1-207-222-7737 (1-207-2-CASPER), or email contact@casperb2b.com."
+  },
+  {
+   "q": "How much does it cost to work with CasperB2B?",
+   "a": "Every engagement is quoted after the fit call, based on exactly what you need. You get a fixed, written price before any work starts, and monthly plans are month-to-month."
+  }
  ]
 }

@@ -9,7 +9,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page, redirect, esc, strip, leadForm, newsletterForm } from "./lib.mjs";
 import { TOOLS, toolPage } from "./tools.mjs";
-import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion } from "./ia.mjs";
+import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion, concernsBlock, ASSURE } from "./ia.mjs";
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI } from "./pages-extra.mjs";
 import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
 import { locationPages } from "./locations.mjs";
@@ -495,6 +495,8 @@ for (const P of ALL) {
       html = html.slice(0, at) + btn + html.slice(at);
     }
   }
+  // risk reversal right under the first-screen CTA (free, no obligation, reply time)
+  if (cta && !TOOLS[p] && !NOINDEX.has(p)) { const end = html.indexOf("</section>"); const m = end > 0 && !/15-minute fit call ·/.test(html.slice(0, end)) && html.slice(0, end).match(/<p class="ctas">[\s\S]*?<\/p>/); if (m) html = html.slice(0, m.index + m[0].length) + ASSURE + html.slice(m.index + m[0].length); }
   if (p === "/sitemap") html = htmlSitemap(html);
   // visuals: an outcome illustration beside the hero (pages without their own hero media) and an icon on every card
   if (!NO_ART.has(p) && !/^\/(privacy|terms|affiliate-terms)$/.test(p)) {
@@ -542,7 +544,8 @@ for (const P of ALL) {
   const steps = nextSteps(p, cluster, KW, (x) => KEEP.has(x) && !NOINDEX.has(x));
   const plain = ["/thank-you", "/agreement-builder"].includes(p);
   const picks = p === "/" || plain || p === BOOK ? [] : relatedPicks(p, new Set(Object.values(steps)));
-  const tail = p === BOOK ? TRUST : plain ? "" : related(p, picks) + nextBlock(p, steps, shortName, cardDesc, cta);
+  const concerns = !plain && p !== BOOK && !noindex && !TOOLS[p] && !/^\/(privacy|terms|affiliate-terms|sitemap|blog|faq)$/.test(p) ? concernsBlock(p, cluster, cta, iconFor) : "";
+  const tail = p === BOOK ? TRUST : plain ? "" : concerns + related(p, picks) + nextBlock(p, steps, shortName, cardDesc, cta);
   const body = `<div class="content${isPost(p) ? " article" : ""}${isPost(p) || isQuestion(p) ? " longread" : ""}" data-path="${p}">${html}${tail}</div>`;
   if (STORY.test(strip(html)) || STORY.test(title + " " + desc)) throw new Error(`${p}: still mentions the $49,000 story: ${(strip(html).match(new RegExp(".{0,60}" + STORY.source + ".{0,40}", "i")) || [""])[0]}`);
   write(p, page({ path: p, title, desc, body, crumbs: p === "/" ? null : crumbs, noindex, ogType: isPost(p) ? "article" : "website", schema: noindex ? [] : schemaFor(p, html, title, desc), cta: cta || { href: BOOK, label: "Book My 15-Minute Fit Call" }, sticky: stickyCta(cta) }));
