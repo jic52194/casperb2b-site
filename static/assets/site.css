@@ -515,9 +515,13 @@ h2[id]{scroll-margin-top:130px}
 .price-card .price span{color:var(--muted)}
 .price-card ul{padding-left:1.2em}
 .content>section.feature-band{background:var(--navy);color:#fff;border-radius:var(--radius);padding:32px 28px;margin:24px 0;box-shadow:none;clip-path:none}
-.feature-band h2,.feature-band p{color:#fff}.feature-band .eyebrow{color:#fdba74}
-.feature-band .btn.ghost{background:transparent;color:#fff;border-color:#fff}.feature-band .btn.ghost:hover{border-color:#fdba74;color:#fdba74}
-@media print{.feature-band{background:none;color:inherit}.feature-band h2,.feature-band p{color:inherit}}
+.feature-band{--neon:#39ff14}
+.feature-band p{color:#fff}
+.feature-band h2{color:var(--neon);text-shadow:0 0 18px rgba(57,255,20,.35)}
+.content>section.feature-band>.eyebrow+h2::before{background:var(--neon);box-shadow:0 0 10px rgba(57,255,20,.6)}
+.feature-band .eyebrow{color:var(--neon);background:rgba(57,255,20,.08);border-color:var(--neon);box-shadow:0 0 10px rgba(57,255,20,.25)}
+.feature-band .btn.ghost{background:var(--neon);color:#030712;border-color:var(--neon);box-shadow:0 0 18px rgba(57,255,20,.45)}.feature-band .btn.ghost:hover{background:#fff;border-color:#fff;color:#030712;box-shadow:0 0 22px rgba(57,255,20,.6)}
+@media print{.feature-band{background:none;color:inherit}.feature-band h2,.feature-band p,.feature-band .eyebrow{color:inherit;text-shadow:none}}
 
 /* ── 2026-10-27 polish: risk reversal, concerns block, mobile-first layout ── */
 /* risk reversal under the first CTA */
