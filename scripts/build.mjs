@@ -409,6 +409,29 @@ function midRead(p, html, cluster, steps, picks) {
   return html.slice(0, at) + card + html.slice(at);
 }
 
+// Hero design: a dark navy hero ("hx") with a neon accent on the headline. Pages whose hero holds a form or a tool keep
+// a light hero ("hx-light") so form fields stay readable. A photo that opens the hero sits beside the text ("hx-img").
+const H1_ACCENT = { "/ai-restaurant-ordering": "best AI employee" }; // hand-picked accent phrases
+function accentH1(h, p) {
+  return h.replace(/<h1>([^<]+)<\/h1>/, (all, t) => {
+    let m; const pick = H1_ACCENT[p];
+    if (pick && t.includes(pick)) return `<h1>${t.replace(pick, `<span class="hl">${pick}</span>`)}</h1>`;
+    if ((m = t.match(/^(.{6,}?:\s*)(.{6,})$/))) return `<h1>${m[1]}<span class="hl">${m[2]}</span></h1>`;
+    if ((m = t.match(/^(.+\sin\s)([^]{3,40})$/)) && !/\sin\s/.test(m[2])) return `<h1>${m[1]}<span class="hl">${m[2]}</span></h1>`;
+    const w = t.trim().split(/\s+/); if (w.length < 4) return all;
+    return `<h1>${w.slice(0, -2).join(" ")} <span class="hl">${w.slice(-2).join(" ")}</span></h1>`;
+  });
+}
+function heroDesign(p, html) {
+  if (!html.startsWith("<section>")) return html;
+  const end = html.indexOf("</section>"), first = end > 0 ? html.slice(0, end) : "";
+  if (!/<h1[\s>]/.test(first)) return html;
+  const light = !!TOOLS[p] || /<form|class="tool/.test(first);
+  const img = /^<section>\s*<img\b/.test(first);
+  const cls = [light ? "hx-light" : "hx", img ? "hx-img" : ""].filter(Boolean).join(" ");
+  return `<section class="${cls}">` + accentH1(html.slice("<section>".length), p);
+}
+
 // ── hubs ──
 const kind = (x) => /^\/(staffing\/.|b2b-growth$)/.test(x) ? "Services" : BY[x]?.location ? (BY[x].location.st === "nh" ? "New Hampshire towns" : "Massachusetts towns") : /^\/(massachusetts|new-hampshire)$/.test(x) ? "States" : x === "/georgetown-ma" ? "Massachusetts towns" : x.startsWith("/tools") || x === "/quiz" ? "Free tools" : /^\/(services|ai-services|seo-audit|caspercare|done-for-you)|-georgetown-ma$|^\/casper-va\/(?!hiring|vs-agency)/.test(x) ? "Services" : isQuestion(x) ? "Questions answered" : isPost(x) ? "Guides & articles" : /^\/problems/.test(x) ? "Problems we fix" : /^\/niches/.test(x) ? "Industries" : "More";
 const KIND_ORDER = ["States", "Massachusetts towns", "New Hampshire towns", "Services", "Questions answered", "Problems we fix", "Industries", "Free tools", "Guides & articles", "More"];
@@ -541,6 +564,7 @@ for (const P of ALL) {
       if (g > 0 && g < e) { const lead = html.slice(0, g).match(/<(h2|p)>(?:(?!<\/?(?:h2|p)\b)[\s\S])*<\/\1>$/); const cut = lead ? g - lead[0].length : g; html = html.slice(0, cut) + "</section><section>" + html.slice(cut); }
     }
   }
+  html = heroDesign(p, html);
   html = html.replace(/<div class="card">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, inner, h) => `<div class="card">${iconFor(h)}${inner}`);
   html = pageAids(p, html, cluster, cta);
   if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);

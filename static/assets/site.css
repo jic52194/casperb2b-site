@@ -638,3 +638,92 @@ details>summary:focus-visible{outline:3px solid #fdba74;outline-offset:2px;borde
 .content .toc a{color:var(--muted)}
 @media(prefers-reduced-motion:reduce){.content a{transition:none!important}}
 @media print{.content a{background:none!important}}
+
+/* ── 2026-10-27 hero redesign: dark navy stage, neon accents ── */
+/* light hero (tools and forms): clean white with a faint neon glow instead of peach */
+.content>section.hx-light:first-child{background:radial-gradient(900px 380px at 92% -10%,rgba(57,255,20,.10),transparent 60%),#fff;box-shadow:0 0 0 100vmax #fff;animation:none}
+.content>section.hx-light:first-child .hl{background:linear-gradient(transparent 58%,rgba(57,255,20,.55) 58%,rgba(57,255,20,.55) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .08em}
+
+/* dark hero */
+.content>section.hx:first-child{position:relative;isolation:isolate;background:none;box-shadow:none;clip-path:none;animation:none;color:#cbd5e1;padding-top:56px;padding-bottom:64px}
+.content>section.hx:first-child::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);
+  background:
+    radial-gradient(620px 360px at 85% 18%,rgba(57,255,20,.16),transparent 65%),
+    radial-gradient(520px 340px at 8% 100%,rgba(56,189,248,.10),transparent 70%),
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(160deg,#060b18 0%,#030712 55%,#05140a 100%)}
+.content>section.hx:first-child::after{content:"";position:absolute;z-index:-1;left:50%;bottom:0;width:100vw;height:3px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--neon) 30%,#38bdf8 70%,transparent);opacity:.7}
+.hx h1{color:#fff;letter-spacing:-.035em;text-wrap:balance}
+.hx h1 .hl{color:var(--neon);text-shadow:0 0 22px rgba(57,255,20,.45),0 0 2px rgba(57,255,20,.6)}
+.hx>.eyebrow{color:var(--neon);background:rgba(57,255,20,.07);border:1px solid rgba(57,255,20,.55);box-shadow:0 0 14px rgba(57,255,20,.18) inset,0 0 12px rgba(57,255,20,.15)}
+.hx p,.hx li{color:#cbd5e1}
+.hx strong,.hx b{color:#fff}
+.hx h2,.hx h3{color:#fff}
+.content>section.hx:first-child .answer{color:#e2e8f0;background:rgba(255,255,255,.04);border-left-color:var(--neon);border-radius:0 12px 12px 0;backdrop-filter:blur(2px)}
+.hx .assure{color:#94a3b8}
+.hx .assure span::before{box-shadow:0 0 10px rgba(57,255,20,.5)}
+/* buttons: neon primary, glass secondary */
+.hx .ctas .btn:not(.ghost){background:var(--neon);border-color:var(--neon);color:#030712;box-shadow:0 0 0 0 rgba(57,255,20,.5),0 10px 30px -10px rgba(57,255,20,.7)}
+.hx .ctas .btn:not(.ghost):hover{background:#fff;border-color:#fff;color:#030712;box-shadow:0 0 28px rgba(57,255,20,.55)}
+.hx .ctas .btn.ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.35);color:#fff}
+.hx .ctas .btn.ghost:hover{border-color:var(--neon);color:var(--neon)}
+/* links and lists inside the dark hero */
+.hx p a:not(.btn),.hx li a:not(.btn){color:#030712}
+.content>section.hx>ul:not(.tags):not(.kv):not(.cols-list)>li::before{background-color:rgba(57,255,20,.1);box-shadow:0 0 0 1px rgba(57,255,20,.5)}
+/* illustration and photo: lift off the dark stage */
+.hx>.hero-art{filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)) drop-shadow(0 0 30px rgba(57,255,20,.12))}
+.hx .card,.hx .card-link{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.hx .card p,.hx .card-link p{color:#94a3b8}
+.hx .price-tag{align-self:flex-start;display:inline-flex;align-items:baseline;gap:.4em;background:rgba(57,255,20,.08);border:1px solid rgba(57,255,20,.55);color:#e2e8f0}
+.hx .price-tag strong{color:var(--neon);text-shadow:0 0 14px rgba(57,255,20,.5)}
+.hx .video,.hx iframe{box-shadow:0 0 0 1px rgba(57,255,20,.35),0 30px 60px -20px rgba(0,0,0,.6)}
+/* photo heroes (articles): photo beside the headline on wide screens */
+.hx-img>img:first-child{border-radius:22px;box-shadow:0 0 0 1px rgba(57,255,20,.4),0 30px 60px -24px rgba(0,0,0,.7);background:#fff;max-height:420px;width:auto;object-fit:contain}
+@media(min-width:900px){
+  .content>section.hx-img:first-child{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);column-gap:52px;align-items:center}
+  .content>section.hx-img:first-child>*{grid-column:1}
+  .content>section.hx-img:first-child>img:first-child{grid-column:2;grid-row:1/span 40;justify-self:center;max-width:100%}
+}
+@media(max-width:899px){
+  .content>section.hx-img:first-child{display:flex;flex-direction:column}
+  .content>section.hx-img:first-child>img:first-child{order:99;max-height:260px;margin:22px auto 0}
+}
+@media(max-width:759px){
+  .content>section.hx:first-child{padding-top:30px;padding-bottom:40px}
+  .content>section.hx:first-child::before{background-size:auto,auto,32px 32px,32px 32px,auto}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hx h1 .hl{animation:hl-glow 4s ease-in-out infinite alternate}
+  @keyframes hl-glow{from{text-shadow:0 0 14px rgba(57,255,20,.3),0 0 2px rgba(57,255,20,.5)}to{text-shadow:0 0 28px rgba(57,255,20,.6),0 0 3px rgba(57,255,20,.7)}}
+}
+@media print{.content>section.hx:first-child::before,.content>section.hx:first-child::after{display:none}.hx,.hx p,.hx h1,.hx h1 .hl{color:#000!important;text-shadow:none!important}}
+
+/* footer on desktop: every link on one line; columns sized to their longest link */
+@media(min-width:760px){.foot .cols a{white-space:nowrap}}
+@media(min-width:1180px){
+  .foot-main{grid-template-columns:220px minmax(0,1fr)!important;gap:48px!important}
+  .foot .cols{grid-template-columns:repeat(4,max-content)!important;justify-content:space-between;gap:0 24px!important}
+}
+/* hero fixes: contrast, links, illustration backdrop, cards, photo position */
+.content>section.hx:first-child p,.content>section.hx:first-child li{color:#cbd5e1}
+.content>section.hx:first-child .answer{color:#e2e8f0}
+.content>section.hx:first-child .assure{color:#94a3b8}
+.content>section.hx:first-child .updated{color:#94a3b8}
+/* links on the dark stage: neon text with a glowing underline (the highlighter is for light backgrounds) */
+.content>section.hx:first-child a:not(.btn):not(.card-link){color:var(--neon)!important;background:none!important;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(57,255,20,.45);text-underline-offset:3px;text-decoration-thickness:2px}
+.content>section.hx:first-child a:not(.btn):not(.card-link):hover{color:#fff!important;text-decoration-color:var(--neon)}
+/* illustration backdrop circles become soft neon and sky glows */
+.hx .hero-art svg>circle:nth-of-type(1){fill:rgba(57,255,20,.10)}
+.hx .hero-art svg>circle:nth-of-type(2){fill:rgba(56,189,248,.10)}
+/* white cards inside the dark hero keep dark text */
+.content>section.hx:first-child .founder-card{background:#fff;border-color:rgba(57,255,20,.35)}
+.content>section.hx:first-child .founder-card p{color:var(--muted)}
+.content>section.hx:first-child .founder-card b{color:var(--navy)}
+.content>section.hx:first-child .founder-card .eyebrow{color:var(--orange-d)}
+.content>section.hx:first-child form.lead p,.content>section.hx:first-child form.lead label{color:var(--ink)}
+/* price tag sizes to its text */
+.content>section.hx:first-child>.price-tag{justify-self:start;align-self:flex-start;width:fit-content}
+/* article photo sits at the top beside the headline */
+@media(min-width:900px){.content>section.hx-img:first-child>img:first-child{align-self:start;margin-top:8px;position:sticky;top:120px}}
+.content>section.hx:first-child>.eyebrow,.content>section.hx:first-child>p.eyebrow{color:var(--neon)}
