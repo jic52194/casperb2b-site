@@ -1,6 +1,6 @@
 {
  "/b2b-growth": {
-  "add": "<section><h2>Paid search for B2B</h2><p>When buyers already search for what you sell, paid search can feed the pipeline too. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section>",
+  "add": "<section><h2>Paid search for B2B</h2><p>When buyers already search for what you sell, paid search can feed the pipeline too. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section><section><h2>B2B marketing in Massachusetts</h2><p>Based north of Boston and working with B2B companies across New England: see <a href=\"/b2b-marketing-agency-massachusetts\">B2B marketing agency in Massachusetts</a>.</p></section>",
   "faq": []
  },
  "/casper-va/bookkeeping": {
@@ -329,6 +329,10 @@
    }
   ]
  },
+ "/do-i-need-an-it-person": {
+  "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
+  "faq": []
+ },
  "/niches/construction-companies": {
   "add": "<section><h2>Marketing for contractors in MA & NH</h2><p>We run websites, local SEO, Google Ads, reviews and missed-call text back for contractors and home-service companies across Massachusetts and New Hampshire. See <a href=\"/contractor-marketing\">contractor marketing</a> for the full setup and the towns we cover.</p></section>",
   "faq": []
@@ -412,6 +416,10 @@
     "a": "Your business does. Everything is built in accounts you own, and we work with access you grant."
    }
   ]
+ },
+ "/services/b2b-lead-generation": {
+  "add": "<section><h2>B2B lead generation in Boston and Massachusetts</h2><p>We're based in Georgetown, MA and run lead generation for companies across Massachusetts and New England. See <a href=\"/b2b-marketing-agency-massachusetts\">B2B marketing agency in Massachusetts</a>.</p></section>",
+  "faq": []
  },
  "/services/brand-style-guides": {
   "add": "<section><h2>What the finished style guide includes</h2><div class=\"grid g2\"><div class=\"card\"><h3>Logo rules</h3><p>Approved versions (full, stacked, icon), minimum sizes, clear space, which version to use on dark and light backgrounds, and examples of what not to do.</p></div><div class=\"card\"><h3>Color system</h3><p>Primary and accent colors with HEX, RGB and CMYK codes, plus guidance on which colors to use for buttons, text and backgrounds so text stays readable.</p></div><div class=\"card\"><h3>Typography</h3><p>Fonts for headings and body text, sizes for web and print, and free fallback fonts for tools that don't have your brand fonts.</p></div><div class=\"card\"><h3>Voice and examples</h3><p>How your business sounds, words you use and avoid, and sample lines for an ad, a social post and an email.</p></div></div><p>You receive the guide as a shareable PDF and a folder of logo files, color swatches and templates for the pieces you use most, such as social posts or letterhead.</p></section><section><h2>How we build it</h2><ol><li><strong>Collect what exists.</strong> We gather your logo files, past marketing, website and anything vendors have made for you.</li><li><strong>Find the drift.</strong> We point out where colors, fonts and logo versions don't match today.</li><li><strong>Set the rules.</strong> We draft the guide, keeping what works and fixing what doesn't, without changing your logo unless you ask.</li><li><strong>Review.</strong> You review the draft, and we revise it based on your notes.</li><li><strong>Hand off.</strong> You get the final PDF and asset folder, ready to send to anyone who makes marketing for you.</li></ol></section><section><h2>What we need from you</h2><p>The original logo files if you have them, examples of marketing you like and dislike, a few words that describe how you want customers to see you, and the names of any vendors who will use the guide. If your only logo is a low-quality image, we can recreate it as a clean vector file or point you to <a href=\"/services/logo-design\">logo design</a>.</p></section><section><h2>Who it fits, and how it connects</h2><p>A style guide fits businesses with more than one person or vendor creating marketing, businesses about to launch a new website or ad campaign, and owners who notice their materials all look slightly different. If you are still deciding on a name or logo, do that first. The guide makes our <a href=\"/services/graphic-design\">graphic design</a>, <a href=\"/services/social-media-growth\">social media</a> and <a href=\"/services/web-development\">website</a> work faster and more consistent. To experiment with colors and fonts on your own first, try the free <a href=\"/brand-kit\">brand kit generator</a>.</p></section>",
@@ -498,6 +506,10 @@
    }
   ]
  },
+ "/services/cybersecurity": {
+  "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
+  "faq": []
+ },
  "/services/email-marketing": {
   "add": "<section><h2>What we set up for you</h2><div class=\"grid g2\"><div class=\"card\"><h3>New lead sequence</h3><p>A short series that sends after someone inquires: a thank-you with what happens next, answers to common questions, proof of your work and a clear way to book.</p></div><div class=\"card\"><h3>Past customer reactivation</h3><p>Emails to people who bought before, timed to when they are likely to need you again, such as seasonal service, renewals or annual checkups.</p></div><div class=\"card\"><h3>Newsletter template</h3><p>A reusable, mobile-friendly layout in your brand, plus a simple monthly content plan so it actually goes out.</p></div><div class=\"card\"><h3>List cleanup and signup forms</h3><p>Duplicates and bad addresses removed, contacts tagged by service or status, and signup forms on your site that feed the right list.</p></div></div></section><section><h2>How email marketing works with us</h2><ol><li><strong>Audit your list and tools.</strong> We look at where contacts live today, how they were collected and what platform you use.</li><li><strong>Fix sending basics.</strong> We check SPF, DKIM and DMARC records for your domain so your emails are more likely to reach the inbox instead of spam.</li><li><strong>Map the sequences.</strong> You approve the trigger, timing and goal for each email before we write it.</li><li><strong>Write and design.</strong> We write the emails in your voice and build them in your brand template.</li><li><strong>Launch and connect.</strong> Sequences are tied to your forms and CRM so they start on their own.</li><li><strong>Review monthly.</strong> We look at opens, clicks, replies and bookings, then adjust subject lines, timing and offers.</li></ol></section><section><h2>What we need from you</h2><p>Access to your email platform or CRM, your current contact list and where it came from, your top services and common questions, and someone to answer replies. Only email people who gave you permission or are existing customers; we will help you sort that out during the audit. If you want examples first, read <a href=\"/blog/email-automation-campaigns\">email automation examples for small business</a>.</p></section><section><h2>How it connects to your other marketing</h2><p>Email is the follow-up layer for leads from <a href=\"/services/ppc\">ads</a>, <a href=\"/services/seo\">search</a> and <a href=\"/services/social-media-ads\">social</a>. It works best inside a CRM, which we set up through our <a href=\"/services/ai-automation\">automation services</a>. If leads go quiet after the first call, see <a href=\"/problems/no-follow-up\">why leads go cold</a>. Email is the wrong first step if you have no list and no steady inquiries yet; build lead flow first, then add email to keep it.</p></section>",
   "faq": [
@@ -531,6 +543,10 @@
     "a": "Templates give you a starting layout; a designer builds the piece around your offer, your audience and the placement, and keeps it consistent with everything else you publish."
    }
   ]
+ },
+ "/services/managed-it": {
+  "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
+  "faq": []
  },
  "/services/ppc": {
   "add": "<section><h2>Selling to other businesses?</h2><p>B2B campaigns need different targeting, longer tracking and pipeline reporting. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section>",

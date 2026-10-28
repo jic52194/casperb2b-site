@@ -74,4 +74,66 @@ export const SEO_PAGES = [
 <details><summary>Do you work with contractors outside Massachusetts and New Hampshire?</summary><p>Yes. Our local focus is Massachusetts and New Hampshire, and we work remotely with businesses anywhere in the U.S.</p></details>
 </section>`,
   },
+  {
+    path: "/b2b-marketing-agency-massachusetts", cluster: "customers", name: "B2B marketing in Massachusetts",
+    keyword: "b2b marketing agency massachusetts",
+    secondary: ["b2b lead generation boston", "b2b marketing companies in new england", "b2b marketing agency boston", "b2b lead generation massachusetts"],
+    title: "B2B Marketing Agency in Massachusetts | CasperB2B",
+    desc: "B2B marketing and lead generation for Massachusetts and New England companies: lead generation, appointment setting, ABM and paid search into your CRM.",
+    h1: "B2B Marketing Agency in Massachusetts",
+    intro: "CasperB2B is a B2B marketing and lead generation company founded in Georgetown, Massachusetts. We help companies that sell to other businesses, in Boston, across Massachusetts and New England and beyond, fill their pipeline with qualified leads, booked meetings and engaged target accounts, delivered into their CRM.",
+    next: { service: "/b2b-growth", tool: "/tools/marketing-budget-calculator", article: "/services/b2b-lead-generation" },
+    html: `<section><p class="eyebrow">B2B growth · Massachusetts & New England</p><h1>B2B Marketing Agency in Massachusetts</h1>
+<p>Selling to other businesses means long sales cycles, buying committees and a pipeline that has to be built on purpose. We run the parts that fill it, from researched target lists to booked meetings, and report on opportunities and revenue rather than clicks.</p>
+<p class="ctas"><a class="btn" href="/contact?topic=marketing">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/b2b-growth">See all B2B services</a></p></section>
+<section><h2>What we run for B2B companies</h2><div class="grid g2">
+<a class="card-link" href="/services/b2b-lead-generation"><h3>B2B lead generation</h3><p>Researched decision-makers who match your ideal customer profile, reached by email, LinkedIn and phone, delivered to your CRM.</p></a>
+<a class="card-link" href="/services/appointment-setting"><h3>Appointment setting</h3><p>SDRs book qualified meetings with decision-makers onto your calendar, with handover notes.</p></a>
+<a class="card-link" href="/services/outbound-prospecting"><h3>Outbound prospecting</h3><p>Cold email, LinkedIn and calling sequences on sound deliverability, with every reply handled.</p></a>
+<a class="card-link" href="/services/demand-generation"><h3>Demand generation</h3><p>Content, LinkedIn and ads that build interest before buyers are in market.</p></a>
+<a class="card-link" href="/services/account-based-marketing"><h3>Account-based marketing</h3><p>Coordinated plays aimed at the buying committees inside a list of high-value accounts.</p></a>
+<a class="card-link" href="/b2b-ppc-management"><h3>B2B PPC management</h3><p>Paid search and paid social for long sales cycles, tracked into your CRM.</p></a>
+</div></section>
+<section><h2>Which one to start with</h2><ul><li><strong>Your reps have time but nobody to call:</strong> start with <a href="/services/b2b-lead-generation">B2B lead generation</a>.</li><li><strong>Your reps should be closing, not prospecting:</strong> start with <a href="/services/appointment-setting">appointment setting</a>.</li><li><strong>Buyers already search for what you sell:</strong> add <a href="/b2b-ppc-management">B2B PPC</a>.</li><li><strong>You sell to a short list of large accounts:</strong> use <a href="/services/account-based-marketing">account-based marketing</a>.</li></ul></section>
+<section><h2>How every engagement runs</h2><ol><li><strong>Fit call.</strong> Fifteen minutes to understand your offer, buyer and current pipeline.</li><li><strong>Signed scope.</strong> Targets, what counts as a qualified lead or meeting, channels and reporting, in writing before work starts.</li><li><strong>Build and launch.</strong> Profile, list, messaging and infrastructure, then a controlled launch.</li><li><strong>Weekly feedback.</strong> Your sales team tells us which leads and meetings were real, and we adjust.</li><li><strong>Pipeline reporting.</strong> Opportunities and revenue, set up with our analytics team.</li></ol></section>
+<section><h2>Industries we focus on</h2><p>Long sales cycles and multi-person buying committees change how pipeline work should run. We have dedicated pages for <a href="/niches/saas">SaaS lead generation</a>, <a href="/niches/cybersecurity-companies">lead generation for cybersecurity companies</a> and <a href="/niches/fintech">fintech lead generation</a>, plus <a href="/niches/consulting-firms">consulting firms</a> and <a href="/niches/it-services">IT services</a>.</p></section>
+<section><h2>Boston, Massachusetts and beyond</h2><p>We were founded in Georgetown, Massachusetts, north of Boston, and work remotely with B2B companies across Massachusetts, New Hampshire and New England, and anywhere in the U.S. Outreach and campaigns target your buyers wherever they are, not just where we are.</p><p>Want a dedicated person on your team instead of a managed service? A <a href="/casper-va/sdr">Casper VA SDR</a> works inside your team.</p></section>
+<section><h2>B2B marketing questions</h2>
+<details><summary>What does a B2B marketing agency do?</summary><p>It builds and runs the work that fills a B2B sales pipeline: target lists, outreach, meeting booking, paid search, content and account-based plays, measured by qualified opportunities and revenue.</p></details>
+<details><summary>Do you work with Boston companies?</summary><p>Yes. We're based north of Boston in Georgetown, MA, and work with companies in Boston, across Massachusetts and New England, and remotely anywhere in the U.S.</p></details>
+<details><summary>How do you define a qualified lead?</summary><p>In writing, before work starts. Every lead is tagged marketing-qualified, sales-qualified or callback-ready so your team knows who to call first.</p></details>
+<details><summary>What does B2B lead generation cost?</summary><p>It depends on your targets, channels and volume. CasperB2B quotes every engagement as a fixed, written scope after a 15-minute fit call. See <a href="/pricing">how pricing works</a>.</p></details>
+</section>`,
+  },
+  {
+    path: "/outsourced-it-support-small-business", cluster: "cyber", name: "Outsourced IT support",
+    keyword: "outsourced it support for small business",
+    secondary: ["outsourced it for small business north shore ma", "it support for small business massachusetts", "managed it new hampshire", "small business it support north shore"],
+    title: "Outsourced IT Support for Small Business | CasperB2B",
+    desc: "Outsourced IT support for small businesses in Massachusetts and New Hampshire: help desk, monitoring, Microsoft 365, backups and security, flat monthly fee.",
+    h1: "Outsourced IT Support for Small Business",
+    intro: "Outsourced IT support means a team outside your company acts as your IT department: they monitor and patch your computers, answer your team's help desk requests, manage Microsoft 365 or Google Workspace and backups, and keep you secure, usually for a flat monthly fee. CasperB2B does this for small businesses across the North Shore, Merrimack Valley and southern New Hampshire.",
+    next: { service: "/services/managed-it", tool: "/tools/cyber-risk-quiz", article: "/do-i-need-an-it-person" },
+    html: `<section><p class="eyebrow">Cybersecurity & IT · MA & NH</p><h1>Outsourced IT Support for Small Business</h1>
+<p>Most small businesses don't need a full-time IT person. They need computers that stay patched, someone to call when something breaks, backups that actually restore and security that blocks the common attacks. That is what outsourced IT covers.</p>
+<p class="ctas"><a class="btn" href="/contact?topic=cybersecurity">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/tools/cyber-risk-quiz">Take the cyber risk quiz</a></p></section>
+<section><h2>What outsourced IT support includes</h2><ul>
+<li><strong>Monitoring and maintenance</strong> of computers, servers and network, with updates and patches applied before problems hit.</li>
+<li><strong>Help desk and remote support</strong> for your team's day-to-day issues, without waiting for a technician to drive out.</li>
+<li><strong>Microsoft 365 or Google Workspace</strong> and cloud storage set up, managed and secured.</li>
+<li><strong>Backups</strong> managed and restores tested, so data can actually come back.</li>
+<li><strong>Security basics:</strong> multi-factor authentication, endpoint protection, email security and access removed the day someone leaves.</li>
+<li><strong>Technology planning</strong> so you buy the right tools at the right time, and support for remote workers wherever they are.</li>
+</ul><p>No lock-in: all documentation, credentials and configurations are yours. See <a href="/services/managed-it">managed IT</a>, <a href="/services/cybersecurity">cybersecurity</a> and <a href="/services/it-infrastructure">IT infrastructure</a> for the detail.</p></section>
+<section><h2>Outsourced IT vs. hiring an IT person</h2><p>A full-time hire gives you one person's skills and availability. Outsourced IT gives you a team, proactive monitoring and a predictable monthly cost, typically priced per user or per device. For most small businesses, the cost is comparable to a few hours of emergency IT support a month. Not sure which you need? Read <a href="/do-i-need-an-it-person">do I need an IT person?</a></p></section>
+<section><h2>Outsourced IT vs. break-fix</h2><p>Break-fix support charges you after something breaks. Managed, outsourced IT monitors and maintains your systems to catch problems early, for a flat monthly fee: less downtime and more predictable costs.</p></section>
+<section><h2>Where we support small businesses</h2><p>We support businesses remotely across the North Shore, Merrimack Valley and southern New Hampshire from our base in Georgetown, MA. Local pages: <a href="/salem-ma/managed-it">Salem, MA</a> · <a href="/andover-ma/managed-it">Andover</a> · <a href="/danvers-ma/managed-it">Danvers</a> · <a href="/newburyport-ma/managed-it">Newburyport</a> · <a href="/haverhill-ma/managed-it">Haverhill</a> · <a href="/beverly-ma/managed-it">Beverly</a> · <a href="/salem-nh/managed-it">Salem, NH</a> · <a href="/portsmouth-nh/managed-it">Portsmouth, NH</a> · <a href="/managed-it-georgetown-ma">Georgetown</a>.</p></section>
+<section><h2>How we start</h2><ol><li><strong>Fit call.</strong> Fifteen minutes on your team, devices and what keeps breaking.</li><li><strong>Assessment.</strong> We inventory devices, accounts, network, backups and who has admin access.</li><li><strong>Signed scope.</strong> What we manage, response expectations and the monthly price, in writing.</li><li><strong>Onboarding.</strong> Monitoring, backups and security controls set up, documented and handed over.</li></ol></section>
+<section><h2>Outsourced IT questions</h2>
+<details><summary>What does outsourced IT support cost for a small business?</summary><p>It's typically priced per user or per device, so it scales with your team. CasperB2B quotes a flat monthly price in writing after a 15-minute fit call.</p></details>
+<details><summary>Can you support our remote employees?</summary><p>Yes. Remote monitoring and management tools let us support, secure and update laptops wherever your team works.</p></details>
+<details><summary>What if we want to switch IT providers later?</summary><p>All documentation, credentials and configurations are yours, so moving to or from our service is straightforward.</p></details>
+<details><summary>Is my business too small to be hacked?</summary><p>No. Most attacks are automated and look for weak passwords, missing multi-factor authentication and unpatched software, regardless of size. See <a href="/is-my-business-too-small-to-hack">is my business too small to hack?</a></p></details>
+</section>`,
+  },
 ];
