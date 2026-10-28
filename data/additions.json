@@ -334,7 +334,7 @@
   ]
  },
  "/contractor-marketing": {
-  "add": "<section><h2>Google Ads for contractors</h2><p>See <a href=\"/ppc-management-massachusetts\">PPC management in MA & NH</a> for how we target your towns and track every call.</p></section>",
+  "add": "<section><h2>Google Ads for contractors</h2><p>See <a href=\"/ppc-management-massachusetts\">PPC management in MA & NH</a> for how we target your towns and track every call.</p></section><section><h2>Plumbers</h2><p>See <a href=\"/plumber-marketing\">marketing for plumbers</a>: town pages, reviews, Google Ads for urgent calls and missed-call text back.</p></section>",
   "faq": []
  },
  "/do-i-need-an-it-person": {
@@ -354,7 +354,7 @@
   "faq": []
  },
  "/niches/hvac-home-services": {
-  "add": "<section><h2>Marketing for contractors in MA & NH</h2><p>We run websites, local SEO, Google Ads, reviews and missed-call text back for contractors and home-service companies across Massachusetts and New Hampshire. See <a href=\"/contractor-marketing\">contractor marketing</a> for the full setup and the towns we cover.</p></section>",
+  "add": "<section><h2>Marketing for contractors in MA & NH</h2><p>We run websites, local SEO, Google Ads, reviews and missed-call text back for contractors and home-service companies across Massachusetts and New Hampshire. See <a href=\"/contractor-marketing\">contractor marketing</a> for the full setup and the towns we cover.</p></section><section><h2>Plumbing companies</h2><p>Run a plumbing business too? See <a href=\"/plumber-marketing\">marketing for plumbers</a>.</p></section>",
   "faq": []
  },
  "/niches/pest-control": {
@@ -565,7 +565,7 @@
   "faq": []
  },
  "/services/managed-it": {
-  "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
+  "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section><section><h2>Managed IT in MA & NH</h2><p>See <a href=\"/managed-it-services-massachusetts\">managed IT in Massachusetts</a> and <a href=\"/managed-it-services-new-hampshire\">managed IT in New Hampshire</a>, with a page for every town we serve.</p></section>",
   "faq": []
  },
  "/services/ppc": {
@@ -626,5 +626,21 @@
     "a": "Yes. Slow or overloaded hosting limits how fast any page can load, so we review your hosting as part of the diagnosis and explain your options."
    }
   ]
+ },
+ "/north-shore-ma": {
+  "add": "<section><h2>Statewide service pages</h2><p><a href=\"/web-design-massachusetts\">Web design</a>, <a href=\"/seo-company-massachusetts\">SEO</a> and <a href=\"/managed-it-services-massachusetts\">managed IT</a> for Massachusetts businesses.</p></section>",
+  "faq": []
+ },
+ "/services/web-development": {
+  "add": "<section><h2>Web design in MA & NH</h2><p>See <a href=\"/web-design-massachusetts\">web design in Massachusetts</a> and <a href=\"/web-design-new-hampshire\">web design in New Hampshire</a>, with a page for every town we serve.</p></section>",
+  "faq": []
+ },
+ "/services/seo": {
+  "add": "<section><h2>SEO in MA & NH</h2><p>See <a href=\"/seo-company-massachusetts\">SEO in Massachusetts</a> and <a href=\"/seo-company-new-hampshire\">SEO in New Hampshire</a>, with a page for every town we serve.</p></section>",
+  "faq": []
+ },
+ "/outsourced-it-support-small-business": {
+  "add": "<section><h2>Local IT support</h2><p>See <a href=\"/managed-it-services-massachusetts\">managed IT in Massachusetts</a> and <a href=\"/managed-it-services-new-hampshire\">managed IT in New Hampshire</a>.</p></section>",
+  "faq": []
  }
 }

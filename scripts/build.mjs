@@ -12,6 +12,7 @@ import { TOOLS, toolPage } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion, concernsBlock, ASSURE } from "./ia.mjs";
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI } from "./pages-extra.mjs";
 import { SEO_PAGES } from "./pages-seo.mjs";
+import { STATE_PAGES } from "./pages-seo-state.mjs";
 import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
 import { locationPages } from "./locations.mjs";
 import { heroArt, iconFor } from "./visuals.mjs";
@@ -79,8 +80,8 @@ byPath["/faq"] = { path: "/faq", title: FAQ_HUB.title, desc: FAQ_HUB.desc, h1: F
 for (const [p, h] of [...Object.entries(HUBS), ["/faq", FAQ_HUB]]) KW[p] = { keyword: h.keyword, title: h.title, desc: h.desc, h1: h.h1, intro: h.intro, cluster: h.cluster || "resources", ...(KW[p] || {}) };
 KW["/pricing"] = { cluster: "about", ...(KW["/pricing"] || {}), title: PRICING.title, desc: PRICING.desc, h1: PRICING.h1, intro: null };
 KW["/agreement-builder"] = { cluster: "about", noindex: true };
-// keyword pages from Search Console demand (scripts/pages-seo.mjs)
-for (const S of SEO_PAGES) { byPath[S.path] = { path: S.path, title: S.title, desc: S.desc, h1: S.h1, html: S.html, hand: true, name: S.name };
+// keyword pages (scripts/pages-seo.mjs: Search Console demand; scripts/pages-seo-state.mjs: state service pages)
+for (const S of [...SEO_PAGES, ...STATE_PAGES]) { byPath[S.path] = { path: S.path, title: S.title, desc: S.desc, h1: S.h1, html: S.html, hand: true, name: S.name };
   KW[S.path] = { ...(KW[S.path] || {}), keyword: S.keyword, secondary: S.secondary, title: S.title, desc: S.desc, h1: S.h1, intro: S.intro, cluster: S.cluster, next: S.next }; }
 KW[RESTAURANT_AI.path] = { cluster: "ai", ...(KW[RESTAURANT_AI.path] || {}), keyword: RESTAURANT_AI.keyword, title: RESTAURANT_AI.title, desc: RESTAURANT_AI.desc, h1: RESTAURANT_AI.h1, intro: null, next: { service: "/niches/restaurants", tool: "/tools/roi-calculator", article: "/how-to-fill-my-restaurant-on-weeknights" } };
 const ALL = Object.values(byPath);
