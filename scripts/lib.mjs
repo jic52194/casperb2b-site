@@ -1,8 +1,12 @@
 // Shared layout + helpers for casperb2b.com (static build). Brand: navy #030712 with neon green #39ff14 accents (dark green #15803d for text on white), Inter. Orange is only in the logo.
 // CasperB2B is the services company. CasperPortal (casperportal.com) is a separate software platform: this site only
 // describes it the way casperb2b.com does today and links out to it; nothing here speaks for casperportal.com.
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
+
+// cache-busting by content: a deploy with changed CSS/JS gets a new ?v= so browsers never mix new HTML with old styles
+const ASSET_V = (f) => { try { return createHash("sha1").update(readFileSync(fileURLToPath(new URL(`../static/assets/${f}`, import.meta.url)))).digest("hex").slice(0, 10); } catch { return BUILT.slice(0, 10); } };
 import { fileURLToPath } from "node:url";
 
 export const SITE = "https://casperb2b.com";
@@ -104,7 +108,7 @@ export function page({ path, title, desc, body, schema = [], crumbs, noindex = f
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${og}">
 <meta name="theme-color" content="#030712"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=${TODAY}">
+<link rel="stylesheet" href="/assets/site.css?v=${ASSET_V("site.css")}">
 ${nodes.map(ld).join("")}
 </head><body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -139,7 +143,7 @@ ${(() => { // "Free tools" sits under the brand block (fills that column); the r
 </div></footer>${sticky}
 <div class="talk" data-talk><button type="button" class="talk-btn" aria-expanded="false" aria-controls="talk-panel"><img src="/img/jared-casper.webp" alt="" width="36" height="36" loading="lazy"><span>Let's talk</span></button>
 <div class="talk-panel" id="talk-panel" hidden><p class="talk-who"><b>Jared Casper</b><span>Founder of CasperB2B</span></p><p>I help businesses build systems that actually bring in customers.</p><p class="ctas"><a class="btn sm" href="tel:${PHONE_TEL}">Call (207) 222-7737</a> <a class="btn sm ghost" href="sms:${PHONE_TEL}">Text us</a></p><p class="fine">Text us from your phone at (207) 222-7737</p></div></div>
-<script src="/assets/site.js?v=${TODAY}" defer></script><script src="/assets/forms.js?v=${TODAY}" defer></script><script src="/assets/t.js" data-site="casperb2b" data-banner="1" defer></script>
+<script src="/assets/site.js?v=${ASSET_V("site.js")}" defer></script><script src="/assets/forms.js?v=${ASSET_V("forms.js")}" defer></script><script src="/assets/t.js" data-site="casperb2b" data-banner="1" defer></script>
 </body></html>`;
 }
 

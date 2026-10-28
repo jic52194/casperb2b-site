@@ -769,3 +769,11 @@ a:hover{color:var(--navy)}
 .logos .card-link{min-height:120px}
 .logos .card-link img{height:96px;max-height:none;width:auto;max-width:92%}
 @media(max-width:759px){.logos .card-link img{height:72px}}
+
+/* ── header + footer fixes ── */
+/* solid header: the translucent white let the dark footer show through and turned the top row grey */
+.top{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+/* footer link groups line up in rows (headings level across columns) instead of uneven stacks */
+@media(min-width:760px){.foot .cols{align-items:start;row-gap:32px}.foot .cols .fcol{display:contents}}
+/* phone: hide the sticky Book/Call bar while the menu drawer is open */
+body:has([data-burger][aria-expanded="true"]) .mcta{display:none}
