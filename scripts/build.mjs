@@ -511,6 +511,8 @@ for (const P of ALL) {
   html = extraFaq(p, html);
   html = placeForms(p, html);
   html = normalizeHero(polish(rewriteMedia(rewriteLinks(html))));
+  // list items captured as <li><p>→</p><p>text</p></li>: drop the arrow paragraph and unwrap a lone <p>
+  html = html.replace(/<li>\s*<p>\s*(?:→|✓|✔|•|►|▶|-|–)\s*<\/p>\s*/g, "<li>").replace(/<li>\s*<p>((?:(?!<\/?p\b)[\s\S])*)<\/p>\s*<\/li>/g, "<li>$1</li>");
   // nothing left behind when an image, link or claim was removed: empty cards, empty grids, heading-only sections
   html = html.replace(/<a class="card-link" href="[^"]*"(?: rel="noopener")?>\s*<\/a>/g, "").replace(/<div class="card">\s*<\/div>/g, "").replace(/<div class="grid[^"]*">\s*<\/div>/g, "").replace(/<section>(?:\s*(?:<p class="eyebrow">[^<]*<\/p>|<h[234]>[^<]*<\/h[234]>))*\s*<\/section>/g, "");
   html = fixHeadings(html).replace(/<img ([^>]*?)alt="Jared Casper"/g, (m, pre) => `<img ${pre}alt=""`); // avatar next to the byline text

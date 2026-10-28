@@ -602,3 +602,39 @@ details>summary:focus-visible{outline:3px solid #fdba74;outline-offset:2px;borde
 .mr-alt a{font-weight:700}
 @media(max-width:759px){.content>.midread{padding:16px}.mr-main b{font-size:1.02rem}}
 @media print{.midread{display:none!important}}
+
+/* ── 2026-10-27 design pass: bullet lists, step lists, neon highlighter links ── */
+:root{--neon:#39ff14;--neon-ink:#0b1220}
+/* bullet lists: navy tile with a neon check, airy rhythm */
+.content>section>ul:not(.tags):not(.kv):not(.cols-list){display:grid;gap:10px;margin:1.1em 0 1.3em;max-width:860px}
+.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li{margin:0;padding:2px 0 2px 38px;line-height:1.6}
+.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li::before{left:0;top:.2em;width:24px;height:24px;border-radius:8px;border:0;transform:rotate(-4deg);
+  background:var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%2339ff14' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;
+  box-shadow:0 4px 10px -4px rgba(3,7,18,.45),0 0 0 3px rgba(57,255,20,.12)}
+.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li>strong:first-child,.content>section>ul:not(.tags):not(.kv):not(.cols-list)>li>b:first-child{color:var(--navy)}
+/* lists inside cards stay compact */
+.card ul{padding-left:0;list-style:none}
+.card ul>li{position:relative;padding-left:22px;margin:.35em 0}
+.card ul>li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:3px;background:var(--neon);transform:rotate(45deg);box-shadow:0 0 0 2px rgba(57,255,20,.2)}
+/* numbered steps: bold navy badge with a neon ring, and a connecting rail */
+.content>section>ol>li::before{background:var(--navy);color:var(--neon);box-shadow:0 0 0 3px rgba(57,255,20,.25);font-size:1rem}
+.content>section>ol>li{transition:border-color .2s,box-shadow .2s,transform .2s}
+.content>section>ol>li:hover{border-color:rgba(57,255,20,.6);box-shadow:0 8px 22px -12px rgba(3,7,18,.35)}
+
+/* in-text links: neon highlighter stroke (internal linking you can see) */
+.content p a:not(.btn):not(.card-link):not(.mr-main),
+.content li a:not(.btn):not(.card-link),
+.content td a,.content dd a,.content .answer a,.content details p a{
+  color:var(--neon-ink);font-weight:600;text-decoration:none;padding:0 .14em;margin:0 -.04em;border-radius:3px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 11.5C30 7 62 9.5 98 8.2s70-2.6 100 1.1c1.6 2.6 1.2 5.6-.6 8.4-34-2.7-66-.7-98 .4S28 20 3 18.4C.6 16.2.4 13.6 2 11.5z' fill='%2339ff14' fill-opacity='.7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:0 88%;background-size:100% 78%;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .25s cubic-bezier(.22,1,.36,1),color .2s}
+.content p a:not(.btn):not(.card-link):not(.mr-main):hover,
+.content li a:not(.btn):not(.card-link):hover,
+.content td a:hover,.content dd a:hover,.content .answer a:hover,.content details p a:hover{background-size:100% 100%;color:var(--neon-ink)}
+.content p a:not(.btn):not(.card-link):not(.mr-main):focus-visible,.content li a:not(.btn):not(.card-link):focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+/* places where the highlighter would clash: nav lists, dark panels, the table of contents, phone numbers in the sticky areas */
+.content .toc a,.content .crumbs a,.content .feature-band a:not(.btn),.content .next .book a,.content .trust-logos{background-image:none!important;padding:0;margin:0;font-weight:inherit}
+.content .toc a{color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.content a{transition:none!important}}
+@media print{.content a{background:none!important}}

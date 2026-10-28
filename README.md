@@ -107,3 +107,10 @@ Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. 
 - Apex A records: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
 - `www` CNAME → `<github-user>.github.io` (fmycar.com uses jic52194.github.io)
 - In the repo's Settings → Pages: source "GitHub Actions", custom domain casperb2b.com, enforce HTTPS.
+
+## Link styling strategy (2026-10-27)
+In-text links to other pages are drawn as a neon-green highlighter stroke (`static/assets/site.css`, "neon highlighter
+links"), so readers can see at a glance which keywords lead somewhere and keep reading from page to page. On hover the
+stroke fills the whole word. Buttons, cards, the table of contents, breadcrumbs and dark panels are excluded.
+Together with "Keep reading" (mid-page), "Related in <topic>", "Your next best step" and "Common concerns, answered",
+every page offers a next read and a booking path at the top, middle and end.
