@@ -3,6 +3,10 @@
   "add": "<section><h2>Paid search for B2B</h2><p>When buyers already search for what you sell, paid search can feed the pipeline too. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section><section><h2>B2B marketing in Massachusetts</h2><p>Based north of Boston and working with B2B companies across New England: see <a href=\"/b2b-marketing-agency-massachusetts\">B2B marketing agency in Massachusetts</a>.</p></section>",
   "faq": []
  },
+ "/b2b-ppc-management": {
+  "add": "<section><h2>Local PPC for service businesses</h2><p>Running ads for a local service business instead? See <a href=\"/ppc-management-massachusetts\">PPC management in MA & NH</a>.</p></section>",
+  "faq": []
+ },
  "/casper-va/bookkeeping": {
   "add": "<section><h2>What a bookkeeping VA handles day to day</h2><ul><li>Matching bank and credit card transactions to the right accounts.</li><li>Attaching receipts and chasing missing ones from your team.</li><li>Creating and sending invoices, then following up on overdue ones in your name.</li><li>Entering bills and preparing a list of payments for you to approve.</li><li>Keeping vendor and customer records current.</li><li>Closing the month so your accountant gets clean books and a short list of questions.</li></ul></section><section><h2>Tools a bookkeeping VA commonly uses</h2><p>Bookkeeping assistants commonly work in QuickBooks Online or Xero, receipt capture apps like Dext or Hubdoc, bill pay tools, payroll platforms and spreadsheets for reconciliations. Access is set up so they can record and prepare, while payments stay under your approval.</p></section><section><h2>How the first weeks with a bookkeeping VA usually go</h2><ol><li><strong>Setup.</strong> You grant accounting-software access, share your chart of accounts and explain how you categorize common expenses.</li><li><strong>Shadowing.</strong> The VA reconciles a past period while you or your accountant review the work and correct category choices.</li><li><strong>Owning tasks.</strong> Weekly reconciliation, invoicing and month-end prep move to the VA, and you review a short summary instead of the raw transactions.</li></ol></section><section><h2>Who a bookkeeping VA fits, and when to hire someone else</h2><p>This role fits owners who are behind on their books, small businesses that send many invoices and companies whose accountant spends too much time cleaning up records before tax time.</p><p>A bookkeeping VA records and organizes. They don’t replace a licensed accountant or CPA for tax filing, tax planning or audits, so keep your accountant for that. If your backlog is general data rather than financial records, hire a <a href=\"/casper-va/data-entry\">data entry specialist</a>. If you mainly need help with bills mixed into a busy inbox, an <a href=\"/casper-va/executive-assistant\">executive assistant</a> may fit better.</p></section>",
   "faq": [
@@ -329,8 +333,16 @@
    }
   ]
  },
+ "/contractor-marketing": {
+  "add": "<section><h2>Google Ads for contractors</h2><p>See <a href=\"/ppc-management-massachusetts\">PPC management in MA & NH</a> for how we target your towns and track every call.</p></section>",
+  "faq": []
+ },
  "/do-i-need-an-it-person": {
   "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
+  "faq": []
+ },
+ "/massachusetts": {
+  "add": "<section><h2>North Shore businesses</h2><p>We're based in Georgetown, MA. See everything we do for <a href=\"/north-shore-ma\">North Shore and Merrimack Valley businesses</a>.</p></section>",
   "faq": []
  },
  "/niches/construction-companies": {
@@ -382,6 +394,10 @@
     "a": "Usually not. An audit diagnoses the issues and prioritizes them. Fixes are done by you, your web person or an agency, and are priced separately."
    }
   ]
+ },
+ "/service-areas": {
+  "add": "<section><h2>North Shore businesses</h2><p>We're based in Georgetown, MA. See everything we do for <a href=\"/north-shore-ma\">North Shore and Merrimack Valley businesses</a>.</p></section>",
+  "faq": []
  },
  "/services/ai-chatbots": {
   "add": "<section><h2>What you get</h2><ul><li><strong>A chatbot on your website</strong> styled to match your brand, set up on the pages where visitors usually have questions.</li><li><strong>A knowledge base you approve:</strong> your services, service area, hours, booking rules and answers to common questions, written so the bot answers the way your team would.</li><li><strong>Clear limits.</strong> The bot is told what it must not do, such as quoting prices you haven't approved, giving medical or legal advice or making promises about timing.</li><li><strong>Lead capture and booking</strong> that collects name, contact details and job details, then offers times from your calendar.</li><li><strong>Handoff to a person</strong> by text or email when a conversation needs your team.</li><li><strong>Conversation logs</strong> you can review, so you see what people ask and where the bot needs better answers.</li></ul></section><section><h2>How an AI chatbot project works</h2><ol><li><strong>Fit call.</strong> We confirm what you want the bot to do and which pages it belongs on.</li><li><strong>Gather your content.</strong> We collect your FAQs, service pages, policies and booking rules.</li><li><strong>Draft and test.</strong> We build the bot and test it with real questions, tricky questions and off-topic questions.</li><li><strong>Your review.</strong> You try it, flag wrong or awkward answers, and approve it for launch.</li><li><strong>Launch and connect.</strong> The bot goes live with your calendar, CRM and handoff alerts connected.</li><li><strong>Tune.</strong> We review conversation logs and update answers as your services and questions change.</li></ol></section><section><h2>What we need from you</h2><p>Your current FAQs and service details, rules for booking, the questions you never want the bot to answer, access to your calendar and CRM, and who should get handoff alerts. When something changes, like new hours or a new service, tell us so the knowledge base stays current.</p></section><section><h2>Who it fits, and when it doesn't</h2><p>Chatbots fit businesses that get the same questions over and over, lose after-hours website visitors or want leads qualified before a call. They are the wrong fit if most of your customers call rather than browse, or if every inquiry needs a custom conversation from the start; in that case, <a href=\"/problems/missed-calls\">missed call text back</a> or a <a href=\"/casper-va/customer-service\">customer service assistant</a> may help more. For the basics, read <a href=\"/what-is-an-ai-chatbot-and-do-i-need-one\">what is an AI chatbot and do I need one</a>. Chatbots are part of our wider <a href=\"/services/ai-automation\">AI automation</a> work, and leads they capture can flow into your <a href=\"/services/email-marketing\">email follow-up</a>.</p></section>",
@@ -544,12 +560,20 @@
    }
   ]
  },
+ "/services/local-seo": {
+  "add": "<section><h2>North Shore businesses</h2><p>We're based in Georgetown, MA. See everything we do for <a href=\"/north-shore-ma\">North Shore and Merrimack Valley businesses</a>.</p></section>",
+  "faq": []
+ },
  "/services/managed-it": {
   "add": "<section><h2>Outsourced IT for small businesses</h2><p>Help desk, monitoring, Microsoft 365, backups and security for one flat monthly fee, for small businesses across the North Shore and southern New Hampshire. See <a href=\"/outsourced-it-support-small-business\">outsourced IT support for small business</a>.</p></section>",
   "faq": []
  },
  "/services/ppc": {
-  "add": "<section><h2>Selling to other businesses?</h2><p>B2B campaigns need different targeting, longer tracking and pipeline reporting. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section>",
+  "add": "<section><h2>Selling to other businesses?</h2><p>B2B campaigns need different targeting, longer tracking and pipeline reporting. See <a href=\"/b2b-ppc-management\">B2B PPC management</a>.</p></section><section><h2>Google Ads in Massachusetts and New Hampshire</h2><p>Local campaigns for the North Shore, Merrimack Valley, Portsmouth and southern NH: see <a href=\"/ppc-management-massachusetts\">PPC management in MA & NH</a>.</p></section>",
+  "faq": []
+ },
+ "/services/reputation-management": {
+  "add": "<section><h2>North Shore businesses</h2><p>We're based in Georgetown, MA. See everything we do for <a href=\"/north-shore-ma\">North Shore and Merrimack Valley businesses</a>.</p></section>",
   "faq": []
  },
  "/services/social-media-ads": {

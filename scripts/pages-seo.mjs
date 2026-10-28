@@ -1,6 +1,8 @@
 // Keyword pages built from Search Console demand (2026-10): phrases that already earn impressions but had no page of
 // their own. Every fact here is already stated elsewhere on casperb2b.com (/services/ppc, /b2b-growth, /niches/*,
 // /problems/missed-calls, cost pages). build.mjs adds each entry as a page and a keyword-plan row.
+// Essex County towns with their own page (North Shore + Merrimack Valley); Georgetown keeps its hand-written page
+const ESSEX = [["/georgetown-ma", "Georgetown"], ["/haverhill-ma", "Haverhill"], ["/newburyport-ma", "Newburyport"], ["/newbury-ma", "Newbury"], ["/amesbury-ma", "Amesbury"], ["/salisbury-ma", "Salisbury"], ["/rowley-ma", "Rowley"], ["/ipswich-ma", "Ipswich"], ["/boxford-ma", "Boxford"], ["/groveland-ma", "Groveland"], ["/topsfield-ma", "Topsfield"], ["/north-andover-ma", "North Andover"], ["/andover-ma", "Andover"], ["/methuen-ma", "Methuen"], ["/danvers-ma", "Danvers"], ["/peabody-ma", "Peabody"], ["/beverly-ma", "Beverly"], ["/salem-ma", "Salem"]];
 const TOWNS = [["/andover-ma", "Andover"], ["/north-andover-ma", "North Andover"], ["/methuen-ma", "Methuen"], ["/haverhill-ma", "Haverhill"], ["/beverly-ma", "Beverly"], ["/newburyport-ma", "Newburyport"], ["/salem-nh", "Salem, NH"], ["/bedford-nh", "Bedford, NH"], ["/portsmouth-nh", "Portsmouth, NH"]];
 
 export const SEO_PAGES = [
@@ -134,6 +136,67 @@ export const SEO_PAGES = [
 <details><summary>Can you support our remote employees?</summary><p>Yes. Remote monitoring and management tools let us support, secure and update laptops wherever your team works.</p></details>
 <details><summary>What if we want to switch IT providers later?</summary><p>All documentation, credentials and configurations are yours, so moving to or from our service is straightforward.</p></details>
 <details><summary>Is my business too small to be hacked?</summary><p>No. Most attacks are automated and look for weak passwords, missing multi-factor authentication and unpatched software, regardless of size. See <a href="/is-my-business-too-small-to-hack">is my business too small to hack?</a></p></details>
+</section>`,
+  },
+  {
+    path: "/ppc-management-massachusetts", cluster: "marketing", name: "PPC management in MA & NH",
+    keyword: "ppc management massachusetts",
+    secondary: ["google ads agency north shore", "adwords management north shore", "ppc agency portsmouth nh", "seacoast nh ppc agency", "ppc services massachusetts", "google ads management new hampshire"],
+    title: "PPC & Google Ads Management in MA & NH | CasperB2B",
+    desc: "PPC and Google Ads management for North Shore, Merrimack Valley and southern NH businesses: high-intent ads, call tracking and monthly reporting.",
+    h1: "PPC & Google Ads Management in Massachusetts & New Hampshire",
+    intro: "CasperB2B manages Google Ads and paid social for businesses across Massachusetts' North Shore and Merrimack Valley and southern New Hampshire, from Portsmouth and the Seacoast to Nashua and Manchester. We target the searches people make when they're ready to buy in your towns, track every call and form, and report cost per lead every month.",
+    next: { service: "/services/ppc", tool: "/tools/marketing-budget-calculator", article: "/how-much-does-seo-cost" },
+    html: `<section><p class="eyebrow">Paid advertising · MA & NH</p><h1>PPC & Google Ads Management in Massachusetts & New Hampshire</h1>
+<p>Local Google Ads work when they show up for the right searches in the right towns and every lead is tracked. They fail when the targeting is too broad, the landing page doesn't match the ad and nobody can tell which campaign produced a call. We fix all three.</p>
+<p class="ctas"><a class="btn" href="/contact?topic=marketing">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/services/ppc">See PPC management</a></p></section>
+<section><h2>What local PPC management includes</h2><ul>
+<li><strong>Location targeting</strong> set to the towns and service areas you actually work in, not the whole state.</li>
+<li><strong>High-intent keywords</strong> such as "[your service] near me" or "[your service] [town]", with negative keywords to cut wasted clicks.</li>
+<li><strong>Ad copy and landing pages</strong> that match each search, so the click turns into a call or form.</li>
+<li><strong>Call and form tracking</strong>, so every lead is attributed to the campaign that produced it and lands in your CRM.</li>
+<li><strong>Bid management</strong> adjusted on performance data to lower cost per lead over time.</li>
+<li><strong>Monthly reporting</strong> on impressions, clicks, conversions and cost per lead.</li>
+</ul></section>
+<section><h2>Where we run campaigns</h2><p><strong>Massachusetts:</strong> the North Shore and Merrimack Valley, including ${ESSEX.slice(0, 12).map(([h, n]) => `<a href="${h}">${n}</a>`).join(", ")} and more (<a href="/north-shore-ma">all North Shore towns</a>).</p><p><strong>New Hampshire:</strong> <a href="/portsmouth-nh">Portsmouth</a> and the Seacoast, <a href="/salem-nh">Salem</a>, <a href="/nashua-nh">Nashua</a>, <a href="/manchester-nh">Manchester</a>, <a href="/bedford-nh">Bedford</a> and the rest of <a href="/new-hampshire">southern New Hampshire</a>.</p><p>We also run campaigns remotely for businesses anywhere in the U.S.</p></section>
+<section><h2>How fast PPC works and what it costs</h2><p>Unlike SEO, Google Ads can drive leads within days of launch. New campaigns typically need about 30 days of data for meaningful optimization, and performance generally improves over the first 60–90 days. Your ad budget is paid to Google separately from the management fee; we recommend a budget based on local search volume and competitive cost-per-click data, and quote management on a 15-minute fit call. Get a starting point with our <a href="/tools/marketing-budget-calculator">marketing budget calculator</a>.</p></section>
+<section><h2>PPC plus SEO</h2><p>Ads buy you visibility now; <a href="/services/local-seo">local SEO</a> builds visibility you don't pay for per click. Most local businesses do best running ads for their highest-value services while SEO grows. Selling to other businesses? See <a href="/b2b-ppc-management">B2B PPC management</a>.</p></section>
+<section><h2>Local PPC questions</h2>
+<details><summary>Do you manage Google Ads for businesses on the North Shore?</summary><p>Yes. We manage Google Ads for businesses across the North Shore and Merrimack Valley, remotely from our base in Georgetown, MA.</p></details>
+<details><summary>Do you run PPC for Portsmouth and Seacoast NH businesses?</summary><p>Yes. We run campaigns for businesses in Portsmouth, the Seacoast and across southern New Hampshire.</p></details>
+<details><summary>How much should I spend on Google Ads?</summary><p>It depends on your market, service and competition. We recommend a budget based on local search volume and cost-per-click data, and never one we don't believe can produce a positive return.</p></details>
+<details><summary>Is ad spend included in PPC management?</summary><p>Usually not. Your ad budget goes directly to Google; the management fee is separate and quoted on a 15-minute fit call.</p></details>
+<details><summary>What is a good cost per lead?</summary><p>It depends on your margins. If a $50 lead turns into a $5,000 job, that's a great cost per lead. We focus on cost per acquisition and return on ad spend, not the cheapest clicks.</p></details>
+</section>`,
+  },
+  {
+    path: "/north-shore-ma", cluster: "local", name: "North Shore, MA",
+    keyword: "digital marketing agency north shore ma",
+    secondary: ["north shore marketing agency", "seo north shore ma", "reputation management north shore massachusetts", "it support north shore ma", "web design north shore ma"],
+    title: "Digital Marketing Agency, North Shore MA | CasperB2B",
+    desc: "SEO, web design, Google Ads, reviews and IT for North Shore and Merrimack Valley businesses, from a Georgetown, MA team. Free 15-minute fit call.",
+    h1: "Digital Marketing Agency on the North Shore, MA",
+    intro: "CasperB2B is a digital marketing and IT company founded in Georgetown, Massachusetts, in the middle of the North Shore. We help North Shore and Merrimack Valley businesses get found on Google, turn visitors into calls, keep reviews coming and keep their systems secure, all set up and run for them.",
+    next: { service: "/services/local-seo", tool: "/tools/website-grader", article: "/get-my-business-on-google" },
+    html: `<section><p class="eyebrow">Essex County, Massachusetts</p><h1>Digital Marketing Agency on the North Shore, MA</h1>
+<p>North Shore customers search by town: "roofer Beverly", "accountant Newburyport", "IT support Danvers". The businesses that show up for those searches, answer fast and have the reviews win the work. We build and run that for you.</p>
+<p class="ctas"><a class="btn" href="/contact?topic=marketing">Book My 15-Minute Fit Call</a> <a class="btn ghost" href="/tools/website-grader">Grade my website</a></p></section>
+<section><h2>What we do for North Shore businesses</h2><div class="grid g2">
+<a class="card-link" href="/services/local-seo"><h3>Local SEO</h3><p>Rank in Google and the map results for your service in every North Shore town you serve.</p></a>
+<a class="card-link" href="/services/web-development"><h3>Web design</h3><p>Fast, mobile-first websites built to turn visitors into calls and booked jobs.</p></a>
+<a class="card-link" href="/ppc-management-massachusetts"><h3>Google Ads</h3><p>Ads targeted to your towns, with every call and form tracked.</p></a>
+<a class="card-link" href="/services/reputation-management"><h3>Reviews & reputation</h3><p>A steady flow of new Google reviews and fast, professional replies.</p></a>
+<a class="card-link" href="/problems/missed-calls"><h3>Missed-call text back</h3><p>Every missed call gets an instant text so the customer doesn't call the next business.</p></a>
+<a class="card-link" href="/outsourced-it-support-small-business"><h3>IT support & cybersecurity</h3><p>Help desk, monitoring, backups and security for a flat monthly fee.</p></a>
+</div></section>
+<section><h2>North Shore and Merrimack Valley towns we serve</h2><p>Each town page covers SEO, web design and IT for that town:</p><p>${ESSEX.map(([h, n]) => `<a href="${h}">${n}</a>`).join(" · ")}</p><p>We also serve <a href="/new-hampshire">southern New Hampshire</a> and work remotely with businesses anywhere in the U.S. See <a href="/service-areas">all service areas</a>.</p></section>
+<section><h2>Why a North Shore team</h2><p>CasperB2B was founded in Georgetown, MA, so we know how customers here search and which neighboring towns your business should show up in. Every request gets a personal reply within 1 business day, and work starts from a signed scope. We work with you by phone, video and screen-share.</p></section>
+<section><h2>How we work</h2><ol><li><strong>Discovery & audit</strong> of your website, Google presence and systems.</li><li><strong>Strategy & blueprint:</strong> a written plan with the highest-impact fixes first.</li><li><strong>Execution & launch:</strong> we build and launch it for you and train your team.</li><li><strong>Optimization & reporting:</strong> monthly reporting and quarterly reviews.</li></ol></section>
+<section><h2>North Shore questions</h2>
+<details><summary>Where is CasperB2B based?</summary><p>CasperB2B was founded in Georgetown, Massachusetts, on the North Shore. We work with North Shore businesses remotely by phone, video and screen-share.</p></details>
+<details><summary>Do you do reputation management for North Shore businesses?</summary><p>Yes. We set up automated review requests after every job and help you reply to reviews quickly and professionally. See <a href="/services/reputation-management">reputation management</a>.</p></details>
+<details><summary>How much does local SEO cost on the North Shore?</summary><p>A local SEO campaign for a small business typically costs between $800 and $2,500 per month, depending on how competitive your service is and how many towns you want to rank in.</p></details>
+<details><summary>Do you also provide IT support?</summary><p>Yes. We provide managed IT and cybersecurity for small businesses across the North Shore. See <a href="/outsourced-it-support-small-business">outsourced IT support</a>.</p></details>
 </section>`,
   },
 ];

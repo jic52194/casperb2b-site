@@ -105,7 +105,7 @@ export function locationPages(L, exists) {
     const towns = L.towns.filter((t) => t.st === code);
     const other = Object.values(L.states).find((x) => x !== s);
     const html = `<section><p class="eyebrow">${esc(s.name)}</p><h1>Marketing, SEO & IT for ${esc(s.name)} businesses</h1>
-<p>We work with businesses across ${esc(s.region)} — and remotely with businesses anywhere in the U.S. and worldwide. Pick your town for local details, or <a href="${other.path}">see ${esc(other.name)}</a>.</p></section>
+<p>We work with businesses across ${esc(s.region)} — and remotely with businesses anywhere in the U.S. and worldwide. Pick your town for local details, or <a href="${other.path}">see ${esc(other.name)}</a>.${code === "ma" ? ` On the North Shore? See <a href="/north-shore-ma">North Shore and Merrimack Valley</a>.` : ""} For local Google Ads, see <a href="/ppc-management-massachusetts">PPC management in MA & NH</a>.</p></section>
 <section><h2>Towns we cover in ${esc(s.name)}</h2><div class="grid g3">${towns.map((t) => `<a class="card-link" href="/${t.slug}"><h3>${esc(t.name)}, ${ST[t.st]}</h3><p>${esc(t.county)} · ${t.zips.join(", ")}</p></a>`).join("")}</div></section>`;
     pages.push({ path: s.path, title: "", desc: "", h1: `Marketing, SEO & IT for ${s.name} businesses`, name: s.name, html, parent: "/service-areas" });
     kw[s.path] = { keyword: `digital marketing agency ${s.name.toLowerCase()}`, secondary: [`small business marketing ${s.name.toLowerCase()}`, `seo company ${s.name.toLowerCase()}`, `it services ${s.name.toLowerCase()}`],
