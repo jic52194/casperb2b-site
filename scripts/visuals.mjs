@@ -2,7 +2,7 @@
 //  • heroArt(cluster): one illustration per topic, showing the outcome the visitor wants (the booked appointment, the
 //    top search result, the protected network, the matched team…). Decorative: aria-hidden, no numbers or claims.
 //  • iconFor(text): a consistent line icon for each card, picked from the card's heading.
-const O = "#f97316", OD = "#c2410c", OL = "#fff7ed", N = "#030712", G = "#16a34a", L = "#e2e8f0", M = "#64748b", W = "#ffffff";
+const O = "#39ff14", OD = "#15803d", OL = "#f0fdf4", N = "#030712", G = "#16a34a", L = "#e2e8f0", M = "#64748b", W = "#ffffff";
 
 const frame = (inner, label) => `<svg viewBox="0 0 440 340" role="img" aria-label="${label}" xmlns="http://www.w3.org/2000/svg"><defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0b1220" flood-opacity=".12"/></filter></defs><circle cx="320" cy="118" r="104" fill="${OL}"/><circle cx="92" cy="262" r="66" fill="#f1f5f9"/>${inner}</svg>`;
 const card = (x, y, w, h, body, r = 16) => `<g filter="url(#sh)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${W}" stroke="${L}"/></g>${body}`;
@@ -27,7 +27,7 @@ const ART = {
   // an assistant answers and books, any hour
   ai: frame(
     card(40, 40, 250, 64, `${txt(62, 70, "Can I come in Thursday?", 14, 600)}${txt(62, 90, "Customer · 9:42 PM", 11, 500, M)}`, 18) +
-    card(150, 122, 250, 84, `<rect x="150" y="122" width="250" height="84" rx="18" fill="${N}"/>${txt(172, 152, "Yes — 2:00 or 4:30 are open.", 14, 600, W)}${txt(172, 174, "Want me to book 2:00?", 14, 600, W)}${txt(172, 194, "AI assistant", 11, 600, "#fdba74")}`, 18) +
+    card(150, 122, 250, 84, `<rect x="150" y="122" width="250" height="84" rx="18" fill="${N}"/>${txt(172, 152, "Yes — 2:00 or 4:30 are open.", 14, 600, W)}${txt(172, 174, "Want me to book 2:00?", 14, 600, W)}${txt(172, 194, "AI assistant", 11, 600, "#39ff14")}`, 18) +
     card(40, 226, 250, 64, `${txt(62, 256, "2:00 works, thanks!", 14, 600)}${txt(62, 276, "Customer", 11, 500, M)}`, 18) + `<g transform="translate(318 236)">${card(0, 0, 82, 74, `<rect x="16" y="14" width="50" height="46" rx="8" fill="${OL}" stroke="${O}"/>${check(41, 37, 13)}`)}</g>`,
     "An AI assistant answering a customer after hours and booking the appointment"),
   // devices behind one shield
@@ -48,7 +48,7 @@ const ART = {
     "A score gauge showing where your business stands and what to fix first"),
   // a clear checklist answer
   resources: frame(
-    card(90, 34, 260, 276, `${txt(116, 72, "The plain-English answer", 15, 800)}${bar(116, 88, 200)}${bar(116, 104, 170)}` + [0, 1, 2, 3].map((i) => `${check(128, 148 + i * 38)}${bar(150, 144 + i * 38, 150 - i * 18, i === 0 ? "#fed7aa" : L)}`).join("")),
+    card(90, 34, 260, 276, `${txt(116, 72, "The plain-English answer", 15, 800)}${bar(116, 88, 200)}${bar(116, 104, 170)}` + [0, 1, 2, 3].map((i) => `${check(128, 148 + i * 38)}${bar(150, 144 + i * 38, 150 - i * 18, i === 0 ? "#bbf7d0" : L)}`).join("")),
     "A checklist page with clear answers"),
   // towns you serve, pinned
   local: frame(

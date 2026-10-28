@@ -1,4 +1,4 @@
-// Shared layout + helpers for casperb2b.com (static build). Brand: orange #f97316 on navy #030712 / white, Inter.
+// Shared layout + helpers for casperb2b.com (static build). Brand: navy #030712 with neon green #39ff14 accents (dark green #15803d for text on white), Inter. Orange is only in the logo.
 // CasperB2B is the services company. CasperPortal (casperportal.com) is a separate software platform: this site only
 // describes it the way casperb2b.com does today and links out to it; nothing here speaks for casperportal.com.
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -102,7 +102,7 @@ export function page({ path, title, desc, body, schema = [], crumbs, noindex = f
 <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1"}">
 <meta property="og:type" content="${ogType}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="en_US"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(NAME)} — Business Growth Services">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${og}">
-<meta name="theme-color" content="#f97316"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="theme-color" content="#030712"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${TODAY}">
 ${nodes.map(ld).join("")}

@@ -32,7 +32,8 @@ function extraFaq(p, html) {
   if (!items) return html;
   // join the last FAQ block on the page; otherwise add one
   const secs = [...html.matchAll(/<section>(?:(?!<section>)[\s\S])*?<\/section>/g)].filter((m) => /<details>/.test(m[0]));
-  if (secs.length) { const m = secs[secs.length - 1]; const end = m.index + m[0].length - "</section>".length; return html.slice(0, end) + items + html.slice(end); }
+  // right after the block's last question, so a closing line or CTA under the FAQ stays at the end
+  if (secs.length) { const m = secs[secs.length - 1]; const end = m.index + m[0].lastIndexOf("</details>") + "</details>".length; return html.slice(0, end) + items + html.slice(end); }
   return html + `<section><h2>Frequently asked questions</h2>${items}</section>`;
 } // extra sections + FAQs for pages that were too thin to rank
 /** Pages captured as one flat run of elements get a <section> per H2 (first chunk = hero), so later steps
@@ -150,7 +151,9 @@ function makeDesc(p, html) {
   if (!d || /^CasperB2B protects small businesses from cyber threats/.test(d) && p !== "/") d = firstPara(html);
   return fitDesc(d);
 }
-const cardDesc = (p) => clip(fitDesc(KW[p]?.desc || BY[p]?.desc || firstPara(BY[p]?.html || "")).replace(/…$/, ""), 130) || clip(fitDesc(KW[p]?.desc || BY[p]?.desc || firstPara(BY[p]?.html || "")), 130);
+// card blurbs drop the meta description's closing call to action ("Book a free 15-minute fit call.") so they never end "…Book a free…"
+const dropCta = (s) => String(s || "").replace(/\s*(?:Book|Request|Get|Schedule|Call)\b[^.!?]*(?:fit call|call|consultation|audit|quote|demo)[^.!?]*[.!?]?\s*$/i, "").trim();
+const cardDesc = (p) => { const d = dropCta(fitDesc(KW[p]?.desc || BY[p]?.desc || firstPara(BY[p]?.html || ""))); return d.length <= 150 ? d : clip(d, 140); };
 
 // ── link + media rewriting ──
 const STATIC_OK = (p) => existsSync(join(ROOT, "static", p)) || /^\/(sitemap\.xml|robots\.txt|llms\.txt)$/.test(p);
@@ -565,7 +568,10 @@ for (const P of ALL) {
     }
   }
   html = heroDesign(p, html);
-  html = html.replace(/<div class="card">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, inner, h) => `<div class="card">${iconFor(h)}${inner}`);
+  // fit / not-fit cards: clean headings (captured as "✓We are a fit if..." / "—We are NOT a fit if...") and mark the not-fit card
+  html = html.replace(/<div class="card"><h3>[^<a-zA-Z]*We are a fit if\.*…?<\/h3>/g, `<div class="card fit"><h3>We're a fit if…</h3>`)
+    .replace(/<div class="card"><h3>[^<a-zA-Z]*We are NOT a fit if\.*…?<\/h3>/g, `<div class="card nofit"><h3>We're not a fit if…</h3>`);
+  html = html.replace(/<div class="card( fit| nofit)?">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, cls = "", inner, h) => `<div class="card${cls}">${iconFor(cls === " nofit" ? "shield" : h)}${inner}`);
   html = pageAids(p, html, cluster, cta);
   if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
