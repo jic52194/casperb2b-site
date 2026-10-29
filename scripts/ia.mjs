@@ -36,7 +36,7 @@ export const MENU = [
     ["SEO", null], ["SEO services", "/services/seo"], ["Local SEO", "/services/local-seo"], ["SEO audit", "/seo-audit"], ["Bundled SEO", "/services/bundled-seo"], ["Get on Google Maps", "/get-my-business-on-google"],
     ["Advertising", null], ["Online advertising", "/services/online-advertising"], ["PPC management", "/services/ppc"], ["Social media ads", "/services/social-media-ads"], ["Social media growth", "/services/social-media-growth"],
     ["Design + Web", null], ["Design services", "/services/design-services"], ["Graphic design", "/services/graphic-design"], ["Logo design", "/services/logo-design"], ["Website development", "/services/web-development"], ["Hosting & support", "/services/hosting-support"]]],
-  ["ai", [["AI services overview", "/ai-services"], ["AI ordering for restaurants", "/ai-restaurant-ordering"], ["AI automation", "/services/ai-automation"], ["AI chatbots", "/services/ai-chatbots"], ["Do I need an AI chatbot?", "/what-is-an-ai-chatbot-and-do-i-need-one"], ["Will AI replace my business?", "/will-ai-replace-my-business"], ["Custom apps", "/services/custom-apps"], ["Mobile app development", "/services/mobile-app-development"], ["App maintenance & support", "/services/application-maintenance"], ["Software testing & QA", "/services/software-testing"], ["Analytics & data", "/services/analytics-data"], ["AI search readiness check", "/tools/ai-search-readiness"]]],
+  ["ai", [["AI services overview", "/ai-services"], ["AI ordering for restaurants", "/ai-restaurant-ordering"], ["AI receptionist for restaurants", "/ai-receptionist-for-restaurants"], ["AI automation", "/services/ai-automation"], ["AI chatbots", "/services/ai-chatbots"], ["Do I need an AI chatbot?", "/what-is-an-ai-chatbot-and-do-i-need-one"], ["Will AI replace my business?", "/will-ai-replace-my-business"], ["Custom apps", "/services/custom-apps"], ["Mobile app development", "/services/mobile-app-development"], ["App maintenance & support", "/services/application-maintenance"], ["Software testing & QA", "/services/software-testing"], ["Analytics & data", "/services/analytics-data"], ["AI search readiness check", "/tools/ai-search-readiness"]]],
   ["cyber", [["Cybersecurity & IT overview", "/cybersecurity-and-it"], ["Cybersecurity services", "/services/cybersecurity"], ["Managed IT", "/services/managed-it"], ["IT infrastructure", "/services/it-infrastructure"], ["Cloud computing", "/services/cloud-computing"], ["Backup & recovery", "/services/backup-and-recovery"], ["Performance monitoring", "/services/performance-monitoring"], ["Website care (CasperCare)", "/caspercare"], ["Too small to get hacked?", "/is-my-business-too-small-to-hack"], ["What if I get hacked?", "/what-happens-if-i-get-hacked"], ["Do I need an IT person?", "/do-i-need-an-it-person"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
   ["va", [["Staffing overview", "/staffing"], ["IT staffing", "/staffing/it-staffing"], ["Contingent staffing", "/staffing/contingent-staffing"], ["Project staffing", "/staffing/project-staffing"], ["Direct hire", "/staffing/direct-hire"], ["AI, ML & data staffing", "/staffing/ai-ml-data-staffing"], ["Cloud staffing", "/staffing/cloud-staffing"], ["Casper VA: dedicated remote staff", "/casper-va"], ["VA roles", "/casper-va/roles"], ["Join our talent network", "/careers"]]],
   ["tools", [["All free tools", "/tools"], ["Revenue leak quiz", "/quiz"], ["Website grader", "/tools/website-grader"], ["SEO checklist", "/tools/seo-checklist"], ["ROI calculator", "/tools/roi-calculator"], ["Marketing budget calculator", "/tools/marketing-budget-calculator"], ["AI search readiness", "/tools/ai-search-readiness"], ["Cyber risk quiz", "/tools/cyber-risk-quiz"]]],
@@ -63,10 +63,12 @@ export function clusterOf(p, kw = {}) {
 }
 
 /** The page's one primary CTA: tools convert inside the tool, everything else books the fit call. */
+// the restaurant AI order-taking product and its keyword pages
+export const RESTO = /^\/(ai-restaurant-ordering|ai-receptionist-for-restaurants|restaurant-phone-ordering-system|restaurant-answering-service|ai-reservation-system-for-restaurants)$/;
 export function primaryCta(p, cluster) {
   const topic = CLUSTERS[cluster]?.topic || "other";
   if (p === BOOK || p === "/thank-you") return null;
-  if (p === "/ai-restaurant-ordering") return { href: `${BOOK}?topic=restaurant`, label: "Get My AI Order-Taker" };
+  if (RESTO.test(p)) return { href: `${BOOK}?topic=restaurant`, label: "Get My AI Order-Taker" };
   if (p === "/careers") return { href: "/careers#apply", label: "Apply to the Talent Network" }; // candidates, not buyers
   return { href: `${BOOK}?topic=${topic}`, label: BOOK_LABEL };
 }
@@ -111,7 +113,7 @@ const CONCERNS = {
 const CONCERN_SET = { ai: ["cost", "ai", "burned", "person"], cyber: ["cyber", "cost", "time", "person"], va: ["va", "cost", "burned", "person"],
   marketing: ["marketing", "cost", "burned", "person"], customers: ["cost", "burned", "time", "person"], local: ["cost", "burned", "time", "person"] };
 export function concernsBlock(p, cluster, cta, icon) {
-  const keys = p === "/ai-restaurant-ordering" ? ["restaurant", "ai", "time", "person"] : CONCERN_SET[cluster] || ["cost", "burned", "time", "person"];
+  const keys = RESTO.test(p) ? ["restaurant", "ai", "time", "person"] : CONCERN_SET[cluster] || ["cost", "burned", "time", "person"];
   const cards = keys.map((k) => { const [ic, q, a] = CONCERNS[k]; return `<div class="concern">${icon(ic)}<div><h3>“${esc(q)}”</h3><p>${a}</p></div></div>`; }).join("");
   return `<section class="concerns" aria-labelledby="concerns-h"><p class="eyebrow">Before you book</p><h2 id="concerns-h">Common concerns, answered</h2><div class="concern-grid">${cards}</div><p class="concerns-cta"><a class="btn" href="${cta ? cta.href : BOOK}" data-cta="concerns">${esc(cta ? cta.label : BOOK_LABEL)}</a><span>Free 15-minute call · No obligation</span></p></section>`;
 }

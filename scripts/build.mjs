@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page, redirect, esc, strip, leadForm, newsletterForm } from "./lib.mjs";
 import { TOOLS, toolPage } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion, concernsBlock, ASSURE } from "./ia.mjs";
-import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI } from "./pages-extra.mjs";
+import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI, RESTAURANT_KW } from "./pages-extra.mjs";
 import { SEO_PAGES } from "./pages-seo.mjs";
 import { STATE_PAGES } from "./pages-seo-state.mjs";
 import { declutter, declutterReport, declutterLate, lateReport, scrubStory, STORY } from "./declutter.mjs";
@@ -70,6 +70,8 @@ const byPath = Object.fromEntries(PAGES.map((p) => [p.path, p]));
 byPath["/pricing"] = { ...(byPath["/pricing"] || { path: "/pricing" }), title: PRICING.title, desc: PRICING.desc, h1: PRICING.h1, html: PRICING.html, hand: true };
 byPath["/agreement-builder"] = { ...(byPath["/agreement-builder"] || { path: "/agreement-builder" }), title: AGREEMENT.title, desc: AGREEMENT.desc, h1: AGREEMENT.h1, html: AGREEMENT.html, hand: true };
 { const R = RESTAURANT_AI; byPath[R.path] = { path: R.path, title: R.title, desc: R.desc, h1: R.h1, html: R.html, hand: true, name: "AI ordering for restaurants" }; }
+const RESTO_NAME = { receptionist: "AI receptionist for restaurants", phone: "Restaurant phone ordering", answering: "Restaurant answering service", reservations: "AI reservations for restaurants" };
+for (const r of RESTAURANT_KW) byPath[r.path] = { path: r.path, title: r.title, desc: r.desc, h1: r.h1, html: r.html, hand: true, service: true, name: RESTO_NAME[r.key] };
 // town pages + state hubs (data/locations.json)
 const LOCS = locationPages(LOC, (h) => !!byPath[h] || h === "/casper-va");
 for (const x of LOCS.pages) { byPath[x.path] = { ...x, generated: true }; KW[x.path] = { ...LOCS.kw[x.path], ...(KW[x.path] || {}) }; }
@@ -83,6 +85,7 @@ KW["/agreement-builder"] = { cluster: "about", noindex: true };
 // keyword pages (scripts/pages-seo.mjs: Search Console demand; scripts/pages-seo-state.mjs: state service pages)
 for (const S of [...SEO_PAGES, ...STATE_PAGES]) { byPath[S.path] = { path: S.path, title: S.title, desc: S.desc, h1: S.h1, html: S.html, hand: true, name: S.name };
   KW[S.path] = { ...(KW[S.path] || {}), keyword: S.keyword, secondary: S.secondary, title: S.title, desc: S.desc, h1: S.h1, intro: S.intro, cluster: S.cluster, next: S.next }; }
+for (const r of RESTAURANT_KW) KW[r.path] = { cluster: "ai", ...(KW[r.path] || {}), keyword: r.keyword, secondary: r.secondary, title: r.title, desc: r.desc, h1: r.h1, intro: null, next: { service: "/ai-restaurant-ordering", tool: "/tools/roi-calculator", article: "/how-to-fill-my-restaurant-on-weeknights" } };
 KW[RESTAURANT_AI.path] = { cluster: "ai", ...(KW[RESTAURANT_AI.path] || {}), keyword: RESTAURANT_AI.keyword, title: RESTAURANT_AI.title, desc: RESTAURANT_AI.desc, h1: RESTAURANT_AI.h1, intro: null, next: { service: "/niches/restaurants", tool: "/tools/roi-calculator", article: "/how-to-fill-my-restaurant-on-weeknights" } };
 const ALL = Object.values(byPath);
 const BY = byPath;
@@ -419,7 +422,7 @@ function midRead(p, html, cluster, steps, picks) {
 
 // Hero design: a dark navy hero ("hx") with a neon accent on the headline. Pages whose hero holds a form or a tool keep
 // a light hero ("hx-light") so form fields stay readable. A photo that opens the hero sits beside the text ("hx-img").
-const H1_ACCENT = { "/ai-restaurant-ordering": "best AI employee" }; // hand-picked accent phrases
+const H1_ACCENT = { "/ai-restaurant-ordering": "best AI employee", ...Object.fromEntries(RESTAURANT_KW.map((r) => [r.path, r.accent])) }; // hand-picked accent phrases
 function accentH1(h, p) {
   return h.replace(/<h1>([^<]+)<\/h1>/, (all, t) => {
     let m; const pick = H1_ACCENT[p];
@@ -503,7 +506,7 @@ function faqSchema(html) {
   const qs = [...html.matchAll(/<details><summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/g)].map((m) => [strip(m[1]), strip(m[2])]).filter(([q, a]) => q && a);
   return qs.length ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: qs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) } : null;
 }
-const isService = (p) => !!BY[p]?.location || /^\/staffing(\/|$)/.test(p) ||  /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
+const isService = (p) => !!BY[p]?.location || !!BY[p]?.service || p === "/ai-restaurant-ordering" || /^\/staffing(\/|$)/.test(p) ||  /^\/services\/[^/]+$/.test(p) || /^\/(ai-services|seo-audit|caspercare|done-for-you|casper-va)$/.test(p) || /^\/casper-va\/(?!roles|hiring-guide|vs-agency)[^/]+$/.test(p) || /-georgetown-ma$/.test(p);
 function schemaFor(p, html, title, desc) {
   const s = [];
   if (p === "/" || p === "/about-us") s.push({ "@context": "https://schema.org", ...ORG });

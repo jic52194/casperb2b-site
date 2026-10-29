@@ -642,5 +642,8 @@
  "/outsourced-it-support-small-business": {
   "add": "<section><h2>Local IT support</h2><p>See <a href=\"/managed-it-services-massachusetts\">managed IT in Massachusetts</a> and <a href=\"/managed-it-services-new-hampshire\">managed IT in New Hampshire</a>.</p></section>",
   "faq": []
+ },
+ "/niches/restaurants": {
+  "add": "<section><h2>Never miss a phone order or booking</h2><p>Busy restaurants lose orders and reservations when nobody can get to the phone. CasperB2B installs AI that answers your calls and texts, takes orders, books tables and notifies your team about each one, for $149 per month. See <a href=\"/ai-restaurant-ordering\">AI order-taking for restaurants</a>, or read about the <a href=\"/ai-receptionist-for-restaurants\">AI receptionist</a>, <a href=\"/restaurant-phone-ordering-system\">phone ordering system</a>, <a href=\"/restaurant-answering-service\">answering service</a> and <a href=\"/ai-reservation-system-for-restaurants\">AI reservations</a>.</p></section>"
  }
 }
