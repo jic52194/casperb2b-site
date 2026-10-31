@@ -83,10 +83,25 @@
         .catch(function () { return false; });
     });
   }
-  // tools.js signature unchanged: casperSubmit(formId, data, tags, notes) → Promise<boolean>
-  window.casperSubmit = function (formId, data, tags, notes) {
-    return submit(formId, data, tags, notes).then(function (r) { return r === true; });
+  // Put the Turnstile box just above a form's submit button and start it on first interaction.
+  function arm(f) {
+    if (f.__arm) return f.__arm;
+    var btn = f.querySelector("button[type=submit]");
+    var box = document.createElement("div");
+    box.className = "cf-ts"; box.style.cssText = "margin:6px 0";
+    if (btn && btn.parentNode) btn.parentNode.insertBefore(box, btn); else f.appendChild(box);
+    function start() { var st = widget(f, box); if (!st.started) st.started = Date.now(); return st; }
+    f.addEventListener("focusin", start, { once: true });
+    f.addEventListener("pointerdown", start, { once: true });
+    return (f.__arm = start);
+  }
+  // casperSubmit(formId, data, tags, notes[, form]) → Promise<boolean>. Pass the tool's own form so the
+  // "I'm not a robot" check (when Cloudflare asks for one) shows inside it instead of a corner box.
+  window.casperSubmit = function (formId, data, tags, notes, form) {
+    var st = form ? arm(form)() : null;
+    return submit(formId, data, tags, notes, st).then(function (r) { return r === true; });
   };
+  document.querySelectorAll("form[data-bot-check]").forEach(arm);
 
   // ---- Wire up forms -----------------------------------------------------------------------------
   function fill(tpl, data) { return tpl.replace(/\{([\w.]+)(?:\|(\w*))?\}/g, function (_, k, d) { return data[k] ? data[k] : (d || ""); }); }
@@ -97,13 +112,7 @@
     hp.type = "text"; hp.name = HP; hp.tabIndex = -1; hp.autocomplete = "off"; hp.setAttribute("aria-hidden", "true");
     hp.style.cssText = "position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0";
     f.appendChild(hp);
-    // Turnstile box sits just above the submit button
-    var box = document.createElement("div");
-    box.className = "cf-ts"; box.style.cssText = "margin:6px 0";
-    if (btn && btn.parentNode) btn.parentNode.insertBefore(box, btn); else f.appendChild(box);
-    function start() { var st = widget(f, box); if (!st.started) st.started = Date.now(); }
-    f.addEventListener("focusin", start, { once: true });
-    f.addEventListener("pointerdown", start, { once: true });
+    var start = arm(f); // Turnstile box sits just above the submit button
 
     f.addEventListener("submit", function (e) {
       e.preventDefault();

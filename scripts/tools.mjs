@@ -3,7 +3,7 @@
 // Every tool posts the same CRM payload (same formId) as before through forms.js.
 // Two live tools showed invented numbers (Website Grader scored a site from the length of its URL; Compare My Business
 // showed random scores). Those now send the same request to the team and show only the checklist they score against.
-import { esc, leadForm } from "./lib.mjs";
+import { esc, leadForm, ASSET_V } from "./lib.mjs";
 
 const money = (n, d = 0) => "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
 const num = ({ id, label, value, min, max, step = 1, help = "", prefix = "", suffix = "" }) =>
@@ -153,7 +153,7 @@ ${leadForm({ id: "Website Grader Tool", submit: "Grade It", success: "Thanks! We
 <div data-ideas><h3>Awaiting Your Input</h3><p>Enter your industry and target audience in the form to generate customized content ideas instantly.</p></div></div>
 <h3>Need these written for you?</h3><p>CasperB2B creates high-ranking, authority-building content for businesses just like yours.</p><p class="ctas"><a class="btn" href="/contact">Book a Strategy Call</a></p></div>`,
 
-  "/tools/breach-response-plan": (h) => hero(h) + `<div class="tool" data-tool="breach"><form class="quiz plan-form" novalidate>
+  "/tools/breach-response-plan": (h) => hero(h) + `<div class="tool" data-tool="breach"><form class="quiz plan-form" data-bot-check novalidate>
 <h2 class="h3">1. Business Details</h2><div class="fields"><div class="field"><label for="b-businessName">Business Name</label><input id="b-businessName" name="businessName" required placeholder="e.g., Acme Plumbing Co."></div><div class="field"><label for="b-email">Your Work Email (To send a backup copy)</label><input id="b-email" name="email" type="email" required placeholder="you@company.com"></div></div>
 <h2 class="h3">2. Emergency Contacts</h2><p>Who is in charge when an incident happens? Who do you call?</p><div class="fields"><div class="field"><label for="b-incidentLeadName">Incident Lead Name</label><input id="b-incidentLeadName" name="incidentLeadName" required placeholder="e.g., Jane Doe (Owner)"></div><div class="field"><label for="b-incidentLeadPhone">Lead Phone Number</label><input id="b-incidentLeadPhone" name="incidentLeadPhone" placeholder="555-0123"></div><div class="field"><label for="b-itContactName">IT Provider / Contact</label><input id="b-itContactName" name="itContactName" placeholder="e.g., CasperB2B Support"></div><div class="field"><label for="b-itContactPhone">IT Emergency Phone</label><input id="b-itContactPhone" name="itContactPhone" placeholder="555-0987"></div><div class="field"><label for="b-legalContactName">Legal Counsel (Optional)</label><input id="b-legalContactName" name="legalContactName" placeholder="Law Firm Name"></div><div class="field"><label for="b-insuranceProvider">Cyber Insurance Provider (Optional)</label><input id="b-insuranceProvider" name="insuranceProvider" placeholder="Insurance Co. &amp; Policy #"></div></div>
 <h2 class="h3">3. Systems &amp; Data</h2><div class="fields"><div class="field wide"><label for="b-criticalSystems">Critical Systems to Disconnect/Protect First</label><p class="fine">List the software or servers that run your business (e.g., QuickBooks, Patient Database, POS System)</p><textarea id="b-criticalSystems" name="criticalSystems" rows="3" required placeholder="1. Main File Server&#10;2. Billing Software&#10;3. Customer CRM"></textarea></div><div class="field wide"><label for="b-backupLocation">Where are your backups stored?</label><p class="fine">If ransomware hits, where is the clean data? (e.g., Cloud Provider, Physical Drive in Safe)</p><input id="b-backupLocation" name="backupLocation" placeholder="e.g., Datto Cloud Backup &amp; Local NAS"></div></div>
@@ -173,5 +173,5 @@ export function toolPage(p, html) {
     const [id, h, sub] = CAPTURE[p];
     out = out.replace(/<\/div>$/, `<div class="capture"><h2 class="h3">${esc(h)}</h2><p>${esc(sub)}</p>${leadForm({ id, submit: "Send It to Me", success: "Got it. Expect a personal reply within 1 business day.", fields: [{ name: "name", label: "Your Name", required: true, autocomplete: "name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] })}</div></div>`);
   }
-  return `${out}<script src="/assets/tools.js" defer></script>`;
+  return `${out}<script src="/assets/tools.js?v=${ASSET_V("tools.js")}" defer></script>`;
 }

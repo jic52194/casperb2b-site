@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 
 // cache-busting by content: a deploy with changed CSS/JS gets a new ?v= so browsers never mix new HTML with old styles
-const ASSET_V = (f) => { try { return createHash("sha1").update(readFileSync(fileURLToPath(new URL(`../static/assets/${f}`, import.meta.url)))).digest("hex").slice(0, 10); } catch { return BUILT.slice(0, 10); } };
+export const ASSET_V = (f) => { try { return createHash("sha1").update(readFileSync(fileURLToPath(new URL(`../static/assets/${f}`, import.meta.url)))).digest("hex").slice(0, 10); } catch { return BUILT.slice(0, 10); } };
 import { fileURLToPath } from "node:url";
 
 export const SITE = "https://casperb2b.com";
@@ -148,7 +148,6 @@ ${(() => { // "Free tools" sits under the brand block (fills that column); the r
 }
 
 // ── forms: every form posts the same JSON payload the live site sent to its GoHighLevel inbound webhook (see forms.js) ──
-export const WEBHOOK = "https://services.leadconnectorhq.com/hooks/TLBXLD9M7LensL45PB90/webhook-trigger/bee537ba-8323-4437-9b8a-6d861e808c0e";
 let formN = 0;
 const field = ({ name, label, type = "text", required = false, options, placeholder = "", autocomplete = "", rows }) => {
   const id = `f${++formN}-${name.replace(/[^a-z0-9]+/gi, "-")}`;

@@ -39,7 +39,9 @@
         var l = v(root, "arpa"), i = v(root, "margin"), a = v(root, "churn"), c = v(root, "spend"), o = v(root, "newc");
         var u = a > 0 ? l * (i / 100) / (a / 100) : 0, d = o > 0 ? c / o : 0, h = d > 0 ? u / d : 0;
         set("o-ltv", usd(u)); set("o-cac", usd(d)); set("o-ratio", fmt(h, 1) + " : 1");
-        set("s-ratio", h < 1 ? "Critical: Losing Money" : h < 3 ? "Warning: Low Efficiency" : h <= 5 ? "Healthy: Ideal Growth" : "Caution: Underinvesting in Growth");
+        var verdict = h < 1 ? "Critical: Losing Money" : h < 3 ? "Warning: Low Efficiency" : h <= 5 ? "Healthy: Ideal Growth" : "Caution: Underinvesting in Growth";
+        set("s-ratio", verdict);
+        extra(root, {}, "ARPA: " + usd(l) + "/mo, Margin: " + i + "%, Churn: " + a + "%/mo, Sales & marketing spend: " + usd(c) + "/mo, New customers: " + o + "/mo → LTV " + usd(u) + ", CAC " + usd(d) + ", LTV:CAC " + fmt(h, 1) + ":1 (" + verdict + ")");
       }
       root.addEventListener("input", run); run();
     },
@@ -49,6 +51,7 @@
         var p = n * (i / 100), g = p * (o / 100), m = g * (c / 100), b = m > 0 ? t / m : 0, h = b * (c / 100), j = h * (o / 100), f = j * n, S = t > 0 ? (f - t) / t * 100 : 0;
         set("o-cpc", usd(m, 2)); set("o-cpl", usd(g, 2)); set("o-cpa", usd(p, 2)); set("o-proj-h", "Budget Projection (" + usd(t, 2) + "/mo)");
         set("o-clicks", fmt(b)); set("o-leads", fmt(h)); set("o-sales", fmt(j)); set("o-rev", usd(f, 2)); set("o-roi", fmt(S) + "%");
+        extra(root, {}, "Customer value: " + usd(n) + ", Target CPA: " + i + "%, Lead-to-sale: " + o + "%, Click-to-lead: " + c + "%, Budget: " + usd(t) + "/mo → " + fmt(h) + " leads, " + fmt(j) + " sales, " + usd(f) + " revenue, ROI " + fmt(S) + "%");
       }
       root.addEventListener("input", run); run();
     },
@@ -80,6 +83,7 @@
         if (i > 0 && i <= 20) { band = "Medium"; txt = "Your business has some security measures, but there are clear vulnerabilities that hackers could exploit. You need to close these gaps before you become a target."; }
         else if (i > 20) { band = "High"; txt = "Your business is highly vulnerable to ransomware, data breaches, and extended downtime. If an automated attack scans your network today, you are at severe risk."; }
         var r = show(root); $("[data-band]", r).textContent = band + " Risk"; $("[data-text]", r).textContent = txt;
+        extra(root, { cyber_risk_band: band, cyber_risk_score: i }, "Cyber Risk Quiz: " + band + " risk (score " + i + "). Answers: " + JSON.stringify(answers(form)));
       });
     },
     maturity: function (root) {
@@ -188,6 +192,7 @@
         var b = ["The Ultimate Guide to " + s + " for " + t, "5 Common Mistakes " + t + " Make When Hiring a " + s + " Professional", "How to Choose the Right " + s + " Service in " + y, s + " Trends: What " + t + " Need to Know", "Why " + t + " Are Switching to Modern " + s + " Solutions"];
         var f = ["Behind the Scenes: A Day in the Life of a " + s + " Expert", "Quick Tip: How " + t + " can save money on " + s + " services", "The #1 Question We Get Asked About " + s, "Watch Us Transform This for Our " + t + " Clients", "Myth vs Reality in the " + s + " World"];
         var m = ["Free Checklist: 10 Things " + t + " Must Check Before Hiring a " + s + " Pro", "The Complete " + s + " Pricing Guide for " + t, "Template: How " + t + " Can Audit Their " + s + " Needs", "Case Study: How We Helped " + t + " Achieve Results with " + s];
+        extra(root, { industry: s, audience: t }, "Content ideas requested for industry: " + s + ", audience: " + t);
         out.innerHTML = "<h3>Blog &amp; Article Ideas</h3><ol>" + li(b) + "</ol><h3>Video &amp; Social Media Ideas</h3><ol>" + li(f) + "</ol><h3>Lead Magnet Ideas</h3><ol>" + li(m) + "</ol>";
       });
     },
@@ -197,7 +202,12 @@
         e.preventDefault(); var msg = $(".form-msg", form);
         var bad = $$("[required]", form).filter(function (i) { return !i.checkValidity(); });
         if (bad.length) { msg.className = "form-msg err"; msg.textContent = "Please fill in the highlighted fields."; bad.forEach(function (i) { i.setAttribute("aria-invalid", "true"); }); bad[0].focus(); return; }
-        var s = {}; $$("input,textarea", form).forEach(function (i) { s[i.name] = i.value.trim(); });
+        var s = {}; $$("input,textarea", form).forEach(function (i) { if (i.name) s[i.name] = i.value.trim(); });
+        var btn = $("button[type=submit]", form), label = btn.textContent; btn.disabled = true; btn.textContent = "Generating...";
+        var sent = window.casperSubmit ? window.casperSubmit("Breach Response Plan Generator", { email: s.email, organization: s.businessName }, ["breach_response_plan"], null, form) : Promise.resolve(false);
+        sent.then(function () { btn.disabled = false; btn.textContent = label; render(s); });
+      });
+      function render(s) {
         var E = function (x) { var d = document.createElement("span"); d.textContent = x; return d.innerHTML; };
         out.innerHTML = '<p class="ctas no-print"><button class="btn" type="button" data-print>Print / Save PDF</button> <button class="btn ghost" type="button" data-edit>Edit Details</button></p><div class="plan"><h2>Incident Response Plan</h2><p><b>' + E(s.businessName || "Company Name") + "</b> · Emergency Document · Last Updated: " + new Date().toLocaleDateString() + "</p>"
           + "<h3>Phase 1: Immediate Action (First 15 Minutes)</h3><ol><li><b>DO NOT TURN OFF COMPUTERS.</b> Disconnect them from the network (unplug ethernet cables, turn off Wi-Fi) to stop the spread, but leave power on for forensics.</li><li><b>Isolate Critical Systems:</b> Immediately disconnect " + E(s.criticalSystems ? s.criticalSystems.split("\n")[0] : "main servers") + " from the internet.</li><li><b>Notify IT Immediately:</b> Call " + E(s.itContactName || "IT Provider") + " at <b>" + E(s.itContactPhone || "___-___-____") + "</b>.</li></ol>"
@@ -207,8 +217,7 @@
         form.hidden = true; show(root);
         $("[data-print]", out).onclick = function () { window.print(); };
         $("[data-edit]", out).onclick = function () { form.hidden = false; out.hidden = true; form.scrollIntoView({ behavior: "smooth" }); };
-        if (window.casperSubmit) window.casperSubmit("Breach Response Plan Generator", { email: s.email, organization: s.businessName });
-      });
+      }
     },
   };
   $$("[data-tool]").forEach(function (root) { var fn = T[root.dataset.tool]; if (fn) fn(root); });

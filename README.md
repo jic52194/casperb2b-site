@@ -51,10 +51,12 @@ This site links to CasperPortal once, in the footer ("Sister product"). CasperPo
 - Tools and quizzes end in a short lead form. Analytics: t.js page views + `cta_click` (every CTA, with `data-cta`
   position), `form_submit` and `lead` events (forms.js).
 
-## Forms (same GHL webhook as before)
+## Forms (Cloudflare Worker → GoHighLevel)
 All forms POST the same JSON payload as the old React app (`first_name, last_name, email, phone, message, source_form,
-source_page, submitted_at, tags[…, source_<formId>], notes` + the form's own fields) to the same GoHighLevel inbound
-webhook: `https://services.leadconnectorhq.com/hooks/TLBXLD9M7LensL45PB90/webhook-trigger/bee537ba-8323-4437-9b8a-6d861e808c0e`.
+source_page, submitted_at, tags[…, source_<formId>], notes` + the form's own fields) to the `casperb2b-forms` Cloudflare
+Worker (URL in `static/assets/forms.js`). The Worker checks Cloudflare Turnstile, the honeypot and the fill time, then
+forwards to the GoHighLevel inbound webhook. **The GHL webhook URL is a secret: keep it only in the Worker's settings,
+never in this public repo.** Tool results (calculator numbers, quiz scores) arrive in `message` / `calendar_notes`.
 
 | Form (formId) | Page |
 |---|---|
