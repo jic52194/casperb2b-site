@@ -582,6 +582,14 @@ for (const P of ALL) {
   html = html.replace(/<div class="card( fit| nofit)?">((?:<p class="eyebrow">[^<]*<\/p>)?<h3>([\s\S]*?)<\/h3>)/g, (all, cls = "", inner, h) => `<div class="card${cls}">${iconFor(cls === " nofit" ? "shield" : h)}${inner}`);
   html = pageAids(p, html, cluster, cta);
   if (p === BOOK) html = html.replace("</section>", `<div class="founder-card"><img src="/img/t-jared-casper.jpg" alt="Jared Casper, Founder of CasperB2B" width="96" height="96" decoding="async"><div><p class="eyebrow">Who you'll talk to</p><p><b>Jared Casper</b>, Founder. He reads every request and replies personally within 1 business day.</p></div></div></section>`);
+  // contact page: the form sits in the hero (beside the call / email / founder details on desktop, right after the intro
+  // on phones), so every "Book My 15-Minute Fit Call" click lands on the form instead of a screen above it
+  if (p === BOOK) {
+    const before = html;
+    html = html.replace(/^(<section class=")(hx[^"]*">)(<h1>[\s\S]*?<\/h1><p>[\s\S]*?<\/p>)([\s\S]*?)<\/section><h2>Send us a Message<\/h2>(<form class="lead"[\s\S]*?<\/form>)/,
+      (all, open, cls, top, info, form) => `${open}contact-hero ${cls}${top}<div class="contact-grid"><div class="contact-form" id="request"><h2 class="h3">Send us a message</h2>${form}</div><div class="contact-info">${info}</div></div></section>`);
+    if (html === before) throw new Error("contact page: hero/form layout did not match — update the contact-hero rule in build.mjs");
+  }
   if (HUB_OF.has(p) && p !== "/about-us" || p === "/about-us") html += clusterListing(cluster, p);
   if (p === "/services") html += allServices();
   if (p === "/") { // every service line in one screen, right after the hero
