@@ -69,7 +69,10 @@ never in this public repo.** Tool results (calculator numbers, quiz scores) arri
 | ROI Calculator Lead, Website Cost Estimate, Digital Maturity Quiz Results, AI Search Readiness Audit, Motivation Quiz Complete, Breach Response Plan Generator, SEO Checklist Download, Strategy Audit Submission, Keyword Research Request, Competitor Comparison Request, Website Grader Tool | the matching /tools/* page |
 | **New formIds (same webhook):** Bundle Builder Request, Tech Stack ROI Consolidation Request, LTV CAC Calculator Lead, Marketing Budget Calculator Lead, Content Idea Generator Lead, Motivation Quiz Lead, Cyber Risk Quiz Lead | the tools that previously ended without a form |
 
-Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. To keep GA4 add
+Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. Events go to the Supabase `track` edge function
+(project carsales-ai-os, table `web_events`). That function only accepts sites and event types on its allow-lists:
+`casperb2b` plus the `lead` and `cta_click` events were added 2026-10-31 (before that every casperb2b event was rejected).
+If the function is redeployed from another repo, keep those entries. To keep GA4 add
 `data-ga4="G-6E61E6C8B7"` to the t.js tag in scripts/lib.mjs.
 
 ## Migration from the two source zips (2026-10-23)
