@@ -8,7 +8,7 @@ import { rmSync, mkdirSync, cpSync, writeFileSync, readFileSync, existsSync } fr
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE, NAME, OUT, TODAY, PHONE_TEL, ORG, ORG_REF, NAV, urls, write, page, redirect, esc, strip, leadForm, newsletterForm } from "./lib.mjs";
-import { TOOLS, toolPage } from "./tools.mjs";
+import { TOOLS, toolPage, NEXT_CALL } from "./tools.mjs";
 import { CLUSTERS, MENU, BOOK, clusterOf, primaryCta, nextSteps, nextBlock, stickyCta, TRUST, isPost, isQuestion, concernsBlock, ASSURE } from "./ia.mjs";
 import { PRICING, AGREEMENT, HUBS, FAQ_HUB, RESTAURANT_AI, RESTAURANT_KW } from "./pages-extra.mjs";
 import { SEO_PAGES } from "./pages-seo.mjs";
@@ -290,7 +290,7 @@ function polish(html) {
 /** One primary CTA per page: buttons that book go to the page's booking link; every other button becomes secondary. */
 function oneCta(html, cta) {
   return html.replace(/<a href="([^"]*)" class="btn( ghost| alt)?"([^>]*)>/g, '<a class="btn$2" href="$1"$3>').replace(/<a class="btn( ghost| alt)?" href="([^"]*)"((?: data-cta="[^"]*")?)/g, (all, kind, href, rest) => {
-    if (href.startsWith(BOOK) && cta) return `<a class="btn" href="${href === BOOK ? cta.href : href}" data-cta="content"`;
+    if (href.startsWith(BOOK) && cta) return `<a class="btn" href="${href === BOOK ? cta.href : href}" data-cta="${/data-cta="form-success"/.test(rest) ? "form-success" : "content"}"`;
     return `<a class="btn ghost" href="${href}"${rest}`;
   });
 }
@@ -340,7 +340,7 @@ const PAGE_FORMS = {
       { name: "contact.role", label: "Role or skills", required: true, placeholder: "e.g. DevOps engineer, AWS, Terraform" }, { name: "contact.profile_url", label: "LinkedIn or resume link (optional)", type: "url", placeholder: "https://" }, { name: "contact.location", label: "Where are you based? (optional)", autocomplete: "address-level2" }] }) + `</div>`,
   "/newsletter": () => leadForm({ id: "Newsletter Subscription - Archive Page", tags: ["newsletter_subscriber"], submit: "Subscribe Now", success: "Subscribed! You'll receive our next growth insights email.", note: "Unsubscribe at any time.",
     fields: [{ name: "first_name", label: "First Name", autocomplete: "given-name" }, { name: "email", label: "Email Address", type: "email", required: true, autocomplete: "email" }] }),
-  "/seo-audit": () => leadForm({ id: "SEO Audit Page", tags: ["website_seo_audit"], submit: "Get My Free SEO Audit", success: "Request received. Expect a personal reply within 1 business day.",
+  "/seo-audit": () => leadForm({ id: "SEO Audit Page", tags: ["website_seo_audit"], submit: "Get My Free SEO Audit", success: "Got it! Jared will review your site and email your free SEO audit within 1 business day. Want it faster? Call or text 1-207-222-7737.", next: NEXT_CALL("seo"),
     fields: [{ name: "first_name", label: "First Name", required: true, autocomplete: "given-name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }, { name: "website", label: "Website URL", type: "url", required: true, placeholder: "https://" }, { name: "primary_goal", label: "Primary goal (optional)", type: "textarea" }] }),
   "/affiliate": () => leadForm({ id: "Partner Program Application", submit: "Submit Application", success: "Application submitted successfully! We'll review and get back to you within 24 hours.",
     fields: [{ name: "first_name", label: "First Name", required: true, autocomplete: "given-name" }, { name: "last_name", label: "Last Name", required: true, autocomplete: "family-name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }, { name: "phone", label: "Phone", type: "tel", autocomplete: "tel" }, { name: "website", label: "Website or social profile", type: "url" }, { name: "contact.promotion_strategy", label: "How will you promote CasperB2B?", type: "textarea", required: true }] }),
@@ -348,7 +348,7 @@ const PAGE_FORMS = {
     fields: [{ name: "first_name", label: "Name", required: true, autocomplete: "given-name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] }),
   "/strategy/marketing": () => leadForm({ id: "Marketing PDF Download", submit: "Send Me the PDF", success: "Sent! Check your inbox.", fields: [{ name: "first_name", label: "First Name", required: true, autocomplete: "given-name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] }),
   "/strategy/sales": () => leadForm({ id: "Sales PDF Download", submit: "Send Me the PDF", success: "Sent! Check your inbox.", fields: [{ name: "first_name", label: "First Name", required: true, autocomplete: "given-name" }, { name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }] }),
-  "/strategy/seo": () => leadForm({ id: "SEO Audit Widget", submit: "Get My Free SEO Audit", success: "Request received. Expect a personal reply within 1 business day.", fields: [{ name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }, { name: "website", label: "Website URL", type: "url", required: true, placeholder: "https://" }] }),
+  "/strategy/seo": () => leadForm({ id: "SEO Audit Widget", submit: "Get My Free SEO Audit", success: "Got it! Jared will review your site and email your free SEO audit within 1 business day. Want it faster? Call or text 1-207-222-7737.", next: NEXT_CALL("seo"), fields: [{ name: "email", label: "Email", type: "email", required: true, autocomplete: "email" }, { name: "website", label: "Website URL", type: "url", required: true, placeholder: "https://" }] }),
 };
 function placeForms(p, html) {
   return html.replace(/<div data-form="(\w+)"><\/div>/g, (all, kind) => {

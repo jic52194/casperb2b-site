@@ -1,0 +1,11 @@
+# casperb2b-forms — deploy from this folder: npx wrangler deploy   (see worker/README.md)
+name = "casperb2b-forms"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true          # keeps https://casperb2b-forms.carsalenow.workers.dev
+keep_vars = true            # don't wipe variables set in the Cloudflare dashboard on deploy
+
+[observability]
+enabled = true              # rejected/forwarded log lines show in the dashboard (Workers → casperb2b-forms → Logs)
+
+# Secrets (not in this file): TURNSTILE_SECRET, GHL_WEBHOOK_URL — see README.md

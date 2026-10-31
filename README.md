@@ -54,9 +54,13 @@ This site links to CasperPortal once, in the footer ("Sister product"). CasperPo
 ## Forms (Cloudflare Worker → GoHighLevel)
 All forms POST the same JSON payload as the old React app (`first_name, last_name, email, phone, message, source_form,
 source_page, submitted_at, tags[…, source_<formId>], notes` + the form's own fields) to the `casperb2b-forms` Cloudflare
-Worker (URL in `static/assets/forms.js`). The Worker checks Cloudflare Turnstile, the honeypot and the fill time, then
-forwards to the GoHighLevel inbound webhook. **The GHL webhook URL is a secret: keep it only in the Worker's settings,
+Worker (source in `worker/`, deploy notes in `worker/README.md`). The Worker checks Cloudflare Turnstile, then drops spam
+(honeypot, under 3 s, gibberish names, 3+ dots in the email) with a 200, and forwards everything else unchanged to the
+GoHighLevel inbound webhook. **The GHL webhook URL is a secret: keep it only in the Worker's settings,
 never in this public repo.** Tool results (calculator numbers, quiz scores) arrive in `message` / `calendar_notes`.
+Every payload also carries attribution: `utm_source utm_medium utm_campaign utm_content utm_term gclid fbclid` (last
+tagged visit this session, sessionStorage), `first_utm_source first_utm_campaign` (first tagged visit ever, localStorage),
+`landing_page referrer` (first page this browser saw + its referrer), and a `utm_<source>` tag. Tests: `npm test`.
 
 | Form (formId) | Page |
 |---|---|

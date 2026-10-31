@@ -13,6 +13,42 @@
   var loadedAt = Date.now();
   var recent = {};
 
+  // ---- Attribution -------------------------------------------------------------------------------
+  // First touch (localStorage, never overwritten): the first visit that carried utm/gclid/fbclid tags.
+  // Landing (localStorage, never overwritten): the first page this browser saw on the site + its referrer.
+  // Last touch (sessionStorage): the most recent tagged URL in this browsing session.
+  var AKEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"];
+  var FT = "cb2b_first_touch", LAND = "cb2b_landing", LT = "cb2b_last_touch";
+  function store(kind) { try { return window[kind] || null; } catch (e) { return null; } }
+  function readJSON(st, k) { try { var v = st && st.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+  function writeJSON(st, k, v) { try { if (st) st.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function tagParams(search) {
+    var o = null;
+    try { var q = new URLSearchParams(search || ""); AKEYS.forEach(function (k) { var v = (q.get(k) || "").trim(); if (v) { (o = o || {})[k] = v.slice(0, 150); } }); } catch (e) {}
+    return o;
+  }
+  function capture(loc, referrer, ls, ss) {
+    var now = new Date().toISOString(), t = tagParams(loc.search);
+    if (!readJSON(ls, LAND)) writeJSON(ls, LAND, { landing_page: loc.pathname, referrer: String(referrer || "").slice(0, 300), at: now });
+    if (t) {
+      if (!readJSON(ls, FT)) { var ft = { at: now }; for (var k in t) ft[k] = t[k]; writeJSON(ls, FT, ft); }
+      var lt = { at: now, landing_page: loc.pathname }; for (var j in t) lt[j] = t[j]; writeJSON(ss, LT, lt);
+    }
+  }
+  // The fields every submit carries (empty strings when unknown, so GHL field mapping stays stable).
+  function attribution(ls, ss, loc, referrer) {
+    var lt = readJSON(ss, LT) || {}, ft = readJSON(ls, FT) || {}, land = readJSON(ls, LAND) || {};
+    var o = {};
+    AKEYS.forEach(function (k) { o[k] = lt[k] || ""; });
+    o.landing_page = land.landing_page || (loc && loc.pathname) || "";
+    o.referrer = land.landing_page ? (land.referrer || "") : String(referrer || "");
+    o.first_utm_source = ft.utm_source || ""; o.first_utm_campaign = ft.utm_campaign || "";
+    return o;
+  }
+  // utm_source=LinkedIn-Page → "utm_linkedin_page"
+  function sourceTag(src) { var t = String(src || "").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 40); return t ? "utm_" + t : ""; }
+  capture(location, document.referrer, store("localStorage"), store("sessionStorage"));
+
   // ---- Turnstile ---------------------------------------------------------------------------------
   var tsLoad;
   function loadTurnstile() {
@@ -61,20 +97,27 @@
   }
 
   // ---- Submit ------------------------------------------------------------------------------------
-  function submit(formId, data, tags, notes, st, hp) {
-    var key = formId + JSON.stringify(data);
-    if (recent[key]) return Promise.resolve(true);
+  function payload(formId, data, tags, notes) {
     var name = data.name || "";
     var first = data.first_name || data.firstName || (name ? name.split(" ")[0] : "");
     var last = data.last_name || data.lastName || (name ? name.split(" ").slice(1).join(" ") : "");
+    var a = attribution(store("localStorage"), store("sessionStorage"), location, document.referrer), utmTag = sourceTag(a.utm_source);
     var p = { first_name: first, last_name: last, email: data.email || "", phone: data.phone || data.phoneNumber || "", message: data.message || data.calendar_notes || data.notes || "",
       source_form: formId, source_page: location.pathname, submitted_at: new Date().toISOString(),
-      tags: (tags || []).concat(["source_" + formId.toLowerCase().replace(/\s+/g, "_")]), notes: notes || data.notes || "" };
+      tags: (tags || []).concat(["source_" + formId.toLowerCase().replace(/\s+/g, "_")], utmTag ? [utmTag] : []), notes: notes || data.notes || "" };
+    for (var ak in a) p[ak] = a[ak];
     for (var k in data) if (Object.prototype.hasOwnProperty.call(data, k)) p[k] = data[k];
     delete p.name;
+    return p;
+  }
+  function submit(formId, data, tags, notes, st, hp) {
+    var key = formId + JSON.stringify(data);
+    if (recent[key]) return Promise.resolve(true);
+    var p = payload(formId, data, tags, notes);
     return takeToken(st || globalWidget()).then(function (token) {
       if (!token) return "captcha";
-      p._ts = token; p._hp = hp || ""; p._t = Date.now() - (st && st.started || loadedAt);
+      // _t: ms since the visitor first touched this form; _tl: ms since the page loaded (the Worker's fill-time check)
+      p._ts = token; p._hp = hp || ""; p._t = Date.now() - (st && st.started || loadedAt); p._tl = Date.now() - loadedAt;
       return fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(p) })
         .then(function (r) {
           if (r.ok) { recent[key] = 1; setTimeout(function () { delete recent[key]; }, 10000); return true; }
@@ -102,6 +145,8 @@
     return submit(formId, data, tags, notes, st).then(function (r) { return r === true; });
   };
   document.querySelectorAll("form[data-bot-check]").forEach(arm);
+  // for tests and debugging in the console: casperForms.payload("Test", { email: "a@b.co" })
+  window.casperForms = { capture: capture, attribution: attribution, sourceTag: sourceTag, payload: payload, tagParams: tagParams };
 
   // ---- Wire up forms -----------------------------------------------------------------------------
   function fill(tpl, data) { return tpl.replace(/\{([\w.]+)(?:\|(\w*))?\}/g, function (_, k, d) { return data[k] ? data[k] : (d || ""); }); }
@@ -135,6 +180,7 @@
         var ok = r === true;
         btn.disabled = false; btn.textContent = label;
         msg.className = "form-msg " + (ok ? "ok" : "err"); msg.textContent = ok ? f.dataset.success : (r === "captcha" ? BOT_ERR : ERR);
+        var next = f.querySelector(".form-next"); if (next) next.hidden = !ok; // "Book a 15-minute fit call" after a successful send
         if (ok) { f.reset(); if (window.csoTrack) window.csoTrack.event("lead", f.dataset.formId); f.dispatchEvent(new CustomEvent("casper:sent", { bubbles: true })); }
       });
     });
