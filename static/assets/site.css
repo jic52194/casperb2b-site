@@ -777,3 +777,15 @@ a:hover{color:var(--navy)}
 @media(min-width:760px){.foot .cols{align-items:start;row-gap:32px}.foot .cols .fcol{display:contents}}
 /* phone: hide the sticky Book/Call bar while the menu drawer is open */
 body:has([data-burger][aria-expanded="true"]) .mcta{display:none}
+
+/* contact page: form in the hero, beside the call / email / founder details on desktop */
+.contact-grid{display:grid;gap:24px;margin-top:22px}
+.contact-grid .contact-form>h2{margin:0 0 10px;color:#fff}
+.contact-hero .contact-form form.lead{margin:0;max-width:none}
+.contact-hero .contact-info>:first-child{margin-top:0}
+.content>section.hx:first-child form.lead .form-msg.ok{color:var(--green)}
+.content>section.hx:first-child form.lead .form-msg.err{color:#b91c1c}
+.content>section.hx:first-child form.lead .fine{color:var(--muted)}
+@media(min-width:900px){.contact-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:start}.contact-grid .contact-form{order:2}.contact-grid .contact-info{order:1}}
+/* the "Let's talk" bubble only points to this page and would sit over the form */
+body:has(.content[data-path="/contact"]) .talk{display:none}

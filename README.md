@@ -51,10 +51,12 @@ This site links to CasperPortal once, in the footer ("Sister product"). CasperPo
 - Tools and quizzes end in a short lead form. Analytics: t.js page views + `cta_click` (every CTA, with `data-cta`
   position), `form_submit` and `lead` events (forms.js).
 
-## Forms (same GHL webhook as before)
+## Forms (Cloudflare Worker → GoHighLevel)
 All forms POST the same JSON payload as the old React app (`first_name, last_name, email, phone, message, source_form,
-source_page, submitted_at, tags[…, source_<formId>], notes` + the form's own fields) to the same GoHighLevel inbound
-webhook: `https://services.leadconnectorhq.com/hooks/TLBXLD9M7LensL45PB90/webhook-trigger/bee537ba-8323-4437-9b8a-6d861e808c0e`.
+source_page, submitted_at, tags[…, source_<formId>], notes` + the form's own fields) to the `casperb2b-forms` Cloudflare
+Worker (URL in `static/assets/forms.js`). The Worker checks Cloudflare Turnstile, the honeypot and the fill time, then
+forwards to the GoHighLevel inbound webhook. **The GHL webhook URL is a secret: keep it only in the Worker's settings,
+never in this public repo.** Tool results (calculator numbers, quiz scores) arrive in `message` / `calendar_notes`.
 
 | Form (formId) | Page |
 |---|---|
@@ -67,7 +69,10 @@ webhook: `https://services.leadconnectorhq.com/hooks/TLBXLD9M7LensL45PB90/webhoo
 | ROI Calculator Lead, Website Cost Estimate, Digital Maturity Quiz Results, AI Search Readiness Audit, Motivation Quiz Complete, Breach Response Plan Generator, SEO Checklist Download, Strategy Audit Submission, Keyword Research Request, Competitor Comparison Request, Website Grader Tool | the matching /tools/* page |
 | **New formIds (same webhook):** Bundle Builder Request, Tech Stack ROI Consolidation Request, LTV CAC Calculator Lead, Marketing Budget Calculator Lead, Content Idea Generator Lead, Motivation Quiz Lead, Cyber Risk Quiz Lead | the tools that previously ended without a form |
 
-Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. To keep GA4 add
+Analytics: `<script src="/assets/t.js" data-site="casperb2b" data-banner="1">`. Events go to the Supabase `track` edge function
+(project carsales-ai-os, table `web_events`). That function only accepts sites and event types on its allow-lists:
+`casperb2b` plus the `lead` and `cta_click` events were added 2026-10-31 (before that every casperb2b event was rejected).
+If the function is redeployed from another repo, keep those entries. To keep GA4 add
 `data-ga4="G-6E61E6C8B7"` to the t.js tag in scripts/lib.mjs.
 
 ## Migration from the two source zips (2026-10-23)
