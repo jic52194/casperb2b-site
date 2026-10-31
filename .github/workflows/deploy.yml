@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci            # sharp is only used by npm run images (one-time image import); the build itself has no dependencies
+      - run: npm test           # attribution (forms.js) + Worker spam rules
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }

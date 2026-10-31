@@ -789,3 +789,6 @@ body:has([data-burger][aria-expanded="true"]) .mcta{display:none}
 @media(min-width:900px){.contact-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:start}.contact-grid .contact-form{order:2}.contact-grid .contact-info{order:1}}
 /* the "Let's talk" bubble only points to this page and would sit over the form */
 body:has(.content[data-path="/contact"]) .talk{display:none}
+/* shown inside a lead form after a successful send: the next step (book a call) */
+form.lead .form-next{margin:.8em 0 0}
+form.lead .form-next[hidden]{display:none}

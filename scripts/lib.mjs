@@ -161,7 +161,7 @@ const field = ({ name, label, type = "text", required = false, options, placehol
 export function leadForm(spec) {
   return `<form class="lead" data-form-id="${esc(spec.id)}" data-tags="${esc((spec.tags || []).join(","))}"${spec.notes ? ` data-notes="${esc(spec.notes)}"` : ""} data-success="${esc(spec.success || "Request received. Expect a personal reply within 1 business day.")}" novalidate>
 <div class="fields">${spec.fields.map(field).join("")}</div>
-<button class="btn" type="submit">${esc(spec.submit || "Submit")}</button>${spec.note ? `<p class="fine">${esc(spec.note)}</p>` : ""}<p class="form-msg" role="status" aria-live="polite"></p></form>`;
+<button class="btn" type="submit">${esc(spec.submit || "Submit")}</button>${spec.note ? `<p class="fine">${esc(spec.note)}</p>` : ""}<p class="form-msg" role="status" aria-live="polite"></p>${spec.next ? `<p class="form-next ctas" hidden><a class="btn" href="${esc(spec.next.href)}" data-cta="form-success">${esc(spec.next.label)}</a></p>` : ""}</form>`;
 }
 export function newsletterForm(id, tags, key = "n") {
   const fid = `nl-${key}-${++formN}`;
